@@ -6,6 +6,7 @@ import Container from './Container';
 
 const Wrapper = styled('aside')`
   margin-top: 80px;
+  margin-bottom: 40px;
   padding: 2rem ${props => props.theme.dimensions.containerPadding}px;
   background-color: ${props => props.theme.colors.drawer.background};
   border: 1px solid ${props => props.theme.colors.border};

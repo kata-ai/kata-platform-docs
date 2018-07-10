@@ -5,7 +5,7 @@ import Container from './Container';
 
 const Wrapper = styled('footer')`
   margin: 0;
-  padding: ${props => props.theme.dimensions.containerPadding}px;
+  padding: ${props => props.theme.dimensions.containerPadding}px 0;
   font-size: 12px;
   line-height: 18px;
 

@@ -12,6 +12,7 @@ import DocsHeader from 'components/DocsHeader';
 import Pagination from 'components/Pagination';
 import styled from 'utils/styled';
 import TocWrapper from 'components/TocWrapper';
+import Footer from 'components/Footer';
 
 interface PageTemplateProps {
   data: {
@@ -39,6 +40,7 @@ interface PageTemplateProps {
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark, sectionList, site } = data;
+  const { siteMetadata } = site;
   const { prev, next } = markdownRemark.frontmatter;
   const prevPage = getPageById(sectionList.edges, prev);
   const nextPage = getPageById(sectionList.edges, next);
@@ -53,7 +55,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <meta property="og:title" content={markdownRemark.frontmatter.title} />
         <meta property="og:description" content={markdownRemark.excerpt} />
       </Helmet>
-      <DocsWrapper>
+      <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
         {markdownRemark.tableOfContents && (
           <TocWrapper dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }} />
         )}
@@ -62,13 +64,14 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
             <h1>{markdownRemark.frontmatter.title}</h1>
           </DocsHeader>
           <MarkdownContent html={markdownRemark.html} />
+          <FooterWrapper>
+            <Container>
+              {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+            </Container>
+            <Footer version={siteMetadata.version} siteLastUpdated={siteMetadata.siteLastUpdated} />
+          </FooterWrapper>
         </Container>
       </DocsWrapper>
-      <FooterWrapper>
-        <Container>
-          {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-        </Container>
-      </FooterWrapper>
     </Page>
   );
 };
@@ -80,7 +83,11 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        sidebarTitle
+        sidebarSubtext
+        siteLastUpdated
         description
+        version
         siteUrl
         keywords
         author {
@@ -117,5 +124,5 @@ export const query = graphql`
 `;
 
 const FooterWrapper = styled('div')`
-  padding: 0 ${props => props.theme.dimensions.containerPadding}px 40px;
+  padding: 0;
 `;

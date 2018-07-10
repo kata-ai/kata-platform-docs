@@ -65,7 +65,11 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        sidebarTitle
+        sidebarSubtext
+        siteLastUpdated
         description
+        version
         siteUrl
         keywords
         author {

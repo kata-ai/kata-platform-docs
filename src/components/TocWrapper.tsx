@@ -2,6 +2,7 @@ import styled from 'utils/styled';
 
 const TocWrapper = styled('section')`
   display: block;
+  margin-left: 24px;
   font-size: 13px;
   line-height: 28px;
 

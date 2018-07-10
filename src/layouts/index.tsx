@@ -70,10 +70,7 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
             onCloseNavMenu={this.closeDrawer}
           />
           <FloatingNavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
-          <LayoutMain>
-            {children()}
-            <Footer version={siteMetadata.version} siteLastUpdated={siteMetadata.siteLastUpdated} />
-          </LayoutMain>
+          <LayoutMain>{children()}</LayoutMain>
         </LayoutRoot>
       </ThemeProvider>
     );
