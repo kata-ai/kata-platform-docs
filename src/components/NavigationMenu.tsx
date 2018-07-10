@@ -34,7 +34,6 @@ const ToggleButton = styled<ToggleableProps, 'button'>('button')`
   box-shadow: ${props =>
     props.isOpen ? props.theme.shadow.layer200 : props.theme.shadow.layer100};
   background-color: ${props => props.theme.colors.white};
-  opacity: ${props => (props.isOpen ? 1 : 0.5)};
   transition: all 0.3s ease;
 `;
 
@@ -44,9 +43,11 @@ const ToggleButtonInner = styled('div')`
   align-items: center;
 `;
 
-const ToggleButtonSpan = styled('span')`
+const ToggleButtonSpan = styled<ToggleableProps, 'span'>('span')`
   flex: 1 1 auto;
   font-weight: 500;
+  opacity: ${props => (props.isOpen ? 1 : 0.5)};
+  transition: all 0.3s ease;
 `;
 
 const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
@@ -91,7 +92,7 @@ class NavigationMenu extends React.PureComponent<NavigationMenuProps, Toggleable
       <Root>
         <ToggleButton onClick={onClick} isOpen={isOpen}>
           <ToggleButtonInner>
-            <ToggleButtonSpan>{node.title}</ToggleButtonSpan>
+            <ToggleButtonSpan isOpen={isOpen}>{node.title}</ToggleButtonSpan>
             {isOpen ? (
               <img src={require('assets/images/arrow-up.svg')} />
             ) : (
