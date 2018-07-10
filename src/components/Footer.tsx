@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import styled from 'utils/styled';
 import Container from './Container';
 
@@ -22,12 +23,19 @@ const Inner = styled('div')`
   }
 `;
 
-const Footer: React.SFC = () => (
+interface FooterProps {
+  version: string;
+  siteLastUpdated: string;
+}
+
+const Footer: React.SFC<FooterProps> = ({ version, siteLastUpdated }) => (
   <Wrapper>
     <Container>
       <Inner>
         <p>&copy; 2018 Kata.ai. All rights reserved.</p>
-        <p>Version version. Last updated date.</p>
+        <p>
+          Version {version}. Last updated {moment(siteLastUpdated).format('D MMMM YYYY')}.
+        </p>
       </Inner>
     </Container>
   </Wrapper>

@@ -72,7 +72,7 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
           <FloatingNavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
           <LayoutMain>
             {children()}
-            <Footer />
+            <Footer version={siteMetadata.version} siteLastUpdated={siteMetadata.siteLastUpdated} />
           </LayoutMain>
         </LayoutRoot>
       </ThemeProvider>
@@ -97,7 +97,9 @@ export const query = graphql`
         title
         sidebarTitle
         sidebarSubtext
+        siteLastUpdated
         description
+        version
         siteUrl
         keywords
         author {
