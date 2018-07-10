@@ -1,7 +1,7 @@
 ---
 id: bot-studio-tutorial
 title: Kata Platform 2.5 - Bot Studio tutorial
-next: nl-studio-tutorial
+next: bot-studio-tutorial-id
 ---
 
 ## Introduction

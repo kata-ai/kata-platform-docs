@@ -73,6 +73,11 @@
         "title": "Bot Studio Tutorial"
       },
       {
+        "id": "bot-studio-tutorial-id",
+        "slug": "/tutorial/bot-studio-tutorial-id/",
+        "title": "Bot Studio Tutorial (Bahasa)"
+      },
+      {
         "id": "nl-studio-tutorial",
         "slug": "/tutorial/nl-studio-tutorial/",
         "title": "NL Studio Tutorial"
