@@ -29,6 +29,10 @@ export type Theme = {
       copy: string;
       calm: string;
     };
+    toc: {
+      link: string;
+      hover: string;
+    };
     white: string;
     error: string;
   };

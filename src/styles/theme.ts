@@ -57,6 +57,10 @@ const theme: Theme = {
       copy: brandColors.grey70,
       calm: brandColors.grey50
     },
+    toc: {
+      link: brandColors.grey60,
+      hover: brandColors.katablue
+    },
     ink: brandColors.black,
     white: brandColors.white,
     error: brandColors.red

@@ -11,6 +11,7 @@ import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
 import Pagination from 'components/Pagination';
 import styled from 'utils/styled';
+import TocWrapper from 'components/TocWrapper';
 
 interface PageTemplateProps {
   data: {
@@ -53,6 +54,9 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <meta property="og:description" content={markdownRemark.excerpt} />
       </Helmet>
       <DocsWrapper>
+        {markdownRemark.tableOfContents && (
+          <TocWrapper dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }} />
+        )}
         <Container>
           <DocsHeader>
             <h1>{markdownRemark.frontmatter.title}</h1>
