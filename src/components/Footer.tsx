@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'utils/styled';
 import Container from './Container';
-import { breakpoints } from 'styles/variables';
 
 const Wrapper = styled('footer')`
   margin: 0;
@@ -9,7 +8,7 @@ const Wrapper = styled('footer')`
   font-size: 12px;
   line-height: 18px;
 
-  @media (max-width: ${breakpoints.lg - 1}px) {
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     margin-bottom: 5rem;
   }
 `;

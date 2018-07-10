@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'utils/styled';
 import { MenuItem } from 'interfaces/nodes';
-import { breakpoints } from 'styles/variables';
 import Container from './Container';
 
 const Wrapper = styled('aside')`
@@ -53,7 +52,7 @@ const PaginationLink = styled(Link)`
     border-bottom-color: ${props => props.theme.colors.gray.copy};
   }
 
-  @media (min-width: ${breakpoints.sm}px) {
+  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
     font-size: ${props => props.theme.dimensions.headingSizes.h2}px;
   }
 `;

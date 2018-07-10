@@ -1,6 +1,5 @@
 import { injectGlobal } from 'utils/styled';
 import { onEvent } from './mixins';
-import { breakpoints } from './variables';
 
 import normalize from './normalize';
 import theme from './theme';
@@ -23,7 +22,7 @@ injectGlobal`
     font-size: ${theme.dimensions.fontSize.regular}px;
     line-height: ${theme.dimensions.lineHeight.regular}px;
 
-    @media (min-width: ${breakpoints.lg}px) {
+    @media (min-width: ${theme.breakpoints.lg}px) {
       font-size: ${theme.dimensions.fontSize.large}px;
     }
   }
@@ -201,7 +200,7 @@ injectGlobal`
       }
     }
 
-    @media (min-width: ${breakpoints.md}) {
+    @media (min-width: ${theme.breakpoints.md}) {
       padding-right: 5rem;
       padding-left: 1.25rem;
     }
