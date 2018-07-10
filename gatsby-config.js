@@ -9,6 +9,7 @@ module.exports = {
     sidebarSubtext: 'Documentation',
     siteLastUpdated: new Date().toISOString(),
     description: 'Documentation skeleton for Kata.ai.',
+    version: '2.5',
     siteUrl: 'https://grundgesetz-skeleton.now.sh',
     keywords: 'gatsbyjs, gatsby, documentation, sample project',
     author: {
@@ -64,6 +65,29 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Kata Platform Documentation',
+        short_name: 'Kata Platform',
+        icons: [
+          {
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/android-chrome-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
+          }
+        ],
+        start_url: '/',
+        display: 'standalone',
+        theme_color: '#006fe6',
+        background_color: '#f8fcff'
+      }
+    }
   ]
 };
