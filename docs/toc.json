@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Overview",
+    "items": [
+      {
+        "id": "about",
+        "slug": "/overview/about/",
+        "title": "About"
+      },
+      {
+        "id": "getting-started",
+        "slug": "/overview/getting-started/",
+        "title": "Getting Started"
+      }
+    ]
+  },
+  {
+    "title": "Concepts",
+    "items": [
+      {
+        "id": "bot",
+        "slug": "/concepts/bot/",
+        "title": "Bot"
+      },
+      {
+        "id": "deployment",
+        "slug": "/concepts/deployment/",
+        "title": "Deployment"
+      },
+      {
+        "id": "conversation",
+        "slug": "/concepts/conversation/",
+        "title": "Conversation"
+      },
+      {
+        "id": "session",
+        "slug": "/concepts/session/",
+        "title": "Session"
+      },
+      {
+        "id": "nlu",
+        "slug": "/concepts/nlu/",
+        "title": "NLU"
+      },
+      {
+        "id": "flow",
+        "slug": "/concepts/flow/",
+        "title": "Flow"
+      },
+      {
+        "id": "intent",
+        "slug": "/concepts/intent/",
+        "title": "Intent"
+      },
+      {
+        "id": "state",
+        "slug": "/concepts/state/",
+        "title": "State"
+      },
+      {
+        "id": "action",
+        "slug": "/concepts/action/",
+        "title": "Action"
+      }
+    ]
+  },
+  {
+    "title": "Tutorial",
+    "items": [
+      {
+        "id": "bot-studio-tutorial",
+        "slug": "/tutorial/bot-studio-tutorial/",
+        "title": "Bot Studio Tutorial"
+      },
+      {
+        "id": "nl-studio-tutorial",
+        "slug": "/tutorial/nl-studio-tutorial/",
+        "title": "NL Studio Tutorial"
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+<svg width="24px" height="24px" viewBox="0 0 24 24">
+  <g fill="#24282d" fill-rule="evenodd">
+    <rect
+      id="Rectangle-Copy"
+      transform="translate(11.748851, 11.748851) rotate(-315.000000) translate(-11.748851, -11.748851) "
+      x="-3.02037964"
+      y="9.90269729"
+      width="29.5384615"
+      height="3.69230769"
+      rx="1.84615385"
+    />
+    <rect
+      id="Rectangle-Copy"
+      transform="translate(11.748851, 11.748851) scale(-1, 1) rotate(-315.000000) translate(-11.748851, -11.748851) "
+      x="-3.02037964"
+      y="9.90269729"
+      width="29.5384615"
+      height="3.69230769"
+      rx="1.84615385"
+    />
+  </g>
+</svg>
