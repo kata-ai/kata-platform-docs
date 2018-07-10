@@ -112,7 +112,7 @@ states:
 
 ## Meta Context
 
-Meta Context is read-only system defined context fields. It is accessible at context `<meta>`. Following are generally available meta context, accessible at any time.
+Meta Context is read-only system defined context fields. It is accessible at `context.<meta>`. Following are generally available meta context, accessible at any time.
 
 - `$init : boolean` - true if entering a new flow
 - `$flow : string` - current flow

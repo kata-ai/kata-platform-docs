@@ -1,6 +1,7 @@
 ---
 id: bot-studio-tutorial
 title: Kata Platform 2.5 - Bot Studio tutorial
+prev: kata-ml-test-spec
 next: bot-studio-tutorial-id
 ---
 

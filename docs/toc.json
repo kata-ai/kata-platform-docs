@@ -65,6 +65,46 @@
     ]
   },
   {
+    "title": "Kata ML Spec",
+    "items": [
+      {
+        "id": "kata-ml-overview",
+        "slug": "/kata-ml/overview/",
+        "title": "Overview"
+      },
+      {
+        "id": "kata-ml-flow",
+        "slug": "/kata-ml/flow/",
+        "title": "Flow"
+      },
+      {
+        "id": "kata-ml-data-structure",
+        "slug": "/kata-ml/data-structure/",
+        "title": "Data Structure"
+      },
+      {
+        "id": "kata-ml-nlu",
+        "slug": "/kata-ml/nlu/",
+        "title": "NLU"
+      },
+      {
+        "id": "kata-ml-method",
+        "slug": "/kata-ml/method/",
+        "title": "Methods"
+      },
+      {
+        "id": "kata-ml-action-type",
+        "slug": "/kata-ml/action-type/",
+        "title": "Action Types"
+      },
+      {
+        "id": "kata-ml-test-spec",
+        "slug": "/kata-ml/test-spec/",
+        "title": "Test Spec"
+      }
+    ]
+  },
+  {
     "title": "Tutorial",
     "items": [
       {
@@ -81,6 +121,16 @@
         "id": "nl-studio-tutorial",
         "slug": "/tutorial/nl-studio-tutorial/",
         "title": "NL Studio Tutorial"
+      }
+    ]
+  },
+  {
+    "title": "FAQs",
+    "items": [
+      {
+        "id": "faq",
+        "slug": "/faq/",
+        "title": "FAQs"
       }
     ]
   }

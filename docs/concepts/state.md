@@ -121,7 +121,7 @@ Following variables can be accessed:
 - `context` flow context
 - `data` session data
 
-Additional meta context accessible in states at context. `<meta>`:
+Additional meta context accessible in states at `context.<meta>`:
 
 - `start : boolean` true if state is initial state
 - `to : string` describe destination state. Available during exit
