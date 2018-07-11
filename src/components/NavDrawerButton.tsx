@@ -10,6 +10,8 @@ const Wrapper = styled<ToggleableProps, 'button'>('button')`
   display: inline-block;
   padding: 8px;
   color: ${props => props.theme.colors.brand};
+  background: none;
+  border: none;
   cursor: pointer;
   z-index: ${props => props.floating && props.theme.zIndex.floatingButton};
 

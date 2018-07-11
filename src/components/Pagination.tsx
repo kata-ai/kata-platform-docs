@@ -11,22 +11,68 @@ const Wrapper = styled('aside')`
   background-color: ${props => props.theme.colors.drawer.background};
   border: 1px solid ${props => props.theme.colors.border};
   border-radius: 4px;
+
+  @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+  }
 `;
 
 const WrapperInner = styled(Container)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
+    flex-direction: row;
+  }
 `;
 
 const PaginationItem = styled('div')`
+  flex: 1 1 50%;
+
   &:first-child {
     text-align: left;
+    border-right: 1px solid ${props => props.theme.colors.border};
   }
 
   &:last-child {
     text-align: right;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
+    padding: 12px;
+    background-color: ${props => props.theme.colors.drawer.background};
+    border: 1px solid ${props => props.theme.colors.border};
+    border-radius: 4px;
+
+    &:first-child {
+      border-right: none;
+    }
+
+    &:last-child {
+      margin-top: 8px;
+    }
+  }
+`;
+
+interface PaginationItemInnerProps {
+  next?: boolean;
+}
+
+const PaginationItemInner = styled<PaginationItemInnerProps, 'div'>('div')`
+  display: flex;
+  flex-direction: ${props => (props.next ? 'row-reverse' : 'row')};
+  align-items: flex-end;
+`;
+
+const PaginationItemText = styled('div')`
+  flex: 1 1 auto;
+`;
+
+const PaginationItemIcon = styled('div')`
+  padding: 3px 16px;
 `;
 
 const PaginationHeading = styled('span')`
@@ -41,24 +87,18 @@ const PaginationHeading = styled('span')`
 
 const PaginationLink = styled(Link)`
   margin: 0;
-  font-size: ${props => props.theme.dimensions.headingSizes.h3}px;
+  font-size: ${props => props.theme.dimensions.headingSizes.h2}px;
+  line-height: ${props => props.theme.dimensions.lineHeight.heading.h2}px;
   font-weight: 500;
   color: ${props => props.theme.colors.gray.copy};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
   transition: border-color 0.3s ease;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    border-bottom-color: ${props => props.theme.colors.gray.copy};
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.sm}px) {
-    font-size: ${props => props.theme.dimensions.headingSizes.h2}px;
+    color: ${props => props.theme.colors.brand};
   }
 `;
-
-const Divider = styled('hr')``;
 
 interface PaginationProps {
   prevPage?: MenuItem;
@@ -70,21 +110,29 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
     <WrapperInner>
       <PaginationItem>
         {prevPage && (
-          <>
-            <PaginationHeading>Previous</PaginationHeading>
-            <PaginationLink to={prevPage.slug}>{prevPage.title}</PaginationLink>
-          </>
+          <PaginationItemInner>
+            <PaginationItemIcon>
+              <img src={require('assets/images/arrow-left.svg')} />
+            </PaginationItemIcon>
+            <PaginationItemText>
+              <PaginationHeading>Previous</PaginationHeading>
+              <PaginationLink to={prevPage.slug}>{prevPage.title}</PaginationLink>
+            </PaginationItemText>
+          </PaginationItemInner>
         )}
       </PaginationItem>
 
-      <Divider />
-
       <PaginationItem>
         {nextPage && (
-          <>
-            <PaginationHeading>Next</PaginationHeading>
-            <PaginationLink to={nextPage.slug}>{nextPage.title}</PaginationLink>
-          </>
+          <PaginationItemInner next>
+            <PaginationItemIcon>
+              <img src={require('assets/images/arrow-right.svg')} />
+            </PaginationItemIcon>
+            <PaginationItemText>
+              <PaginationHeading>Next</PaginationHeading>
+              <PaginationLink to={nextPage.slug}>{nextPage.title}</PaginationLink>
+            </PaginationItemText>
+          </PaginationItemInner>
         )}
       </PaginationItem>
     </WrapperInner>

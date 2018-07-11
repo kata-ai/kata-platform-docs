@@ -140,7 +140,7 @@ const theme: Theme = {
   zIndex: {
     content: 1,
     overlay: 90,
-    drawer: 95,
+    drawer: 105,
     floatingButton: 100
   },
 

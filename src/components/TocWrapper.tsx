@@ -26,9 +26,10 @@ const TocWrapper = styled<ToggleableProps, 'section'>('section')`
     width: 100%;
     height: 100vh;
     margin-left: 0;
+    margin-top: ${props => props.theme.heights.header}px;
     padding: 64px;
     background-color: ${props => props.theme.colors.white};
-    z-index: ${props => props.theme.zIndex.floatingButton - 1};
+    z-index: ${props => props.theme.zIndex.drawer - 5};
   }
 
   @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {

@@ -118,6 +118,7 @@ const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
     visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
     opacity: ${props => (props.isOpen ? 1 : 0)};
     background-color: ${props => props.theme.colors.brand};
+    z-index: ${props => props.theme.zIndex.floatingButton + 5};
   }
 `;
 
@@ -152,6 +153,7 @@ class Header extends React.Component<HeaderProps> {
             </TitleInnerContainer>
           </TitleInner>
           <DocumentationNav isOpen={open}>
+            <NavDrawerButton onClick={toggleDrawer} floating={open} drawerIsOpen={open} />
             <DocumentationNavMenus navigation={navigation} onCloseNavMenu={onCloseNavMenu} />
           </DocumentationNav>
           <NavDrawerButton onClick={toggleDrawer} floating={open} drawerIsOpen={open} />

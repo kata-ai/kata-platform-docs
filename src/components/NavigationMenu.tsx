@@ -42,6 +42,8 @@ const ToggleButton = styled<ToggleableProps, 'button'>('button')`
     background: transparent;
     border-radius: 0;
     border-bottom: 1px solid ${props => transparentize(0.5, props.theme.colors.white)};
+    font-size: 20px;
+    line-height: 21px;
     color: ${props => props.theme.colors.white};
   }
 `;
@@ -70,6 +72,11 @@ const ToggleButtonSpan = styled<ToggleableProps, 'span'>('span')`
   font-weight: 500;
   color: ${props =>
     props.isOpen ? props.theme.colors.black : transparentize(0.5, props.theme.colors.black)};
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    color: ${props =>
+      props.isOpen ? props.theme.colors.white : transparentize(0.5, props.theme.colors.white)};
+  }
 `;
 
 const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
