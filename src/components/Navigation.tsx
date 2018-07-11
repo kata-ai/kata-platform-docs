@@ -47,7 +47,7 @@ const WrapperInner = styled('div')`
     width: ${props => props.theme.widths.drawer.lg - 1}px;
     flex: 1 1 auto;
     z-index: 2;
-    height: 1000%;
+    max-height: 100vh;
     overflow-y: auto;
   }
 
@@ -56,6 +56,7 @@ const WrapperInner = styled('div')`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 1000%;
   }
 `;
 
