@@ -2,6 +2,7 @@
 id: bot-template-tutorial-id
 title: "Kata Platform 2.5 - Bot Studio Tutorial: Bot Template (Bahasa Indonesia)"
 prev: bot-template-tutorial
+next: faq
 ---
 
 Secara garis besar, Kata platform memiliki 3 template yaitu API bot, Button Bot dan Shopping Bot. Kita akan menjelaskan satu per satu dimulai dari API Bot.

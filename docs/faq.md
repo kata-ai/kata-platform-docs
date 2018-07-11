@@ -1,5 +1,5 @@
 ---
 id: faq
 title: FAQs
-prev: nl-studio-tutorial
+prev: bot-template-tutorial-id
 ---
