@@ -47,7 +47,7 @@ const WrapperInner = styled('div')`
     width: ${props => props.theme.widths.drawer.lg - 1}px;
     flex: 1 1 auto;
     z-index: 2;
-    height: 100vh;
+    height: 1000%;
     overflow-y: auto;
   }
 
