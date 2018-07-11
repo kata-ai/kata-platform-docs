@@ -2,7 +2,7 @@
 id: nl-studio-tutorial
 title: Kata Platform 2.5 - NL Studio tutorial
 prev: bot-studio-tutorial
-next: bot-template-tutorial
+next: nl-studio-tutorial-id
 ---
 
 ## Introduction

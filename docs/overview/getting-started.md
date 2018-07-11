@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
-prev: about
+prev: release-notes
 next: bot
 ---
 

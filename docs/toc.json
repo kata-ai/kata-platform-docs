@@ -8,6 +8,11 @@
         "title": "About"
       },
       {
+        "id": "release-notes",
+        "slug": "/overview/release-notes/",
+        "title": "Release Notes"
+      },
+      {
         "id": "getting-started",
         "slug": "/overview/getting-started/",
         "title": "Getting Started"
@@ -144,7 +149,7 @@
     "items": [
       {
         "id": "faq",
-        "slug": "/faq/",
+        "slug": "/faq/faq/",
         "title": "FAQs"
       }
     ]
