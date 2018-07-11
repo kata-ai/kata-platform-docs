@@ -15,7 +15,6 @@ import 'assets/fonts/league-mono.css';
 import 'styles/globals';
 import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css';
 import FloatingNavButton from 'components/FloatingNavButton';
-import Footer from 'components/Footer';
 
 interface WrapperProps extends RouteComponentProps<{}> {
   children: () => any;
