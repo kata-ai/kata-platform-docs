@@ -125,6 +125,7 @@ interface HeaderProps {
   onOpenNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
   toggleDrawer?: () => void;
+  toggleToc?: () => void;
 }
 
 class Header extends React.Component<HeaderProps> {

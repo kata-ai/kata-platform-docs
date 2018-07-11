@@ -1,6 +1,10 @@
 import styled from 'utils/styled';
 
-const TocWrapper = styled('section')`
+interface ToggleableProps {
+  isOpen?: boolean;
+}
+
+const TocWrapper = styled<ToggleableProps, 'section'>('section')`
   display: block;
   margin-left: 24px;
   font-size: 13px;
@@ -12,6 +16,23 @@ const TocWrapper = styled('section')`
     top: 48px;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    display: ${props => (props.isOpen ? 'block' : 'none')};
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 64px;
+    background-color: ${props => props.theme.colors.white};
+    z-index: ${props => props.theme.zIndex.floatingButton - 1};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
+    padding: 24px;
   }
 
   ul {

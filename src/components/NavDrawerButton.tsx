@@ -47,14 +47,14 @@ const Inner = styled<ToggleableProps, 'div'>('div')`
   }
 `;
 
-interface FloatingNavButtonProps {
+interface NavDrawerButtonProps {
   className?: string;
   drawerIsOpen?: boolean;
   floating?: boolean;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const NavDrawerButton: React.SFC<FloatingNavButtonProps> = ({
+const NavDrawerButton: React.SFC<NavDrawerButtonProps> = ({
   className,
   drawerIsOpen,
   floating,

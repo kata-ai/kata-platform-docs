@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Page from 'components/Page';
@@ -13,6 +13,7 @@ import Pagination from 'components/Pagination';
 import styled from 'utils/styled';
 import TocWrapper from 'components/TocWrapper';
 import Footer from 'components/Footer';
+import TocFloatingButton from 'components/TocFloatingButton';
 
 interface PageTemplateProps {
   data: {
@@ -38,43 +39,68 @@ interface PageTemplateProps {
   };
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  const { markdownRemark, sectionList, site } = data;
-  const { siteMetadata } = site;
-  const { prev, next } = markdownRemark.frontmatter;
-  const prevPage = getPageById(sectionList.edges, prev);
-  const nextPage = getPageById(sectionList.edges, next);
+interface PageTemplateState {
+  tocIsOpen: boolean;
+}
 
-  return (
-    <Page docsPage>
-      <Helmet>
-        <title>
-          {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
-        </title>
-        <meta name="description" content={markdownRemark.excerpt} />
-        <meta property="og:title" content={markdownRemark.frontmatter.title} />
-        <meta property="og:description" content={markdownRemark.excerpt} />
-      </Helmet>
-      <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
-        {markdownRemark.tableOfContents && (
-          <TocWrapper dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }} />
-        )}
-        <Container>
-          <DocsHeader>
-            <h1>{markdownRemark.frontmatter.title}</h1>
-          </DocsHeader>
-          <MarkdownContent html={markdownRemark.html} />
-          <FooterWrapper>
-            <Container>
-              {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-            </Container>
-            <Footer version={siteMetadata.version} siteLastUpdated={siteMetadata.siteLastUpdated} />
-          </FooterWrapper>
-        </Container>
-      </DocsWrapper>
-    </Page>
-  );
-};
+class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState> {
+  constructor(props: PageTemplateProps) {
+    super(props);
+
+    this.state = {
+      tocIsOpen: false
+    };
+  }
+
+  public render() {
+    const { markdownRemark, sectionList, site } = this.props.data;
+    const { siteMetadata } = site;
+    const { prev, next } = markdownRemark.frontmatter;
+    const prevPage = getPageById(sectionList.edges, prev);
+    const nextPage = getPageById(sectionList.edges, next);
+
+    return (
+      <Page docsPage>
+        <Helmet>
+          <title>
+            {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
+          </title>
+          <meta name="description" content={markdownRemark.excerpt} />
+          <meta property="og:title" content={markdownRemark.frontmatter.title} />
+          <meta property="og:description" content={markdownRemark.excerpt} />
+        </Helmet>
+        <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
+          {markdownRemark.tableOfContents && (
+            <TocWrapper
+              isOpen={this.state.tocIsOpen}
+              dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
+            />
+          )}
+          <Container>
+            <DocsHeader>
+              <h1>{markdownRemark.frontmatter.title}</h1>
+            </DocsHeader>
+            <MarkdownContent html={markdownRemark.html} />
+            <FooterWrapper>
+              <Container>
+                {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
+              </Container>
+              <Footer
+                version={siteMetadata.version}
+                siteLastUpdated={siteMetadata.siteLastUpdated}
+              />
+            </FooterWrapper>
+          </Container>
+          <TocFloatingButton tocIsOpen={this.state.tocIsOpen} onClick={this.toggleToc} />
+        </DocsWrapper>
+      </Page>
+    );
+  }
+
+  private toggleToc = () => {
+    this.setState({ tocIsOpen: !this.state.tocIsOpen });
+  };
+}
 
 export default PageTemplate;
 
