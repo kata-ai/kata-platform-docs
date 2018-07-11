@@ -64,6 +64,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             fields {
               layout
               slug
+              redirect
             }
           }
         }
