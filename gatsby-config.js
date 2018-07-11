@@ -88,6 +88,7 @@ module.exports = {
         theme_color: '#006fe6',
         background_color: '#f8fcff'
       }
-    }
+    },
+    'gatsby-plugin-netlify'
   ]
 };
