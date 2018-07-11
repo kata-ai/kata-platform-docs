@@ -18,8 +18,8 @@ const Wrapper = styled('footer')`
 const Inner = styled('div')`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
+  text-align: center;
   padding-top: ${props => props.theme.dimensions.containerPadding}px;
   border-top: 1px solid ${props => props.theme.colors.border};
 
@@ -28,17 +28,27 @@ const Inner = styled('div')`
   }
 
   @media (min-width: ${props => props.theme.breakpoints.md}px) {
+    text-align: left;
+    align-items: flex-start;
     flex-direction: row;
   }
 `;
 
 const FooterLeft = styled('div')``;
 
-const FooterRight = styled('div')``;
+const FooterRight = styled('div')`
+  margin-top: 16px;
+  text-align: center;
+
+  @media (min-width: ${props => props.theme.breakpoints.md}px) {
+    margin-top: 0;
+  }
+`;
 
 const SocialMediaList = styled('ul')`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
