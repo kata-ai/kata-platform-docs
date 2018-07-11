@@ -2,7 +2,7 @@
 id: about
 title: About Kata Bot Platform
 redirect_from:
-  - index.html
+  - /
 next: getting-started
 ---
 
