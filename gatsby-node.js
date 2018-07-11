@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter;
+      const { permalink, redirect_from, layout } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
@@ -39,12 +39,22 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
         name: 'layout',
         value: layout || ''
       });
+
+      // Used by createPages() to register redirects.
+      createNodeField({
+        node,
+        name: 'redirect',
+        value: redirect_from ? JSON.stringify(redirect_from) : ''
+      });
     }
   }
 };
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage, createRedirect } = boundActionCreators;
+
+  // Used to detect and prevent duplicate redirects
+  const redirectToSlugMap = {};
 
   const allMarkdown = await graphql(`
     {
@@ -67,7 +77,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, layout } = node.fields;
+    const { slug, layout, redirect } = node.fields;
 
     createPage({
       path: slug,
@@ -86,5 +96,37 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         slug
       }
     });
+
+    // URL redirect handler
+    // Adapted from reactjs/reactjs.org:
+    // https://github.com/reactjs/reactjs.org/blob/master/gatsby-node.js#L111
+    if (redirect) {
+      let toRedirect = JSON.parse(node.fields.redirect);
+      if (!Array.isArray(toRedirect)) {
+        toRedirect = [toRedirect];
+      }
+
+      toRedirect.forEach(fromPath => {
+        if (redirectToSlugMap[fromPath] != null) {
+          console.error(
+            `Duplicate redirect detected from "${fromPath}" to:\n` +
+              `* ${redirectToSlugMap[fromPath]}\n` +
+              `* ${slug}\n`
+          );
+        }
+
+        // A leading "/" is required for redirects to work,
+        // But multiple leading "/" will break redirects.
+        // For more context see https://github.com/reactjs/reactjs.org/pull/194
+        const toPath = slug.startsWith('/') ? slug : `/${slug}`;
+
+        redirectToSlugMap[fromPath] = slug;
+        createRedirect({
+          fromPath: `/${fromPath}`,
+          redirectInBrowser: true,
+          toPath
+        });
+      });
+    }
   });
 };

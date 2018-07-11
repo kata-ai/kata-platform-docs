@@ -119,7 +119,8 @@ const theme: Theme = {
         h4: 20
       }
     },
-    containerPadding: 24
+    containerPadding: 32,
+    containerPaddingLg: 48
   },
 
   // Widths
@@ -132,7 +133,7 @@ const theme: Theme = {
 
   // Heights
   heights: {
-    header: 60
+    header: 64
   },
 
   // z-index

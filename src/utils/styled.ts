@@ -79,6 +79,7 @@ export type Theme = {
       };
     };
     containerPadding: number;
+    containerPaddingLg: number;
   };
   widths: {
     drawer: {

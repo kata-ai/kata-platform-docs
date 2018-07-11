@@ -43,7 +43,7 @@
     "gatsby-transformer-remark": "^1.7.42",
     "gatsby-transformer-sharp": "^1.6.26",
     "moment": "^2.22.2",
-    "polished": "^1.9.2",
+    "polished": "^1.9.3",
     "prism-themes": "^1.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

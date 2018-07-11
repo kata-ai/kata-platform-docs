@@ -57,7 +57,13 @@ class DocumentationNavMenus extends React.Component<Props, State> {
 export default DocumentationNavMenus;
 
 const Wrapper = styled('div')`
-  padding: 0 ${props => props.theme.dimensions.containerPadding}px;
-  padding-bottom: 48px;
+  margin-top: ${props => props.theme.heights.header}px;
+  padding: 48px ${props => props.theme.dimensions.containerPadding}px;
   transition: all 0.3s ease;
+  overflow-y: auto;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}px) {
+    margin-top: 0;
+    padding: 0 24px 48px;
+  }
 `;

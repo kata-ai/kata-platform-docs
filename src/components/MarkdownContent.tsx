@@ -11,6 +11,19 @@ const MarkdownContent: React.SFC<MarkdownContentProps> = ({ className, html }) =
 );
 
 export default styled(MarkdownContent)`
+  ul {
+    list-style-type: none;
+
+    li {
+      &::before {
+        position: absolute;
+        content: '•';
+        color: ${props => props.theme.colors.brand};
+        margin-left: -1.45rem;
+      }
+    }
+  }
+
   li {
     p {
       margin-top: 0;

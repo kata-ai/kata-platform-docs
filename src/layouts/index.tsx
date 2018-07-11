@@ -14,7 +14,6 @@ import 'assets/fonts/museo-sans-rounded.css';
 import 'assets/fonts/league-mono.css';
 import 'styles/globals';
 import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css';
-import FloatingNavButton from 'components/FloatingNavButton';
 
 interface WrapperProps extends RouteComponentProps<{}> {
   children: () => any;
@@ -67,8 +66,8 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
             navigation={data.navigationMenus.edges}
             open={drawerIsOpen}
             onCloseNavMenu={this.closeDrawer}
+            toggleDrawer={this.toggleDrawer}
           />
-          <FloatingNavButton onClick={this.toggleDrawer} drawerIsOpen={drawerIsOpen} />
           <LayoutMain>{children()}</LayoutMain>
         </LayoutRoot>
       </ThemeProvider>

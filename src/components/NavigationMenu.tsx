@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { transparentize } from 'polished';
 import { MenuNode } from 'interfaces/nodes';
 import styled from 'utils/styled';
 
@@ -34,20 +35,35 @@ const ToggleButton = styled<ToggleableProps, 'button'>('button')`
   box-shadow: ${props =>
     props.isOpen ? props.theme.shadow.layer200 : props.theme.shadow.layer100};
   background-color: ${props => props.theme.colors.white};
-  transition: all 0.3s ease;
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    padding: 14px 0;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid ${props => transparentize(0.5, props.theme.colors.white)};
+    color: ${props => props.theme.colors.white};
+  }
 `;
 
-const ToggleButtonInner = styled('div')`
+const ToggleButtonInner = styled<ToggleableProps, 'div'>('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: none;
+
+  & svg {
+    g {
+      fill: ${props =>
+        props.isOpen ? props.theme.colors.white : transparentize(0.5, props.theme.colors.white)};
+    }
+  }
 `;
 
 const ToggleButtonSpan = styled<ToggleableProps, 'span'>('span')`
   flex: 1 1 auto;
   font-weight: 500;
   opacity: ${props => (props.isOpen ? 1 : 0.5)};
-  transition: all 0.3s ease;
 `;
 
 const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
@@ -56,7 +72,6 @@ const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`
   list-style-type: none;
   margin: 20px 0;
   padding: 0;
-  transition: all 0.3s ease;
 `;
 
 const ToggleMenuList = styled('li')`
@@ -82,6 +97,20 @@ const ToggleMenuListLink = styled(Link)`
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.brand};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    color: ${props => transparentize(0.5, props.theme.colors.white)};
+
+    &:hover,
+    &:focus {
+      color: ${props => props.theme.colors.white};
+      background: none;
+    }
+
+    &.active {
+      color: ${props => props.theme.colors.white};
+    }
+  }
 `;
 
 class NavigationMenu extends React.PureComponent<NavigationMenuProps, ToggleableProps> {
@@ -91,12 +120,37 @@ class NavigationMenu extends React.PureComponent<NavigationMenuProps, Toggleable
     return (
       <Root>
         <ToggleButton onClick={onClick} isOpen={isOpen}>
-          <ToggleButtonInner>
+          <ToggleButtonInner isOpen={isOpen}>
             <ToggleButtonSpan isOpen={isOpen}>{node.title}</ToggleButtonSpan>
             {isOpen ? (
-              <img src={require('assets/images/arrow-up.svg')} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10px"
+                height="6px"
+                viewBox="0 0 10 6"
+                version="1.1"
+              >
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  {/* tslint:disable:max-line-length */}
+                  <path
+                    d="M5.00025,6.00025 C4.74425,6.00025 4.48825,5.90225 4.29325,5.70725 L0.29325,1.70725 C-0.09775,1.31625 -0.09775,0.68425 0.29325,0.29325 C0.68425,-0.09775 1.31625,-0.09775 1.70725,0.29325 L5.00025,3.58625 L8.29325,0.29325 C8.68425,-0.09775 9.31625,-0.09775 9.70725,0.29325 C10.09825,0.68425 10.09825,1.31625 9.70725,1.70725 L5.70725,5.70725 C5.51225,5.90225 5.25625,6.00025 5.00025,6.00025"
+                    id="arrow-up"
+                    transform="translate(5.000250, 3.000125) scale(1, -1) translate(-5.000250, -3.000125) "
+                  />
+                  {/* tslint:enable:max-line-length */}
+                </g>
+              </svg>
             ) : (
-              <img src={require('assets/images/arrow-down.svg')} />
+              <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="6px" viewBox="0 0 10 6">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  {/* tslint:disable:max-line-length */}
+                  <path
+                    d="M5.00025,6.00025 C4.74425,6.00025 4.48825,5.90225 4.29325,5.70725 L0.29325,1.70725 C-0.09775,1.31625 -0.09775,0.68425 0.29325,0.29325 C0.68425,-0.09775 1.31625,-0.09775 1.70725,0.29325 L5.00025,3.58625 L8.29325,0.29325 C8.68425,-0.09775 9.31625,-0.09775 9.70725,0.29325 C10.09825,0.68425 10.09825,1.31625 9.70725,1.70725 L5.70725,5.70725 C5.51225,5.90225 5.25625,6.00025 5.00025,6.00025"
+                    id="arrow-down"
+                  />
+                  {/* tslint:enable:max-line-length */}
+                </g>
+              </svg>
             )}
           </ToggleButtonInner>
         </ToggleButton>

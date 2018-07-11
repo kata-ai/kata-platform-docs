@@ -6,6 +6,7 @@ import Container from './Container';
 import { MenuNode } from 'interfaces/nodes';
 import DocumentationNavMenus from './DocumentationNavMenus';
 import Logo from './Logo';
+import NavDrawerButton from './NavDrawerButton';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -13,25 +14,18 @@ interface ToggleableProps {
 
 const Wrapper = styled<ToggleableProps, 'header'>('header')`
   display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 0.3s ease;
+  flex-direction: row;
   background-color: ${props => props.theme.colors.drawer.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: ${props => props.theme.zIndex.drawer};
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    width: ${props => props.theme.widths.drawer.lg}px;
-    height: 100vh;
-    padding-bottom: 5rem;
+    width: 100%;
+    flex-direction: column;
+    padding: 12px ${props => props.theme.dimensions.containerPadding}px;
     overflow-y: auto;
     pointer-events: auto;
-    transform: translate(${props => (props.isOpen ? '0' : '-100%')}, 0);
+    // transform: translate(${props => (props.isOpen ? '0' : '-100%')}, 0);
     transition: transform 0.3s ease;
   }
 
@@ -52,11 +46,35 @@ const WrapperInner = styled('div')`
     height: 100vh;
     overflow-y: auto;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 const TitleInner = styled('div')`
-  padding: 48px 40px;
+  padding: 0;
   color: ${props => props.theme.colors.gray.copy};
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}px) {
+    padding: ${props => props.theme.dimensions.containerPaddingLg}px 40px;
+  }
+`;
+
+const TitleInnerContainer = styled(Container)`
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    align-items: flex-end;
+  }
 `;
 
 const HomepageLink = styled(Link)`
@@ -75,11 +93,28 @@ const Subtitle = styled('p')`
   margin-top: 16px;
   margin-bottom: 0;
   color: ${props => props.theme.colors.gray.calm};
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    margin-left: 8px;
+    line-height: 20px;
+  }
 `;
 
-const DocumentationNav = styled('nav')`
+const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
   display: flex;
   flex-direction: column;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
+    opacity: ${props => (props.isOpen ? 1 : 0)};
+    background-color: ${props => props.theme.colors.brand};
+  }
 `;
 
 interface HeaderProps {
@@ -89,6 +124,7 @@ interface HeaderProps {
   open?: boolean;
   onOpenNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
+  toggleDrawer?: () => void;
 }
 
 class Header extends React.Component<HeaderProps> {
@@ -97,22 +133,23 @@ class Header extends React.Component<HeaderProps> {
   }
 
   render() {
-    const { title, subtitle, navigation, open, onCloseNavMenu } = this.props;
+    const { title, subtitle, navigation, open, onCloseNavMenu, toggleDrawer } = this.props;
 
     return (
-      <Wrapper isOpen={open}>
+      <Wrapper>
         <WrapperInner>
           <TitleInner>
-            <Container>
+            <TitleInnerContainer>
               <HomepageLink to="/" href="/" onClick={onCloseNavMenu}>
-                <Logo src={require('assets/images/logo-platform.png')} alt={title} height={24} />
+                <Logo src={require('assets/images/logo-platform.png')} alt={title} />
               </HomepageLink>
               {subtitle && <Subtitle>{subtitle}</Subtitle>}
-            </Container>
+            </TitleInnerContainer>
           </TitleInner>
-          <DocumentationNav>
+          <DocumentationNav isOpen={open}>
             <DocumentationNavMenus navigation={navigation} onCloseNavMenu={onCloseNavMenu} />
           </DocumentationNav>
+          <NavDrawerButton onClick={toggleDrawer} floating={open} drawerIsOpen={open} />
         </WrapperInner>
       </Wrapper>
     );
