@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import styled, { ThemeProvider } from 'utils/styled';
+import styled from 'utils/styled';
 
 import Page from 'components/Page';
 import NotFoundWrapper from 'components/NotFoundWrapper';
 import { SiteMetadata } from 'interfaces/gatsby';
-import theme from 'styles/theme';
 
 interface Props {
   data: {
@@ -17,24 +16,22 @@ interface Props {
 }
 
 const NotFoundPage: React.SFC<Props> = ({ data }) => (
-  <ThemeProvider theme={theme}>
-    <Page>
-      <Helmet>
-        <title>404: Page not found. &middot; {data.site.siteMetadata.title}</title>
-      </Helmet>
-      <NotFoundWrapper>
-        <Inner>
-          <Title>404</Title>
-          <Body>We can't find the page you're looking for.</Body>
-          <Body>
-            <Link to="/" href="/">
-              Go back?
-            </Link>
-          </Body>
-        </Inner>
-      </NotFoundWrapper>
-    </Page>
-  </ThemeProvider>
+  <Page>
+    <Helmet>
+      <title>404: Page not found. &middot; {data.site.siteMetadata.title}</title>
+    </Helmet>
+    <NotFoundWrapper>
+      <Inner>
+        <Title>404</Title>
+        <Body>We can't find the page you're looking for.</Body>
+        <Body>
+          <Link to="/" href="/">
+            Go back?
+          </Link>
+        </Body>
+      </Inner>
+    </NotFoundWrapper>
+  </Page>
 );
 
 export default NotFoundPage;
@@ -64,7 +61,7 @@ const Inner = styled('div')`
 const Title = styled('h1')`
   font-size: 5rem;
   margin: 0;
-  color: ${props => props.theme.colors.gray};
+  color: ${props => props.theme.colors.gray.calm};
 `;
 
 const Body = styled('p')`
