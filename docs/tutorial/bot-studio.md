@@ -29,7 +29,7 @@ You will get a confirmation email regarding your account for verification from u
 
 ## Create Conversation Bot
 
-### Login to KATA Platform
+### Login to Kata Platform
 
 Go to the [will change it later] link http://new-platform.katalabs.io/login as in the attached picture.
 
@@ -37,7 +37,7 @@ Go to the [will change it later] link http://new-platform.katalabs.io/login as i
 
 Click "Login" to continue
 
-### Create a New Bot
+### Create a new bot
 
 After login, the first view in Kata platform will be the dashboard.
 
@@ -49,7 +49,7 @@ Here you may see the bot templates (first section) that provided before and also
 
 ## Create `Fallback` Flow
 
-### CREATE `Fallback` FLOW
+### Create a Flow
 
 Once your bot created, you will be redirected to sub-menu "Conversational Flows". In accordance with flow diagram above, we will create a flow that does not match any flow (simply called as “else condition” state)
 
@@ -104,13 +104,13 @@ After `sorryMessage` action on `init` state has been added, then we will make tr
 
 ![bse-16](./images/bse-16.png)
 
-Click “Update” to update the transition. Keep in mind that every state required fallback transition as in stage number 7.
+Click “Update” to update the transition.
 
 ## Create `Order` Flow
 
-### Create NLUs from order
+### Create NLUs from `order`
 
-You have successfully made a `fallback` flow, then we will enter the flow order.
+You have successfully made a `fallback` flow, then we will enter the flow `order`.
 
 ![bse-17](./images/bse-17.png)
 
@@ -138,9 +138,9 @@ This intent has a text type and uses NLU we created. Select NLUs that created in
 
 ![bse-20](./images/bse-20.png)
 
-#### Create a state init in the flow order
+#### Create a state `init` in the flow `order`
 
-Similar with `init` state in fallback flow, we must create `init` state as first state.
+Similar with `init` state in `fallback` flow, we must create `init` state as first state.
 
 ![bse-21](./images/bse-21.png)
 
@@ -150,15 +150,15 @@ Then add a self transition in `init` state
 
 ### Create pizza menu action
 
-#### Create a state showpizza
+#### Create a state `showPizza`
 
-In step number 12, we will continue to display pizza menu and ask desired menu.
+Next, we will continue to display pizza menu and ask desired menu.
 
 ![bse-23](./images/bse-23.png)
 
 To get started, click the "+" button on Conversation Flow sub-menu and named `showPizza`.
 
-#### Adding pizzamenu and askoptions action to state showpizza
+#### Adding `pizzaMenu` and `askOptions` action to state `showPizza`
 
 On `showPizza` state, add a `pizzaOptions` action that displays information **text** about Pepperoni and Veggie Lovers menus.
 
@@ -220,13 +220,13 @@ Next, we will add intent `reenter` that useful for showing repetition message if
 
 ![bse-32](./images/bse-32.png)
 
-#### Create a Transition between state `init` and state `showPizza`
+#### Create a transition between state `init` and state `showPizza`
 
 To connect the flow from order to the menu display, we will make a transition between two states that we created before. You can drag the green round dot on the `init` state to `showPizza` state until the transition drawer appears on the right
 
 ![bse-33](./images/bse-33.png)
 
-### Create NLUs `Quantity`
+### Create NLUs `quantity`
 
 The next path is to handle expected number of ordered pizzas.
 
@@ -284,7 +284,7 @@ Then, in state `confirmPizza` create a mapping when transiting as shown below by
 
 #### Make intent `yesno`
 
-In the 20th step, we already made NLU containing confirmation yes and no. The NLU will be used at this stage. In order to understand confirmation statement from a user, you can create an intent to accommodate entries that use NLU `yesno` classifier.
+Previously, we already made NLU containing confirmation yes and no. The NLU will be used at this stage. In order to understand confirmation statement from a user, you can create an intent to accommodate entries that use NLU `yesno` classifier.
 
 First of all, we will create an intent for the keyword `yes`
 
@@ -302,7 +302,7 @@ In `done` state, we will complete the order by saying thank you and ended bot co
 
 ![bse-47](./images/bse-47.png)
 
-Thus, the final result of state done is as follows
+Thus, the final result of state `done` is as follows
 
 ![bse-48](./images/bse-48.png)
 
@@ -424,7 +424,7 @@ Congratulations! Now your chat bot is done. Next, we will try to make a bot with
 
 Before you begin, you can see our NLStudio full tutorial on links (link tutorial NLStudio). In this section, you will create a NLModel which able to process pizza ordering orders. Let's start.
 
-### Create New NLU
+### Create new NLU
 
 In the main menu, click the NLU menu located on the left of the screen. Then, the menu will look like below
 
@@ -434,7 +434,7 @@ Then, click the "+" button to create a new NLU and fill NLU data as follow
 
 ![bse-72](./images/bse-72.png)
 
-### Create an `intent` entity
+### Create an `intentOrder` entity
 
 After created a new NLU, you must enter the entity. Click the "+" button to create an entity
 
@@ -491,3 +491,5 @@ Next, you have to publish this NLStudio integration and replace the version on "
 - 1.0.0 Initial release, created by amanda@kata.ai
 - 1.1.0 Added “Make NLU using NLStudio”, edited by amanda@kata.ai
 - 1.1.1 Adjustment for LINE deployment section
+- 1.1.2 Adjustment for punctuation
+- 1.1.3 Adjustment for any unrelate words

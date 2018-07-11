@@ -36,7 +36,7 @@ Masuk ke tautan http://platform.kata.ai/login seperti pada gambar terlampir.
 
 Klik “Login” untuk melanjutkan
 
-### Membuat Bot Baru
+### Membuat bot baru
 
 Setelah login, tampilan pertama dalam Kata platform adalah dashboard.
 
@@ -50,7 +50,7 @@ Untuk membuat bot baru, klik “Create new bot” dan kamu akan diminta mengisi 
 
 ## Membuat Flow `Fallback`
 
-### Membuat `Fallback` flow
+### Membuat flow
 
 Setelah bot percakapan sudah dibuat, kamu akan diarahkan pada sub-menu “Conversational Flows”. Sesuai dengan diagram alur diatas, kita akan membuat terlebih dahulu kondisi yang tidak masuk flow manapun.
 
@@ -80,7 +80,7 @@ Sehingga intent yang dibuat akan menjadi gambar dibawah ini
 
 ### Membuat state `init`
 
-Setelah langkah keempat berhasil, selanjutnya kita akan membuat state `init`. Hapus state yang sebelumnya disediakan dengan menekan state dan klik “Delete”. Lalu, klik tombol “+” yang berada di bagian kanan bawah halaman kamu.
+Setelah langkah diatas berhasil, selanjutnya kita akan membuat state `init`. Hapus state yang sebelumnya disediakan dengan menekan state dan klik “Delete”. Lalu, klik tombol “+” yang berada di bagian kanan bawah halaman kamu.
 
 Isi state dengan nama “init” pada tab “Overview” dan atur state tersebut menjadi initial state dan end state (seperti pada gambar dibawah). Fungsi “initial state” berguna untuk menjadikan state `init` sebagai yang pertama dicek pada flow dan “end state” berguna untuk menjadikan state `init` sebagai yang terakhir.
 
@@ -100,19 +100,19 @@ Tampilan setelah action sudah ditambahkan adalah sebagai berikut
 
 ### Menambahkan transition `fallback` pada `init` state
 
-Setelah action pada state sudah ditambah, selanjutnya kita akan membuat transition fallback. Klik pada state yang sudah kamu buat, dan pada tab “Transition” masukkan data-data seperti dibawah ini
+Setelah action pada state sudah ditambah, selanjutnya kita akan membuat transition `fallback`. Klik pada state yang sudah kamu buat, dan pada tab “Transition” masukkan data-data seperti dibawah ini
 
 ![bsb-16](./images/bsb-16.png)
 
-Klik “Update” untuk memperbaharui state dengan penambahan transisi. Perlu diingat bahwa pada setiap state dibutuhkan fallback transition seperti pada tahap nomor 7 ini.
+Klik “Update” untuk memperbaharui state dengan penambahan transisi.
 
 ## Membuat Flow `Order`
 
-Kamu telah berhasil membuat fallback flow, selanjutnya kita akan masuk pada flow order.
+Kamu telah berhasil membuat flow `fallback` , selanjutnya kita akan masuk pada flow `order`.
 
 ![bsb-17](./images/bsb-17.png)
 
-#### Membuat NLUs `Order`
+#### Membuat NLUs `order`
 
 Alur untuk memesan pizza dimulai dengan menerima input order dari pengguna. Nah, untuk memahaminya kita akan memasukkan kata-kata seperti pesan, pesen, pesen pitza, pizza dan lainnya dengan mendefinisikan NLU. NLU berfungsi agar bot memahami masukkan dari pengguna.
 
@@ -130,15 +130,15 @@ Masukkan isian dengan nama `order`
 
 #### Membuat intent `ordertxt`
 
-Setiap flow membutuhkan sebuah intent yang diatur sebagai “initial”, oleh karena itu pada flow order kita akan menggunakan intent `orderTxt` yang akan mengecek masukkan pemesan pizza.
+Setiap flow membutuhkan sebuah intent yang diatur sebagai “initial”, oleh karena itu pada flow `order` kita akan menggunakan intent `orderTxt` yang akan mengecek masukkan pemesan pizza.
 
 Intent ini memiliki tipe text dan menggunakan NLU yang sudah kita buat sebelumnya. Pilih NLU yang sudah dibuat pada bagian “classifier” untuk mengklasifikasi masukkan dari pengguna apakah termasuk dalam lingkup pesanan.
 
 ![bsb-20](./images/bsb-20.png)
 
-#### Membuat state `init` pada flow order
+#### Membuat state `init` pada flow `order`
 
-Sesuai dengan pembuatan flow fallback, kita harus membuat terlebih dahulu state init. Perbedaan dengan flow fallback, pada state ini hanya diatur sebagai initial saja.
+Sesuai dengan pembuatan flow `fallback` kita harus membuat terlebih dahulu state `init`. Perbedaan dengan flow `fallback`, pada state ini hanya diatur sebagai initial saja.
 
 ![bsb-21](./images/bsb-21.png)
 
@@ -146,7 +146,7 @@ Sesuai dengan pembuatan flow fallback, kita harus membuat terlebih dahulu state 
 
 #### Membuat state `showPizza`
 
-Pada langkah nomor 12 ini, kita akan menyesuaikan dengan conversation tree yaitu menampilkan menu pizza dan menanyakan menu yang diinginkan.
+Kita akan menyesuaikan dengan conversation tree yaitu menampilkan menu pizza dan menanyakan menu yang diinginkan.
 
 ![bsb-22](./images/bsb-22.png)
 
@@ -158,7 +158,7 @@ Kemudian, pada state `showPizza` tambahkan action `pizzaOptions` yang menampilka
 
 ![bsb-23](./images/bsb-23.png)
 
-Lalu tambahkan juga action untuk menanyakan menu pada pengguna yang akan kita beri nama `askOptions`dengan menggunakan tipe action text
+Lalu tambahkan juga action untuk menanyakan menu pada pengguna yang akan kita beri nama `askOptions` dengan menggunakan tipe action text
 
 ![bsb-24](./images/bsb-24.png)
 
@@ -214,7 +214,7 @@ Tambahkan intent `reenter`
 
 ![bsb-31](./images/bsb-31.png)
 
-#### Membuat Transition antara state `init` dengan state `showPizza`
+#### Membuat transition antara state `init` dengan state `showPizza`
 
 Untuk menghubungkan alur dari pengguna memesan hingga pilihan menu ditampilkan, kita akan membuat transisi antara kedua state yang sudah kita buat diatas. Cara menghubungkannya adalah kamu dapat menarik titik bulat hijau pada state `init` ke state `showPizza` hingga muncul pengaturan transisi di bagian kanan
 
@@ -274,8 +274,8 @@ Kemudian, pada state `confirmPizza` buatlah sebuah mapping ketika melakukan tran
 
 ![bsb-42](./images/bsb-42.png)
 
-Membuat intent `yesno`
-Pada tahapan 20, kita sudah membuat NLU yang berisikan konfirmasi ya dan tidak. NLU tersebut akan digunakan pada tahap ini. Agar bot dapat mengerti pernyataan konfirmasi dari pengguna, kamu dapat membuat intent untuk menampung masukkan yang menggunakan NLU `yesno` classifier.
+####Membuat intent `yesno`
+Sebelumnyakita sudah membuat NLU yang berisikan konfirmasi ya dan tidak. NLU tersebut akan digunakan pada tahap ini. Agar bot dapat mengerti pernyataan konfirmasi dari pengguna, kamu dapat membuat intent untuk menampung masukkan yang menggunakan NLU `yesno` classifier.
 
 Pertama-tama, kita akan membuat intent untuk keyword `yes`
 
@@ -301,9 +301,9 @@ Sehingga, hasil akhir dari state done adalah sebagai berikut
 
 ![bsb-48](./images/bsb-48.png)
 
-#### Membuat transisi dari `confirmpizza` menuju `done`
+#### Membuat transisi dari `confirmPizza` menuju `done`
 
-Selanjutnya adalah kita akan menghubungkan state confirmPizza menuju state done. Dikarenakan done adalah state terakhir, maka transisi yang dibuat adalah default transition
+Selanjutnya adalah kita akan menghubungkan state `confirmPizza` menuju state `done`. Dikarenakan done adalah state terakhir, maka transisi yang dibuat adalah default transition
 
 ![bsb-49](./images/bsb-49.png)
 
@@ -490,3 +490,5 @@ Selanjutnya, kamu harus mempublikasikan integrasi NLStudio ini dan mengganti ver
 - 1.0.0 Initial release, created by amanda@kata.ai
 - 1.1.0 Added “Membuat NLU menggunakan NLStudio”, edited by amanda@kata.ai
 - 1.1.1 Adjustment for LINE deployment section
+- 1.1.2 Adjustment in punctuation
+- 1.1.3 Adjustment for any unrelate words

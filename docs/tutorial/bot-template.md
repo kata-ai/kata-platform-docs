@@ -19,7 +19,7 @@ Before entering this tutorial, we should understand the conversation tree as bel
 
 ![bte-1](./images/bte-1.png)
 
-### Create a new Bot
+### Create a new bot
 
 Firstly, click on "Create with This Template" and update the bot name and adjust timezone depends on your location.
 
@@ -334,5 +334,5 @@ Congratulations! Now your bot using Shopping bot template is done
 
 ## Version log
 
-1.0.0 Initial release, created by amanda@kata.ai
-1.0.1 Adjustment deployment section to LINE platform
+- 1.0.0 Initial release, created by amanda@kata.ai
+- 1.0.1 Adjustment deployment section to LINE platform
