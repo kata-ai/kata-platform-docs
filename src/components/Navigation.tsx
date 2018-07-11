@@ -20,7 +20,11 @@ const Wrapper = styled<ToggleableProps, 'header'>('header')`
   z-index: ${props => props.theme.zIndex.drawer};
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: ${props => props.theme.heights.header}px;
     flex-direction: column;
     padding: 12px ${props => props.theme.dimensions.containerPadding}px;
     overflow-y: auto;

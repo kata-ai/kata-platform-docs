@@ -22,10 +22,9 @@ const TocWrapper = styled<ToggleableProps, 'section'>('section')`
     display: ${props => (props.isOpen ? 'block' : 'none')};
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    margin: 0;
+    width: 100%;
+    height: 100vh;
     padding: 64px;
     background-color: ${props => props.theme.colors.white};
     z-index: ${props => props.theme.zIndex.floatingButton - 1};
