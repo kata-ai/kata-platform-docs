@@ -16,7 +16,29 @@ module.exports = {
       name: 'Kata.ai',
       url: 'https://kata.ai',
       email: 'info@kata.ai'
-    }
+    },
+    socials: [
+      {
+        name: 'Twitter',
+        imgpath: 'icon-twitter.svg',
+        url: 'https://twitter.com/KataDotAI'
+      },
+      {
+        name: 'GitHub',
+        imgpath: 'icon-github.svg',
+        url: 'https://github.com/kata-ai'
+      },
+      {
+        name: 'LinkedIn',
+        imgpath: 'icon-linkedin.svg',
+        url: 'https://www.linkedin.com/company/yesboss/'
+      },
+      {
+        name: 'Medium',
+        imgpath: 'icon-medium.svg',
+        url: 'https://medium.com/kata-engineering'
+      }
+    ]
   },
   plugins: [
     {

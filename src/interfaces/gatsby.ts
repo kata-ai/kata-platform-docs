@@ -14,4 +14,11 @@ export interface SiteMetadata {
   siteUrl: string;
   keywords: string;
   author: SiteAuthor;
+  socials: SocialMedia[];
+}
+
+export interface SocialMedia {
+  name: string;
+  imgpath: string;
+  url: string;
 }

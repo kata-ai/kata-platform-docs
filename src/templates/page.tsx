@@ -88,6 +88,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
               <Footer
                 version={siteMetadata.version}
                 siteLastUpdated={siteMetadata.siteLastUpdated}
+                socials={siteMetadata.socials}
               />
             </FooterWrapper>
           </Container>
@@ -120,6 +121,11 @@ export const query = graphql`
           name
           url
           email
+        }
+        socials {
+          name
+          imgpath
+          url
         }
       }
     }
