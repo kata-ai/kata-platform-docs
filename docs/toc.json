@@ -115,7 +115,7 @@
       {
         "id": "bot-studio-tutorial-id",
         "slug": "/tutorial/bot-studio-id/",
-        "title": "Bot Studio Tutorial (Bahasa)"
+        "title": "Bot Studio Tutorial (Bahasa Indonesia)"
       },
       {
         "id": "nl-studio-tutorial",
@@ -125,7 +125,7 @@
       {
         "id": "nl-studio-tutorial-id",
         "slug": "/tutorial/nl-studio-id/",
-        "title": "NL Studio Tutorial (Bahasa)"
+        "title": "NL Studio Tutorial (Bahasa Indonesia)"
       },
       {
         "id": "bot-template-tutorial",
@@ -135,7 +135,7 @@
       {
         "id": "bot-template-tutorial-id",
         "slug": "/tutorial/bot-template-id/",
-        "title": "Bot Template Tutorial (Bahasa)"
+        "title": "Bot Template Tutorial (Bahasa Indonesia)"
       }
     ]
   },

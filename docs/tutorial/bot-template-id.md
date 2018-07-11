@@ -1,6 +1,6 @@
 ---
 id: bot-template-tutorial-id
-title: "Kata Platform 2.5 - Bot Studio Tutorial: Bot Template (Bahasa)"
+title: "Kata Platform 2.5 - Bot Studio Tutorial: Bot Template (Bahasa Indonesia)"
 prev: bot-template-tutorial
 ---
 
