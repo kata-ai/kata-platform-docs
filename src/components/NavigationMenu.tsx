@@ -55,7 +55,12 @@ const ToggleButtonInner = styled<ToggleableProps, 'div'>('div')`
   & svg {
     g {
       fill: ${props =>
-        props.isOpen ? props.theme.colors.white : transparentize(0.5, props.theme.colors.white)};
+        props.isOpen ? props.theme.colors.black : transparentize(0.5, props.theme.colors.black)};
+
+      @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+        fill: ${props =>
+          props.isOpen ? props.theme.colors.white : transparentize(0.5, props.theme.colors.white)};
+      }
     }
   }
 `;
@@ -63,7 +68,8 @@ const ToggleButtonInner = styled<ToggleableProps, 'div'>('div')`
 const ToggleButtonSpan = styled<ToggleableProps, 'span'>('span')`
   flex: 1 1 auto;
   font-weight: 500;
-  opacity: ${props => (props.isOpen ? 1 : 0.5)};
+  color: ${props =>
+    props.isOpen ? props.theme.colors.black : transparentize(0.5, props.theme.colors.black)};
 `;
 
 const ToggleMenu = styled<ToggleableProps, 'ul'>('ul')`

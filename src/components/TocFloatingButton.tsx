@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'utils/styled';
-import { brandColors } from 'styles/theme';
 
 interface ToggleableProps {
   isOpen?: boolean;
