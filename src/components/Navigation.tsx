@@ -55,7 +55,6 @@ const WrapperInner = styled('div')`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 1000%;
   }
 `;
 
@@ -112,9 +111,9 @@ const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 1000%;
     visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
     opacity: ${props => (props.isOpen ? 1 : 0)};
     background-color: ${props => props.theme.colors.brand};
