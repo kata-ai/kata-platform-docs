@@ -1,6 +1,6 @@
 ---
 id: bot-template-tutorial
-title: "Bot Studio Tutorial: Bot Template"
+title: Bot Template Tutorial
 prev: nl-studio-tutorial
 next: faq
 ---

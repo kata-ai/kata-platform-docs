@@ -1,6 +1,6 @@
 ---
 id: nl-studio-tutorial
-title: NL Studio tutorial
+title: NL Studio Tutorial
 prev: bot-studio-tutorial
 next: bot-template-tutorial
 ---

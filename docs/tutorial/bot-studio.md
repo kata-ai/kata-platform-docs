@@ -1,6 +1,6 @@
 ---
 id: bot-studio-tutorial
-title: Bot Studio tutorial
+title: Bot Studio Tutorial
 prev: kata-ml-test-spec
 next: nl-studio-tutorial
 ---
