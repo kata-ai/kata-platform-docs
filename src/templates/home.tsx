@@ -7,18 +7,15 @@ import { MenuNode } from 'interfaces/nodes';
 import MarkdownContent from 'components/MarkdownContent';
 import DocsWrapper from 'components/DocsWrapper';
 import DocsHeader from 'components/DocsHeader';
+import TocWrapper from 'components/TocWrapper';
+import styled from 'utils/styled';
+import Footer from 'components/Footer';
+import { SiteMetadata } from 'interfaces/gatsby';
 
-interface PageTemplateProps {
+interface HomepageTemplateProps {
   data: {
     site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-        author: {
-          name: string;
-          url: string;
-        };
-      };
+      siteMetadata: SiteMetadata;
     };
     sectionList: {
       edges: Array<{
@@ -27,6 +24,7 @@ interface PageTemplateProps {
     };
     markdownRemark: {
       html: string;
+      tableOfContents: string;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -38,27 +36,65 @@ interface PageTemplateProps {
   };
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
-  const { markdownRemark } = data;
+interface HomepageTemplateState {
+  tocIsOpen: boolean;
+}
 
-  return (
-    <Page docsPage>
-      <Helmet>
-        <meta property="og:title" content="Home" />
-      </Helmet>
-      <DocsWrapper>
-        <Container>
-          <DocsHeader>
-            <h1>{data.site.siteMetadata.title}</h1>
-          </DocsHeader>
-          <MarkdownContent html={markdownRemark.html} />
-        </Container>
-      </DocsWrapper>
-    </Page>
-  );
-};
+class HomepageTemplate extends React.Component<HomepageTemplateProps, HomepageTemplateState> {
+  constructor(props: HomepageTemplateProps) {
+    super(props);
 
-export default PageTemplate;
+    this.state = {
+      tocIsOpen: false
+    };
+  }
+
+  render() {
+    const { markdownRemark, site } = this.props.data;
+    const { siteMetadata } = site;
+
+    return (
+      <Page docsPage>
+        <Helmet>
+          <title>{siteMetadata.title}</title>
+          <meta property="og:title" content="Home" />
+        </Helmet>
+        <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
+          {markdownRemark.tableOfContents && (
+            <TocWrapper
+              isOpen={this.state.tocIsOpen}
+              onClick={this.toggleToc}
+              dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
+            />
+          )}
+          <Container>
+            <DocsHeader>
+              <h1>
+                {markdownRemark.frontmatter.title !== 'Home'
+                  ? markdownRemark.frontmatter.title
+                  : siteMetadata.title}
+              </h1>
+            </DocsHeader>
+            <MarkdownContent html={markdownRemark.html} />
+            <FooterWrapper>
+              <Footer
+                version={siteMetadata.version}
+                siteLastUpdated={siteMetadata.siteLastUpdated}
+                socials={siteMetadata.socials}
+              />
+            </FooterWrapper>
+          </Container>
+        </DocsWrapper>
+      </Page>
+    );
+  }
+
+  private toggleToc = () => {
+    this.setState({ tocIsOpen: !this.state.tocIsOpen });
+  };
+}
+
+export default HomepageTemplate;
 
 export const query = graphql`
   query HomeTemplateQuery($slug: String!) {
@@ -77,6 +113,11 @@ export const query = graphql`
           url
           email
         }
+        socials {
+          name
+          imgpath
+          url
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -90,4 +131,8 @@ export const query = graphql`
       }
     }
   }
+`;
+
+const FooterWrapper = styled('div')`
+  padding: 0;
 `;
