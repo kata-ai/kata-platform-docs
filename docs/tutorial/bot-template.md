@@ -2,6 +2,7 @@
 id: bot-template-tutorial
 title: "Bot Studio Tutorial: Bot Template"
 prev: nl-studio-tutorial
+next: faq
 ---
 
 Broadly speaking, Kata platform has 3 templates namely API bot, Button bot and Shopping Bot. We will explain them one by one starting from API Bot.

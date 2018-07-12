@@ -3,7 +3,7 @@ id: about
 title: About Kata Bot Platform
 redirect_from:
   - /
-next: getting-started
+next: release-notes
 ---
 
 Kata Bot Platform is a platform for building enterprise scale bots with ease. The platform allows you to:

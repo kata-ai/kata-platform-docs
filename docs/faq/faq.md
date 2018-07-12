@@ -1,7 +1,7 @@
 ---
 id: faq
 title: FAQs
-prev: bot-template-tutorial-id
+prev: bot-template-tutorial
 ---
 
 ## What is the best practice for making a flow ?
