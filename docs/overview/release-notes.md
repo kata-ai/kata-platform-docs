@@ -1,8 +1,6 @@
 ---
 id: release-notes
 title: Release Notes
-redirect_from:
-  - /
 next: about
 ---
 
