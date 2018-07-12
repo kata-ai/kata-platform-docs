@@ -485,11 +485,3 @@ Klik “Update” untuk menyimpan intent yang sudah diperbaharui.
 Selanjutnya, kamu harus mempublikasikan integrasi NLStudio ini dan mengganti versi pada menu “Deployment” untuk mencoba langsung pada perangkat kamu.
 
 ---
-
-## Version log
-
-- 1.0.0 Initial release, created by amanda@kata.ai
-- 1.1.0 Added “Membuat NLU menggunakan NLStudio”, edited by amanda@kata.ai
-- 1.1.1 Adjustment for LINE deployment section
-- 1.1.2 Adjustment in punctuation
-- 1.1.3 Adjustment for any unrelate words

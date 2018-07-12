@@ -328,8 +328,3 @@ Setelah kamu sudah menambahkan bot sebagai teman, kirim sebuah pesan yang mengan
 Selamat ! Sekarang chat bot mu dengan template Shopping Bot sudah selesai
 
 ---
-
-## Version log
-
-- 1.0.0 Initial release, created by amanda@kata.ai
-- 1.0.1 Adjustment for LINE deployment section

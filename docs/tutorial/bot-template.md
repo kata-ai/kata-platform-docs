@@ -330,8 +330,3 @@ After you added the chat bot as a friend, send a message containing the word "hi
 Congratulations! Now your bot using Shopping bot template is done
 
 ---
-
-## Version log
-
-- 1.0.0 Initial release, created by amanda@kata.ai
-- 1.0.1 Adjustment deployment section to LINE platform

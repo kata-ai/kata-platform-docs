@@ -485,11 +485,3 @@ Click "Update" to save the updated intent.
 Next, you have to publish this NLStudio integration and replace the version on "Deployment" menu to try directly on your device.
 
 ---
-
-## Version log:
-
-- 1.0.0 Initial release, created by amanda@kata.ai
-- 1.1.0 Added “Make NLU using NLStudio”, edited by amanda@kata.ai
-- 1.1.1 Adjustment for LINE deployment section
-- 1.1.2 Adjustment for punctuation
-- 1.1.3 Adjustment for any unrelate words
