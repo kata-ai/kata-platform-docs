@@ -5,6 +5,8 @@ prev: kata-ml-test-spec
 next: nl-studio-tutorial
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7F48Iw7qyv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Introduction
 
 In this tutorial, we will create a simple conversation bot to order the pizza used on the LINE platform. Making bots can be done easily and quickly, even with the lack of knowledge of programming language which using technology from Kata platform.
