@@ -8,10 +8,12 @@ module.exports = {
     sidebarTitle: 'Kata Platform Documentation',
     sidebarSubtext: 'Documentation',
     siteLastUpdated: new Date().toISOString(),
-    description: 'Documentation skeleton for Kata.ai.',
+    description:
+      "Kata Platform 2.5 is the incremental update to the 2.0 version that was launched in December 2017. We're building 2.5 based on the mission that every component built now will be used in the next upcoming version.",
     version: '2.5',
     siteUrl: 'https://docs.kata.ai',
-    keywords: 'gatsbyjs, gatsby, documentation, sample project',
+    keywords:
+      'kata.ai, kata-ai, kata platform, kata platform 2.5, artificial intelligence, ai, chatbot, documentation',
     author: {
       name: 'Kata.ai',
       url: 'https://kata.ai',
