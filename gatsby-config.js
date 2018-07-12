@@ -10,7 +10,7 @@ module.exports = {
     siteLastUpdated: new Date().toISOString(),
     description: 'Documentation skeleton for Kata.ai.',
     version: '2.5',
-    siteUrl: 'https://grundgesetz-skeleton.now.sh',
+    siteUrl: 'https://docs.kata.ai',
     keywords: 'gatsbyjs, gatsby, documentation, sample project',
     author: {
       name: 'Kata.ai',

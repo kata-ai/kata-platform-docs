@@ -1,6 +1,8 @@
-# grundgesetz-skeleton
+# kata-platform-docs
 
-> Documentation website for the Kata platform
+> Documentation website for the Kata Platform
+
+Welcome to the GitHub project for the Kata Platform. You can access the documentation website at https://docs.kata.ai
 
 ---
 
