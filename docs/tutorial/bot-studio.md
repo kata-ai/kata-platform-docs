@@ -5,7 +5,7 @@ prev: kata-ml-test-spec
 next: nl-studio-tutorial
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7F48Iw7qyv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7F48Iw7qyv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Introduction
 

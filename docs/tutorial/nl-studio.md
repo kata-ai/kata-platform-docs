@@ -5,6 +5,8 @@ prev: bot-studio-tutorial
 next: bot-template-tutorial
 ---
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UTnXH8l7QVY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Introduction
 
 In the previous tutorial which is making pizza bot (link for pizza bot tutorial language), the purpose is helping users to order. Moreover, we also make a NLU for bot to understand user conversations. However, created NLUs have limitations such as data should be prepared as much as possible. Therefore, in Kata Platform we have set up NLU menu to help create Natural Language Model that can be customised to your business needs.

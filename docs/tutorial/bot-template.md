@@ -9,6 +9,8 @@ Broadly speaking, Kata platform has 3 templates namely API bot, Button bot and S
 
 ## API Bot template
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HsM2g9R1ml0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 The function of this bot is to provide an example to use API integration. In this template, we will learn how the bot answering a question from an user who inquires about city weather. We will use API which is :
 
 ```
@@ -125,6 +127,8 @@ Congratulations! Now your bot using API template bot is done
 
 ## Button Bot Template
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BtPPYkgmVPA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 In this template, we will learn how to create bot using action button. The concept used is user will be given a question "Who is current president of Indonesia?", Then, a user must choose answers by pressing provided options button. As above, we will see the conversation tree first from this template.
 
 ![bte-23](./images/bte-23.png)
@@ -225,6 +229,8 @@ After you added the chat bot as a friend, send a message containing the word "ma
 Congratulations! Now your bot using button bot template bot is done
 
 ## Shopping Bot Template
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hnkFHI-T2hQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You could try shopping bot template to create a simple concept of place orders from consumers to bot. We will learn how to make a bot using action button. Similar with above image, we will see conversation tree first from this template.
 
