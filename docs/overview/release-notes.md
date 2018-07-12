@@ -1,8 +1,7 @@
 ---
 id: release-notes
 title: Release Notes
-prev: about
-next: getting-started
+next: about
 ---
 
 Same powerful Kata Platform, only look and feel better. Should you have any questions, feel free to email **support@kata.ai**
