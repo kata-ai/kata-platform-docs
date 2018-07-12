@@ -1,6 +1,6 @@
 ---
 id: bot-studio-tutorial-id
-title: Kata Platform 2.5 - Bot Studio tutorial (Bahasa Indonesia)
+title: Bot Studio tutorial (Bahasa Indonesia)
 prev: bot-studio-tutorial
 next: nl-studio-tutorial
 ---

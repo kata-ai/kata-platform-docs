@@ -1,6 +1,6 @@
 ---
 id: nl-studio-tutorial-id
-title: Kata Platform 2.5 - NL Studio tutorial (Bahasa Indonesia)
+title: NL Studio tutorial (Bahasa Indonesia)
 prev: nl-studio-tutorial
 next: bot-template-tutorial
 ---
