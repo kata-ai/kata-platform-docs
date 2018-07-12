@@ -14,6 +14,7 @@ import styled from 'utils/styled';
 import TocWrapper from 'components/TocWrapper';
 import Footer from 'components/Footer';
 import TocFloatingButton from 'components/TocFloatingButton';
+import DocsContribution from 'components/DocsContribution';
 
 interface PageTemplateProps {
   data: {
@@ -82,6 +83,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
               <h1>{markdownRemark.frontmatter.title}</h1>
             </DocsHeader>
             <MarkdownContent html={markdownRemark.html} />
+            <DocsContribution />
             <FooterWrapper>
               <Container>
                 {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}

@@ -11,6 +11,7 @@ import TocWrapper from 'components/TocWrapper';
 import styled from 'utils/styled';
 import Footer from 'components/Footer';
 import { SiteMetadata } from 'interfaces/gatsby';
+import DocsContribution from 'components/DocsContribution';
 
 interface HomepageTemplateProps {
   data: {
