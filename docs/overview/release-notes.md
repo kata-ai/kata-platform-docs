@@ -15,17 +15,20 @@ The new Error Log lists any errors that appeared during bot development. What we
 
 ![rn-1](./images/release-notes/rn-1.png)
 
-### bot templates
+### Bot templates
 
 Get a head start creating your bot with our starter-pack templates:
 
-API Bot
+#### API Bot
+
 Learn how your Bot can integrate to third-party API.
 
-Button Bot
+#### Button Bot
+
 Not only through conversation, your bot can also interact with users through buttons.
 
-Shopping Bot
+#### Shopping Bot
+
 Our famous Pizza Bot is now available for anyone. Build your own Shopping Bot using our recipe.
 
 ![rn-2](./images/release-notes/rn-2.png)
