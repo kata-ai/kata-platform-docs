@@ -1,6 +1,7 @@
 ---
 id: release-notes
 title: Release Notes
+description: What's new in the Kata Platform
 next: about
 ---
 

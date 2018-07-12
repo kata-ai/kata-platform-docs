@@ -33,6 +33,7 @@ interface PageTemplateProps {
       frontmatter: {
         id: string;
         title: string;
+        description: string;
         prev?: string;
         next?: string;
       };
@@ -66,9 +67,15 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
           <title>
             {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
           </title>
-          <meta name="description" content={markdownRemark.excerpt} />
+          <meta
+            name="description"
+            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
+          />
           <meta property="og:title" content={markdownRemark.frontmatter.title} />
-          <meta property="og:description" content={markdownRemark.excerpt} />
+          <meta
+            property="og:description"
+            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
+          />
         </Helmet>
         <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
           {markdownRemark.tableOfContents && (
@@ -151,6 +158,7 @@ export const query = graphql`
       frontmatter {
         id
         title
+        description
         prev
         next
       }
