@@ -78,6 +78,7 @@ class HomepageTemplate extends React.Component<HomepageTemplateProps, HomepageTe
             </DocsHeader>
             <MarkdownContent html={markdownRemark.html} />
             <FooterWrapper>
+              <DocsContribution />
               <Footer
                 version={siteMetadata.version}
                 siteLastUpdated={siteMetadata.siteLastUpdated}
@@ -135,5 +136,6 @@ export const query = graphql`
 `;
 
 const FooterWrapper = styled('div')`
+  margin-top: 40px;
   padding: 0;
 `;

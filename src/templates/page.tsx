@@ -83,8 +83,8 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
               <h1>{markdownRemark.frontmatter.title}</h1>
             </DocsHeader>
             <MarkdownContent html={markdownRemark.html} />
-            <DocsContribution />
             <FooterWrapper>
+              <DocsContribution />
               <Container>
                 {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
               </Container>
@@ -159,5 +159,6 @@ export const query = graphql`
 `;
 
 const FooterWrapper = styled('div')`
+  margin-top: 40px;
   padding: 0;
 `;
