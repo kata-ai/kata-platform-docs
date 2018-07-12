@@ -230,7 +230,7 @@ Congratulations! Now your bot using button bot template bot is done
 
 ## Shopping Bot Template
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hnkFHI-T2hQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AazPtNe-kn8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 You could try shopping bot template to create a simple concept of place orders from consumers to bot. We will learn how to make a bot using action button. Similar with above image, we will see conversation tree first from this template.
 
