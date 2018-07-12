@@ -2,7 +2,7 @@
 id: bot-studio-tutorial
 title: Kata Platform 2.5 - Bot Studio tutorial
 prev: kata-ml-test-spec
-next: bot-studio-tutorial-id
+next: nl-studio-tutorial
 ---
 
 ## Introduction
@@ -340,7 +340,7 @@ Make a deployment with `pizzaChat` name and select version 0.0.1. You can also f
 
 ### Register LINE account
 
-To sign up for a LINE account, you must signed in LINE developer console (https://developers.line.me/console/)
+To sign up for a LINE account, you must signed in [LINE developer console](https://developers.line.me/console/)
 
 ![bse-54](./images/bse-54.png)
 
@@ -350,7 +350,7 @@ Once you registered your LINE account, you must enter the console by entering yo
 
 ![bse-55](./images/bse-55.png)
 
-Then, you're going to create a provider by clicked this link https://developers.line.me/console/register/provider/ and enter provider name.
+Then, you're going to create a provider by clicked [this link](https://developers.line.me/console/register/provider/) and enter provider name.
 
 ![bse-56](./images/bse-56.png)
 

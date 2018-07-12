@@ -11,6 +11,7 @@ const DocsWrapper = styled<DocsWrapperProps, 'article'>('article')`
   position: relative;
   padding: 24px;
   padding-bottom: 3rem;
+  overflow-y: auto;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     flex-direction: ${props => props.hasToc && 'row-reverse'};
