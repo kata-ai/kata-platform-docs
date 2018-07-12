@@ -33,6 +33,26 @@ Our famous Pizza Bot is now available for anyone. Build your own Shopping Bot us
 
 ![rn-2](./images/release-notes/rn-2.png)
 
+### Documentation
+
+Getting complicated with our new Platform? Keep calm and check our documentation menu
+
+Easiness to access our sub-menu in simple and subtle view.
+
+![rn-24](./images/rn-24.png)
+
+We're simplify our table of contents for shortcut access into them
+
+![rn-25](./images/rn-25.png)
+
+Featured our newest tutorial that is bot template tutorial
+
+![rn-26](./images/rn-26.png)
+
+Responsive view in any device you have
+
+![rn-27](./images/rn-27.png)
+
 ## What's Improved
 
 ### General
