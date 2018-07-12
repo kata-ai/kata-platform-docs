@@ -118,29 +118,14 @@
         "title": "Bot Studio Tutorial"
       },
       {
-        "id": "bot-studio-tutorial-id",
-        "slug": "/tutorial/bot-studio-id/",
-        "title": "Bot Studio Tutorial (Bahasa Indonesia)"
-      },
-      {
         "id": "nl-studio-tutorial",
         "slug": "/tutorial/nl-studio/",
         "title": "NL Studio Tutorial"
       },
       {
-        "id": "nl-studio-tutorial-id",
-        "slug": "/tutorial/nl-studio-id/",
-        "title": "NL Studio Tutorial (Bahasa Indonesia)"
-      },
-      {
         "id": "bot-template-tutorial",
         "slug": "/tutorial/bot-template/",
         "title": "Bot Template Tutorial"
-      },
-      {
-        "id": "bot-template-tutorial-id",
-        "slug": "/tutorial/bot-template-id/",
-        "title": "Bot Template Tutorial (Bahasa Indonesia)"
       }
     ]
   },
