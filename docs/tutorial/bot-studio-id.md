@@ -17,7 +17,7 @@ Mari kita mulai dengan melihat diagram alur bot atau biasa disebut dengan “con
 
 Sebelum masuk pada pembuatan bot percakapan, kamu harus mendaftarkan diri terlebih dahulu pada platform kami. Lewati tahapan ini jika kamu sudah memiliki akun sebelumnya.
 
-Masuk terlebih dahulu pada tautan [will change it later] http://new-platform.katalabs.io/login dan klik pada tautan “Sign up”
+Masuk terlebih dahulu pada tautan [berikut](http://platform.kata.ai/login) dan klik pada tautan “Sign up”
 
 ![bsb-2](./images/bsb-2.png)
 

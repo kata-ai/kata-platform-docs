@@ -33,7 +33,7 @@ You will get a confirmation email regarding your account for verification from u
 
 ### Login to Kata Platform
 
-Go to the [will change it later] link http://new-platform.katalabs.io/login as in the attached picture.
+Go to [the link](http://platform.kata.ai/login) as in the attached picture.
 
 ![bse-4](./images/bse-4.png)
 
