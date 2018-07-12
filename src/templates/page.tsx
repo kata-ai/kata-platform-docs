@@ -73,6 +73,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
           {markdownRemark.tableOfContents && (
             <TocWrapper
               isOpen={this.state.tocIsOpen}
+              onClick={this.toggleToc}
               dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
             />
           )}
