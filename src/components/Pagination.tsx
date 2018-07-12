@@ -42,11 +42,6 @@ const PaginationItem = styled('div')`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
-    padding: 12px;
-    background-color: ${props => props.theme.colors.drawer.background};
-    border: 1px solid ${props => props.theme.colors.border};
-    border-radius: 4px;
-
     &:first-child {
       border-right: none;
     }
@@ -65,6 +60,13 @@ const PaginationItemInner = styled<PaginationItemInnerProps, 'div'>('div')`
   display: flex;
   flex-direction: ${props => (props.next ? 'row-reverse' : 'row')};
   align-items: flex-end;
+
+  @media (max-width: ${props => props.theme.breakpoints.md - 1}px) {
+    padding: 12px;
+    background-color: ${props => props.theme.colors.drawer.background};
+    border: 1px solid ${props => props.theme.colors.border};
+    border-radius: 4px;
+  }
 `;
 
 const PaginationItemText = styled('div')`

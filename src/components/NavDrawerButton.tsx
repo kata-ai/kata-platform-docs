@@ -23,7 +23,7 @@ const Wrapper = styled<ToggleableProps, 'button'>('button')`
   ${props =>
     props.floating &&
     css`
-      position: fixed;
+      position: absolute;
       top: 12px;
       right: 32px;
       z-index: ${props.theme.zIndex.floatingButton};
