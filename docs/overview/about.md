@@ -1,8 +1,6 @@
 ---
 id: about
 title: About Kata Bot Platform
-redirect_from:
-  - /
 prev: release-notes
 next: getting-started
 ---
