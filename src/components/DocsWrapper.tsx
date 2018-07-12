@@ -12,11 +12,14 @@ const DocsWrapper = styled<DocsWrapperProps, 'article'>('article')`
   position: relative;
   padding: 24px;
   padding-bottom: 3rem;
-  overflow-x: auto;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     flex-direction: ${props => props.hasToc && 'row-reverse'};
     padding: 48px;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    overflow-x: auto;
   }
 `;
 
