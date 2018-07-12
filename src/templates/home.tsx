@@ -122,6 +122,7 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      tableOfContents
       excerpt
       frontmatter {
         id
