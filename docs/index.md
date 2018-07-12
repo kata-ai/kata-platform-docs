@@ -150,4 +150,4 @@ Ability to filter the prediction when doing a training data
 
 ## Contributing to the Documentation
 
-Is something missing/incorrect? Please let us know by contacting **support@kata.ai**. If you know how to fix it, don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls) on this documentation's GitHub repository and fix them.
+Is something missing/incorrect? Please let us know by contacting **support@kata.ai**. If you know how to fix it straight away, don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls) on this documentation's GitHub repository.
