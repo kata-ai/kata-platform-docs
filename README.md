@@ -4,44 +4,9 @@
 
 ---
 
-## Geting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/) (8.0.0+)
-- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but this is for your own sanity.)
-
-### Initial setup
-
-Clone this repository.
-
-```bash
-git clone https://github.com/kata-ai/kata-platform-docs.git
-```
-
-`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
-
-```bash
-# npm
-npm install
-# yarn
-yarn
-```
-
-### Running the server
-
-To start working on this documentation, you need to start a development server.
-
-```bash
-# npm
-npm start
-# yarn
-yarn start
-```
-
 ## Contributing
 
-Sonething is missing/incorrect? Don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls) and fix them. We will review your changes and put them in.
+Something is missing/incorrect? Don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls) and fix them. We will review your changes and put them in.
 
 ### Commit message guidelines
 
@@ -79,6 +44,43 @@ build:    Changes that affect the build system or external dependencies (example
 ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 chore:    Other changes that don't modify src or test files
 revert:   Reverts a previous commit
+```
+
+---
+
+## Development guide
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/) (8.0.0+)
+- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but this is for your own sanity.)
+
+### Initial setup
+
+Clone this repository.
+
+```bash
+git clone https://github.com/kata-ai/kata-platform-docs.git
+```
+
+`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
+
+```bash
+# npm
+npm install
+# yarn
+yarn
+```
+
+### Running the server
+
+To start working on this documentation, you need to start a development server.
+
+```bash
+# npm
+npm start
+# yarn
+yarn start
 ```
 
 ---
