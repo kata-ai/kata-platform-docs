@@ -58,7 +58,12 @@ const TocFloatingButton: React.SFC<TocFloatingButtonProps> = ({
   tocIsOpen,
   onClick
 }) => (
-  <Wrapper className={className} onClick={onClick} isOpen={tocIsOpen}>
+  <Wrapper
+    className={className}
+    onClick={onClick}
+    isOpen={tocIsOpen}
+    aria-label="Toggle Table of Contents"
+  >
     <Inner isOpen={tocIsOpen}>
       {tocIsOpen ? (
         <svg width="24px" height="24px" viewBox="0 0 24 24">

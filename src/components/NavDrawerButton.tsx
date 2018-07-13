@@ -62,13 +62,18 @@ const NavDrawerButton: React.SFC<NavDrawerButtonProps> = ({
   floating,
   onClick
 }) => (
-  <Wrapper className={className} onClick={onClick} floating={floating} drawerIsOpen={drawerIsOpen}>
+  <Wrapper
+    className={className}
+    onClick={onClick}
+    floating={floating}
+    drawerIsOpen={drawerIsOpen}
+    aria-label="Toggle Navigation"
+  >
     <Inner drawerIsOpen={drawerIsOpen}>
       {drawerIsOpen ? (
         <svg width="24px" height="24px" viewBox="0 0 24 24">
           <g fill-rule="evenodd">
             <rect
-              id="Rectangle-Copy"
               transform="translate(11.748851, 11.748851) rotate(-315.000000) translate(-11.748851, -11.748851) "
               x="-3.02037964"
               y="9.90269729"
@@ -78,7 +83,6 @@ const NavDrawerButton: React.SFC<NavDrawerButtonProps> = ({
             />
             {/* tslint:disable:max-line-length */}
             <rect
-              id="Rectangle-Copy"
               transform="translate(11.748851, 11.748851) scale(-1, 1) rotate(-315.000000) translate(-11.748851, -11.748851) "
               x="-3.02037964"
               y="9.90269729"
@@ -91,10 +95,10 @@ const NavDrawerButton: React.SFC<NavDrawerButtonProps> = ({
         </svg>
       ) : (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <g id="burger-btn">
-            <rect id="line-1" x="0" y="0" width="24" height="3" rx="1.5" />
-            <rect id="line-2" x="0" y="10.5" width="24" height="3" rx="1.5" />
-            <rect id="line-3" x="0" y="21" width="24" height="3" rx="1.5" />
+          <g>
+            <rect x="0" y="0" width="24" height="3" rx="1.5" />
+            <rect x="0" y="10.5" width="24" height="3" rx="1.5" />
+            <rect x="0" y="21" width="24" height="3" rx="1.5" />
           </g>
         </svg>
       )}
