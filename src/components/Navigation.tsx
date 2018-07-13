@@ -7,6 +7,7 @@ import { MenuNode } from 'interfaces/nodes';
 import DocumentationNavMenus from './DocumentationNavMenus';
 import Logo from './Logo';
 import NavDrawerButton from './NavDrawerButton';
+import MediaQuery from 'utils/mediaQuery';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -138,7 +139,7 @@ class Header extends React.Component<HeaderProps> {
   }
 
   render() {
-    const { title, subtitle, navigation, open, onCloseNavMenu, toggleDrawer } = this.props;
+    const { navigation, open, onCloseNavMenu, toggleDrawer } = this.props;
 
     return (
       <Wrapper>
@@ -146,9 +147,15 @@ class Header extends React.Component<HeaderProps> {
           <TitleInner>
             <TitleInnerContainer>
               <HomepageLink to="/" href="/" onClick={onCloseNavMenu}>
-                <Logo src={require('assets/images/logo-platform.png')} alt={title} />
+                <Logo src={require('assets/images/logo-platform.png')} alt="Kata Platform" />
               </HomepageLink>
-              {subtitle && <Subtitle>{subtitle}</Subtitle>}
+              <MediaQuery.ServerRender predicted="desktop">
+                <MediaQuery.Matcher
+                  mobile={<Subtitle>Docs</Subtitle>}
+                  tablet={<Subtitle>Docs</Subtitle>}
+                  desktop={<Subtitle>Documentation</Subtitle>}
+                />
+              </MediaQuery.ServerRender>
             </TitleInnerContainer>
           </TitleInner>
           <DocumentationNav isOpen={open}>
