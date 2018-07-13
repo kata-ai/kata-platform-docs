@@ -81,7 +81,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+        siteUrl: 'https://docs.kata.ai'
       }
     },
     'gatsby-plugin-styled-components',
