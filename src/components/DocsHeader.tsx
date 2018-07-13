@@ -1,7 +1,7 @@
 import styled from 'utils/styled';
 
 const DocsHeader = styled('header')`
-  margin-bottom: 1rem;
+  margin-bottom: 40px;
 
   & h1 {
     margin: 0;
