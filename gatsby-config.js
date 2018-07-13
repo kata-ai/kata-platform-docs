@@ -1,6 +1,6 @@
 'use strict';
 
-const cssnext = require('postcss-cssnext');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -114,7 +114,13 @@ module.exports = {
         background_color: '#f8fcff'
       }
     },
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cache'
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.DOCS_GA_TRACKING_CODE
+      }
+    },
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-netlify'
   ]
 };
