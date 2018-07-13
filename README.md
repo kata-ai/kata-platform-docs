@@ -80,9 +80,9 @@ To start working on this documentation, you need to start a development server.
 
 ```bash
 # npm
-npm start
+npm run dev
 # yarn
-yarn start
+yarn dev
 ```
 
 ---
