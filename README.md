@@ -2,13 +2,48 @@
 
 > Documentation website for the Kata Platform
 
-Welcome to the GitHub project for the Kata Platform. You can access the documentation website at https://docs.kata.ai
+Welcome to the GitHub project for the Kata Platform documentation! We've built this site from the ground-up with performance, accessibility, and fanciness in mind. You can access the documentation website at https://docs.kata.ai
 
 ---
 
 ## Contributing
 
-Something is missing/incorrect? Don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls) and fix them. We will review your changes and put them in.
+Something is missing/incorrect? Don't hesitate to [create a pull request](https://github.com/kata-ai/kata-platform-docs/pulls)! The following section outlines how you can contribute to our documentation site.
+
+### Development guide
+
+#### Prerequisites
+
+- [Node.js](https://nodejs.org/en/) (8.0.0+)
+- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but this is for your own sanity.)
+
+#### Initial setup
+
+Clone this repository.
+
+```bash
+git clone https://github.com/kata-ai/kata-platform-docs.git
+```
+
+`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
+
+```bash
+# npm
+npm install
+# yarn
+yarn
+```
+
+#### Running the server
+
+To start working on this documentation, you need to start a development server.
+
+```bash
+# npm
+npm run dev
+# yarn
+yarn dev
+```
 
 ### Commit message guidelines
 
@@ -46,43 +81,6 @@ build:    Changes that affect the build system or external dependencies (example
 ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 chore:    Other changes that don't modify src or test files
 revert:   Reverts a previous commit
-```
-
----
-
-## Development guide
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/en/) (8.0.0+)
-- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but this is for your own sanity.)
-
-### Initial setup
-
-Clone this repository.
-
-```bash
-git clone https://github.com/kata-ai/kata-platform-docs.git
-```
-
-`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
-
-```bash
-# npm
-npm install
-# yarn
-yarn
-```
-
-### Running the server
-
-To start working on this documentation, you need to start a development server.
-
-```bash
-# npm
-npm run dev
-# yarn
-yarn dev
 ```
 
 ---
