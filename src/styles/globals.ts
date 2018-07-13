@@ -50,9 +50,9 @@ injectGlobal`
   }
 
   img {
+    display: block;
     max-width: 100%;
-    object-fit: contain;
-    position: relative;
+    margin: 0 0 1rem;
   }
 
   // Figure elements
