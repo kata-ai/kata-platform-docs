@@ -52,7 +52,6 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
         <LayoutRoot>
           <Helmet>
             <title>{siteMetadata.title}</title>
-            <link rel="canonical" href={`${siteMetadata.siteUrl}${location.pathname}`} />
             <meta name="description" content={siteMetadata.description} />
             <meta name="keywords" content={siteMetadata.keywords} />
             <meta property="og:type" content="website" />
