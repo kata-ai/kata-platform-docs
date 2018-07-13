@@ -117,7 +117,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.DOCS_GA_TRACKING_CODE
+        trackingId: process.env.GATSBY_GA_TRACKING_ID
       }
     },
     'gatsby-plugin-netlify-cache',
