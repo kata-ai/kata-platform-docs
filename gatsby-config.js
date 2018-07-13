@@ -92,6 +92,13 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#006fe6', // kata-blue
+        showSpinner: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Kata Platform Documentation',
