@@ -102,7 +102,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Kata Platform Documentation',
-        short_name: 'Kata Platform',
+        short_name: 'Kata.ai Docs',
         icons: [
           {
             src: '/android-chrome-192x192.png',
@@ -117,8 +117,8 @@ module.exports = {
         ],
         start_url: '/',
         display: 'standalone',
-        theme_color: '#006fe6',
-        background_color: '#f8fcff'
+        theme_color: '#f8fcff',
+        background_color: '#f6f7f8'
       }
     },
     {
