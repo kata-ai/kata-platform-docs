@@ -16,20 +16,23 @@ interface ToggleableProps {
 const Wrapper = styled<ToggleableProps, 'header'>('header')`
   display: flex;
   flex-direction: row;
+  position: relative;
+  overflow: hidden;
   background-color: ${props => props.theme.colors.drawer.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease, transform 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: ${props => props.theme.heights.header}px;
+    height: 100%;
+    max-height: ${props => (props.isOpen ? '100vh' : `${props.theme.heights.header}px`)};
     flex-direction: column;
     padding: 12px ${props => props.theme.dimensions.containerPadding}px;
     overflow-y: auto;
     pointer-events: auto;
-    transition: transform 0.3s ease;
     z-index: ${props => props.theme.zIndex.drawer};
   }
 
@@ -110,11 +113,11 @@ const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
   transition: visibility 0.3s ease, opacity 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 1000%;
+    height: 100%;
     visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
     opacity: ${props => (props.isOpen ? 1 : 0)};
     background-color: ${props => props.theme.colors.brand};
@@ -142,7 +145,7 @@ class Header extends React.Component<HeaderProps> {
     const { navigation, open, onCloseNavMenu, toggleDrawer } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper isOpen={open}>
         <WrapperInner>
           <TitleInner>
             <TitleInnerContainer>
