@@ -11,11 +11,15 @@ const TocWrapper = styled<ToggleableProps, 'section'>('section')`
   line-height: 28px;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
-    flex: 0 0 240px;
+    flex: 0 0 180px;
     position: sticky;
     top: 48px;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.xl}px) {
+    flex: 0 0 240px;
   }
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
