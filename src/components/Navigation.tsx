@@ -20,7 +20,7 @@ const Wrapper = styled<ToggleableProps, 'header'>('header')`
   overflow: hidden;
   background-color: ${props => props.theme.colors.drawer.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: max-height 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     position: fixed;
