@@ -19,7 +19,6 @@ const TocWrapper = styled<ToggleableProps, 'section'>('section')`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
-    display: ${props => (props.isOpen ? 'block' : 'none')};
     position: fixed;
     top: 0;
     left: 0;
@@ -30,6 +29,10 @@ const TocWrapper = styled<ToggleableProps, 'section'>('section')`
     padding: 64px;
     background-color: ${props => props.theme.colors.white};
     z-index: ${props => props.theme.zIndex.drawer - 5};
+    visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
+    opacity: ${props => (props.isOpen ? 1 : 0)};
+    transform: ${props => (props.isOpen ? 'translateY(0)' : 'translateY(64px)')};
+    transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     overflow-y: auto;
   }
 
