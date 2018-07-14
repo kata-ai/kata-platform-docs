@@ -60,6 +60,8 @@ const Wrapper = styled('div')`
   margin-top: ${props => props.theme.heights.header}px;
   padding: 48px ${props => props.theme.dimensions.containerPadding}px;
   transition: all 0.3s ease;
+  height: 100%;
+  max-height: ${props => `calc(100vh - ${props.theme.heights.header}px)`};
   overflow-y: auto;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
