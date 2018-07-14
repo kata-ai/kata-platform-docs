@@ -113,11 +113,11 @@ const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
   transition: visibility 0.3s ease, opacity 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 1000%;
     visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
     opacity: ${props => (props.isOpen ? 1 : 0)};
     background-color: ${props => props.theme.colors.brand};
