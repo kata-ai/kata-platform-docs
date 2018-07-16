@@ -20,7 +20,7 @@ const Wrapper = styled<ToggleableProps, 'header'>('header')`
   overflow: hidden;
   background-color: ${props => props.theme.colors.drawer.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: max-height 0.3s ease, transform 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     position: fixed;
@@ -113,11 +113,11 @@ const DocumentationNav = styled<ToggleableProps, 'nav'>('nav')`
   transition: visibility 0.3s ease, opacity 0.3s ease;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 1000%;
+    height: 100vh;
     visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
     opacity: ${props => (props.isOpen ? 1 : 0)};
     background-color: ${props => props.theme.colors.brand};
@@ -163,7 +163,11 @@ class Header extends React.Component<HeaderProps> {
           </TitleInner>
           <DocumentationNav isOpen={open}>
             <NavDrawerButton onClick={toggleDrawer} floating={open} drawerIsOpen={open} />
-            <DocumentationNavMenus navigation={navigation} onCloseNavMenu={onCloseNavMenu} />
+            <DocumentationNavMenus
+              isOpen={open}
+              navigation={navigation}
+              onCloseNavMenu={onCloseNavMenu}
+            />
           </DocumentationNav>
           <NavDrawerButton onClick={toggleDrawer} floating={open} drawerIsOpen={open} />
         </WrapperInner>
