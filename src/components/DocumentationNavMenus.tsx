@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'utils/styled';
 import { MenuNode } from 'interfaces/nodes';
 import NavigationMenu from './NavigationMenu';
+import { ToggleableProps } from 'interfaces/app';
 
-interface Props {
+interface Props extends ToggleableProps {
   navigation?: Array<{ node: MenuNode }>;
   onCloseNavMenu?: (e: React.MouseEvent<HTMLElement>) => void;
 }
@@ -34,10 +35,10 @@ class DocumentationNavMenus extends React.Component<Props, State> {
   }
 
   render() {
-    const { navigation, onCloseNavMenu } = this.props;
+    const { navigation, isOpen, onCloseNavMenu } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper isOpen={isOpen}>
         {navigation &&
           navigation.map(({ node }) => (
             <NavigationMenu
@@ -56,16 +57,21 @@ class DocumentationNavMenus extends React.Component<Props, State> {
 
 export default DocumentationNavMenus;
 
-const Wrapper = styled('div')`
-  margin-top: ${props => props.theme.heights.header}px;
+const Wrapper = styled<ToggleableProps, 'div'>('div')`
+  /* The values below look arbitrary, but necessary to prevent weird height stuff happening. */
+  margin-top: ${props => (props.isOpen ? `${props.theme.heights.header}px` : '24px')};
   padding: 48px ${props => props.theme.dimensions.containerPadding}px;
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease;
   height: 100%;
   max-height: ${props => `calc(100vh - ${props.theme.heights.header}px)`};
-  overflow-y: auto;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     margin-top: 0;
     padding: 0 24px 48px;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
+    padding-top: 24px;
+    overflow-y: auto;
   }
 `;
