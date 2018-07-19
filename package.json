@@ -23,7 +23,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "classnames": "^2.2.5",
     "dotenv": "^6.0.0",
-    "gatsby": "^1.9.273",
+    "gatsby": "^1.9.274",
     "gatsby-link": "^1.6.45",
     "gatsby-plugin-canonical-urls": "^1.0.18",
     "gatsby-plugin-catch-links": "^1.0.24",
@@ -71,7 +71,7 @@
     "gh-pages": "^1.2.0",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
-    "serve": "^6.5.7",
+    "serve": "^9.2.0",
     "tslint": "^5.10.0",
     "tslint-config-kata": "^1.0.5",
     "tslint-react": "^3.6.0"
