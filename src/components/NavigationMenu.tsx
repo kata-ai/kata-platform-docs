@@ -35,6 +35,7 @@ const ToggleButton = styled<ToggleableProps, 'button'>('button')`
   box-shadow: ${props =>
     props.isOpen ? props.theme.shadow.layer200 : props.theme.shadow.layer100};
   background-color: ${props => props.theme.colors.white};
+  cursor: pointer;
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {
     padding: 14px 0;
