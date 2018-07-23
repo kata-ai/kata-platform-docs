@@ -13,7 +13,7 @@ Same powerful Kata Platform, only look and feel better. Should you have any ques
 
 ### Error logs
 
-The new Error Log lists any errors that appeared during bot development. What went wrong and when it went wrong.
+The new Error Log lists any errors during bot development. What went wrong and when it went wrong.
 
 ![rn-1](./images/release-notes/rn-1.png)
 
@@ -37,21 +37,19 @@ Our famous Pizza Bot is now available for anyone. Build your own Shopping Bot us
 
 ### Documentation
 
-Getting complicated with our new Platform? Keep calm and check our documentation menu
-
-Easiness to access our sub-menu in simple and subtle view.
+Getting complicated with our new Platform? Keep calm and check our documentation menu.
 
 ![rn-24](./images/release-notes/rn-24.png)
 
-We're simplify our table of contents for shortcut access into them
+We simplified our table of contents for ease of access.
 
 ![rn-25](./images/release-notes/rn-25.png)
 
-Featured our newest tutorial that is bot template tutorial
+Bot tutorial is now included in the documentation.
 
 ![rn-26](./images/release-notes/rn-26.png)
 
-Responsive view in any device you have
+Documentation is now responsive, viewable on any devices.
 
 ![rn-27](./images/release-notes/rn-27.png)
 
@@ -59,7 +57,7 @@ Responsive view in any device you have
 
 ### General
 
-Our new Design System is used throughout the platform to ensure consistency for your experience to help build bot faster and better. (ps: We're going to release our own Design System later on this year. Stay tune!)
+Our new Design System is used throughout the platform to ensure consistency for your experience to help build bot faster and better. (ps: We're going to release our own Design System later on this year. Stay tuned!)
 
 ![rn-3](./images/release-notes/rn-3.png)
 
@@ -79,7 +77,7 @@ Easily switch between Bots and NLUs from the new switcher on the sidebar.
 
 ![rn-7](./images/release-notes/rn-7.png)
 
-Menu is now moved to the sidebar, so you have better visibility of what can you do on Kata | Platform.
+Menu is now moved to the sidebar, so you have better visibility of what can you do on Kata Platform.
 
 ![rn-8](./images/release-notes/rn-8.png)
 
@@ -101,7 +99,7 @@ You can show/hide the priority states number and floating states line.
 
 ![rn-12](./images/release-notes/rn-12.png)
 
-Hover your mouse on one of state node, and see what's the next step. Grey Node means it's an end state, meanwhile, Blue Node means it still carries on the conversation to another state.
+Hover your mouse on one of state node to see where that state transitions to. Grey Node means it's an end state, meanwhile, Blue Node means it still carries on the conversation to another state.
 
 ![rn-13](./images/release-notes/rn-13.png)
 
@@ -113,7 +111,7 @@ Actions can now be created and reused in the same place.
 
 ![rn-15](./images/release-notes/rn-15.png)
 
-And we now support 12 Actions Type. (Channel support for each action type may varies)
+And we now support 12 Actions Type. (Channel support for each action type may vary).
 
 ![rn-16](./images/release-notes/rn-16.png)
 
