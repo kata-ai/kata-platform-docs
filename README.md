@@ -15,7 +15,7 @@ Something is missing/incorrect? Don't hesitate to [create a pull request](https:
 #### Prerequisites
 
 - [Node.js](https://nodejs.org/en/) (8.0.0+)
-- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but this is for your own sanity.)
+- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but highly recommended for your own sanity.)
 
 #### Initial setup
 
@@ -25,7 +25,7 @@ Clone this repository.
 git clone https://github.com/kata-ai/kata-platform-docs.git
 ```
 
-`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run the following command.
+`cd` to the generated project. Here we'll have to install our node dependencies. To do so, run (one of) the following command(s).
 
 ```bash
 # npm
@@ -59,7 +59,7 @@ We use [Commitizen](https://github.com/commitizen/cz-cli) with the [cz-conventio
 <footer>
 ```
 
-The first line must contain a commit type, an optional scope, and the subject of the commit.
+The first line must contain a commit type, an _optional_ scope, and the subject of the commit.
 
 The message body contains a longer description of the change. This is reserved for any information that won't fit inside the subject line of a commit message. Note that each line of the commit message should not be longer than 72 characters.
 
@@ -78,7 +78,7 @@ refactor: A code change that neither fixes a bug nor adds a feature
 perf:     A code change that improves performance
 test:     Adding missing tests or correcting existing tests
 build:    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+ci:       Changes to our CI configuration files and scripts (example scopes: travis, circle)
 chore:    Other changes that don't modify src or test files
 revert:   Reverts a previous commit
 ```
