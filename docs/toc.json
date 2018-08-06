@@ -126,6 +126,11 @@
         "id": "bot-template-tutorial",
         "slug": "/tutorial/bot-template/",
         "title": "Bot Template Tutorial"
+      },
+      {
+        "id": "fb-messenger-integration",
+        "slug": "/tutorial/fb-messenger-integration/",
+        "title": "Integration with FB Messenger"
       }
     ]
   },
