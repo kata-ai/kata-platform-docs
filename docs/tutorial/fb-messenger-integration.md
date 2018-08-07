@@ -11,11 +11,11 @@ In this tutorial, we will learn to connect our bot with Facebook Messenger which
 
 ## Create Conversation Bot
 
-Firstly, click “Create with This Template” and modify the bot name and adjusting your timezone.
+Firstly, click "Create with This Template" and modify the bot name and adjusting your timezone.
 
 ![fb-1](./images/fb-messenger-integration/fb-1.png)
 
-Afterwards, find a bot which has “weatherbotTesting” title and click to open the detail. Then, you have to create a deployment.
+Afterwards, find a bot which has "weatherbotTesting" title and click to open the detail. Then, you have to create a deployment.
 
 ![fb-2](./images/fb-messenger-integration/fb-2.png)
 
@@ -33,7 +33,7 @@ After you add an App ID to Facebook Developer Console account, you must add "Pro
 
 ![fb-5](./images/fb-messenger-integration/fb-5.png)
 
-For your bot installation, you must create a Facebook page located in the "Settings" section and the "Advance" sub-menu. Follow the instructions from Facebook to create a Facebook page.
+For your bot installation, you must create a Facebook page located in the "Settings" section and the "Advanced" sub-menu. Follow the instructions from Facebook to create a Facebook page.
 
 ![fb-6](./images/fb-messenger-integration/fb-6.png)
 
@@ -41,7 +41,7 @@ First of all, you must select "Page Category". Choose a category from your Faceb
 
 ![fb-7](./images/fb-messenger-integration/fb-7.png)
 
-The first display when you succesfully created a page is a homepage from the Facebook page
+When you've created the page successfully you'll be redirected to that page.
 
 ![fb-8](./images/fb-messenger-integration/fb-8.png)
 
@@ -69,11 +69,11 @@ Once you created your Messenger Facebook channel, you still need a webhook link 
 
 ![fb-14](./images/fb-messenger-integration/fb-14.png)
 
-You will see a dialog box which we have to fill the "Callback URL" and the "Verify Token" fields.
+You will see a dialog box with Callback URL and Verify Token fields to fill.
 
 ![fb-5](./images/fb-messenger-integration/fb-15.png)
 
-You can enter the "Webhook" field from “Webhook” field in Channel Detail
+You can get the Webhook information from the Webhook field in Channel Detail.
 
 ![fb-16](./images/fb-messenger-integration/fb-16.png)
 
@@ -91,12 +91,12 @@ In order to test the direct conversation on Facebook Messenger, we have to confi
 
 ![fb-19](./images/fb-messenger-integration/fb-19.png)
 
-Choose “Send Message” in “Contact you” section.
+Choose "Send Message" in "Contact you" section.
 
 ![fb-20](./images/fb-messenger-integration/fb-20.png)
 
-Almost there! You are ready to test the bot. Go to home on your Facebook page and click “Send Message” button. You will be provided several options to continue, then click “Test button”. Try to chat “info cuaca” keyword to train the bot response.
+Almost there! You are ready to test the bot. Go to home on your Facebook page and click "Send Message" button. You will be provided several options to continue, then click "Test button". Try to chat "info cuaca" keyword to train the bot response.
 
 ![fb-21](./images/fb-messenger-integration/fb-21.png)
 
-Congratulation ! Your bot is working well and you may try it in Facebook Messenger platform, both mobile and website.
+Congratulations! Your bot is now connected to Facebook Messenger platform.
