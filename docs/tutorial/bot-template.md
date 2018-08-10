@@ -2,7 +2,7 @@
 id: bot-template-tutorial
 title: Bot Template Tutorial
 prev: nl-studio-tutorial
-next: faq
+next: fb-messenger-integration
 ---
 
 Broadly speaking, Kata Platform has 3 templates namely API bot, Button bot and Shopping Bot. We will explain them one by one starting from API Bot.
