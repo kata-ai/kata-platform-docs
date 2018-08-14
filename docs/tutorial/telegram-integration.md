@@ -1,6 +1,6 @@
 ---
-id: connecting-with-telegram
-title: Connecting with Telegram
+id: telegram-integration
+title: Integration with Telegram
 prev: fb-messenger-integration
 next: faq
 ---
