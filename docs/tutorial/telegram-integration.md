@@ -7,15 +7,15 @@ next: faq
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3NRZcyl7erM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Telegram as one of the social media that is currently becoming citizen choice, has become an option for a brand to engage the customer. Therefore, this tutorial featured how to connect our chatbot to Telegram. In this tutorial, we will use API Bot template which is a bot to inform weather in big cities such as Jakarta, Bandung and Surabaya.
+In this tutorial, we will use API Bot template to inform weather in big cities and deploy it to Telegram.
 
 ## Create Chatbot
 
-Firstly, go to bot studio in Kata Platform and click “Create with This Template” in API Bot card. Fill in all fields as below
+Firstly, go to bot studio in Kata Platform and click “Create with This Template” in API Bot card. Fill in all fields as follows:
 
 ![tel-1](./images/connecting-with-telegram/tel-1.png)
 
-Then, you have to test you chatbot by creating a deployment. Go to deployment menu in sidebar and click “Create Deployment”
+Then, you have to test you chatbot by creating a deployment. Go to deployment menu in sidebar and click “Create Deployment”.
 
 ![tel-2](./images/connecting-with-telegram/tel-2.png)
 
@@ -23,11 +23,11 @@ Then, you have to test you chatbot by creating a deployment. Go to deployment me
 
 ## Integration with Telegram
 
-You have to download telegram app in desktop (download link : https://desktop.telegram.org/) before integration process. Remember, you must have Telegram account to sign in. After you signed in to Telegram, search BotFather account to register your chatbot.
+You have to download telegram app in desktop (download link : https://desktop.telegram.org/) before integration process. Remember, you must have Telegram account to sign in. After you signed in to Telegram, register your chatbot with BotFather [https://telegram.me/BotFather](https://telegram.me/BotFather).
 
 ![tel-4](./images/connecting-with-telegram/tel-4.png)
 
-Then, type “/newbot” and BotFather will ask your chatbot name. Feel free to use any name you like.
+Type in “/newbot” and BotFather will ask your chatbot name.
 
 ![tel-5](./images/connecting-with-telegram/tel-5.png)
 
@@ -35,44 +35,42 @@ Lastly, you will ask to enter your chatbot username.
 
 ![tel-6](./images/connecting-with-telegram/tel-6.png)
 
-Final step is you will see a bot token to access HTTP API
+When you're done, BotFather will give you the HTTP API access token.
 
 ![tel-7](./images/connecting-with-telegram/tel-7.png)
 
 ## Create Channel with Telegram
 
-In this step, you have to create channel in Kata Platform. Go to “Deployment” menu and click “View Channel”. Then, create a channel as below
+In Kata Platform, you can add Channels in a Deployment. Go to “Deployment” menu and click “View Channel”. Here you can add new Channel.
 
 ![tel-8](./images/connecting-with-telegram/tel-8.png)
 
-You have to enter Bot Token which generated from Telegram. Copy the bot token from BotFather window chat. The created channel can be seen as follows.
+On this step, you can paste the HTTP API access token given by BotFather in the previous step.
 
 ![tel-9](./images/connecting-with-telegram/tel-9.png)
 
-Click the eye icon to open generated webhook from Kata Platform. You may see a webhook URL. This URL shall be inserted later to Telegram.
+Click on the eye icon to open generated webhook on Kata Platform. Copy this Webhook URL for the next step.
 
 ![tel-10](./images/connecting-with-telegram/tel-10.png)
 
-Next, open a new tab and enter this URL.
+Open a new tab and enter this URL.
 
 ```
 https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
 ```
 
-Afterward, change “my_bot_token” into your own bot token. Also, change webhook URL from Kata Platform into the URL.
+Remember to change `"my_bot_token"` into your own bot token and the webhook URL from Kata Platform into the `"url_to_send_updates_to"`.
 
 ![tel-11](./images/connecting-with-telegram/tel-11.png)
 
-Click “Go” or press enter on keyboard. You may see successful message as follows.
+Click "Go" or press enter on keyboard. You may see successful message as follows.
 
 ![tel-12](./images/connecting-with-telegram/tel-12.png)
 
-You're all set ! Let's try our chatbot in Telegram by searching your bot username and start to chat
+You're all set! Let's try our chatbot in Telegram by searching your bot username.
 
-## Conversation Simulation to User
-
-Search your username and type “info cuaca” and continue to city name.
+Type “info cuaca” to your bot and continue to city name.
 
 ![tel-13](./images/connecting-with-telegram/tel-13.png)
 
-Congratulation! Your bot is well prepared and you may try it in Telegram desktop or mobile.
+Congratulations! Your bot is well prepared and you may try it in Telegram desktop or mobile.
