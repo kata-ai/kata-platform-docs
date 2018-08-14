@@ -11,11 +11,11 @@ In this tutorial, we will use API Bot template to inform weather in big cities a
 
 ## Create Chatbot
 
-Firstly, go to bot studio in Kata Platform and click “Create with This Template” in API Bot card. Fill in all fields as follows:
+Firstly, go to bot studio in Kata Platform and click "Create with This Template" in API Bot card. Fill in all fields as follows:
 
 ![tel-1](./images/connecting-with-telegram/tel-1.png)
 
-Then, you have to test you chatbot by creating a deployment. Go to deployment menu in sidebar and click “Create Deployment”.
+Then, you have to test you chatbot by creating a deployment. Go to deployment menu in sidebar and click "Create Deployment".
 
 ![tel-2](./images/connecting-with-telegram/tel-2.png)
 
@@ -27,7 +27,7 @@ You have to download telegram app in desktop (download link : https://desktop.te
 
 ![tel-4](./images/connecting-with-telegram/tel-4.png)
 
-Type in “/newbot” and BotFather will ask your chatbot name.
+Type in `/newbot` and BotFather will ask your chatbot name.
 
 ![tel-5](./images/connecting-with-telegram/tel-5.png)
 
@@ -41,7 +41,7 @@ When you're done, BotFather will give you the HTTP API access token.
 
 ## Create Channel with Telegram
 
-In Kata Platform, you can add Channels in a Deployment. Go to “Deployment” menu and click “View Channel”. Here you can add new Channel.
+In Kata Platform, you can add Channels in a Deployment. Go to "Deployment" menu and click "View Channel". Here you can add new Channel.
 
 ![tel-8](./images/connecting-with-telegram/tel-8.png)
 
@@ -59,7 +59,7 @@ Open a new tab and enter this URL.
 https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
 ```
 
-Remember to change `"my_bot_token"` into your own bot token and the webhook URL from Kata Platform into the `"url_to_send_updates_to"`.
+Remember to change `my_bot_token` into your own bot token and the webhook URL from Kata Platform into the `url_to_send_updates_to`.
 
 ![tel-11](./images/connecting-with-telegram/tel-11.png)
 
@@ -69,7 +69,7 @@ Click "Go" or press enter on keyboard. You may see successful message as follows
 
 You're all set! Let's try our chatbot in Telegram by searching your bot username.
 
-Type “info cuaca” to your bot and continue to city name.
+Type "info cuaca" to your bot and continue to city name.
 
 ![tel-13](./images/connecting-with-telegram/tel-13.png)
 
