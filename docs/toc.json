@@ -131,6 +131,11 @@
         "id": "fb-messenger-integration",
         "slug": "/tutorial/fb-messenger-integration/",
         "title": "Integration with FB Messenger"
+      },
+      {
+        "id": "connecting-with-telegram",
+        "slug": "/tutorial/connecting-with-telegram/",
+        "title": "Connecting with Telegram"
       }
     ]
   },
