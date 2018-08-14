@@ -5,6 +5,8 @@ prev: fb-messenger-integration
 next: faq
 ---
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3NRZcyl7erM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Telegram as one of the social media that is currently becoming citizen choice, has become an option for a brand to engage the customer. Therefore, this tutorial featured how to connect our chatbot to Telegram. In this tutorial, we will use API Bot template which is a bot to inform weather in big cities such as Jakarta, Bandung and Surabaya.
 
 ## Create Chatbot
