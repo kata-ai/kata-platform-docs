@@ -2,7 +2,7 @@
 id: fb-messenger-integration
 title: Integration with FB Messenger
 prev: bot-template-tutorial
-next: faq
+next: connecting-with-telegram
 ---
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/57JO8sPdlLQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
