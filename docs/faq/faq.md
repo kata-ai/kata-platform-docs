@@ -88,7 +88,7 @@ config:
 For changing loading message info, create a PUT request to:
 
 ```
-https://<zaunUrl>/bots/<botId>/deployments/<deploymentName>/channels/<channelId>
+https://&lt;zaunUrl&gt;/bots/&lt;botId&gt;/deployments/&lt;deploymentName&gt;/channels/&lt;channelId&gt;
 ```
 
 Next, put request header as follows:
