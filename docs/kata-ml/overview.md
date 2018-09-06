@@ -1,7 +1,6 @@
 ---
 id: kata-ml-overview
 title: Kata ML Spec
-prev: action
 next: kata-ml-flow
 ---
 

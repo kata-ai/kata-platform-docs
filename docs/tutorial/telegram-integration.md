@@ -2,7 +2,6 @@
 id: telegram-integration
 title: Integration with Telegram
 prev: fb-messenger-integration
-next: faq
 ---
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3NRZcyl7erM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

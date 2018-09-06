@@ -1,7 +1,6 @@
 ---
 id: bot
 title: Bot
-prev: getting-started
 next: deployment
 ---
 
