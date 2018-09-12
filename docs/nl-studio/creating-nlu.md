@@ -79,9 +79,9 @@ In addition to dividing an entity trait into several other entities, it may also
 
 Given training data:
 
-- Where is the closest place to extend my driver license? (`#ask_nearby_simstnk`)
-- Where is the closest place to extend my car license? (`#ask_nearby_simstnk`)
-- Where is the nearest police station? (`#ask_nearby_police`)
+- dimana tempat perpanjang sim paling dekat? (`#ask_nearby_simstnk`)
+- dimana tempat perpanjang stnk sekitar sini? (`#ask_nearby_simstnk`)
+- dimana kantor polisi terdekat? (`#ask_nearby_police`)
 
 ```yaml
 name: nl-v1
@@ -127,9 +127,9 @@ However, this profile intent characteristics shall be watched out because it can
 
 Given training data:
 
-- What is the recipe for making bbq pizza? (`#ask_bbq_recipe`)
-- How do you make pepperoni pizza? (`#ask_pepperoni_recipe`)
-- Tell me, your pizza aas's recipe (`#ask_aas_recipe`)
+- resep untuk membuat pizza bbq apa ya? (`#ask_bbq_recipe`)
+- pizza pepperoni gimana cara buatnya ya? (`#ask_pepperoni_recipe`)
+- kasih tau dong resep pizza aas buatanmu (`#ask_aas_recipe`)
 
 ```yaml
 name: nl-v1
@@ -170,7 +170,7 @@ entities
             - ask_aas_recipe
 ```
 
-`intent` entity for `nl-v1` can distinguish the 3 labels, but `nl-v2` cannot differentiate that because the words `bbq`, `pepperoni`, and `aas` are considered in similar group, namely pizza. If you are given input "what is a recipe for bbq?" Then the probability for three labels are same (based on the training data above).
+'Intent' entity for nl-v1 can distinguish the 3 labels, but nl-v2 cannot differentiate that because the words 'bbq', 'pepperoni', and 'aas' are considered in similar group, namely pizza. If you are given input "resep buat bbq apa ya?" Then the probability for three labels are same (based on the training data above).
 
 If you still wish to use dictionary to ease the training and classification process, it can be done in the following way.
 

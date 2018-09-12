@@ -78,7 +78,7 @@ Following is a description and example of using some common words tagger models.
   - Example: `(021) 712391`, `+62872284752`, `1500-677`
 - **pos**
   - Entity Tagger to find POS (Part-of-Speech) Tags for each word. Fill labels with defined tags (Ex: Noun, Verb, Adj, Adv, etc). Tag each word in training data with correct tag to produce a good model.
-  - Example: Ibu`(label: Noun)`, `pergi (label: Verb)`, `ke (label: Prep)`, `pasar (label: Noun)`
+  - Example: `Ibu (label: Noun)`, `pergi (label: Verb)`, `ke (label: Prep)`, `pasar (label: Noun)`
 - **preps**
   - Entity Tagger to find words with Indonesian prepositions ("ke", "dari", "di") which around the word. Example implementation is useful to distinguish locations which are origin and destination.
   - Implementation can be creating 1 entity with label [origin, destination] or making 2 entities where first entity to find 'origin' and the second entity to find 'destination'.

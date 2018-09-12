@@ -23,7 +23,7 @@ Following example is an extraction process from human language to parameters of 
 ```
 # Input
 
-    My name is Joko, I live in Jakarta.
+    Nama saya Joko, saya tinggal di Jakarta.
 
 # Output
 
