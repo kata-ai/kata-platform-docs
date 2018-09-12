@@ -116,18 +116,18 @@ Here are some profiles (models) that can be used for text classification tasks.
 - **topic**
   - Classifier to find out topic from a sentence. Example:
     - Categorize complaint reports based on problem type
-      - flooding! we need a rubber boat → topic: flood
-      - the water level has reached 40 cm → topic: flood
-      - there was a collision between Avanza and Xenia at toll entrance → topic: accident
-      - found heroin at my neighbor's house → topic: drugs
-      - the weight of marijuana and methamphetamine reaches 10 grams → topic: drugs
+      - banjir nih di kemang, butuh perahu karet → **topic: flood**
+      - ketinggian air sudah mencapai 40 cm → **topic: flood**
+      - ada tabrakan antara avanza dan xenia di pintu masuk tol → **topic: accident**
+      - ditemukan heroin di rumah tetangga saya → **topic: drugs**
+      - berat ganja dan sabu2 mencapai 10 gram → **topic: drugs**
     - Categorize products types from e-commerce reviews
-      - My child likes to read books on his work → topic: book
-      - This author work have been printed and translated into many languages → topic: book
-      - How come my laptop has only been used for a while, then the keyboard has been dislodged? → topic: computer
-      - the mouse runs well, the design is also very good → topic: computer
-      - I really like this cookware because it's good and not easy to get dirty → topic: kitchenware
-      - I have not feared of stove exploded since using pink LPG gas → topic: kitchenware
+      - Anak saya suka membaca buku karyanya → **topic: book**
+      - Karya-karya penulis ini sudah dicetak dan diterjemahkan ke dalam banyak bahasa → **topic: book**
+      - Kok laptop saya baru dipakai sebentar keyboardnya sudah copot2 ya? → **topic: computer**
+      - mouse nya berjalan dengan baik, desainnya juga oke banget → **topic: computer**
+      - saya sangat suka peralatan masak ini karena bagus dan tidak mudah kotor → **topic: kitchenware**
+      - udah gak takut kompor meledak sejak pakai tabung gas lpg yang pink → **topic: kitchenware**
 
 ## Root
 
