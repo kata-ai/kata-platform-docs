@@ -2,7 +2,6 @@
 id: action
 title: Action
 prev: state
-next: kata-ml-overview
 ---
 
 Action is the part which triggers responses to the user. Action can be attached to a certain state, so that it will be triggered when the flow reaches certain state.
