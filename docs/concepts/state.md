@@ -7,11 +7,11 @@ next: action
 
 State represents the stage of the conversation. Imagine you are a Customer Service agent, you will provided with an SOP that requires you to respond appropriately in every state / stage of conversation. The state concept is basically a finite state machine with initial and end states.
 
-![Figure 1](./images/state/figure-1.png)
+![Figure 1](/images/concepts/state/figure-1.png)
 
 We have discussed the three conversation phase: intent recognition, state mapping and action selection. In the state mapping phase, the parsed message together with current state, context and data will be mapped into a new state, updated context, and data.
 
-![Figure 2](./images/state/figure-2.png)
+![Figure 2](/images/concepts/state/figure-2.png)
 
 A state can have an action or multiple actions attached that is being triggered at the end of state mapping lifecyle.
 
@@ -32,7 +32,7 @@ The lifecycle of a state mapping process is following:
 
 Every state mapping process must start from a state. If a flow is newly created, then it will start from the initial state. A flow can only have one initial state. There is two styles of initial state: the so called pitcher init or guardian init.
 
-![Figure 3](./images/state/figure-3.png)
+![Figure 3](/images/concepts/state/figure-3.png)
 
 The pitcher init is an initial state that only used to start a flow and will never be revisited again. This style of init doesn't need to have an action attached, since it will never be the destination state.
 

@@ -7,7 +7,7 @@ next: intent
 
 Flow is the main building block of a Bot. A flow corresponds to a discourse in a conversation.
 
-![Figure 1](./images/flow/figure-1.png)
+![Figure 1](/images/concepts/flow/figure-1.png)
 
 A flow consists of intents, states, and actions. The processing of user message is divided into three pipelined steps:
 
@@ -15,17 +15,17 @@ A flow consists of intents, states, and actions. The processing of user message 
 2.  State Mapping Determining the state of the bot and the context variables
 3.  Chosing Action Generate response by executing defined action
 
-![Figure 2](./images/flow/figure-2.png)
+![Figure 2](/images/concepts/flow/figure-2.png)
 
 You can think the Intent - State - Action separation as an MVC model. Where the intents are the controller, the states as the model and the actions as the views.
 
-![Figure 3](./images/flow/figure-3.png)
+![Figure 3](/images/concepts/flow/figure-3.png)
 
 ## Flow Stack
 
 A bot can have multiple flows and those can be active at the same time. Those information is stored in the flow stack. The bot also store which flow is the current flow.
 
-![Figure 4](./images/flow/figure-4.png)
+![Figure 4](/images/concepts/flow/figure-4.png)
 
 Whenever a flow is opened, it will become the current flow. This will push the previously current flow to the stack. Those flows in the stack are on hold.
 
