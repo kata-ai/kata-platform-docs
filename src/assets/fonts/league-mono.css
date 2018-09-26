@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-Thin.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 100;
 }
@@ -8,6 +9,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-UltraLight.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 200;
 }
@@ -15,6 +17,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-Light.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 300;
 }
@@ -22,6 +25,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-Regular.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
 }
@@ -29,6 +33,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-Medium.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 500;
 }
@@ -36,6 +41,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-SemiBold.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 600;
 }
@@ -43,6 +49,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-Bold.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 700;
 }
@@ -50,6 +57,7 @@
 @font-face {
   font-family: 'League Mono';
   src: url('./files/LeagueMono-ExtraBold.otf');
+  font-display: swap;
   font-style: normal;
   font-weight: 900;
 }
