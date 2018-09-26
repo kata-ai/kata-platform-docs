@@ -27,7 +27,7 @@ Intent can be defined as following:
 
 ```yaml
 intents:
-    <name>: <Intent>
+  <name>: <Intent>
 ```
 
 The intent description contains following fields:
@@ -78,21 +78,21 @@ Example:
 
 ```yaml
 classifier:
-    nlu: topicClassifier
-    match: food
-    options:
-        lowerCase: true
-        threshold: 0.8
+  nlu: topicClassifier
+  match: food
+  options:
+    lowerCase: true
+    threshold: 0.8
 ```
 
 Example Multiple Classifiers:
 
 ```yaml
 classifier:
-    - nlu: topicClassifier
-      match: food
-    - nlu: keywordClassifier
-      match: food
+  - nlu: topicClassifier
+    match: food
+  - nlu: keywordClassifier
+    match: food
 ```
 
 Example mapping label using dict:
@@ -120,29 +120,29 @@ Example:
 
 ```yaml
 attributes:
-    city:
-        nlu: genericNER
-        path: LOCATION
-        options:
-            threshold: 0.6
-        process:
-            - filterCity
-            - capitalize
+  city:
+    nlu: genericNER
+    path: LOCATION
+    options:
+      threshold: 0.6
+    process:
+      - filterCity
+      - capitalize
 ```
 
 Example normalizing using dict:
 
 ```yaml
 attributes:
-    city:
-        nlu: genericNER
-        path: location
-        options:
-            threshold: 0.6
-        dict:
-            jakarta: [jkt, jekardah, jakarta]
-            bandung: [bdg, bandung]
-            default: invalid
+  city:
+    nlu: genericNER
+    path: location
+    options:
+      threshold: 0.6
+    dict:
+      jakarta: [jkt, jekardah, jakarta]
+      bandung: [bdg, bandung]
+      default: invalid
 ```
 
 ## States
@@ -151,7 +151,7 @@ States can be defined as following:
 
 ```yaml
 states:
-    <name>: <State>
+  <name>: <State>
 ```
 
 The state description contains following fields:
@@ -194,8 +194,8 @@ Example:
 
 ```yaml
 enter:
-    data.name: attributes.name
-    context.count: (context.count || 0)++
+  data.name: attributes.name
+  context.count: (context.count || 0)++
 ```
 
 Example using method:
@@ -208,10 +208,10 @@ method definition:
 
 ```yaml
 methods:
-    someMapping(ctx): > # {intent, attributes, content, payload, data, context}
-        ctx.data.name = ctx.attributes.name;
-        ctx.context.count++;
-        return ctx;
+  someMapping(ctx): > # {intent, attributes, content, payload, data, context}
+    ctx.data.name = ctx.attributes.name;
+    ctx.context.count++;
+    return ctx;
 ```
 
 ### State Actions
@@ -226,23 +226,23 @@ Example:
 
 ```yaml
 action:
-    name: reply
-    options:
-        text: "hi!"
+  name: reply
+  options:
+    text: 'hi!'
 ```
 
 Example multiple actions:
 
 ```yaml
 action:
-    - name: reply
-      condition: context.mood = 'good'
-      options:
-        text: "hi $(data.name)!"
-    - name: reply
-      condition: context.mood = 'bad'
-      options:
-        text: "apaan sih kamu!"
+  - name: reply
+    condition: context.mood = 'good'
+    options:
+      text: 'hi $(data.name)!'
+  - name: reply
+    condition: context.mood = 'bad'
+    options:
+      text: 'apaan sih kamu!'
 ```
 
 You can simplify state actions (if you only have 1 action in some states) :
@@ -257,7 +257,7 @@ Transition define condition that leads to moving from one state to the other sta
 
 ```yaml
 transitions:
-    <destination>: <Transition>
+  <destination>: <Transition>
 ```
 
 Field definition:
@@ -274,8 +274,8 @@ transitions:
   askDob:
     condition: "intent == 'yes' && !context.personGender && context.verifyGender"
     mapping:
-      context.personGender: "context.verifyGender"
-      context.verifyGender: "null"
+      context.personGender: 'context.verifyGender'
+      context.verifyGender: 'null'
 ```
 
 You can simplify transitions definition :
@@ -290,7 +290,7 @@ transitions
 Normally it is tedious if we have to define a transition to a state that is available in every state. e.g. Cancel state. To mitigate this we can define a floating transition. The system will automatically attach this transition in every state.
 
 ```yaml
-float : <Transition>
+float: <Transition>
 ```
 
 ### Events
@@ -314,13 +314,13 @@ Example:
 
 ```yaml
 states:
-    stateA:
-        enter:
-            context.stateACount: (context.stateACount || 0)++
-        transit:
-            context.name: attributes.name || null
-        exit:
-            context.stateA.to: context.$to
+  stateA:
+    enter:
+      context.stateACount: (context.stateACount || 0)++
+    transit:
+      context.name: attributes.name || null
+    exit:
+      context.stateA.to: context.$to
 ```
 
 ## Actions
@@ -329,7 +329,7 @@ Actions can be defined as following:
 
 ```yaml
 actions:
-    <name>: <Action>
+  <name>: <Action>
 ```
 
 Following fields are available:
@@ -343,10 +343,10 @@ Example:
 
 ```yaml
 actions:
-    askName:
-        type: reply
-        options:
-            text: "nama kamu siapa?"
+  askName:
+    type: reply
+    options:
+      text: 'nama kamu siapa?'
 ```
 
 Available action types are described in **Action Types**.
@@ -367,7 +367,7 @@ this reenter need to be catched by the previous flow that is open:
 
 ```yaml
 intents:
-    reenter:
-        type: command
-        condition: content == "reenter"
+  reenter:
+    type: command
+    condition: content == "reenter"
 ```

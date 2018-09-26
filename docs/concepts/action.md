@@ -51,15 +51,15 @@ states:
     action:
       - name: recordOrder
         condition: "intent == 'addDetails' &&
-                    (attributes.pizzaType || attributes.pizzaSize || attributes.pizzaCrust || attributes.pizzaQuantity)"
+          (attributes.pizzaType || attributes.pizzaSize || attributes.pizzaCrust || attributes.pizzaQuantity)"
       - name: askPizzaType
-        condition: "!context.type"
+        condition: '!context.type'
       - name: askPizzaCrust
-        condition: "context.type &&!context.crust"
+        condition: 'context.type &&!context.crust'
       - name: askPizzaSize
-        condition: "context.type &&context.crust &&!context.size"
+        condition: 'context.type &&context.crust &&!context.size'
       - name: askPizzaQuantity
-        condition: "context.type &&context.crust &&context.size &&!context.quantity"
+        condition: 'context.type &&context.crust &&context.size &&!context.quantity'
 ```
 
 ## Command

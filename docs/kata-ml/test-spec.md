@@ -46,16 +46,16 @@ schema: kata.ai/schema/kata-ml/1.0/test/intents
 flow: welcome
 desc: Welcome flow intent test
 test:
-    "should select language: bahasa indonesia":
-        context: # write your context here
-        data: # write your data here
-        message:
-            type: text
-            content: pilih bahasa indonesia
-        expect:
-            intent: selectLanguage
-            attributes:
-                language: bahasa indonesia
+  'should select language: bahasa indonesia':
+    context: # write your context here
+    data: # write your data here
+    message:
+      type: text
+      content: pilih bahasa indonesia
+    expect:
+      intent: selectLanguage
+      attributes:
+        language: bahasa indonesia
 ```
 
 ## States Spec
@@ -102,18 +102,18 @@ schema: kata.ai/schema/kata-ml/1.0/test/states
 desc: Welcome State Test
 flow: welcome
 test:
-    "should go to main menu after selecting english":
-        state: langSel
-        intent: selectLanguage
-        attributes:
-            language: english
-        message:
-            type: text
-            content: "english please"
-        expect:
-            data:
-                lang: en
-            state: mainMenu
+  'should go to main menu after selecting english':
+    state: langSel
+    intent: selectLanguage
+    attributes:
+      language: english
+    message:
+      type: text
+      content: 'english please'
+    expect:
+      data:
+        lang: en
+      state: mainMenu
 ```
 
 ## Actions Spec
@@ -159,16 +159,16 @@ schema: kata.ai/schema/kata-ml/1.0/test/actions
 desc: Welcome State Test
 flow: welcome
 test:
-    "should return mainMenu":
-        state: mainMenu
-        intent: selectLanguage
-        attributes:
-            language: english
-        message:
-            type: text
-            content: "english please"
-        expect:
-            - action: sendMainMenu
+  'should return mainMenu':
+    state: mainMenu
+    intent: selectLanguage
+    attributes:
+      language: english
+    message:
+      type: text
+      content: 'english please'
+    expect:
+      - action: sendMainMenu
 ```
 
 ## Flow Spec
@@ -220,11 +220,11 @@ state: initialState
 context: # initial context
 data: # initial data
 test:
-    "should select langauge":
-        message:
-            type: text
-            content: "english please"
-        expect:
-            state: mainMenu
-            intent: selectLanguage
+  'should select langauge':
+    message:
+      type: text
+      content: 'english please'
+    expect:
+      state: mainMenu
+      intent: selectLanguage
 ```

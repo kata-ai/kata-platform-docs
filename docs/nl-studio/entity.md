@@ -1,6 +1,6 @@
 ---
 id: nl-studio-entity
-title: "Entity"
+title: 'Entity'
 prev: nl-studio-overview
 next: nl-studio-creating-nlu
 ---
@@ -141,18 +141,18 @@ Implementation example:
 
 ```yaml
 entities:
-    person_name:
-        type: phrase
-        profile: ner
-        root: kata:ner/ner:person
-    origin:
-        type: phrase
-        profile: preps
-        root: kata:ner/ner:location
-    destination:
-        type: phrase
-        profile: preps
-        root: kata:ner/ner:location
+  person_name:
+    type: phrase
+    profile: ner
+    root: kata:ner/ner:person
+  origin:
+    type: phrase
+    profile: preps
+    root: kata:ner/ner:location
+  destination:
+    type: phrase
+    profile: preps
+    root: kata:ner/ner:location
 ```
 
 Using the structure above, you can discover words which is 'origin' or 'destination'. Words that are origin and destination are assumed to be location name. Another implementation if you don't want to use entity from Kata Team is by creating your own entity 'location' and make the entity 'origin' and 'destination' root to your own entity 'location'.
@@ -165,35 +165,35 @@ Implementation example:
 
 ```yaml
 entities:
-    greeting_type:
-        type: trait
-        profile: default
-        root: kata:qisg/qisg:greetings
-        labels:
-            - morning
-            - afternoon
-            - evening
-            - night
-            - hi
-            - bye
-    question_type:
-        type: trait
-        profile: default
-        root: kata:qisg/qisg:questions
-        labels:
-            - whatIs
-            - howTo
-            - where
-            - when
-    intent:
-        type: phrase
-        profile: default
-        root: kata:qisg/qisg
-        labels:
-            - greet
-            - ask_receipt
-            - order_pizza
-            - thank_you
+  greeting_type:
+    type: trait
+    profile: default
+    root: kata:qisg/qisg:greetings
+    labels:
+      - morning
+      - afternoon
+      - evening
+      - night
+      - hi
+      - bye
+  question_type:
+    type: trait
+    profile: default
+    root: kata:qisg/qisg:questions
+    labels:
+      - whatIs
+      - howTo
+      - where
+      - when
+  intent:
+    type: phrase
+    profile: default
+    root: kata:qisg/qisg
+    labels:
+      - greet
+      - ask_receipt
+      - order_pizza
+      - thank_you
 ```
 
 From above structure, it is assumed that 'question_type' entity and 'greeting_type' are each specific forms from 'qisg' entity with 'question' label and 'greeting'. As for 'intent' entity which have more general labels, use root 'qisg' to help classification process without specifying what labels affect.

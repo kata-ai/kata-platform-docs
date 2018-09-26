@@ -89,7 +89,7 @@ Storing variable example:
 states:
   init:
     transit:
-      context.isActive: "true"
+      context.isActive: 'true'
 ```
 
 Using variable in intent:
@@ -97,7 +97,7 @@ Using variable in intent:
 ```yaml
 intents:
   continueIntent:
-    condition: "context.isActive == true"
+    condition: 'context.isActive == true'
 ```
 
 Using variable in transition:
@@ -107,7 +107,7 @@ states:
   init:
     transitions:
       done:
-        condition: "context.hasName && context.hasPhone"
+        condition: 'context.hasName && context.hasPhone'
 ```
 
 ## Meta Context

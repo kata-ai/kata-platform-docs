@@ -22,7 +22,7 @@ Example:
 
 ```yaml
 method:
-    otherMethod(x):
-        code: $include(./some/code.js)
-        entry: module.exports
+  otherMethod(x):
+    code: $include(./some/code.js)
+    entry: module.exports
 ```

@@ -17,7 +17,7 @@
     "dev": "gatsby develop",
     "format": "npm run format:src && npm run format:docs",
     "format:src": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "format:docs": "prettier --write \"docs/**/*.{md}\"",
+    "format:docs": "prettier --write \"docs/**/*.md\"",
     "lint": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",
     "start": "serve -s public",
     "test": "npm run type-check && npm run lint",

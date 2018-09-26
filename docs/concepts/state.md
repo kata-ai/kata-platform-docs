@@ -99,8 +99,8 @@ Mapping is a process of updating the context and data. The mapping syntax is a k
 
 ```yaml
 myState:
-    transit:
-        context.person.name: attributes.name || context.person.name
+  transit:
+    context.person.name: attributes.name || context.person.name
 ```
 
 You can use valid javascript expression in the mapping. You can also define nested fields in the key part. There are multiple lifecycle events where you can put your mappings:
