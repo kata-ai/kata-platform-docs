@@ -2,7 +2,6 @@
 id: getting-started
 title: Getting Started
 prev: about
-next: bot
 ---
 
 ## Creating an Account
@@ -126,7 +125,7 @@ $ kata push
 CREATED BOT SUCCESSFULLY
 ```
 
-![figure-1](./images/getting-started/figure-1.png)
+![figure-1](/images/overview/getting-started/figure-1.png)
 
 Above picture describe the states of the bot. The bot begins in the init state and will immediately move to either greet or other state, depending on the intent. As other and greet are both end state, the bot will close the flow afterwards and each new message will begin at the init state.
 
@@ -196,7 +195,7 @@ $ kata deploy dev
 
 Whereas dev is the deployment name. You can deploy to multiple deployment, each with their own channels.
 
-![figure-2](./images/getting-started/figure-2.png)
+![figure-2](/images/overview/getting-started/figure-2.png)
 
 This way you can manage e.g. separate development and production development, each with specified version channels.
 
@@ -234,4 +233,4 @@ Follow Line official documentation on how to create an account for chatbot throu
 
 This is how it looks like when you setup the channel parameters correctly in Line:
 
-![figure-3](./images/getting-started/figure-3.png)
+![figure-3](/images/overview/getting-started/figure-3.png)

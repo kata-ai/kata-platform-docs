@@ -110,6 +110,31 @@
     ]
   },
   {
+    "title": "NL Studio",
+    "items": [
+      {
+        "id": "nl-studio-overview",
+        "slug": "/nl-studio/overview/",
+        "title": "Overview"
+      },
+      {
+        "id": "nl-studio-entity",
+        "slug": "/nl-studio/entity/",
+        "title": "Entity"
+      },
+      {
+        "id": "nl-studio-creating-nlu",
+        "slug": "/nl-studio/creating-nlu/",
+        "title": "Creating NLU"
+      },
+      {
+        "id": "nl-studio-training-guideline",
+        "slug": "/nl-studio/training-guideline/",
+        "title": "Training Guideline"
+      }
+    ]
+  },
+  {
     "title": "Tutorial",
     "items": [
       {

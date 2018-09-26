@@ -2,7 +2,6 @@
 id: action
 title: Action
 prev: state
-next: kata-ml-overview
 ---
 
 Action is the part which triggers responses to the user. Action can be attached to a certain state, so that it will be triggered when the flow reaches certain state.
@@ -67,7 +66,7 @@ states:
 
 You can specify a command action that will trigger re-converse. A command action will not be returned to the user but will be used as the next input of the conversation.
 
-![Figure 1](./images/action/figure-1.png)
+![Figure 1](/images/concepts/action/figure-1.png)
 
 Example:
 

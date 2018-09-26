@@ -7,7 +7,7 @@ next: session
 
 A conversation is an interaction between user and bot, it consists of one incoming message and one or more responses. The system will never send a message to user by itself. Every message coming to the user is triggered by an incoming message. Incoming message can either be triggered a user message, or by systems such as scheduler / broadcaster.
 
-![Figure 1](./images/conversation/figure-1.png)
+![Figure 1](/images/concepts/conversation/figure-1.png)
 
 ## Process Workflow
 
@@ -46,4 +46,4 @@ A message consists of following definitions:
 
 Command allow you to trigger multiple converse cycles. This is useful in many use-cases, such as moving to multiple states for more fluid conversation.
 
-![Figure 2](./images/conversation/figure-2.png)
+![Figure 2](/images/concepts/conversation/figure-2.png)

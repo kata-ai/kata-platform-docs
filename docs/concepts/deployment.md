@@ -7,7 +7,7 @@ next: conversation
 
 A deployment is essentially a pairing between a specific version of a bot to a set of channels. The idea is to make it simple to have multiple deployments such as devel, staging and production.
 
-![Figure 1](./images/deployment/figure-1.png)
+![Figure 1](/images/concepts/deployment/figure-1.png)
 
 ## Channels
 

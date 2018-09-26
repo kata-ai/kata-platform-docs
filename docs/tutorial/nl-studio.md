@@ -19,7 +19,7 @@ Started to a few datasets, NLU studio possible to create NL Model and able to ad
 
 Following with previous `pizzaBot` tutorial, we must enter Kata Platform by entering username and password you previously had
 
-![nse-1](./images/nl-studio/nse-1.png)
+![nse-1](/images/tutorial/nl-studio/nse-1.png)
 
 Click "Login" to continue
 
@@ -27,53 +27,53 @@ Click "Login" to continue
 
 After you entered to Kata Platform, click NLU menu where located on left screen. Then, the menu will look like this
 
-![nse-2](./images/nl-studio/nse-2.png)
+![nse-2](/images/tutorial/nl-studio/nse-2.png)
 
 Then, click "+" button to create a new NLU and fill in as follow
 
-![nse-3](./images/nl-studio/nse-3.png)
+![nse-3](/images/tutorial/nl-studio/nse-3.png)
 
 ### Create an `intent` entity
 
 After you created a new NLU, you must enter the entity. The entity will help us in classifying every input from users. Click the "+" button to create an entity
 
-![nse-4](./images/nl-studio/nse-4.png)
+![nse-4](/images/tutorial/nl-studio/nse-4.png)
 
 First of all, create an entity that is an `intent` classification consisting of 4 `intents` (**order, askOptions, confirm, cancel**). You can customize the intent selection to match your needs. In this entity example we will create 4 `intent` first.
 
-![nse-5](./images/nl-studio/nse-5.png)
+![nse-5](/images/tutorial/nl-studio/nse-5.png)
 
 ### Create entity `type`
 
 In this entity `type`, we will create a NLU with dictionary type which will be limiting and handles pizza type selection. Add new entity and fill in the data as below
 
-![nse-6](./images/nl-studio/nse-6.png)
+![nse-6](/images/tutorial/nl-studio/nse-6.png)
 
 Then, continue filling the dictionary by adding other words
 
-![nse-7](./images/nl-studio/nse-7.png)
+![nse-7](/images/tutorial/nl-studio/nse-7.png)
 
 ### Create entity `size`
 
 Entity `size` serves to determine pizzas size which ordered by users. In this entity, we will use "Belongs to” which used to provide a marker which entity is under another entity. The entity`size` will be under entity `type`. How to use it will be shown in the picture below.
 
-![nse-8](./images/nl-studio/nse-8.png)
+![nse-8](/images/tutorial/nl-studio/nse-8.png)
 
 In dictionary section, enter a keyword that will be a prediction input from users
 
-![nse-9](./images/nl-studio/nse-9.png)
+![nse-9](/images/tutorial/nl-studio/nse-9.png)
 
 ### Create entity `crust`
 
 Next, we will create an entity named `crust` that works to find out crust type on pizza. It is under entity `type`. You can enter data according to image below:
 
-![nse-10](./images/nl-studio/nse-10.png)
+![nse-10](/images/tutorial/nl-studio/nse-10.png)
 
 ### Create entity `qty`
 
 In pizza bot which we created earlier, user must enter pizza number to be purchased using intent `regex`. Entity `qty` will be created using dictionary by entering numbers or keywords related to the number of pizzas ordered. Add entity to NLU dashboard, then fill in the data as below
 
-![nse-11](./images/nl-studio/nse-11.png)
+![nse-11](/images/tutorial/nl-studio/nse-11.png)
 
 You have completed intent creation, then let's try to do dataset training
 
@@ -81,41 +81,41 @@ You have completed intent creation, then let's try to do dataset training
 
 In order to data training, you must enter to "Training" menu located on the left side
 
-![nse-12](./images/nl-studio/nse-12.png)
+![nse-12](/images/tutorial/nl-studio/nse-12.png)
 
 You may enter the dataset to create a NL Model on training page. Enter a simple phrase like "want pizza" and press "enter" on the keyboard
 
-![nse-13](./images/nl-studio/nse-13.png)
+![nse-13](/images/tutorial/nl-studio/nse-13.png)
 
 Then, in this section you can do tagging and text classification. In entities option, select`intent: order`. Intent order is useful as a user initiation in ordering pizza.
 
-![nse-14](./images/nl-studio/nse-14.png)
+![nse-14](/images/tutorial/nl-studio/nse-14.png)
 
 Click "Train" to start training. You can also add a few sentences to train more data in making NL Model. You may follow the text below
 
-![nse-15](./images/nl-studio/nse-15.png)
+![nse-15](/images/tutorial/nl-studio/nse-15.png)
 
 We need to train a lot of data to increase complexity. In our next example, we will do partial tagging by entering text and doing text selection on the word we want to tag. The process of selecting text can be done by blocking one or more words at a time using a cursor.
 
 You can try as in the following picture. In the words "how much american all star", select only on the word "American all star"
 
-![nse-16](./images/nl-studio/nse-16.png)
+![nse-16](/images/tutorial/nl-studio/nse-16.png)
 
 Then, select entity `type` to classify as below.
 
-![nse-17](./images/nl-studio/nse-17.png)
+![nse-17](/images/tutorial/nl-studio/nse-17.png)
 
 We may include some keywords as attached to practice more, you can also enter a phrase "I want American all star pizza, two and bbq hand tossed one"
 
-![nse-18](./images/nl-studio/nse-18.png)
+![nse-18](/images/tutorial/nl-studio/nse-18.png)
 
 Then, we will try the next sentence.
 
-![nse-19](./images/nl-studio/nse-19.png)
+![nse-19](/images/tutorial/nl-studio/nse-19.png)
 
 To match with created intent, enter the parent of this entity by selecting "belongs to" button and selecting "Pepperoni" because the word "small" is a Pepperoni size reference. In "add trait" option, select `intent:order` to classify as an order
 
-![nse-20](./images/nl-studio/nse-20.png)
+![nse-20](/images/tutorial/nl-studio/nse-20.png)
 
 Similar to previous image, the words "two" and "medium" have different ownership. The word "two" owned by the "bbq" and "medium" owned by "pepperoni" pizza type. You can also enter other words. Do not forget to add `intent:order` for order sentence structure
 
@@ -123,11 +123,11 @@ Similar to previous image, the words "two" and "medium" have different ownership
 
 To test whether dataset is created right, you are able to do NLU testing as attached
 
-![nse-21](./images/nl-studio/nse-21.png)
+![nse-21](/images/tutorial/nl-studio/nse-21.png)
 
 Then, enter the word "i want two aas". You can see the results of previous training data as attached
 
-![nse-22](./images/nl-studio/nse-22.png)
+![nse-22](/images/tutorial/nl-studio/nse-22.png)
 
 Congratulations, you have completed how to create NL model using NL studio.
 
@@ -135,7 +135,7 @@ Congratulations, you have completed how to create NL model using NL studio.
 
 When performing NLU testing, sometimes the results displayed is not match with our expectations. As the example below (please note the results will differ on each NLStudio, depending on the training data).
 
-![nse-23](./images/nl-studio/nse-23.png)
+![nse-23](/images/tutorial/nl-studio/nse-23.png)
 
 In the picture above, the sentence has a prediction to order and must be included in `intent:order`. Therefore, we will improve the result from NLModel.
 
@@ -143,7 +143,7 @@ In the picture above, the sentence has a prediction to order and must be include
 
 First of all, you should be in the "Log" sub-menu of NLU.
 
-![nse-24](./images/nl-studio/nse-24.png)
+![nse-24](/images/tutorial/nl-studio/nse-24.png)
 
 On this page, you will see dataset when you do previous training.
 
@@ -151,20 +151,20 @@ On this page, you will see dataset when you do previous training.
 
 In the "do you sell american all star" message, we will adjust the dataset. Click on "add trait" and select `intent:order`.
 
-![nse-25](./images/nl-studio/nse-25.png)
+![nse-25](/images/tutorial/nl-studio/nse-25.png)
 
 Then it will look like as below
 
-![nse-26](./images/nl-studio/nse-26.png)
+![nse-26](/images/tutorial/nl-studio/nse-26.png)
 
 Click "Train" to train NLModel and you will receive a notice like below
 
-![nse-27](./images/nl-studio/nse-27.png)
+![nse-27](/images/tutorial/nl-studio/nse-27.png)
 
 ### Test NLU with data that has been fixed
 
 Then we will try to test the dataset after doing training above. Click "Test NLU" and enter a phrase "hi, do you sell aas".
 
-![nse-28](./images/nl-studio/nse-28.png)
+![nse-28](/images/tutorial/nl-studio/nse-28.png)
 
 Congratulations, now you have understood how to train NLModel with your dataset

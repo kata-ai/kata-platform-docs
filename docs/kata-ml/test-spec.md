@@ -2,7 +2,6 @@
 id: kata-ml-test-spec
 title: Test Spec
 prev: kata-ml-action-type
-next: bot-studio-tutorial
 ---
 
 Flows, intents, states and actions can be tested.

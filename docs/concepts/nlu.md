@@ -7,7 +7,7 @@ next: flow
 
 The Natural Language Understanding unit is an object that transform a text message into a structured object. To be able to support different understanding systems, such as Kata internal Verstand system or Wit.ai system, the NLU concept is designed to be high-level and flexible.
 
-![Figure 1](./images/nlu/figure-1.png)
+![Figure 1](/images/concepts/nlu/figure-1.png)
 
 We provide various kind of NLUs. For more information please refer to KataML Spec.
 
