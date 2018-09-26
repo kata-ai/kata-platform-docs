@@ -73,7 +73,7 @@ For example:
 
 ![faq-11](/images/faq/faq-11.png)
 
-![faq-12](./images/faq-12.png)
+![faq-12](/images/faq/faq-12.png)
 
 ## How to change `defaultErrorMessage` and loading message info?
 
