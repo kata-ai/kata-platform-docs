@@ -1,5 +1,5 @@
 import { createMediaMatcher } from 'react-media-match';
-import theme from 'styles/theme';
+import theme from '../styles/theme';
 
 const MediaQuery = createMediaMatcher({
   mobile: `(max-width: ${theme.breakpoints.md - 1}px)`,

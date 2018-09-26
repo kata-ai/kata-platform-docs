@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-import styled from 'utils/styled';
+import styled from '../utils/styled';
 import Container from './Container';
-import { MenuNode } from 'interfaces/nodes';
+import { MenuNode } from '../interfaces/nodes';
 import DocumentationNavMenus from './DocumentationNavMenus';
 import Logo from './Logo';
 import NavDrawerButton from './NavDrawerButton';
-import MediaQuery from 'utils/mediaQuery';
+import MediaQuery from '../utils/mediaQuery';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -149,8 +149,8 @@ class Header extends React.Component<HeaderProps> {
         <WrapperInner>
           <TitleInner>
             <TitleInnerContainer>
-              <HomepageLink to="/" href="/" onClick={onCloseNavMenu}>
-                <Logo src={require('assets/images/logo-platform.png')} alt="Kata Platform" />
+              <HomepageLink to="/" onClick={onCloseNavMenu}>
+                <Logo src={require('../assets/images/logo-platform.png')} alt="Kata Platform" />
               </HomepageLink>
               <MediaQuery.ServerRender predicted="desktop">
                 <MediaQuery.Matcher

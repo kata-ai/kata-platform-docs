@@ -62,60 +62,60 @@ version: 0.0.1
 
 # flow definitions
 flows:
-    # Hello Flow
-    hello:
-        # set flow as fallback flow, that means, in the case
-        # no flow is matched, it will go to this flow
-        # there shall be one flow defined as fallback flow
+  # Hello Flow
+  hello:
+    # set flow as fallback flow, that means, in the case
+    # no flow is matched, it will go to this flow
+    # there shall be one flow defined as fallback flow
+    fallback: true
+
+    # hello flow intents definition
+    intents:
+      # greet intent
+      greeting:
+        # initial means the intent can be matched from outside
+        # of the flow
+        initial: true
+        # will match if the text is 'hi'
+        condition: content == 'hi'
+      # fallback intent, will match if no other intent matches
+      fallback:
         fallback: true
 
-        # hello flow intents definition
-        intents:
-            # greet intent
-            greeting:
-                # initial means the intent can be matched from outside
-                # of the flow
-                initial: true
-                # will match if the text is 'hi'
-                condition: content == 'hi'
-            # fallback intent, will match if no other intent matches
-            fallback:
-                fallback: true
-
-        # hello flow states definition
-        states:
-            # initial state. Will start with this when bot enter this flow
-            init:
-                initial: true
-                # as initial flow it will immediately transit to
-                # other states
-                transitions:
-                    # from init to greet
-                    greet:
-                        # will do if intent is 'greet'
-                        condition: intent == "greeting"
-                    # from init to other
-                    other:
-                        # default transition
-                        # every state needs a default transition
-                        fallback: true
-            # greet state
-            greet:
-                # will close the flow when reached this state
-                end: true
-                # respond with a text 'hi!'
-                action:
-                    name: text
-                    options:
-                        text: hi!
-            other:
-                # will close the flow when reached this state
-                end: true
-                # respond with a text 'sorry!'
-                action:
-                    name: text
-                    options:
-                        text: sorry!
+    # hello flow states definition
+    states:
+      # initial state. Will start with this when bot enter this flow
+      init:
+        initial: true
+        # as initial flow it will immediately transit to
+        # other states
+        transitions:
+          # from init to greet
+          greet:
+            # will do if intent is 'greet'
+            condition: intent == "greeting"
+          # from init to other
+          other:
+            # default transition
+            # every state needs a default transition
+            fallback: true
+      # greet state
+      greet:
+        # will close the flow when reached this state
+        end: true
+        # respond with a text 'hi!'
+        action:
+          name: text
+          options:
+            text: hi!
+      other:
+        # will close the flow when reached this state
+        end: true
+        # respond with a text 'sorry!'
+        action:
+          name: text
+          options:
+            text: sorry!
 ```
 
 Now open terminal in that folder, and type:

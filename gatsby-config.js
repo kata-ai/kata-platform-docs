@@ -84,10 +84,14 @@ module.exports = {
         siteUrl: 'https://docs.kata.ai'
       }
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layouts/index.tsx`)
+      }
+    },
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-resolve-src',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',

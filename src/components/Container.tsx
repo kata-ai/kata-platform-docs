@@ -1,4 +1,4 @@
-import styled from 'utils/styled';
+import styled from '../utils/styled';
 
 const Container = styled('div')`
   position: relative;

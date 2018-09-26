@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'utils/styled';
-import { MenuNode } from 'interfaces/nodes';
+import styled from '../utils/styled';
+import { MenuNode } from '../interfaces/nodes';
 import NavigationMenu from './NavigationMenu';
-import { ToggleableProps } from 'interfaces/app';
+import { ToggleableProps } from '../interfaces/app';
 
 interface Props extends ToggleableProps {
   navigation?: Array<{ node: MenuNode }>;

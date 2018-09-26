@@ -1,6 +1,6 @@
 ---
 id: bot-template-tutorial-id
-title: "Bot Studio Tutorial: Bot Template (Bahasa Indonesia)"
+title: 'Bot Studio Tutorial: Bot Template (Bahasa Indonesia)'
 prev: bot-template-tutorial
 next: faq
 ---

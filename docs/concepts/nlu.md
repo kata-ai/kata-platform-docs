@@ -20,7 +20,7 @@ First we will use VerstandClassifier NLU to extract label and score of a text.
 ```yaml
 myNLU:
   type: verstandClassifier
-  options:
+  ? options
   model: someModelId
 ```
 
@@ -40,7 +40,7 @@ Now we can add process into myNLU
 myNLU:
   type: verstandClassifier
   options:
-      model: someModelId
+    model: someModelId
   process: hyphenate
 ```
 
@@ -51,11 +51,11 @@ You can specify a custom NLU using method:
 ```yaml
 nlus:
   customNLU:
-      type: method
-      method: myNLUMethod
-      options:
-          regex: "test (.*)"
-          index: 1
+    type: method
+    method: myNLUMethod
+    options:
+      regex: 'test (.*)'
+      index: 1
 ```
 
 ```yaml

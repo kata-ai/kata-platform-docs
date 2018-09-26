@@ -18,23 +18,23 @@ Example:
 
 ```yaml
 nlus:
-    genericNer:
-        type: verstandTagger
-        options:
-            model: <id>
+  genericNer:
+    type: verstandTagger
+    options:
+      model: <id>
 ```
 
 ## Keyword NLU
 
 ```yaml
 myNLU:
-    type: keyword
-    options:
-        case: boolean           # true for case sensitive
-        exact: boolean          # true to match only exact message
-        default: string         # default key if nothing match
-        keywords:               # <key> : [<match values>]
-            <key>: string[]
+  type: keyword
+  options:
+    case: boolean # true for case sensitive
+    exact: boolean # true to match only exact message
+    default: string # default key if nothing match
+    keywords: # <key> : [<match values>]
+      <key>: string[]
 ```
 
 Output:
@@ -47,120 +47,120 @@ Example:
 
 ```yaml
 options:
-    keywords:
-        "American Thin Crust":
-            - thin crust
-            - american thin crust
-            - american
-        "Hawaiian":
-            - hawai
-            - hawaiian
+  keywords:
+    'American Thin Crust':
+      - thin crust
+      - american thin crust
+      - american
+    'Hawaiian':
+      - hawai
+      - hawaiian
 ```
 
 ## Regex NLU
 
 ```yaml
 myRegex:
-    type: regex
-    options:
-        regex: <regex as string>
-        index: number # optional
+  type: regex
+  options:
+    regex: <regex as string>
+    index: number # optional
 ```
 
 or
 
 ```yaml
 myRegex:
-    type: regex
-    options:
-        regex: <regex as string>
-        index:
-            <key>: number
+  type: regex
+  options:
+    regex: <regex as string>
+    index:
+      <key>: number
 ```
 
 or
 
 ```yaml
 myRegex:
-    type: regex
-    options:
-        regex:
-            <key>: <regex as string>
+  type: regex
+  options:
+    regex:
+      <key>: <regex as string>
 ```
 
 Example with index:
 
 ```yaml
 nlus:
-    nameNLU:
-        type: regex
-        options:
-            regex: "nama saya (.+)"
-            index: 1
+  nameNLU:
+    type: regex
+    options:
+      regex: 'nama saya (.+)'
+      index: 1
 
 ## usage in intent
 intents:
-    giveName:
-        attributes:
-            name:
-                nlu: nameNLU
+  giveName:
+    attributes:
+      name:
+        nlu: nameNLU
 ```
 
 Example with multiple index:
 
 ```yaml
 nlus:
-    nameNLU:
-        type: regex
-        options:
-            regex: "nama (saya|kamu) (.+)"
-            index:
-                who: 1
-                name: 2
+  nameNLU:
+    type: regex
+    options:
+      regex: 'nama (saya|kamu) (.+)'
+      index:
+        who: 1
+        name: 2
 
 ## usage in intent
 intents:
-    giveName:
-        attributes:
-            name:
-                nlu: nameNLU
-                path: who
-            who:
-                nlu: nameNLU
-                path: name
+  giveName:
+    attributes:
+      name:
+        nlu: nameNLU
+        path: who
+      who:
+        nlu: nameNLU
+        path: name
 ```
 
 Example with multiple regex:
 
 ```yaml
 nlus:
-    regexNlu:
-        type: regex
-        options:
-            regex:
-                name: "nama saya (.+)"
-                email: "w+@w+.w+"
+  regexNlu:
+    type: regex
+    options:
+      regex:
+        name: 'nama saya (.+)'
+        email: 'w+@w+.w+'
 
 ## usage in intent
 intents:
-    giveName:
-        attributes:
-            name:
-                nlu: regexNlu
-                path: name
-            who:
-                nlu: regexNLU
-                path: email
+  giveName:
+    attributes:
+      name:
+        nlu: regexNlu
+        path: name
+      who:
+        nlu: regexNLU
+        path: email
 ```
 
 ## Verstand Tagger NLU
 
 ```yaml
 myNLU:
-    type: verstandTagger
-    options:
-        model: string           # verstand model id
-        labels: boolean         # for use as classifier
+  type: verstandTagger
+  options:
+    model: string # verstand model id
+    labels: boolean # for use as classifier
 ```
 
 Output:
@@ -189,11 +189,11 @@ Example:
 
 ```yaml
 myNLU:
-    type: verstandClassifier
-    options:
-        model: string           # verstand model id
-        threshold: number       # match threshold
-        asAttribute: boolean    # for use as attribute (path = score/label)
+  type: verstandClassifier
+  options:
+    model: string # verstand model id
+    threshold: number # match threshold
+    asAttribute: boolean # for use as attribute (path = score/label)
 ```
 
 Output:
@@ -218,9 +218,9 @@ Example:
 
 ```yaml
 myNLU:
-    type: verstandRetrieval
-    options:
-        model: string           # verstand model id
+  type: verstandRetrieval
+  options:
+    model: string # verstand model id
 ```
 
 Output:
@@ -242,10 +242,10 @@ Example:
 
 ```yaml
 myNLU:
-    type: witIntent
-    options:
-        apitoken: string       # wit api token
-        threshold: number       # match threshold
+  type: witIntent
+  options:
+    apitoken: string # wit api token
+    threshold: number # match threshold
 ```
 
 Output:
@@ -264,10 +264,10 @@ Example:
 
 ```yaml
 myNLU:
-    type: witEntity
-    options:
-        apitoken: string       # wit api token
-        threshold: number       # match threshold
+  type: witEntity
+  options:
+    apitoken: string # wit api token
+    threshold: number # match threshold
 ```
 
 Output:

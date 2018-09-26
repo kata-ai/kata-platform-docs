@@ -23,24 +23,24 @@ lang: id
 
 # Flow definition
 flows:
-    # flowName and description
-    someFlow:
-        # you can include other files using $include directive
-        intents: $include(./some/path)
+  # flowName and description
+  someFlow:
+    # you can include other files using $include directive
+    intents: $include(./some/path)
 
 # Method definitions
 methods:
-    # method definition in javascript
-    someMethod(x): x*x
+  # method definition in javascript
+  someMethod(x): x*x
 
 # NLU definition
 nlus:
-    # define NLU to be used in this bot
-    someNlu: ...
+  # define NLU to be used in this bot
+  someNlu: ...
 
 # Config
 config:
-    # free to define your nested configuration
+  # free to define your nested configuration
 ```
 
 ## Include Directive

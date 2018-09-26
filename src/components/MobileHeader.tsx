@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'utils/styled';
+import styled from '../utils/styled';
 import Container from './Container';
 
 interface MobileHeaderProps {

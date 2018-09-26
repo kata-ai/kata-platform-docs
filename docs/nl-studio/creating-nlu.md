@@ -47,22 +47,22 @@ can be converted into 2 different entities as follows:
 name: nl-1
 lang: id
 entities:
-    intent:
-        type: trait
-        profile: intent
-        labels:
-            - lupa
-            - ganti
-            - buat
-            - hilang
-    topic:
-        type: trait
-        profile: topic
-        labels:
-            - pin
-            - kartu
-            - buku_tabungan
-            - nasabah
+  intent:
+    type: trait
+    profile: intent
+    labels:
+      - lupa
+      - ganti
+      - buat
+      - hilang
+  topic:
+    type: trait
+    profile: topic
+    labels:
+      - pin
+      - kartu
+      - buku_tabungan
+      - nasabah
 ```
 
 Using above method could also increase score value. It can be like as follow, `nl-1` will divide value 1 into 8 different groups for entity intent. While `nl-2` will divide value 1 into 4 different groups for entity intent and value 1 into 4 different groups for entity topic.

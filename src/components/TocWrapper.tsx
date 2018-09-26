@@ -1,4 +1,4 @@
-import styled from 'utils/styled';
+import styled from '../utils/styled';
 
 interface ToggleableProps {
   isOpen?: boolean;

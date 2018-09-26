@@ -1,12 +1,13 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import styled, { ThemeProvider } from 'utils/styled';
 
-import Page from 'components/Page';
-import NotFoundWrapper from 'components/NotFoundWrapper';
-import { SiteMetadata } from 'interfaces/gatsby';
-import theme from 'styles/theme';
+import Page from '../components/Page';
+import NotFoundWrapper from '../components/NotFoundWrapper';
+
+import theme from '../styles/theme';
+import { SiteMetadata } from '../interfaces/gatsby';
+import styled, { ThemeProvider } from '../utils/styled';
 
 interface Props {
   data: {
@@ -29,9 +30,7 @@ const NotFoundPage: React.SFC<Props> = ({ data }) => (
           <Title>404</Title>
           <Body>We can't find the page you're looking for.</Body>
           <Body>
-            <Link to="/" href="/">
-              Go back?
-            </Link>
+            <Link to="/">Go back?</Link>
           </Body>
         </Inner>
       </NotFoundWrapper>

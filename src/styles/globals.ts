@@ -1,4 +1,4 @@
-import { injectGlobal } from 'utils/styled';
+import { injectGlobal } from '../utils/styled';
 import { onEvent } from './mixins';
 
 import normalize from './normalize';

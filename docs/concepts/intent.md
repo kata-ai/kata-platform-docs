@@ -97,7 +97,7 @@ intents:
       match: hello
     attributes:
       sentiment:
-          nlu: sentimentAnalysis
+        nlu: sentimentAnalysis
 ```
 
 The output of the NLU will be directly mapped to the attribute. To choose specific path of the output you can use path.

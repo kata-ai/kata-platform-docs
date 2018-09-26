@@ -1,20 +1,23 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import Page from 'components/Page';
-import Container from 'components/Container';
-import getPageById from 'utils/getPageById';
-import { MenuNode } from 'interfaces/nodes';
-import { SiteMetadata } from 'interfaces/gatsby';
-import MarkdownContent from 'components/MarkdownContent';
-import DocsWrapper from 'components/DocsWrapper';
-import DocsHeader from 'components/DocsHeader';
-import Pagination from 'components/Pagination';
-import styled from 'utils/styled';
-import TocWrapper from 'components/TocWrapper';
-import Footer from 'components/Footer';
-import TocFloatingButton from 'components/TocFloatingButton';
-import DocsContribution from 'components/DocsContribution';
+import Page from '../components/Page';
+import Container from '../components/Container';
+import MarkdownContent from '../components/MarkdownContent';
+import DocsWrapper from '../components/DocsWrapper';
+import DocsHeader from '../components/DocsHeader';
+import Pagination from '../components/Pagination';
+import TocWrapper from '../components/TocWrapper';
+import Footer from '../components/Footer';
+import TocFloatingButton from '../components/TocFloatingButton';
+import DocsContribution from '../components/DocsContribution';
+
+import { MenuNode } from '../interfaces/nodes';
+import { SiteMetadata } from '../interfaces/gatsby';
+
+import getPageById from '../utils/getPageById';
+import styled from '../utils/styled';
 
 interface PageTemplateProps {
   data: {
