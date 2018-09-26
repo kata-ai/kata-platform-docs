@@ -1,4 +1,4 @@
-import { MenuNode, MenuItem } from 'interfaces/nodes';
+import { MenuNode, MenuItem } from '../interfaces/nodes';
 
 const getPageById = (sectionList: Array<{ node: MenuNode }>, templateFile?: string) => {
   if (!templateFile) {

@@ -1,36 +1,36 @@
 import React from 'react';
+import { RouteComponentProps } from '@reach/router';
+import { graphql, StaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import Navigation from 'components/Navigation';
-import LayoutRoot from 'components/LayoutRoot';
-import LayoutMain from 'components/LayoutMain';
-import theme from 'styles/theme';
-import { ThemeProvider } from 'utils/styled';
-import { MenuNode } from 'interfaces/nodes';
-import { SiteMetadata } from 'interfaces/gatsby';
-import { RouteComponentProps } from 'react-router';
+import Navigation from '../components/Navigation';
+import LayoutRoot from '../components/LayoutRoot';
+import LayoutMain from '../components/LayoutMain';
+import theme from '../styles/theme';
+import { ThemeProvider } from '../utils/styled';
+import { MenuNode } from '../interfaces/nodes';
+import { SiteMetadata } from '../interfaces/gatsby';
 
-import 'assets/fonts/museo-sans-rounded.css';
-import 'assets/fonts/league-mono.css';
-import 'styles/globals';
+import '../assets/fonts/museo-sans-rounded.css';
+import '../assets/fonts/league-mono.css';
+import '../styles/globals';
 import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css';
 
-interface WrapperProps extends RouteComponentProps<{}> {
-  children: () => any;
-  data: {
-    site: {
-      siteMetadata: SiteMetadata;
-    };
-    navigationMenus: {
-      edges: Array<{
-        node: MenuNode;
-      }>;
-    };
-  };
-}
+interface WrapperProps extends RouteComponentProps<{}> {}
 
 interface WrapperState {
   drawerIsOpen: boolean;
+}
+
+interface QueryData {
+  site: {
+    siteMetadata: SiteMetadata;
+  };
+  navigationMenus: {
+    edges: Array<{
+      node: MenuNode;
+    }>;
+  };
 }
 
 class IndexLayout extends React.Component<WrapperProps, WrapperState> {
@@ -43,33 +43,43 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
   }
 
   render() {
-    const { children, data, location } = this.props;
-    const { siteMetadata } = data.site;
+    const { children, location } = this.props;
     const { drawerIsOpen } = this.state;
 
     return (
-      <ThemeProvider theme={theme}>
-        <LayoutRoot>
-          <Helmet>
-            <title>{siteMetadata.title}</title>
-            <meta name="description" content={siteMetadata.description} />
-            <meta name="keywords" content={siteMetadata.keywords} />
-            <meta property="og:type" content="website" />
-            <meta property="og:site_name" content={siteMetadata.title} />
-            <meta property="og:description" content={siteMetadata.description} />
-            <meta property="og:url" content={`${siteMetadata.siteUrl}${location.pathname}`} />
-          </Helmet>
-          <Navigation
-            title={siteMetadata.sidebarTitle || siteMetadata.title}
-            subtitle={siteMetadata.sidebarSubtext}
-            navigation={data.navigationMenus.edges}
-            open={drawerIsOpen}
-            onCloseNavMenu={this.closeDrawer}
-            toggleDrawer={this.toggleDrawer}
-          />
-          <LayoutMain>{children()}</LayoutMain>
-        </LayoutRoot>
-      </ThemeProvider>
+      <StaticQuery query={query}>
+        {(data: QueryData) => {
+          const { siteMetadata } = data.site;
+
+          return (
+            <ThemeProvider theme={theme}>
+              <LayoutRoot>
+                <Helmet>
+                  <title>{siteMetadata.title}</title>
+                  <meta name="description" content={siteMetadata.description} />
+                  <meta name="keywords" content={siteMetadata.keywords} />
+                  <meta property="og:type" content="website" />
+                  <meta property="og:site_name" content={siteMetadata.title} />
+                  <meta property="og:description" content={siteMetadata.description} />
+                  <meta
+                    property="og:url"
+                    content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`}
+                  />
+                </Helmet>
+                <Navigation
+                  title={siteMetadata.sidebarTitle || siteMetadata.title}
+                  subtitle={siteMetadata.sidebarSubtext}
+                  navigation={data.navigationMenus.edges}
+                  open={drawerIsOpen}
+                  onCloseNavMenu={this.closeDrawer}
+                  toggleDrawer={this.toggleDrawer}
+                />
+                <LayoutMain>{children}</LayoutMain>
+              </LayoutRoot>
+            </ThemeProvider>
+          );
+        }}
+      </StaticQuery>
     );
   }
 
@@ -84,7 +94,7 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
 
 export default IndexLayout;
 
-export const query = graphql`
+const query = graphql`
   query IndexLayoutQuery {
     site {
       siteMetadata {

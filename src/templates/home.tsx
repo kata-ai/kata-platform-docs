@@ -1,17 +1,19 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import Page from 'components/Page';
-import Container from 'components/Container';
-import { MenuNode } from 'interfaces/nodes';
-import MarkdownContent from 'components/MarkdownContent';
-import DocsWrapper from 'components/DocsWrapper';
-import DocsHeader from 'components/DocsHeader';
-import TocWrapper from 'components/TocWrapper';
-import styled from 'utils/styled';
-import Footer from 'components/Footer';
-import { SiteMetadata } from 'interfaces/gatsby';
-import DocsContribution from 'components/DocsContribution';
+import Page from '../components/Page';
+import Container from '../components/Container';
+import { MenuNode } from '../interfaces/nodes';
+import MarkdownContent from '../components/MarkdownContent';
+import DocsWrapper from '../components/DocsWrapper';
+import DocsHeader from '../components/DocsHeader';
+import TocWrapper from '../components/TocWrapper';
+import Footer from '../components/Footer';
+import DocsContribution from '../components/DocsContribution';
+
+import { SiteMetadata } from '../interfaces/gatsby';
+import styled from '../utils/styled';
 
 interface HomepageTemplateProps {
   data: {

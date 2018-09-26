@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'utils/styled';
+import styled, { css } from '../utils/styled';
 
 interface ToggleableProps {
   drawerIsOpen?: boolean;

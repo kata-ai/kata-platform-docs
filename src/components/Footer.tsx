@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
-import styled from 'utils/styled';
+import styled from '../utils/styled';
 import Container from './Container';
-import { SocialMedia } from 'interfaces/gatsby';
+import { SocialMedia } from '../interfaces/gatsby';
 
 const Wrapper = styled('footer')`
   margin: 0;

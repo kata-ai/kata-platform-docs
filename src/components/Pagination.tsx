@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import styled from 'utils/styled';
-import { MenuItem } from 'interfaces/nodes';
+
+import styled from '../utils/styled';
+import { MenuItem } from '../interfaces/nodes';
 import Container from './Container';
 
 const Wrapper = styled('aside')`
@@ -114,7 +115,7 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
         {prevPage && (
           <PaginationItemInner>
             <PaginationItemIcon>
-              <img src={require('assets/images/arrow-left.svg')} />
+              <img src={require('../assets/images/arrow-left.svg')} />
             </PaginationItemIcon>
             <PaginationItemText>
               <PaginationHeading>Previous</PaginationHeading>
@@ -128,7 +129,7 @@ const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
         {nextPage && (
           <PaginationItemInner next>
             <PaginationItemIcon>
-              <img src={require('assets/images/arrow-right.svg')} />
+              <img src={require('../assets/images/arrow-right.svg')} />
             </PaginationItemIcon>
             <PaginationItemText>
               <PaginationHeading>Next</PaginationHeading>
