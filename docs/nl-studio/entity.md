@@ -133,7 +133,7 @@ Here are some profiles (models) that can be used for text classification tasks.
 
 This following example is several root concept usages with entities made by Kata Team.
 
-### `kata:ner/ner[:location or :person]`
+### kata:ner/ner[:location or :person]
 
 Can be used to help carry out tagging to words which are location name or the name of a person.
 
@@ -157,7 +157,7 @@ entities:
 
 Using the structure above, you can discover words which is 'origin' or 'destination'. Words that are origin and destination are assumed to be location name. Another implementation if you don't want to use entity from Kata Team is by creating your own entity 'location' and make the entity 'origin' and 'destination' root to your own entity 'location'.
 
-### `kata:qisg/qisg[:greetings or :instructions or :question or :statement]`
+### kata:qisg/qisg[:greetings or :instructions or :question or :statement]
 
 Can be used to assist in the classification process of a sentence.
 
