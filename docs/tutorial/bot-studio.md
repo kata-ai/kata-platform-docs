@@ -48,7 +48,7 @@ Here you may see the bot templates (first section) that provided before and also
 
 ![bse-6](/images/tutorial/bot-studio/bse-6.png)
 
-## Create `Fallback` Flow
+## Create Fallback Flow
 
 ### Create a Flow
 
@@ -64,7 +64,7 @@ Next, click "Create Flow" button to create a flow and name it `fallback`. This f
 
 ![bse-9](/images/tutorial/bot-studio/bse-9.png)
 
-### Create intent `fallback`
+### Create intent fallback
 
 After created `fallback` flow, we will enter intent by pressing the "Intents" tab on the sub-menu (picture below).
 Remove intent by pressing "more" symbol and click on "Delete" text. Next, we will create a new intent for `fallback`.
@@ -79,7 +79,7 @@ So, your created intent will show as below
 
 ![bse-12](/images/tutorial/bot-studio/bse-12.png)
 
-### Create a state `init`
+### Create a state init
 
 After the above step, we will create state named `init`. Delete previously provided state by pressing state and clicking "Delete". Then, click the "+" button at the bottom right of your page.
 
@@ -87,7 +87,7 @@ Fill state with name `init` on "Overview" tab and set a state to initial state a
 
 ![bse-13](/images/tutorial/bot-studio/bse-13.png)
 
-### Add action to state `init`
+### Add action to state init
 
 At this point, we will continue our conversation tree after created fallback, i.e. `sorryMessage` action. This action will display an apology message because user input is not matched with any flow. First of all, delete existing action by pressing the "x" symbol on right side of action dropdown. Then, we start to add action. Click the "Add action" button in the action section.
 
@@ -99,7 +99,7 @@ After above action is added, it will appear as follow
 
 ![bse-15](/images/tutorial/bot-studio/bse-15.png)
 
-### Create transition `fallback` to `init` state
+### Create transition fallback to init state
 
 After `sorryMessage` action on `init` state has been added, then we will make transition fallback. Click on `init` state and open “Transition” tab. Then, input the data as follows
 
@@ -107,15 +107,15 @@ After `sorryMessage` action on `init` state has been added, then we will make tr
 
 Click “Update” to update the transition.
 
-## Create `Order` Flow
+## Create Order Flow
 
-### Create NLUs from `order`
+### Create NLUs from order
 
 You have successfully made a `fallback` flow, then we will enter the flow `order`.
 
 ![bse-17](/images/tutorial/bot-studio/bse-17.png)
 
-#### Create NLUs `order`
+#### Create NLUs order
 
 The plot for ordering pizza begins by accepting input order from the user. For better understanding, we will include words such as “order”, “pls order”, “orde pza”, “order pitza” and others by defining NLU. NLU is useful for bot to understand user input.
 
@@ -123,7 +123,7 @@ First of all, click the "NLUs" sub-menu on the Bot menu and click "Create NLU" t
 
 ![bse-18](/images/tutorial/bot-studio/bse-18.png)
 
-#### Add flow `order`
+#### Add flow order
 
 After preparing NLU to classify user input, then we will add a new flow. To create a new flow, we must go to sub-menu "Conversation Flow" then click "Create Flow".
 
@@ -131,7 +131,7 @@ Enter name order in name field
 
 ![bse-19](/images/tutorial/bot-studio/bse-19.png)
 
-#### Create `ordertxt` intent
+#### Create ordertxt intent
 
 Each flow requires an intent which is set as "initial". Therefore in the flow order, we will use intent `orderTxt` which will check input from customer.
 
@@ -139,7 +139,7 @@ This intent has a text type and uses NLU we created. Select NLUs that created in
 
 ![bse-20](/images/tutorial/bot-studio/bse-20.png)
 
-#### Create a state `init` in the flow `order`
+#### Create a state init in the flow order
 
 Similar with `init` state in `fallback` flow, we must create `init` state as first state.
 
@@ -151,7 +151,7 @@ Then add a self transition in `init` state
 
 ### Create pizza menu action
 
-#### Create a state `showPizza`
+#### Create a state showPizza
 
 Next, we will continue to display pizza menu and ask desired menu.
 
@@ -159,7 +159,7 @@ Next, we will continue to display pizza menu and ask desired menu.
 
 To get started, click the "+" button on Conversation Flow sub-menu and named `showPizza`.
 
-#### Adding `pizzaMenu` and `askOptions` action to state `showPizza`
+#### Adding pizzaMenu and askOptions action to state showPizza
 
 On `showPizza` state, add a `pizzaOptions` action that displays information **text** about Pepperoni and Veggie Lovers menus.
 
@@ -209,49 +209,49 @@ Click "Create" to continue, make sure your data is as same as picture below:
 
 ![bse-30](/images/tutorial/bot-studio/bse-30.png)
 
-#### Make `pizzaChosen` intent
+#### Make pizzaChosen intent
 
 Intent is made to handle user input after selecting pizza, therefore we will create an intent named `pizzaChosen`.
 
 ![bse-31](/images/tutorial/bot-studio/bse-31.png)
 
-#### Creating intent `reenter`
+#### Creating intent reenter
 
 Next, we will add intent `reenter` that useful for showing repetition message if user's input is not match with bot understanding.
 
 ![bse-32](/images/tutorial/bot-studio/bse-32.png)
 
-#### Create a transition between state `init` and state `showPizza`
+#### Create a transition between state init and state showPizza
 
 To connect the flow from order to the menu display, we will make a transition between two states that we created before. You can drag the green round dot on the `init` state to `showPizza` state until the transition drawer appears on the right
 
 ![bse-33](/images/tutorial/bot-studio/bse-33.png)
 
-### Create NLUs `quantity`
+### Create NLUs quantity
 
 The next path is to handle expected number of ordered pizzas.
 
 ![bse-34](/images/tutorial/bot-studio/bse-34.png)
 
-#### Create NLUs for `quantity`
+#### Create NLUs for quantity
 
 At this stage, we will create NLU with regex number. Bot is expected to understand user input by numbers 1-9.
 
 ![bse-35](/images/tutorial/bot-studio/bse-35.png)
 
-#### Create Intent `quantity`
+#### Create Intent quantity
 
 After creating NLU, we will add an intent that respond to the user quantity input.
 
 ![bse-36](/images/tutorial/bot-studio/bse-36.png)
 
-#### Create a `pizzaQuantity` state
+#### Create a pizzaQuantity state
 
 Then, we will create a `pizzaQuantity` state that will ask for a user order quantity with a text and `askQuantity` action to provide a bot response to the user.
 
 ![bse-37](/images/tutorial/bot-studio/bse-37.png)
 
-#### Add a `showPizza` transition with pizzaquantity
+#### Add a showPizza transition with pizzaquantity
 
 We will connect `showPizza` state to `pizzaQuantity` state and also, storing the`payload.pizza` value into `context.pizza` when flow movement occurs.
 
@@ -267,13 +267,13 @@ First of all, we will create NLU which is keywords from confirmation words such 
 
 ![bse-40](/images/tutorial/bot-studio/bse-40.png)
 
-#### Create `confirmPizza` state
+#### Create confirmPizza state
 
 After creating a NLU, we will create a `confirmPizza` state that useful to order confirmation. In addition, we will store chosen pizza and quantity information.
 
 ![bse-41](/images/tutorial/bot-studio/bse-41.png)
 
-#### Make a transition from `pizzaQuantity` to `confirmPizza`
+#### Make a transition from pizzaQuantity to confirmPizza
 
 At this stage, we will make a transition by storing value (mapping) from pizza quantity **and** chosen pizza type.
 
@@ -283,7 +283,7 @@ Then, in state `confirmPizza` create a mapping when transiting as shown below by
 
 ![bse-43](/images/tutorial/bot-studio/bse-43.png)
 
-#### Make intent `yesno`
+#### Make intent yesno
 
 Previously, we already made NLU containing confirmation yes and no. The NLU will be used at this stage. In order to understand confirmation statement from a user, you can create an intent to accommodate entries that use NLU `yesno` classifier.
 
@@ -295,7 +295,7 @@ Then, we will create an intent for keyword `no`
 
 ![bse-45](/images/tutorial/bot-studio/bse-45.png)
 
-#### Create `done` state
+#### Create done state
 
 In `done` state, we will complete the order by saying thank you and ended bot conversation. There is a condition when user cancelling order. Therefore, we will add condition to `done` action which are `sayThanks` and `sayCancel`
 
@@ -307,7 +307,7 @@ Thus, the final result of state `done` is as follows
 
 ![bse-48](/images/tutorial/bot-studio/bse-48.png)
 
-#### Make the transition from `confirmPizza` to `done`
+#### Make the transition from confirmPizza to done
 
 Next, we will connect `confirmPizza` state to `done` state. Because `done` is the last state, so that created transition will be a default transition
 
@@ -435,7 +435,7 @@ Then, click the "+" button to create a new NLU and fill NLU data as follow
 
 ![bse-72](/images/tutorial/bot-studio/bse-72.png)
 
-### Create an `intentOrder` entity
+### Create an intentOrder entity
 
 After created a new NLU, you must enter the entity. Click the "+" button to create an entity
 

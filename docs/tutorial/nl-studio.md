@@ -33,7 +33,7 @@ Then, click "+" button to create a new NLU and fill in as follow
 
 ![nse-3](/images/tutorial/nl-studio/nse-3.png)
 
-### Create an `intent` entity
+### Create an intent entity
 
 After you created a new NLU, you must enter the entity. The entity will help us in classifying every input from users. Click the "+" button to create an entity
 
@@ -43,7 +43,7 @@ First of all, create an entity that is an `intent` classification consisting of 
 
 ![nse-5](/images/tutorial/nl-studio/nse-5.png)
 
-### Create entity `type`
+### Create entity type
 
 In this entity `type`, we will create a NLU with dictionary type which will be limiting and handles pizza type selection. Add new entity and fill in the data as below
 
@@ -53,7 +53,7 @@ Then, continue filling the dictionary by adding other words
 
 ![nse-7](/images/tutorial/nl-studio/nse-7.png)
 
-### Create entity `size`
+### Create entity size
 
 Entity `size` serves to determine pizzas size which ordered by users. In this entity, we will use "Belongs to” which used to provide a marker which entity is under another entity. The entity`size` will be under entity `type`. How to use it will be shown in the picture below.
 
@@ -63,13 +63,13 @@ In dictionary section, enter a keyword that will be a prediction input from user
 
 ![nse-9](/images/tutorial/nl-studio/nse-9.png)
 
-### Create entity `crust`
+### Create entity crust
 
 Next, we will create an entity named `crust` that works to find out crust type on pizza. It is under entity `type`. You can enter data according to image below:
 
 ![nse-10](/images/tutorial/nl-studio/nse-10.png)
 
-### Create entity `qty`
+### Create entity qty
 
 In pizza bot which we created earlier, user must enter pizza number to be purchased using intent `regex`. Entity `qty` will be created using dictionary by entering numbers or keywords related to the number of pizzas ordered. Add entity to NLU dashboard, then fill in the data as below
 
