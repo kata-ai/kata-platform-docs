@@ -64,7 +64,15 @@ module.exports = {
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
           'gatsby-remark-smartypants',
-          'gatsby-remark-responsive-iframe'
+          'gatsby-remark-responsive-iframe',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 720,
+              linkImagesToOriginal: false,
+              wrapperStyle: 'margin-top: 1.5rem; margin-bottom: 1.5rem'
+            }
+          }
         ]
       }
     },

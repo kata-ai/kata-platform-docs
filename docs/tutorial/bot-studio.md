@@ -184,16 +184,14 @@ Fill carousel name with `pizzaMenu` and fill in content as below:
 Title: Pepperoni
 Text: This is the favorite of Peps
 Thumbnail Image Url: https://www.wikihow.com/images/thumb/a/a7/Make-Pepperoni-Pizza-Step-19-Version-2.jpg/aid1074004-v4-728px-Make-Pepperoni-Pizza-Step-19-Version-2.jpg.webp
-Actions :
-     Label: Pepperoni
-     Type: Postback
-     Payload:
-     {
-     	key : "type"
-     	value : "pizza",
-     	key : "pizza":
-     	value : "Pepperoni"
-     }
+Actions:
+  Label: Pepperoni
+  Type: Postback
+  Payload:
+    - key: type
+      value: pizza
+    - key: pizza
+      value: Pepperoni
 ```
 
 ```
@@ -201,15 +199,13 @@ Title: Veggie Lovers
 Text: Vegie vegie stay healthy
 Thumbnail Image Url: https://www.calcuttaweb.com/store/image/data/calcutta/pizza/veggie-lovers-pizza-pihu-7.jpg
 Actions:
-     Label: Veggie Lovers
-     Type: Postback
-     Payload:
-     {
-     	key : "type"
-     	value : "pizza",
-     	key : "pizza"
-     	value : "Veggie Lovers"
-     }
+  Label: Veggie Lovers
+  Type: Postback
+  Payload:
+    - key: type
+      value: pizza
+    - key: pizza
+      value: Veggie Lovers
 ```
 
 ![bse-28](/images/tutorial/bot-studio/bse-28.png)
