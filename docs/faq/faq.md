@@ -74,3 +74,31 @@ For example:
 ![faq-11](/images/faq/faq-11.png)
 
 ![faq-12](/images/faq/faq-12.png)
+
+## How to change `defaultErrorMessage` and loading message info?
+
+You may change `defaultErrorMessage` from bot.yml as below:
+
+```yaml
+config:
+    defaultErrorMessage: Mohon maaf sebelumnya ada error di sistem kami nih :(
+```
+
+For changing loading message info, create a PUT request to:
+
+```
+https://&lt;zaunUrl&gt;/bots/&lt;botId&gt;/deployments/&lt;deploymentName&gt;/channels/&lt;channelId&gt;
+```
+
+Next, put request header as follows:
+
+```
+key: Authorization
+value: Bearer
+```
+
+Afterward, go to BOT menu and go down to “Configuration” sub menu. Next, copy all response without rpmLimit, agentId and webhook to options and add
+
+```
+burstMessageResponse
+```
