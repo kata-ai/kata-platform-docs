@@ -66,8 +66,7 @@ Next, click "Create Flow" button to create a flow and name it `fallback`. This f
 
 ### Create intent fallback
 
-After created `fallback` flow, we will enter intent by pressing the "Intents" tab on the sub-menu (picture below).
-Remove intent by pressing "more" symbol and click on "Delete" text. Next, we will create a new intent for `fallback`.
+After created `fallback` flow, we will enter intent by pressing the "Intents" tab on the sub-menu (picture below). Then, we will create a new intent for `fallback`.
 
 ![bse-10](/images/tutorial/bot-studio/bse-10.png)
 
@@ -81,7 +80,7 @@ So, your created intent will show as below
 
 ### Create a state init
 
-After the above step, we will create state named `init`. Delete previously provided state by pressing state and clicking "Delete". Then, click the "+" button at the bottom right of your page.
+After the above step, we will create state named `init`. Then, click the "+" button at the bottom right of your page.
 
 Fill state with name `init` on "Overview" tab and set a state to initial state and end state (as shown below). "Initial state" function is useful for making init state as first checked for flow and "end state" is useful for making init state as the last.
 
@@ -141,7 +140,7 @@ This intent has a text type and uses NLU we created. Select NLUs that created in
 
 #### Create a state init in the flow order
 
-Similar with `init` state in `fallback` flow, we must create `init` state as first state.
+Similar with `init` state in `fallback` flow, we must create `init` state as initial state.
 
 ![bse-21](/images/tutorial/bot-studio/bse-21.png)
 
@@ -161,7 +160,7 @@ To get started, click the "+" button on Conversation Flow sub-menu and named `sh
 
 #### Adding pizzaMenu and askOptions action to state showPizza
 
-On `showPizza` state, add a `pizzaOptions` action that displays information **text** about Pepperoni and Veggie Lovers menus.
+On `showPizza` state, create a `pizzaOptions` action that displays information **text** about Pepperoni and Veggie Lovers menus.
 
 ![bse-24](/images/tutorial/bot-studio/bse-24.png)
 
@@ -188,7 +187,13 @@ Thumbnail Image Url: https://www.wikihow.com/images/thumb/a/a7/Make-Pepperoni-Pi
 Actions :
      Label: Pepperoni
      Type: Postback
-     Payload: {"type":"pizza","pizza":"Pepperoni"}
+     Payload:
+     {
+     	key : "type"
+     	value : "pizza",
+     	key : "pizza":
+     	value : "Pepperoni"
+     }
 ```
 
 ```
@@ -198,7 +203,13 @@ Thumbnail Image Url: https://www.calcuttaweb.com/store/image/data/calcutta/pizza
 Actions:
      Label: Veggie Lovers
      Type: Postback
-     Payload: {"type":"pizza","pizza":"Veggie Lovers"}
+     Payload:
+     {
+     	key : "type"
+     	value : "pizza",
+     	key : "pizza"
+     	value : "Veggie Lovers"
+     }
 ```
 
 ![bse-28](/images/tutorial/bot-studio/bse-28.png)
@@ -335,13 +346,13 @@ First of all, we have to create a deployment first. Find the "Deployment" menu o
 
 ![bse-52](/images/tutorial/bot-studio/bse-52.png)
 
-Make a deployment with `pizzaChat` name and select version 0.0.1. You can also follow the picture below
+Make a deployment with `pizzaChat` name and select version 0.0.2. You can also follow the picture below
 
 ![bse-53](/images/tutorial/bot-studio/bse-53.png)
 
 ### Register LINE account
 
-To sign up for a LINE account, you must signed in [LINE developer console](https://developers.line.me/console/)
+To sign up for a LINE developer account, you have to create LINE social media account by [installing LINE application, either desktop or mobile app](https://line.me/en/download). After you successfully registered, signed in to [LINE developer console](https://developers.line.me/console/)
 
 ![bse-54](/images/tutorial/bot-studio/bse-54.png)
 
@@ -484,5 +495,3 @@ Next, go to the sub-menu "Conversation Flows" and click on the tab "Intents". Se
 Click "Update" to save the updated intent.
 
 Next, you have to publish this NLStudio integration and replace the version on "Deployment" menu to try directly on your device.
-
----
