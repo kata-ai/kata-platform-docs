@@ -24,7 +24,7 @@ A deployment can have multiple channels, such as:
 To create a deployment in the CLI, you can use following command:
 
 ```
-kata deploy &lt;name&gt; [version]
+kata deploy <name> [version]
 ```
 
 Whereas `<name>` is the deployment name. The name can be anything, however we recommend names like dev, staging, and prod. The `[version]` parameter is optional, if it is not given, it will take the latest version.
@@ -32,7 +32,7 @@ Whereas `<name>` is the deployment name. The name can be anything, however we re
 To make a deployment work, you need to add at least one channel:
 
 ```
-kata add-channel &lt;deployment-name&gt; &lt;channel-name&gt;
+kata add-channel <deployment-name> <channel-name>
 ```
 
 You will prompted with the required information about the channel. For more information about channels, you can visit integration page.
