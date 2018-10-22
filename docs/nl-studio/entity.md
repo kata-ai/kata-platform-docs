@@ -35,9 +35,9 @@ Entity with type dict (dictionary) aims to simplify and speed up the training pr
 
 Bellow is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
 
-![nlsg-2](/images/nl-studio/nlsg-2.jpg)
+![nlsg-2](./images/nlsg-2.jpg)
 
-![nlsg-3](/images/nl-studio/nlsg-3.jpg)
+![nlsg-3](./images/nlsg-3.jpg)
 
 ### Phrase
 
@@ -95,7 +95,7 @@ Following is a description and example of using some common words tagger models.
 
 Here is an example for training entity with type phrase in label 'person'.
 
-![nlsg-4](/images/nl-studio/nlsg-4.jpg)
+![nlsg-4](./images/nlsg-4.jpg)
 
 ### Trait
 
