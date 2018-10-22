@@ -66,7 +66,7 @@ states:
 
 You can specify a command action that will trigger re-converse. A command action will not be returned to the user but will be used as the next input of the conversation.
 
-![Figure 1](/images/concepts/action/figure-1.png)
+![Figure 1](./images/action/figure-1.png)
 
 Example:
 

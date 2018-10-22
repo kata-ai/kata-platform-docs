@@ -6,7 +6,7 @@ next: deployment
 
 A bot is a dialogue agent that is capable of receiving a message and returning responses. These bots can be connected to various channels such as Facebook Messenger, LINE, Slack or even your App.
 
-![Figure 1](/images/concepts/bot/figure-1.png)
+![Figure 1](./images/bot/figure-1.png)
 
 ## Bot Anatomy
 
