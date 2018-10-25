@@ -153,6 +153,30 @@ intents:
         path: email
 ```
 
+## NL Studio NLU
+
+```yaml
+mynl:
+  type: nl
+  options:
+    nluId: <nluId>
+    token: <nluToken>
+    output: <type>        # raw or value
+    threshold: <number>   # confidence rate, if less than treshold bot wouldn't recognize as this intent
+    flatten: true         #optional, default false
+
+## usage in intent
+intents:
+  yes:
+    classifier:
+      nlu: mynl
+      expression: "intent == 'yes'"
+  name:
+    classifier:
+      nlu: mynl
+      expression: "ner == 'person'"
+```
+
 ## Wit Intent NLU
 
 ```yaml
