@@ -103,7 +103,7 @@ options:
         label: string
 ```
 
-## imagemap action (LINE)
+## Imagemap Action (LINE)
 
 ```yaml
 type: 'template'
