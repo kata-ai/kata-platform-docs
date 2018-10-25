@@ -233,10 +233,6 @@ exampleFlow:
         text: "Halo, $(result.displayName) terima kasih sudah add kami..."
 ```
 
-![faq-11](./images/faq-11.png)
-
-![faq-12](./images/faq-12.png)
-
 ## How to change `defaultErrorMessage` and loading message info?
 
 You may change `defaultErrorMessage` from bot.yml as below:
