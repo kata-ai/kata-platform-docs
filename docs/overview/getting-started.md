@@ -6,12 +6,9 @@ prev: about
 
 ## Creating an Account
 
-To create an account, go to [platform.kata.ai](https://platform.kata.ai/) and sign yourself up there. Our team will manually verify your credentials, and give you an access.
+To create an account, go to [platform.kata.ai](https://platform.kata.ai/) and sign yourself up there.
 
-As prerequisites, make sure you have Nodejs version 6+ and Typescript:
-
-1.  Install Nodejs 6+
-2.  exec `npm install -g typescript`
+As prerequisites, make sure you have Node.js version 6.x or later
 
 Install Kata-CLI at your device:
 
@@ -30,12 +27,10 @@ $ kata login
 username: <username>
 password: <password>
 ```
-
-Login using your account as team
+Login as team after successfully login as user
 
 ```
 $ kata switch team <teamName>
-password: <password>
 ```
 
 Login using token
@@ -55,8 +50,8 @@ schema: kata.ai/schema/kata-ml/1.0
 name: firstbot
 # Bot description
 desc: My First Bot
-# Bot id, need to be unique globally
-id: firstbot-<youruserid>
+# Bot id, will be generated after push
+id: <your-generated-bot-id>
 # Bot version
 version: 0.0.1
 
