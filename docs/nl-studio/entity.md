@@ -1,21 +1,41 @@
 ---
 id: nl-studio-entity
 title: 'Entity'
-prev: nl-studio-overview
-next: nl-studio-creating-nlu
+prev: nl-studio-nlu
+next: nl-studio-designing-nlu
 ---
 
-To create one entity, here are several things that need to be defined.
+Entity is everything you want to extract from a human language text with NLU. For example, given a human language sentence input that wants to know the words whether its person name or the location name. Therefore, person name and location name are entities you want to extract for.
 
-- **name\*** - _entity name._
-- **type\*** - _type of entity consisting of:_
-  - **dictionary** - _word tagger_ with dictionary support from user.
-  - **phrase** - _word tagger_ for common words.
-  - **trait** - _text classifier_. Classify a sentence into particular classes.
-- **profile\*** - profile represents a model for completing certain tasks. This model needs to be trained before use.
-- **root** - root is used to define the hierarchical relationship between entities and help both training and prediction processes.
-- **labels\*\*** - labels are used to determine what class an entity will be classified.
-- **inherit** - inherit is used to duplicate _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate model that has been trained even though training data is not included. This makes entity immediately predict although no training has been carried out.
+Ability to extract an entity require a trained machine learning model. The model is responsible for extracting each entity from a given text. So that, it can be said that **_each entity has its own model._**
+
+Following example is an extraction process from human language to parameters of entity.
+
+```
+# Input
+
+    Nama saya Joko, saya tinggal di Jakarta.
+
+# Output
+
+    - entity_person = "Joko"
+    - entity_location = "Jakarta"
+    - entity_intent = "give_credential"
+```
+
+An entity consists of these following definitions:
+
+- `name : string`\* - entity name.
+- `type : "dict" | "phrase" | "trait"`\* - type of entity consisting of:
+  - dict - (dictionary) _word tagger_ with dictionary support from user.
+  - phrase - _word tagger_ for common words.
+  - trait - _text classifier_. Classify a sentence into particular classes.
+- `profile : string`\* - profile represents a model for completing certain tasks. This model needs to be trained before use.
+- `root : string` - root is used to define the hierarchical relationship between entities and help both training and prediction processes.
+- `belongsTo : string` - to define relationship between entity. Feature belongsTo can only be used for entity in same NLU.
+- `labels : string[]`\*\* - labels are used to determine what class an entity will be classified.
+- `inherit : string` - inherit is used to duplicate _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate model that has been trained even though training data is not included. This makes entity immediately predict although no training has been carried out.
+- `dictionary : { [key : string] : string[] }` -  dictionary keywords for entity type `dict`.
 
 **Footnotes**
 
@@ -131,9 +151,11 @@ Here are some profiles (models) that can be used for text classification tasks.
 
 ## Root
 
-This following example is several root concept usages with entities made by Kata Team.
+An entity can root to other entity in same NLU or other entity in different NLU. Kata Team already create several NLUs and entities that can be utilized.
 
-### kata:ner/ner[:location or :person]
+This following examples are several root concept usages with entities made by Kata Team.
+
+**kata:ner/ner[:location or :person]**
 
 Can be used to help carry out tagging to words which are location name or the name of a person.
 
@@ -157,7 +179,7 @@ entities:
 
 Using the structure above, you can discover words which is 'origin' or 'destination'. Words that are origin and destination are assumed to be location name. Another implementation if you don't want to use entity from Kata Team is by creating your own entity 'location' and make the entity 'origin' and 'destination' root to your own entity 'location'.
 
-### kata:qisg/qisg[:greetings or :instructions or :question or :statement]
+**kata:qisg/qisg[:greetings or :instructions or :question or :statement]**
 
 Can be used to assist in the classification process of a sentence.
 
@@ -201,6 +223,8 @@ From above structure, it is assumed that 'question_type' entity and 'greeting_ty
 Above examples are samples for root usage and utilization. For the implementation itself, it is not required to be exactly as same as above example.
 
 ## Inherit
+
+This feature can only be utilized from entity in different NLU. Inherit would duplicate both structure and trained model of an entity so you can't update the structure of it, but you can add more training data from your entity. Kata Team already create several trained NLUs and entities that can be inherited.
 
 Following are some entities belong to Kata Team that have been trained and able to be duplicated. Even though you can make predictions without giving any data training, if the prediction is wrong / incorrect, just add more training data to the NLU.
 

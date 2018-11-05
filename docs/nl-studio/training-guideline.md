@@ -1,8 +1,11 @@
 ---
 id: nl-studio-training-guideline
 title: Training Guideline
-prev: nl-studio-entity-inherit
+prev: nl-studio-designing-nlu
+next: nl-studio-using-kata-cli
 ---
+
+## Tips
 
 The training process is carried out to make the machine determine what answers need to be given if an input is received. This process is executed based on provided training data.
 
