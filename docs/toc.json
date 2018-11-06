@@ -113,9 +113,9 @@
     "title": "NL Studio",
     "items": [
       {
-        "id": "nl-studio-overview",
-        "slug": "/nl-studio/overview/",
-        "title": "Overview"
+        "id": "nl-studio-nlu",
+        "slug": "/nl-studio/nlu/",
+        "title": "NLU"
       },
       {
         "id": "nl-studio-entity",
@@ -123,14 +123,19 @@
         "title": "Entity"
       },
       {
-        "id": "nl-studio-creating-nlu",
-        "slug": "/nl-studio/creating-nlu/",
-        "title": "Creating NLU"
+        "id": "nl-studio-designing-nlu",
+        "slug": "/nl-studio/designing-nlu/",
+        "title": "Designing NLU"
       },
       {
         "id": "nl-studio-training-guideline",
         "slug": "/nl-studio/training-guideline/",
         "title": "Training Guideline"
+      },
+      {
+        "id": "nl-studio-using-kata-cli",
+        "slug": "/nl-studio/using-kata-cli/",
+        "title": "NL Studio using Kata-CLI"
       }
     ]
   },

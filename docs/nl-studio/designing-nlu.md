@@ -1,11 +1,11 @@
 ---
-id: nl-studio-creating-nlu
-title: Creating NLU
-prev: nl-studio-overview
+id: nl-studio-designing-nlu
+title: Designing NLU
+prev: nl-studio-entity
 next: nl-studio-training-guideline
 ---
 
-NLU can be made as user wanted. Please note that more complex the NLU is, more training data is required to make the NLU better.
+Before creating a NLU, you need to know what things you want to discover to ease the process of designing NLU. Eventhough there is no restriction on how you can create your NLU, please note that more complex the NLU is, more training data is required to make the NLU better.
 
 Some things that need to be considered in designing an NLU are:
 
@@ -219,6 +219,7 @@ Some states in a bot may get similar input, however it have different meanings d
 
 - `YesNo` NL which can be used in various flows, but it is specific to states that require user confirmation.
 
-### Notes
+
+**Notes**
 
 Some of methods above can be an alternative for condition such as: an entity contains many labels, data between labels are similar, the amount of training data is limited, prediction results are still not optimal, or other different problems. If there is no problem found, you can create only one entity that has many labels.
