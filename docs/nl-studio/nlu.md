@@ -1,7 +1,7 @@
 ---
 id: nl-studio-nlu
 title: NLU
-next: nl-studio-entity-profile
+next: nl-studio-entity
 ---
 
 Here is an explanatory concept in NL Studio and some tips for using it.

@@ -125,12 +125,12 @@ Means the sentence is classified into **entity intent** as **label order** and *
 ```
 Saya mau pesan tiket ke (@destination Malang) atas nama (@ner:person Budi) #intent:order
 ```
-Means the word “**Malang**” is tagged for **entity destination **and “**Budi**” is tagged for **entity ner** as **label person**
+Means the word “**Malang**” is tagged for **entity destination** and “**Budi**” is tagged for **entity ner** as **label person**
 
 ```
 Pizza (@item-1 bbq) jumlahnya (@item-1.qty dua) ya #intent:order
 ```
-Means the word “**bbq**” is tagged for **entity item** with** id 1**, “**dua**” is tagged for **entity qty** which **belongs to entity item** with **id 1**. Using id is required for defining belongsTo.
+Means the word “**bbq**” is tagged for **entity item** with **id 1**, “**dua**” is tagged for **entity qty** which **belongs to entity item** with **id 1**. Using id is required for defining belongsTo.
 
 
 To train the model use the following training command. Give an interval for around 15-30 seconds for the model to completely finish training.
