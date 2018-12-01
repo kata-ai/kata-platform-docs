@@ -329,7 +329,7 @@ You may use `metadata.channelType` in Bot configuration
 
 ## How to use Flatten in NLUs?
 
-**Conig in bot.yml**
+**Config in bot.yml**
 ```nlus:
        mynl:
           type: nl
