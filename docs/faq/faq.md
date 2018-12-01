@@ -293,6 +293,7 @@ gimana narik debit? #intent:ask #faq:askDebit
 5. Execute `kata nl-train -f file_train.txt`
 
 Note:
-Training syntax for entity type *trait*
+
+- Training syntax for entity type **trait** : 
 ```kalimat #entity_trait:label_nya```
-If NLU is already created in NL-Studio, you must still create file `nlu.yml` but no need to execute `kata nl-push`. So that, you may directly train inside the folder by executing `kata nl-train`
+- If NLU is already created in NL-Studio, you must still create file `nlu.yml` but no need to execute `kata nl-push`. So that, you may directly train inside the folder by executing `kata nl-train`
