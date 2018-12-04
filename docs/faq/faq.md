@@ -297,3 +297,73 @@ Note:
 - Training syntax for entity type **trait** : 
 ```kalimat #entity_trait:label_nya```
 - If NLU is already created in NL-Studio, you must still create file `nlu.yml` but no need to execute `kata nl-push`. So that, you may directly train inside the folder by executing `kata nl-train`
+
+## Is there any configurable field where we can put our google map api key due to location action usage?
+
+1. For setup your Google API Key, put in config in bot studio:
+`googleApiKey: thisisgoogleapikey`
+
+2. Then, call the configuration in action :
+```actions :
+       	options :
+               	text: $(config.googleApiKey)
+```
+
+## If FB messenger & LINE has action button which use URL, how about Twitter? Is there any alternative way such as action text URL? 
+
+Twitter has `quickreply` that quite similar with action button. Follow this code to put `quickreply` :
+```type: "template"
+options:
+    type: "button" | "confirm"
+    items: 
+        quickreply:
+            - type: "text" 
+              label: string          
+              payload:
+                [key : string]: string 
+```
+
+## How to get metadata time?
+
+You may use `metadata.channelType` in Bot configuration
+
+## How to use Flatten in NLUs?
+
+**Config in bot.yml**
+```nlus:
+       mynl:
+          type: nl
+          options:
+              nluId:"user:nlu-name"
+              token:"token" 
+              output:<type>
+              threshold:<number> 
+              flatten:true  #optional, default false 
+```
+
+If flatten is enabled, first object in array will be the value of the entity with entity name as the key
+
+**Output Type**
+
+RAW
+
+flatten: false
+
+`{intent:[{ type:'trait', score:1, value:'mainMenu'}]`
+
+
+flatten: true
+
+`{ intentArray:[{ type:'trait', score:1, value:'mainMenu'}],intent:{ type:'trait', score:1, value:'mainMenu'}}}`
+
+
+VALUE
+
+flatten: false
+
+`{ intent:['mainMenu']}`
+
+
+flatten: true
+
+`{intentArray:['mainMenu'],intent:'mainMenu'}`
