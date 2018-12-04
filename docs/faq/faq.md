@@ -3,13 +3,13 @@ id: faq
 title: Kata Platform 3.0 FAQ
 ---
 
-### Q: Sekarang Add Channel etc di mana?
+### Q: How to add channel and deploy in Kata Platform 3.0 ?
 
-A: Di Platform 3.0, Channel bisa ditambah di bawah menu Environment. Setiap Environment bisa punya banyak channel yang bisa diatur sendiri. Setiap Environment akan memiliki list Channel yang berbeda, gunanya adalah untuk memudahkan Environment Management sehingga lebih rapi.
+A: In Kata Platform 3.0, channel can be added under Environment menu which placed in Deploy. Each Environment featured various channel integration that customisable. Every environment has different channel list, it useful to ease Environment Management for clean and neat appearance.
 
-### Q: Apakah bisa menggunakan NL dari Project berbeda?
+### Q: Is it possible to use NL from different Project?
 
-A: Yes, implementasinya masih sama seperti versi sebelumnya. Bisa langsung didefine di kataML-nya.
+A: Yes, the implementation is similar with previous version. You may define them in kataML
 
 ### Q: How do I give access to anyone to access and update content on my CMS Client Dashboard?
 
