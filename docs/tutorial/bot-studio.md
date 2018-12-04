@@ -555,3 +555,6 @@ After webhook URL is generated, go to Messaging Settings in LINE developer conso
 
 Scan the QR Code in LINE Developer Console to add the bot.
 ![bse-115](/images/tutorial/bot-studio/bse-115.png)
+
+Then, test to scan QR Code
+![bse-116](/images/tutorial/bot-studio/bse-116.png)

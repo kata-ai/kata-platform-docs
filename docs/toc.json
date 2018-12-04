@@ -201,21 +201,6 @@
         "id": "nl-studio-tutorial",
         "slug": "/tutorial/nl-studio/",
         "title": "NL Studio Tutorial"
-      },
-      {
-        "id": "bot-template-tutorial",
-        "slug": "/tutorial/bot-template/",
-        "title": "Bot Template Tutorial"
-      },
-      {
-        "id": "fb-messenger-integration",
-        "slug": "/tutorial/fb-messenger-integration/",
-        "title": "Integration with FB Messenger"
-      },
-      {
-        "id": "telegram-integration",
-        "slug": "/tutorial/telegram-integration/",
-        "title": "Integration with Telegram"
       }
     ]
   },
