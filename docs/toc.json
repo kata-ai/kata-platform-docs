@@ -33,11 +33,6 @@
         "title": "Bot"
       },
       {
-        "id": "deployment",
-        "slug": "/concepts/deployment/",
-        "title": "Deployment"
-      },
-      {
         "id": "conversation",
         "slug": "/concepts/conversation/",
         "title": "Conversation"
@@ -183,9 +178,19 @@
     "title": "Kata CLI Guide",
     "items": [
       {
-        "id": "kata-cli-introduction",
-        "slug": "/kata-cli/introduction/",
-        "title": "Introduction"
+        "id": "kata-cli-installation",
+        "slug": "/kata-cli/installation/",
+        "title": "Installation"
+      },
+      {
+        "id": "kata-cli-command-listings",
+        "slug": "/kata-cli/command-listings/",
+        "title": "Command Listings"
+      },
+      {
+        "id": "kata-cli-best-practice",
+        "slug": "/kata-cli/best-practice/",
+        "title": "Best Practice"
       }
     ]
   },
