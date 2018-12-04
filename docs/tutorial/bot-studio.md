@@ -50,7 +50,7 @@ Click on “Create Project” and fill in the form. Each project contains one bo
 
 NLU language is used to determine which language model you want to use. Currently, we support Bahasa Indonesia and English.
 
-You can also choose NLU Visibility to be public or private. If you choose public, **all Kata | Platform users **can utilize your NLU using root and inherit function.
+You can also choose NLU Visibility to be public or private. If you choose public, **all Kata | Platform users** can utilize your NLU using root and inherit function.
 
 ## **Create Fallback Flow**
 
@@ -218,7 +218,7 @@ Click “Create” to create the state. Successfully created state will look lik
 
 ### Update showPizza state Into Show Pizza Menu in Carousel Action Type
 
-Previous step is an example to create action to** show pizza menu in text. **Let's try to update the state into Carousel action type.
+Previous step is an example to create action to **show pizza menu in text.** Let's try to update the state into Carousel action type.
 
 To update the state, click on `showPizza` state and an update state form will appear
 ![bse-39](/images/tutorial/bot-studio/bse-39.png)Then, remove all actions in the state by clicking “x” on each action.
