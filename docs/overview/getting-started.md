@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+next: introduction-to-project
 prev: about
 ---
 
@@ -27,6 +28,7 @@ $ kata login
 username: <username>
 password: <password>
 ```
+
 Login as team after successfully login as user
 
 ```

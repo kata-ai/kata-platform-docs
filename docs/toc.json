@@ -16,6 +16,11 @@
         "id": "getting-started",
         "slug": "/overview/getting-started/",
         "title": "Getting Started"
+      },
+      {
+        "id": "introduction-to-project",
+        "slug": "/overview/introduction-to-project/",
+        "title": "Introduction to Project"
       }
     ]
   },
@@ -136,6 +141,51 @@
         "id": "nl-studio-using-kata-cli",
         "slug": "/nl-studio/using-kata-cli/",
         "title": "NL Studio using Kata-CLI"
+      }
+    ]
+  },
+  {
+    "title": "CMS Studio",
+    "items": [
+      {
+        "id": "cms-studio-about",
+        "slug": "/cms-studio/about/",
+        "title": "About"
+      },
+      {
+        "id": "cms-studio-elements",
+        "slug": "/cms-studio/elements/",
+        "title": "Elements"
+      },
+      {
+        "id": "cms-studio-dashboard",
+        "slug": "/cms-studio/dashboard/",
+        "title": "Dashboard"
+      }
+    ]
+  },
+  {
+    "title": "Deployment Guide",
+    "items": [
+      {
+        "id": "deployment-guide-introduction",
+        "slug": "/deployment-guide/introduction/",
+        "title": "Introduction"
+      },
+      {
+        "id": "deployment-guide-how-to-deploy",
+        "slug": "/deployment-guide/how-to-deploy/",
+        "title": "How to Deploy"
+      }
+    ]
+  },
+  {
+    "title": "Kata CLI Guide",
+    "items": [
+      {
+        "id": "kata-cli-introduction",
+        "slug": "/kata-cli/introduction/",
+        "title": "Introduction"
       }
     ]
   },

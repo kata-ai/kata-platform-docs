@@ -4,181 +4,236 @@ title: Bot Studio Tutorial
 next: nl-studio-tutorial
 ---
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7F48Iw7qyv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Introduction
 
-In this tutorial, we will create a simple conversation bot to order the pizza used on the LINE platform. Making bots can be done easily and quickly, even with the lack of knowledge of programming language which using technology from Kata platform.
+Building a chatbot on Kata | Platform is quick and easy, even with a lack of programming knowledge. In this tutorial, we will learn how to create a simple bot on LINE Messenger to order a pizza. We will also learn how to train your bot with NL Studio.
 
-Let's start by looking at a bot plot diagram or commonly called a "conversation tree". Conversation tree could map bot functionality in user response.
+Let's start by looking at this bot diagram, or commonly called “conversation tree.” Conversation tree is an overview of chatbot functionalities. In this conversation tree, we break down the process of ordering pizza and the types of bot action we want to use on each state.
 
-![bse-1](/images/tutorial/bot-studio/bse-1.png)
+![bse-1](/images/tutorial/bot-studio/bse-1.jpg)
 
-## Sign up for Kata Platform Account
+## Sign up to Kata | Platform
 
-Before entering conversation bot, you must register on our platform. Skip this step if you already have an account before.
+Create an account on Kata | Platform to start building chatbot.
 
-Sign in first at https://platform.kata.ai/login and click on the link "Sign up".
+On your browser, open [_http://platform.kata.ai/login_](http://new-platform.katalabs.io/login) and click “Sign Up”
 
 ![bse-2](/images/tutorial/bot-studio/bse-2.png)
 
-Then, you will be prompted to fill in your username and email. To speed up the registration process, you better have prepared early for your account data as shown below. The selection of account types could be tailored to your future needs. Click "Sign Up" to continue creating your account.
+Then fill the form with a username, an email, and an account type. Continue by clicking "Sign Up."
 
 ![bse-3](/images/tutorial/bot-studio/bse-3.png)
 
-You will get a confirmation email regarding your account for verification from us. You may follow the instructions in your email. Congratulation, your account is ready and you're now ready to make chat bot.
+You will get a confirmation email once our team has verified your account.
 
-## Create Conversation Bot
+You may follow the instructions provided in the confirmation email to activate and start using your account.
 
-### Login to Kata Platform
+## **Create a Project**
 
-Go to [the link](http://platform.kata.ai/login) as in the attached picture.
+### **Login to Kata | Platform**
+
+On your browser, open [_http://platform.kata.ai/login_](http://new-platform.katalabs.io/login) and enter your username & password.
 
 ![bse-4](/images/tutorial/bot-studio/bse-4.png)
 
-Click "Login" to continue
+Click "Login" to continue.
 
-### Create a new bot
+### **Create a project**
 
-After login, the first view in Kata platform will be the dashboard.
+After you logged in, you will be taken to the Project Page.
 
 ![bse-5](/images/tutorial/bot-studio/bse-5.png)
 
-Here you may see the bot templates (first section) that provided before and also you may try later for better understanding. To create a new bot, click on "Create new bot" and you will be prompted to fill in data as attached.
+Click on “Create Project” and fill in the form. Each project contains one bot design, one NL, and one CMS.
 
 ![bse-6](/images/tutorial/bot-studio/bse-6.png)
 
-## Create Fallback Flow
+NLU language is used to determine which language model you want to use. Currently, we support Bahasa Indonesia and English.
 
-### Create a Flow
+You can also choose NLU Visibility to be public or private. If you choose public, **all Kata | Platform users **can utilize your NLU using root and inherit function.
 
-Once your bot created, you will be redirected to sub-menu "Conversational Flows". In accordance with flow diagram above, we will create a flow that does not match any flow (simply called as “else condition” state)
+## **Create Fallback Flow**
 
-![bse-7](/images/tutorial/bot-studio/bse-7.png)
+### **Create fallback flow**
 
-A flow consists of **intent, state and action.** In the picture below, you may see a flow that created automatically by the system or `default` flow. We will delete existing flow by pressing "more" button and then "Delete".
+Once you create a project, you will be redirected to the Bot Studio menu.
+
+Now we are going to learn how to create a flow. Flow is a container of **intent, state, and action**. A flow typically represents a linear process.
+
+The first flow that we will create is a Fallback Flow. Its purpose is to handle undefined users input, or commonly called “else condition” state. In this case, the “else condition” is everything that is not “Start Order”.
+
+![bse-1](/images/tutorial/bot-studio/bse-1.jpg)
+
+You may find a flow that is created automatically by the system or default flow. We will delete that flow by pressing more button and then “Delete.”
 
 ![bse-8](/images/tutorial/bot-studio/bse-8.png)
 
-Next, click "Create Flow" button to create a flow and name it `fallback`. This flow works to handle input from users that can not be accepted by any flow. Set flow to active, persistent and default so the fields will show as below
+Next, click “Create Flow” button to create `fallback` flow. Set flow to active, persistent, and default.
 
 ![bse-9](/images/tutorial/bot-studio/bse-9.png)
 
-### Create intent fallback
+### **Create fallback intent**
 
-After created `fallback` flow, we will enter intent by pressing the "Intents" tab on the sub-menu (picture below). Then, we will create a new intent for `fallback`.
+After you have created `fallback` flow, we will create new intent by pressing the Intents tab on the sub-menu. Then, we will create a new intent for `fallback` flow. Click “Create Intent” button to create.
 
 ![bse-10](/images/tutorial/bot-studio/bse-10.png)
 
-Click "Create Intent" button and fill in the contents as attached. Set the intent made to default by click "as fallback"
+Then, fill in the form as follows
 
 ![bse-11](/images/tutorial/bot-studio/bse-11.png)
 
-So, your created intent will show as below
+### Create State init
+
+Next, we will create a state called `init`. Click the ”+” button at the bottom right of your screen.
 
 ![bse-12](/images/tutorial/bot-studio/bse-12.png)
 
-### Create a state init
+Fill state with name `init` on Overview tab and set it to initial state and end state (as shown below).
 
-After the above step, we will create state named `init`. Then, click the "+" button at the bottom right of your page.
-
-Fill state with name `init` on "Overview" tab and set a state to initial state and end state (as shown below). "Initial state" function is useful for making init state as first checked for flow and "end state" is useful for making init state as the last.
+Enabling Initial State and End State will make `init` the first and the last flow to be checked by the bot when there isn't any flow that matches a user's input.
 
 ![bse-13](/images/tutorial/bot-studio/bse-13.png)
 
-### Add action to state init
-
-At this point, we will continue our conversation tree after created fallback, i.e. `sorryMessage` action. This action will display an apology message because user input is not matched with any flow. First of all, delete existing action by pressing the "x" symbol on right side of action dropdown. Then, we start to add action. Click the "Add action" button in the action section.
-
-Click the "+" symbol to add an action. Then, action type options that possible completed by a state will appear. In this tutorial, we will create a text type according to the conversation tree. Fill action content according to the picture below. Click the "Update Action" button to save created action.
+Now we will create a bot response to display an apology message. Click “Add actions” button to create a response.
 
 ![bse-14](/images/tutorial/bot-studio/bse-14.png)
 
-After above action is added, it will appear as follow
+Container for creating action will appear
 
 ![bse-15](/images/tutorial/bot-studio/bse-15.png)
 
-### Create transition fallback to init state
+### Create Action Text in State init
 
-After `sorryMessage` action on `init` state has been added, then we will make transition fallback. Click on `init` state and open “Transition” tab. Then, input the data as follows
+Click on “+” button to create a new action.
 
 ![bse-16](/images/tutorial/bot-studio/bse-16.png)
 
-Click “Update” to update the transition.
-
-## Create Order Flow
-
-### Create NLUs from order
-
-You have successfully made a `fallback` flow, then we will enter the flow `order`.
+Choose action type “Text”
 
 ![bse-17](/images/tutorial/bot-studio/bse-17.png)
 
-#### Create NLUs order
-
-The plot for ordering pizza begins by accepting input order from the user. For better understanding, we will include words such as “order”, “pls order”, “orde pza”, “order pitza” and others by defining NLU. NLU is useful for bot to understand user input.
-
-First of all, click the "NLUs" sub-menu on the Bot menu and click "Create NLU" to create your first NLU. According to above explanation, enter the words associated with ordering pizza. In other words, NLU is a "keyword" type. You can also create as much as possible, at least the words as in the picture below.
+Then, fill in the form
 
 ![bse-18](/images/tutorial/bot-studio/bse-18.png)
 
-#### Add flow order
-
-After preparing NLU to classify user input, then we will add a new flow. To create a new flow, we must go to sub-menu "Conversation Flow" then click "Create Flow".
-
-Enter name order in name field
+Click on “Create Action” button.
 
 ![bse-19](/images/tutorial/bot-studio/bse-19.png)
 
-#### Create ordertxt intent
+### Create Self Transition in State Init
 
-Each flow requires an intent which is set as "initial". Therefore in the flow order, we will use intent `orderTxt` which will check input from customer.
-
-This intent has a text type and uses NLU we created. Select NLUs that created in the "classifier" section to classify the input of the user whether included in the order scope or not.
+The last step to finalize `fallback` flow is to create self-transition for `init` state. Self transition is required to avoid error when the next state is not available. Click on “Transitions” and enable Self Transition.
 
 ![bse-20](/images/tutorial/bot-studio/bse-20.png)
 
-#### Create a state init in the flow order
-
-Similar with `init` state in `fallback` flow, we must create `init` state as initial state.
+Click “Create” button. Your screen should look like this
 
 ![bse-21](/images/tutorial/bot-studio/bse-21.png)
 
-Then add a self transition in `init` state
+## Create Order Flow
+
+Next, we will create `Start Order` flow to handle pizza order.
+
+![bse-1](/images/tutorial/bot-studio/bse-1.jpg)
+
+### Create Flow Order
+
+First step is to create another flow called `order` .
 
 ![bse-22](/images/tutorial/bot-studio/bse-22.png)
 
-### Create pizza menu action
-
-#### Create a state showPizza
-
-Next, we will continue to display pizza menu and ask desired menu.
+Created flow will be shown like this
 
 ![bse-23](/images/tutorial/bot-studio/bse-23.png)
 
-To get started, click the "+" button on Conversation Flow sub-menu and named `showPizza`.
+### Create Keyword NLUs for 'Order'
 
-#### Adding pizzaMenu and askOptions action to state showPizza
-
-On `showPizza` state, create a `pizzaOptions` action that displays information **text** about Pepperoni and Veggie Lovers menus.
+In this step, we will define the NLU (Natural Language Understanding) to trigger `order` flow. NLU is used to translate user inputs into data that machine can understand. There are many types of NLU, but the type that we will use in this particular flow is called `keyword`. To define the NLU, go to NLUs menu.
 
 ![bse-24](/images/tutorial/bot-studio/bse-24.png)
 
-Then, also add ask menu action to user which handled by `askOptions` by using the action text type
+Next, click on “Create NLU”
 
 ![bse-25](/images/tutorial/bot-studio/bse-25.png)
 
-So the result is shown below :
+Choose Keyword type and enter keywords that represents `order`, such as “order”, “pls order”, “order pza”.
 
 ![bse-26](/images/tutorial/bot-studio/bse-26.png)
 
-Next, we will make a pizza menu display by using carousel. Remove `pizzaOptions` action from the state by pressing symbol "x" located on the right.
-
-Then add a new action and select the action carousel
+Successfully created NLU looks like this
 
 ![bse-27](/images/tutorial/bot-studio/bse-27.png)
 
-Fill carousel name with `pizzaMenu` and fill in content as below:
+### Create Intent for Order
+
+Each flow requires an `intent` to classify user's inquiry and trigger matching flow. So our next step is to set initial intent for `order` flow.
+
+Go back to Conversation Flow menu and click on `order` flow, then click on “Intents” tab.
+![bse-28](/images/tutorial/bot-studio/bse-28.png)
+
+Previously, you already created keyword NLUs called `order`. We will set that keyword as intent in `order` flow. Map the NLU on classifier section.
+![bse-29](/images/tutorial/bot-studio/bse-29.png)
+
+Click “Create” to create the intent. Your screen should look like this
+![bse-30](/images/tutorial/bot-studio/bse-30.png)
+
+### Create a State Named init
+
+Every flow must have at least one state. Because we haven't created any state in `order` flow, we have to create one. Let's create a state called `init` . Set the state as initial and then enable self-transition.
+
+![bse-31](/images/tutorial/bot-studio/bse-31.png)
+![bse-32](/images/tutorial/bot-studio/bse-32.png)
+
+Click “Create” button to create initial state.
+
+Next, we will define how the bot will respond to user who entered `order` flow.
+
+## Create Action for Pizza Menu
+
+As seen on the conversation tree below, the first message in `order` flow is “Show Pizza Type”
+
+![bse-1](/images/tutorial/bot-studio/bse-1.jpg)
+
+### Create a State to Show Pizza type in Text Action Type
+
+To get started, we need to create a state named `showPizza` on `order` flow. Click on “+” button in Conversation Flow menu.
+![bse-33](/images/tutorial/bot-studio/bse-33.png)
+
+Let's begin by creating an action called `pizzaOptions`. This action will inform users in **text about our available pizza menu**.
+
+Click on “+” button to create an action and choose Text as action type.
+![bse-34](/images/tutorial/bot-studio/bse-34.png)
+
+Fill in Text action type to inform our pizza menu
+![bse-35](/images/tutorial/bot-studio/bse-35.png)
+
+Click on “Create Action” to finalize. Next step is to create an action called `askOptions`
+![bse-36](/images/tutorial/bot-studio/bse-36.png)
+
+Click on “Create Action” button. Your form should look like this
+![bse-37](/images/tutorial/bot-studio/bse-37.png)
+
+Click “Create” to create the state. Successfully created state will look like this
+![bse-38](/images/tutorial/bot-studio/bse-38.png)
+
+### Update showPizza state Into Show Pizza Menu in Carousel Action Type
+
+Previous step is an example to create action to** show pizza menu in text. **Let's try to update the state into Carousel action type.
+
+To update the state, click on `showPizza` state and an update state form will appear
+![bse-39](/images/tutorial/bot-studio/bse-39.png)Then, remove all actions in the state by clicking “x” on each action.
+![bse-40](/images/tutorial/bot-studio/bse-40.png)
+After removing available actions, we will create an action called `pizzaMenu` as Carousel action type.
+
+Click on “Add” actions button then click on “+” button to create a new action. Choose Carousel action type to continue.
+![bse-41](/images/tutorial/bot-studio/bse-41.png)
+
+Enter `pizzaMenu` as name
+![bse-42](/images/tutorial/bot-studio/bse-42.png)
+
+Fill in the carousel content by clicking “Add carousel” button, then click on “Add action” button to define the **label and type**. Next, click on Add Payload button to enter **key and value**.
+
+Fill in first carousel with this data
 
 ```
 Title: Pepperoni
@@ -194,6 +249,8 @@ Actions:
       value: Pepperoni
 ```
 
+Fill in second carousel with this data
+
 ```
 Title: Veggie Lovers
 Text: Vegie vegie stay healthy
@@ -208,286 +265,293 @@ Actions:
       value: Veggie Lovers
 ```
 
-![bse-28](/images/tutorial/bot-studio/bse-28.png)
+Your first form should look like this
+![bse-43](/images/tutorial/bot-studio/bse-43.png)
 
-![bse-29](/images/tutorial/bot-studio/bse-29.png)
+Your second form should look like this
+![bse-44](/images/tutorial/bot-studio/bse-44.png)
 
-Click "Create" to continue, make sure your data is as same as picture below:
+Finalize this step by clicking “Create Action.”
 
-![bse-30](/images/tutorial/bot-studio/bse-30.png)
+It should look like this
+![bse-46](/images/tutorial/bot-studio/bse-45.png)
 
-#### Make pizzaChosen intent
+Once the bot displays a carousel containing the type for pizza menu, its next step is to ask user to select the pizza. Click “Add actions” button to trigger drop-down list, then choose `askOptions`
+![bse-47](/images/tutorial/bot-studio/bse-46.png)
 
-Intent is made to handle user input after selecting pizza, therefore we will create an intent named `pizzaChosen`.
+After you select `askOptions` action click “Create Action” button to finalize this step.
+![bse-48](/images/tutorial/bot-studio/bse-47.png)
 
-![bse-31](/images/tutorial/bot-studio/bse-31.png)
+Your form should look like this
+![bse-49](/images/tutorial/bot-studio/bse-48.png)
 
-#### Creating intent reenter
+Click “Update” to update the state.
 
-Next, we will add intent `reenter` that useful for showing repetition message if user's input is not match with bot understanding.
+### Create Intent to Choose A Pizza
 
-![bse-32](/images/tutorial/bot-studio/bse-32.png)
+Now we have to create an intent called `pizzaChosen` to handle user's input after they have selected a pizza type. Click on Intent menu in `order` flow.
+![bse-50](/images/tutorial/bot-studio/bse-49.png)
 
-#### Create a transition between state init and state showPizza
+Click on Create Intent and create intent as follow
+![bse-51](/images/tutorial/bot-studio/bse-50.png)
 
-To connect the flow from order to the menu display, we will make a transition between two states that we created before. You can drag the green round dot on the `init` state to `showPizza` state until the transition drawer appears on the right
+Successfully created intent looks like this
+![bse-52](/images/tutorial/bot-studio/bse-51.png)
 
-![bse-33](/images/tutorial/bot-studio/bse-33.png)
+### Create Transition between init and showPizza
+
+Now, we will create a transition between two states that we have created before.
+
+Click the green dot on `init` state, and a connector line will appear. Connect that line to `showPizza` state. If you do it right, a Create Transition form will appear.
+
+![bse-53](/images/tutorial/bot-studio/bse-52.png)
+Fill in the form with these data, and click “Create”
+
+### Create 'reenter' intent
+
+Next, we will add `reenter` intent so the bot can return to its previous state after triggering fallback state. Create the intent in `order` flow.
+
+![bse-54](/images/tutorial/bot-studio/bse-53.png)
+
+## Create Action for Asking Pizza Quantity
+
+In this step we will learn how to create “Ask quantity” state.
+![bse-55](/images/tutorial/bot-studio/bse-1.jpg)
+
+### Create pizzaQuantity state
+
+In this step we will create `pizzaQuantity` state to handle order quantity. The type of action we will use is in this state is Text. Click on “+” button on `order` flow and fill the form as follows
+![bse-56](/images/tutorial/bot-studio/bse-54.png)
+
+Result :
+![bse-57](/images/tutorial/bot-studio/bse-55.png)
 
 ### Create NLUs quantity
 
-The next path is to handle expected number of ordered pizzas.
+Afterwards, we have to handle user's input with NLUs. Because we only allowed number from 1 to 9, we will create a limitation in regex format. Click on Create NLUs and follow this screenshot
+![bse-58](/images/tutorial/bot-studio/bse-56.png)
 
-![bse-34](/images/tutorial/bot-studio/bse-34.png)
+Successfully created NLU will be shown like this
+![bse-59](/images/tutorial/bot-studio/bse-57.png)
 
-#### Create NLUs for quantity
+### Create Intent quantity
 
-At this stage, we will create NLU with regex number. Bot is expected to understand user input by numbers 1-9.
+After we created the NLU, we will add an intent to respond user's input. In `order` flow, click on Create Intent and fill in the form
+![bse-60](/images/tutorial/bot-studio/bse-58.png)
 
-![bse-35](/images/tutorial/bot-studio/bse-35.png)
+Successfully created intent will look like this
+![bse-61](/images/tutorial/bot-studio/bse-59.png)
 
-#### Create Intent quantity
+### Create Transition between showPizza and pizzaQuantity
 
-After creating NLU, we will add an intent that respond to the user quantity input.
+Now we have to create a transition between `showPizza`and `pizzaQuantity`. We will also store `payload.pizza` value into `context.pizza`. Click on the blue dot on `showPizza` and drag the line to `pizzaQuantity` state to create the transition. Create Transition form will appear after you have successfully connected the states.
+![bse-62](/images/tutorial/bot-studio/bse-60.png)
 
-![bse-36](/images/tutorial/bot-studio/bse-36.png)
+Created transition will look like this
+![bse-63](/images/tutorial/bot-studio/bse-61.png)
 
-#### Create a pizzaQuantity state
+## Create Confirmation Action
 
-Then, we will create a `pizzaQuantity` state that will ask for a user order quantity with a text and `askQuantity` action to provide a bot response to the user.
+Our next step is creating `Ask confirmation` state.
+![bse-64](/images/tutorial/bot-studio/bse-1.jpg)
 
-![bse-37](/images/tutorial/bot-studio/bse-37.png)
+### Create “YESNO” keyword NLUs
 
-#### Add a showPizza transition with pizzaquantity
+First, we will create a keyword NLU to handle `yes` and `no`. Click on Create NLUs and fill in as follows
 
-We will connect `showPizza` state to `pizzaQuantity` state and also, storing the`payload.pizza` value into `context.pizza` when flow movement occurs.
+![bse-65](/images/tutorial/bot-studio/bse-62.png)
 
-![bse-38](/images/tutorial/bot-studio/bse-38.png)
+Successfully created NLU will look like this
+![bse-66](/images/tutorial/bot-studio/bse-63.png)
 
-### Create NLUS confirmation
+### Create confirmPizza state
 
-The next step is to provide order confirmation
+Now we will create `confirmPizza` state to handle order confirmation. We will also store chosen pizza & quantity information in this state. Select `order` flow and click on “+” button to create `confirmPizza` state .
+![bse-67](/images/tutorial/bot-studio/bse-64.png)
 
-![bse-39](/images/tutorial/bot-studio/bse-39.png)
+Click Create Action. Your screen should look like this
+![bse-68](/images/tutorial/bot-studio/bse-65.png)
 
-First of all, we will create NLU which is keywords from confirmation words such as `yes` and `no` with the name NLU `yesno`
+### Create a transition from pizzaQuantity to confirmPizza
 
-![bse-40](/images/tutorial/bot-studio/bse-40.png)
+We will make a transition by storing value (mapping) from pizza quantity **and** chosen pizza type. Click the blue dot on `pizzaQuantity` and drag the line to `confirmPizza` state to create a transition. Create Transition form will appear after you successfully connected the states.
+![bse-69](/images/tutorial/bot-studio/bse-66.png)
 
-#### Create confirmPizza state
+Add mapping in onTransit tab
+![bse-70](/images/tutorial/bot-studio/bse-67.png)
 
-After creating a NLU, we will create a `confirmPizza` state that useful to order confirmation. In addition, we will store chosen pizza and quantity information.
+Result will be shown as follows
+![bse-71](/images/tutorial/bot-studio/bse-68.png)
 
-![bse-41](/images/tutorial/bot-studio/bse-41.png)
+### Create intent yesno
 
-#### Make a transition from pizzaQuantity to confirmPizza
+Previously, we already made an NLU containing `yes` and `no` keywords. We will use that NLU as a classifier on an intent.
 
-At this stage, we will make a transition by storing value (mapping) from pizza quantity **and** chosen pizza type.
-
-![bse-42](/images/tutorial/bot-studio/bse-42.png)
-
-Then, in state `confirmPizza` create a mapping when transiting as shown below by updating created state.
-
-![bse-43](/images/tutorial/bot-studio/bse-43.png)
-
-#### Make intent yesno
-
-Previously, we already made NLU containing confirmation yes and no. The NLU will be used at this stage. In order to understand confirmation statement from a user, you can create an intent to accommodate entries that use NLU `yesno` classifier.
-
-First of all, we will create an intent for the keyword `yes`
-
-![bse-44](/images/tutorial/bot-studio/bse-44.png)
+First of all, we will create an intent in `order` flow for the keyword `yes`
+![bse-72](/images/tutorial/bot-studio/bse-69.png)
 
 Then, we will create an intent for keyword `no`
+![bse-73](/images/tutorial/bot-studio/bse-70.png)
 
-![bse-45](/images/tutorial/bot-studio/bse-45.png)
+Both intent will appear as follows
+![bse-73](/images/tutorial/bot-studio/bse-71.png)
 
-#### Create done state
+### Create done state
 
-In `done` state, we will complete the order by saying thank you and ended bot conversation. There is a condition when user cancelling order. Therefore, we will add condition to `done` action which are `sayThanks` and `sayCancel`
+In `done` state, we will complete the order by saying thank you and end the conversation. We will also set a condition when a user wants to cancel the order. So in this state we will create two actions: `sayThanks` and `sayCancel`.
 
-![bse-46](/images/tutorial/bot-studio/bse-46.png)
+![bse-74](/images/tutorial/bot-studio/bse-72.png)
 
-![bse-47](/images/tutorial/bot-studio/bse-47.png)
+![bse-74](/images/tutorial/bot-studio/bse-73.png)
 
-Thus, the final result of state `done` is as follows
+Result:
+![bse-75](/images/tutorial/bot-studio/bse-74.png)
 
-![bse-48](/images/tutorial/bot-studio/bse-48.png)
+### Create a transition from confirmPizza to done
 
-#### Make the transition from confirmPizza to done
+Next, we will connect `confirmPizza` state to `done` state. Because `done` is the last state, we will set it as default transition. Connect `confirmPizza` to `done` by clicking the blue dot and drag the line to connect the states. Create Transition form will appear after you have successfully connected the states.
+![bse-76](/images/tutorial/bot-studio/bse-75.png)
 
-Next, we will connect `confirmPizza` state to `done` state. Because `done` is the last state, so that created transition will be a default transition
+Final flow:
+![bse-77](/images/tutorial/bot-studio/bse-76.png)
 
-![bse-49](/images/tutorial/bot-studio/bse-49.png)
+## Publish Your Bot
 
-## Publish the Chatbot
+To save your work, click on Publish button located at the top right of your screen. Fill in the changelog as “initial version of pizza bot” for future reference. Click “Publish” to continue.
+![bse-78](/images/tutorial/bot-studio/bse-77.png)
 
-After all the steps are done, your bot should be shown like this
+![bse-79](/images/tutorial/bot-studio/bse-78.png)
 
-![bse-50](/images/tutorial/bot-studio/bse-50.png)
+Every time you publish a bot, it will record a hash number (similar to Git's hash number) in Revision List.
+![bse-80](/images/tutorial/bot-studio/bse-79.png)
 
-To save your work, you can access the blue button located on top right.
+## Testing Your Chatbot
 
-![bse-51](/images/tutorial/bot-studio/bse-51.png)
+Click on Test Chatbot on Bot Studio then type “order” to initialize `order` flow.
+![bse-81](/images/tutorial/bot-studio/bse-80.png)
 
-Push the last version you created by pressing the "Patch" option
+Check on the rest of the flow and make sure everything you've made works.
 
-## Deploy The Chatbot
+## Deploy Your Chatbot
 
-At this point, you have finished making conversation bot. Now we will try to deploy on one channel which is LINE
+Now we will try to deploy our chatbot to LINE Messenger.
 
-### Create the deployment
+### Create deployment
 
-First of all, we have to create a deployment first. Find the "Deployment" menu on your left sidebar.
+First of all, we have to create a deployment first. Find the “Deployment” menu on the left sidebar.
+![bse-82](/images/tutorial/bot-studio/bse-81.png)
 
-![bse-52](/images/tutorial/bot-studio/bse-52.png)
+Click on Create Deployment button on top right
+![bse-14](/images/tutorial/bot-studio/bse-82.png)
 
-Make a deployment with `pizzaChat` name and select version 0.0.2. You can also follow the picture below
+Choose Patch on Deployment Version.
+![bse-14](/images/tutorial/bot-studio/bse-83.png)
 
-![bse-53](/images/tutorial/bot-studio/bse-53.png)
+Succesfully created deployment looks like this.
+![bse-14](/images/tutorial/bot-studio/bse-84.png)
 
-### Register LINE account
+### Create Environment
 
-To sign up for a LINE developer account, you have to create LINE social media account by [installing LINE application, either desktop or mobile app](https://line.me/en/download). After you successfully registered, signed in to [LINE developer console](https://developers.line.me/console/)
+Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production. Inside each environment, you can add as many messaging channel as you like. You have to setup environment first before integrating to messaging channel.
 
-![bse-54](/images/tutorial/bot-studio/bse-54.png)
+In this tutorial, we will try to setup Production environment. Click on Environment menu under Deploy and you will be shown 3 available environments.
+![bse-14](/images/tutorial/bot-studio/bse-85.png)
+Click “Create Environment” button in Production.
 
-### Channel settings
+The first field we have to fill in is deployment version. Choose 0.0.1 (shown on the previous step) as deployment version in Production.
 
-Once you registered your LINE account, you must enter the console by entering your username and password
+Another field we have to fill in is environment URL. This URL is used to access CMS Client later. You can read the full explanation about CMS Client [here](http://sss.c/).
+![bse-14](/images/tutorial/bot-studio/bse-86.png)
 
-![bse-55](/images/tutorial/bot-studio/bse-55.png)
+Successfully created environment will look like this
+![bse-14](/images/tutorial/bot-studio/bse-87.png)
 
-Then, you're going to create a provider by clicked [this link](https://developers.line.me/console/register/provider/) and enter provider name.
+Next, we need to create channel inside the environment. Click on Create Channel on Production environment and you will be redirected to Create Channel page
+![bse-14](/images/tutorial/bot-studio/bse-88.png)
 
-![bse-56](/images/tutorial/bot-studio/bse-56.png)
+Next, click “Create Channel” and fill in as follows
+![bse-14](/images/tutorial/bot-studio/bse-89.png)
 
-Once you created the provider, click on "MessagingAPI" button in upper section.
+Let's setup LINE developer console so you can fill in fields highlighted with red box.
 
-![bse-57](/images/tutorial/bot-studio/bse-57.png)
+### Registration to LINE Developer console
 
-This feature is useful for adding new channels. Fill in channel information.
+**Create LINE account**
 
-![bse-58](/images/tutorial/bot-studio/bse-58.png)
+To sign up for a LINE developer account, you have to have a LINE account by [installing LINE application, either desktop or mobile app](https://line.me/en/download). After you successfully registered, sign in to https://developers.line.biz/en/
 
-Please note that when you filling the **plan** you must choose **Developer Trial**
+In LINE Developer Console click Log In.
+![bse-14](/images/tutorial/bot-studio/bse-90.png)
 
-![bse-5](/images/tutorial/bot-studio/bse-59.png)
+Click on Log in with LINE
+![bse-14](/images/tutorial/bot-studio/bse-91.png)
 
-Once you filled in data on MessagingAPI, bot display will change as below
+Enter your email and password
+![bse-14](/images/tutorial/bot-studio/bse-92.png)
 
-![bse-60](/images/tutorial/bot-studio/bse-60.png)
+After you successfully logged in, you will be redirected to provider list dashboard
+![bse-14](/images/tutorial/bot-studio/bse-93.png)
 
-To view channel details, you can hit the channel button. Then, in detail channel, you will see Messaging Settings. In this section, you must do "enable Webhooks" and click the Issues button on access token channel.
+**Create a Provider**
+Click “Create New Provider”
+![bse-14](/images/tutorial/bot-studio/bse-94.png)
 
-![bse-61](/images/tutorial/bot-studio/bse-61.png)
+Fill in provider name
+![bse-14](/images/tutorial/bot-studio/bse-95.png)
 
-If you completed above step, you will see
+Click Confirm to continue. You will have to re-confirm the provider name since it cannot be changed later. Click “Create” to confirm.
+![bse-14](/images/tutorial/bot-studio/bse-96.png)
 
-![bse-62](/images/tutorial/bot-studio/bse-62.png)
+### Setup Channel for LINE Integration
 
-In "Using LINE Features" section, you need to disable some features on LINE as shown below
+Setup channel in Messaging API by clicking Create Channel on Messaging API.
+![bse-14](/images/tutorial/bot-studio/bse-97.png)
 
-![bse-63](/images/tutorial/bot-studio/bse-63.png)
+Fill in the form as follows
+![bse-14](/images/tutorial/bot-studio/bse-98.png)
+![bse-14](/images/tutorial/bot-studio/bse-99.png)
 
-Voila, your channel is ready and you are able to integrate your bot.
+Next, you have to choose **Developer Trial as Plan**
+![bse-14](/images/tutorial/bot-studio/bse-100.png)Continue to click Confirm.
 
-### Deployment on channel
+Accept Terms of Use from LINE then click Create
+![bse-14](/images/tutorial/bot-studio/bse-101.png)
 
-In the "Deployment" menu, click on "View channel" button to see integrated channels. If there is none data, your bot is never integrated before.
+Successfuly created channel will look like this
+![bse-14](/images/tutorial/bot-studio/bse-102.png)
 
-To add a new channel, click on "+" button in lower right corner of your page. Enter line name and select channel line
+### Integration LINE and Your Chatbot
 
-![bse-64](/images/tutorial/bot-studio/bse-64.png)
+Click on created channel to fill in Channel Access Token and Channel Secret. Here is the guideline to fill in those fields
 
-There is an empty field that you must to fill, so you must re-open the LINE developer console to enter the data in it.
+**Fill in Channel Access Token field**
+Click “Issue” in Messaging Settings section
+![bse-14](/images/tutorial/bot-studio/bse-103.png)
 
-Access Token Channel can be found here
+Then, issue dialog will pop up. Click on Issue to continue
+![bse-14](/images/tutorial/bot-studio/bse-104.png)
 
-![bse-65](/images/tutorial/bot-studio/bse-65.png)
+Then, copy Channel Access Token below and paste it on Create Channel form in Kata | Platform
+![bse-14](/images/tutorial/bot-studio/bse-105.png)
+![bse-14](/images/tutorial/bot-studio/bse-106.png)
 
-Channel Secret can be found here
+**Fill in Channel Secret field**
 
-![bse-66](/images/tutorial/bot-studio/bse-66.png)
+In Basic Information, copy Channel Secret from LINE to Kata | Platform
+![bse-14](/images/tutorial/bot-studio/bse-107.png)
+![bse-14](/images/tutorial/bot-studio/bse-108.png)
 
-Then, click "create" to create channel and will be as attached
+Final result in Kata | Platform will look like this
+![bse-14](/images/tutorial/bot-studio/bse-109.png)
 
-![bse-67](/images/tutorial/bot-studio/bse-67.png)
+Click “Create” to generate webhook URL from Kata | Platform.
+![bse-14](/images/tutorial/bot-studio/bse-110.png)
 
-The final step is to insert a webhook created from the bot to LINE. You can click eye symbol on the Action column to see channel detail and copy the link.
+After webhook URL is generated, go to Messaging Settings in LINE developer console to enable webhook.
+![bse-14](/images/tutorial/bot-studio/bse-111.png)Click “Update” then paste the webhook URL to LINE developer console.
+![bse-14](/images/tutorial/bot-studio/bse-112.png)Click “Update” then click “Verify.”
+![bse-14](/images/tutorial/bot-studio/bse-113.png)Next, disable auto-reply messages and greeting messages
+![bse-14](/images/tutorial/bot-studio/bse-114.png)Voila! You have successfully deployed your bot to LINE Messenger.
 
-![bse-68](/images/tutorial/bot-studio/bse-68.png)
-
-Then, paste URL's webhook in LINE console. Click "verify" button to check connection whether success or failure to the channel.
-
-![bse-69](/images/tutorial/bot-studio/bse-69.png)
-
-Now, you have a conversation with the bot. On the same page, look for QR code images. Later this QR code can be used to add your artificial bot as a friend. Once you've added a bot as a friend, send a message containing the word "order"
-
-![bse-70](/images/tutorial/bot-studio/bse-70.png)
-
-Congratulations! Now your chat bot is done. Next, we will try to make a bot with NLU using NLStudio.
-
-## Improving NLUs using NLStudio
-
-Before you begin, you can see our NLStudio full tutorial on links (link tutorial NLStudio). In this section, you will create a NLModel which able to process pizza ordering orders. Let's start.
-
-### Create new NLU
-
-In the main menu, click the NLU menu located on the left of the screen. Then, the menu will look like below
-
-![bse-71](/images/tutorial/bot-studio/bse-71.png)
-
-Then, click the "+" button to create a new NLU and fill NLU data as follow
-
-![bse-72](/images/tutorial/bot-studio/bse-72.png)
-
-### Create an intentOrder entity
-
-After created a new NLU, you must enter the entity. Click the "+" button to create an entity
-
-![bse-73](/images/tutorial/bot-studio/bse-73.png)
-
-Then, create an entity with the data as below
-
-![bse-74](/images/tutorial/bot-studio/bse-74.png)
-
-After you created the entity, the next step is data training. You have to enter a few sentences with the classification of `intentOrder: order`
-
-### Conduct training data
-
-The first step is you have to enter "Training" sub-menu
-
-![bse-75](/images/tutorial/bot-studio/bse-75.png)
-
-Then, in the box which to enter a sentence, fill a sentence like "I want pizza"
-
-![bse-76](/images/tutorial/bot-studio/bse-76.png)
-
-Then, select `intentOrder:order` and click "Train" button to train the NLModel you created. The final display will look like this
-
-![bse-77](/images/tutorial/bot-studio/bse-77.png)
-
-NLModel will be more precise in understanding by doing the training in several times. You may enter following sentences to train the NLModel you have created
-
-![bse-78](/images/tutorial/bot-studio/bse-78.png)
-
-If you think you've done enough training and feel that NLModel already understands user input, you can try testing by pressing the "Test NLU" button at the bottom right of the page.
-
-![bse-79](/images/tutorial/bot-studio/bse-79.png)
-
-### Integration with bot studio
-
-Once you are sure that the NLModel you created has captured user information well, you may start the NLModel integration with your bot.
-
-To get started, go to the "Bot" menu and click the "NLU" sub-menu. Create a new NLU and fill in the data as attached picture
-
-![bse-80](/images/tutorial/bot-studio/bse-80.png)
-
-Next, go to the sub-menu "Conversation Flows" and click on the tab "Intents". Select "orderTxt" you've created earlier to handle user input and add a new classifier as below
-
-![bse-81](/images/tutorial/bot-studio/bse-81.png)
-
-Click "Update" to save the updated intent.
-
-Next, you have to publish this NLStudio integration and replace the version on "Deployment" menu to try directly on your device.
+Scan the QR Code in LINE Developer Console to add the bot.
+![bse-14](/images/tutorial/bot-studio/bse-115.png)
