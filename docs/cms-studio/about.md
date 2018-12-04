@@ -1,28 +1,19 @@
 ---
 id: cms-studio-about
-title: About CMS Studio
+title: CMS Studio
+next: cms-studio-elements
 ---
 
-### **About Project**
+CMS Studio allows you to build a custom workspace where everyone in your team can collaborate in modifying all bot contents, from editing bot responses to creating new bot features, without writing a single line of code or deploying anything.
 
-Project system is introduced to keep things more organized and to avoid clutter by putting everything you need in one place. A project contains one bot design, one NL, and one CMS.
+Every dashboard will have its own namespace that you can define under Deploy - Environment Menu.
 
-[Docs](http://related-docs/)
+### **About Page, Form, and Element**
 
-### **About Revision List**
+Before you start building your workspace, you need to understand these components:
 
-Revision Lists records a hash number every time you publish your bot design, NL, or CMS. You can also see people who published the revision along with the changelog.
+- **Page** is the main category (i.e. Product Page)
+- **Form** is a sub-category inside a Page (i.e Product X Response Form)
+- **Element** is a unit inside a Form. (i.e. editable contents about Product X)
 
-[Docs](http://related-docs/)
-
-### **About Deployment**
-
-Project deployment on Kata | Platform 3.0 will refer to the latest revision of bot, NL, and CMS. You can also restore an earlier version of a deployment using 'Rollback' feature.
-
-[Docs](http://related-docs/)
-
-### **About Environment**
-
-To help you ensure only high quality and robust bots are delivered to your users, now Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production.
-
-[Docs](http://related-docs/)
+Currently, we don't set any limit to how many pages, forms, or elements you can build under one CMS, so you can build it as many as you want. However, please note that Kata Dashboard will be used by your clients, so it's better to make it as simple as possible.

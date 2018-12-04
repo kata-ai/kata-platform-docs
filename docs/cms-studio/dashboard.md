@@ -1,28 +1,18 @@
 ---
 id: cms-studio-dashboard
-title: About CMS Dashboard
+title: Kata Dashboard
+prev: cms-studio-elements
 ---
 
-### **About Project**
+Once you've done building the CMS on CMS Studio, you can invite users/clients to contribute to Kata Dashboard and update your bot's knowledge. Follow these steps to invite users:
 
-Project system is introduced to keep things more organized and to avoid clutter by putting everything you need in one place. A project contains one bot design, one NL, and one CMS.
+- Open CMS Studio
+- Open Users Menu
+- Invite New Users by email
 
-[Docs](http://related-docs/)
+### Few things to note:
 
-### **About Revision List**
+- You have to invite users for **every CMS Environment**. Meaning, if your CMS have more than one Environments, you have to re-invite all users one by one.
+- You can only invite Kata Platform users to Kata Dashboard. So make sure your client already has registered account on Kata Platform before you invite them. We're in the process of building the ability to invite unregistered users, more on this soon.
 
-Revision Lists records a hash number every time you publish your bot design, NL, or CMS. You can also see people who published the revision along with the changelog.
-
-[Docs](http://related-docs/)
-
-### **About Deployment**
-
-Project deployment on Kata | Platform 3.0 will refer to the latest revision of bot, NL, and CMS. You can also restore an earlier version of a deployment using 'Rollback' feature.
-
-[Docs](http://related-docs/)
-
-### **About Environment**
-
-To help you ensure only high quality and robust bots are delivered to your users, now Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production.
-
-[Docs](http://related-docs/)
+![cmss-8](./images/cmss-8.jpg)

@@ -1,28 +1,42 @@
 ---
 id: cms-studio-elements
-title: About CMS Elements
+title: CMS Elements
+prev: cms-studio-about
+next: cms-studio-dashboard
 ---
 
-### **About Project**
+Elements are the component where you can set customizable bot contents in your CMS. Here are the elements we provide on CMS Studio:
 
-Project system is introduced to keep things more organized and to avoid clutter by putting everything you need in one place. A project contains one bot design, one NL, and one CMS.
+## **Single Elements**
 
-[Docs](http://related-docs/)
+- Text
 
-### **About Revision List**
+![cmss-1](./images/cmss-1.png)
 
-Revision Lists records a hash number every time you publish your bot design, NL, or CMS. You can also see people who published the revision along with the changelog.
+- Text Area
 
-[Docs](http://related-docs/)
+![cmss-2](./images/cmss-2.png)
 
-### **About Deployment**
+- Text List
 
-Project deployment on Kata | Platform 3.0 will refer to the latest revision of bot, NL, and CMS. You can also restore an earlier version of a deployment using 'Rollback' feature.
+![cmss-3](./images/cmss-3.png)
 
-[Docs](http://related-docs/)
+- Slider
 
-### **About Environment**
+![cmss-4](./images/cmss-4.png)
 
-To help you ensure only high quality and robust bots are delivered to your users, now Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production.
+- Dropdown
 
-[Docs](http://related-docs/)
+![cmss-5](./images/cmss-5.png)
+
+- Toggle
+
+![cmss-6](./images/cmss-6.png)
+
+## **FAQ Table**
+
+Use this table to maintain FAQ-related knowledge of your bot. Since we have implemented our own Natural Language Model, specifically for FAQ-related contents to this FAQ Table, you don't need to do extra training on NL Studio.
+
+You can create as many **labels** as you like, depending on how many topics you would like to handle under this FAQ. Every **question** will be considered as training data and will enrich the existing Natural Language Model, so the more the merrier. You can also put more than one **answers** as variations to avoid any repetitive responses.
+
+![cmss-7](./images/cmss-7.png)

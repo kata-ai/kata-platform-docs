@@ -5,166 +5,143 @@ prev: bot-studio-tutorial
 next: bot-template-tutorial
 ---
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UTnXH8l7QVY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Introduction
 
-In the previous tutorial which is making pizza bot (link for pizza bot tutorial language), the purpose is helping users to order. Moreover, we also make a NLU for bot to understand user conversations. However, created NLUs have limitations such as data should be prepared as much as possible. Therefore, in Kata Platform we have set up NLU menu to help create Natural Language Model that can be customised to your business needs.
-
-Started to a few datasets, NLU studio possible to create NL Model and able to adapt your own flow. The tutorial as follow will create a NL Model using NL Studio. Case study to be made is NL Model for pizza bot
+In [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4), we learned how to make keyword-based chatbot to order pizza. However, keyword-based chatbot is not so smart. In this tutorial we will learn how to enhance the chatbot using NL Studio.
 
 ## Creating a NL Model with NL Studio
 
-### Login to Kata platform
+### Login to Kata | platform
 
-Following with previous `pizzaBot` tutorial, we must enter Kata Platform by entering username and password you previously had
+Login to Kata | Platform by entering your username and password.
+![nlst-1](/images/tutorial/nl-studio/nlst-1.png)
+Click Login to continue
 
-![nse-1](/images/tutorial/nl-studio/nse-1.png)
+### Create Entity Label
 
-Click "Login" to continue
+After you entered to Kata Platform, click on the project you've created
+![nlst-2](/images/tutorial/nl-studio/nlst-2.png)
 
-### Create new NLU
+Then, click on NLU on the side bar
+![nlst-3](/images/tutorial/nl-studio/nlst-3.png)
 
-After you entered to Kata Platform, click NLU menu where located on left screen. Then, the menu will look like this
+Next, click Create Entity. Entity has similar definition with NL Model. It will help us to classify every input from users.
+![nlst-4](/images/tutorial/nl-studio/nlst-4.png)
 
-![nse-2](/images/tutorial/nl-studio/nse-2.png)
+Now, create an entity called `intent` that with 4 labels: `order`, `askOptions`, `confirm` and `cancel`. Further explanation about entity is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)
+![nlst-5](/images/tutorial/nl-studio/nlst-5.png)
 
-Then, click "+" button to create a new NLU and fill in as follow
+### Create Entity Type
 
-![nse-3](/images/tutorial/nl-studio/nse-3.png)
+In this entity `type`, we will create an entity with dictionary type (further explanation about entity dictionary type is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)). This entity will handle pizza type selection. Add new entity and fill in the data as follows
 
-### Create an intent entity
+![nlst-6](/images/tutorial/nl-studio/nlst-6.png)
 
-After you created a new NLU, you must enter the entity. The entity will help us in classifying every input from users. Click the "+" button to create an entity
+Then, continue filling the dictionary by adding other types
+![nlst-7](/images/tutorial/nl-studio/nlst-7.png)
 
-![nse-4](/images/tutorial/nl-studio/nse-4.png)
+### Create Entity Size
 
-First of all, create an entity that is an `intent` classification consisting of 4 `intents` (**order, askOptions, confirm, cancel**). You can customize the intent selection to match your needs. In this entity example we will create 4 `intent` first.
+Entity `size` is used to handle pizzas size. In this entity, we will use `Belongs to` feature which binds an entity under another entity (further explanation about belongsTo usage is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)). We will put entity `size` under entity `type`.
 
-![nse-5](/images/tutorial/nl-studio/nse-5.png)
+![nlst-8](/images/tutorial/nl-studio/nlst-8.png)
 
-### Create entity type
+In dictionary section, enter a keyword as a prediction for input from users
+![nlst-9](/images/tutorial/nl-studio/nlst-9.png)
 
-In this entity `type`, we will create a NLU with dictionary type which will be limiting and handles pizza type selection. Add new entity and fill in the data as below
+### Create Entity Crust
 
-![nse-6](/images/tutorial/nl-studio/nse-6.png)
+Next, we will create an entity named `crust` to find out crust type on pizza. We'll put it under entity `type`.
+![nlst-10](/images/tutorial/nl-studio/nlst-10.png)
 
-Then, continue filling the dictionary by adding other words
+Enter the data as follows
+![nlst-11](/images/tutorial/nl-studio/nlst-11.png)
 
-![nse-7](/images/tutorial/nl-studio/nse-7.png)
+### Create Entity Qty
 
-### Create entity size
+In pizza chatbot which we created earlier, user must enter pizza number to purchase using regex (regular expression.)
 
-Entity `size` serves to determine pizzas size which ordered by users. In this entity, we will use "Belongs to” which used to provide a marker which entity is under another entity. The entity`size` will be under entity `type`. How to use it will be shown in the picture below.
+Entity `qty` will use dictionary by entering numbers or keywords related to the number of pizzas ordered. Add entity then fill in the form as follows
+![nlst-12](/images/tutorial/nl-studio/nlst-12.png)
 
-![nse-8](/images/tutorial/nl-studio/nse-8.png)
+Then, fill in as below
+![nlst-13](/images/tutorial/nl-studio/nlst-13.png)
 
-In dictionary section, enter a keyword that will be a prediction input from users
+After you've created entities, try to train data using your defined entities.
 
-![nse-9](/images/tutorial/nl-studio/nse-9.png)
+### Training Your Model
 
-### Create entity crust
+To start training, enter Training menu under NLU
+![nlst-14](/images/tutorial/nl-studio/nlst-14.png)
 
-Next, we will create an entity named `crust` that works to find out crust type on pizza. It is under entity `type`. You can enter data according to image below:
+Enter a simple phrase like "want pizza" and press "enter" on your keyboard
+![nlst-15](/images/tutorial/nl-studio/nlst-15.png)
 
-![nse-10](/images/tutorial/nl-studio/nse-10.png)
+Then, in this section you can start tagging and classifying text. Click on Add Trait, then select `intent: order`.
+![nlst-16](/images/tutorial/nl-studio/nlst-16.png)
 
-### Create entity qty
+Click Train to submit your dataset.
+![nlst-17](/images/tutorial/nl-studio/nlst-17.png)
 
-In pizza bot which we created earlier, user must enter pizza number to be purchased using intent `regex`. Entity `qty` will be created using dictionary by entering numbers or keywords related to the number of pizzas ordered. Add entity to NLU dashboard, then fill in the data as below
+Then, add a few more sentences to train more data. You can follow this
+![nlst-18](/images/tutorial/nl-studio/nlst-18.png)
 
-![nse-11](/images/tutorial/nl-studio/nse-11.png)
+In our next example, we will do partial tagging by entering text and doing text selection on the word we want to tag. **The process of selecting text can be done by blocking one or more words at a time using a cursor.**
 
-You have completed intent creation, then let's try to do dataset training
+You can follow the example in this following picture. On the sentence "how much american all star", select only on the word "American all star"
+![nlst-19](/images/tutorial/nl-studio/nlst-19.png)
 
-### Training
+Then, select entity `type` to classify
+![nlst-20](/images/tutorial/nl-studio/nlst-20.png)
 
-In order to data training, you must enter to "Training" menu located on the left side
+You can also enter a phrase "I want American all star pizza, two and bbq hand tossed one" and tag it like this
+![nlst-21](/images/tutorial/nl-studio/nlst-21.png)
 
-![nse-12](/images/tutorial/nl-studio/nse-12.png)
+You may see a number beside an entity. That number represents how accurate an entity identifies a phrase (highest is 1.0)
 
-You may enter the dataset to create a NL Model on training page. Enter a simple phrase like "want pizza" and press "enter" on the keyboard
+Try to tag more sentences.
+![nlst-22](/images/tutorial/nl-studio/nlst-22.png)
 
-![nse-13](/images/tutorial/nl-studio/nse-13.png)
+Next, we will define parent entity using `BelongsTo`. Click on `BelongsTo` dropdown on `small` phrase, then select "Pepperoni". Final result looks like this
+![nlst-23](/images/tutorial/nl-studio/nlst-23.png)
 
-Then, in this section you can do tagging and text classification. In entities option, select`intent: order`. Intent order is useful as a user initiation in ordering pizza.
+### Testing NLU in Prediction Console
 
-![nse-14](/images/tutorial/nl-studio/nse-14.png)
+Use Test NLU to test a dataset.
+![nlst-24](/images/tutorial/nl-studio/nlst-24.png)
 
-Click "Train" to start training. You can also add a few sentences to train more data in making NL Model. You may follow the text below
+Enter a word such as "i want two aas" (read: aas means American All Star). You can see the prediction result as you can see in this image
+![nlst-25](/images/tutorial/nl-studio/nlst-25.png)
 
-![nse-15](/images/tutorial/nl-studio/nse-15.png)
+## Adjusting the Dataset
 
-We need to train a lot of data to increase complexity. In our next example, we will do partial tagging by entering text and doing text selection on the word we want to tag. The process of selecting text can be done by blocking one or more words at a time using a cursor.
+When performing NLU prediction in Test NLU, sometimes the prediction result is wrong, incomplete, or still has a low confidence score.
+![nlst-26](/images/tutorial/nl-studio/nlst-26.png)
 
-You can try as in the following picture. In the words "how much american all star", select only on the word "American all star"
+For example, the sentence above should be tagged as `intent:order`. However, prediction result has no prediction to order. To improve or fix a prediction, enter Log menu.
 
-![nse-16](/images/tutorial/nl-studio/nse-16.png)
+### Enter Log Menu
 
-Then, select entity `type` to classify as below.
+Go to Log menu under NLU
+![nlst-27](/images/tutorial/nl-studio/nlst-27.png)
 
-![nse-17](/images/tutorial/nl-studio/nse-17.png)
+On this page, you will see previous dataset when you have predicted on Test NLU.
 
-We may include some keywords as attached to practice more, you can also enter a phrase "I want American all star pizza, two and bbq hand tossed one"
+### Fix The Prediction
 
-![nse-18](/images/tutorial/nl-studio/nse-18.png)
+We will adjust the dataset. Click on pencil icon (which placed in left icon)
+![nlst-28](/images/tutorial/nl-studio/nlst-28.png)
 
-Then, we will try the next sentence.
+Then, select `intent:order`.
+![nlst-29](/images/tutorial/nl-studio/nlst-29.png)
+Click train to revise the prediction. Trained data will be seen as follow.
+![nlst-30](/images/tutorial/nl-studio/nlst-30.png)
 
-![nse-19](/images/tutorial/nl-studio/nse-19.png)
-
-To match with created intent, enter the parent of this entity by selecting "belongs to" button and selecting "Pepperoni" because the word "small" is a Pepperoni size reference. In "add trait" option, select `intent:order` to classify as an order
-
-![nse-20](/images/tutorial/nl-studio/nse-20.png)
-
-Similar to previous image, the words "two" and "medium" have different ownership. The word "two" owned by the "bbq" and "medium" owned by "pepperoni" pizza type. You can also enter other words. Do not forget to add `intent:order` for order sentence structure
-
-### Test on Test NLU
-
-To test whether dataset is created right, you are able to do NLU testing as attached
-
-![nse-21](/images/tutorial/nl-studio/nse-21.png)
-
-Then, enter the word "i want two aas". You can see the results of previous training data as attached
-
-![nse-22](/images/tutorial/nl-studio/nse-22.png)
-
-Congratulations, you have completed how to create NL model using NL studio.
-
-## Adjusting the dataset
-
-When performing NLU testing, sometimes the results displayed is not match with our expectations. As the example below (please note the results will differ on each NLStudio, depending on the training data).
-
-![nse-23](/images/tutorial/nl-studio/nse-23.png)
-
-In the picture above, the sentence has a prediction to order and must be included in `intent:order`. Therefore, we will improve the result from NLModel.
-
-### Enter log menu
-
-First of all, you should be in the "Log" sub-menu of NLU.
-
-![nse-24](/images/tutorial/nl-studio/nse-24.png)
-
-On this page, you will see dataset when you do previous training.
-
-### Fix the prediction
-
-In the "do you sell american all star" message, we will adjust the dataset. Click on "add trait" and select `intent:order`.
-
-![nse-25](/images/tutorial/nl-studio/nse-25.png)
-
-Then it will look like as below
-
-![nse-26](/images/tutorial/nl-studio/nse-26.png)
-
-Click "Train" to train NLModel and you will receive a notice like below
-
-![nse-27](/images/tutorial/nl-studio/nse-27.png)
+You will receive a notification after you click “Train”
 
 ### Test NLU with data that has been fixed
 
-Then we will try to test the dataset after doing training above. Click "Test NLU" and enter a phrase "hi, do you sell aas".
+We will try to predict another dataset and see if the result has been improved. Click Test NLU and enter a phrase "hi, do you sell aas".
+![nlst-31](/images/tutorial/nl-studio/nlst-31.png)
 
-![nse-28](/images/tutorial/nl-studio/nse-28.png)
-
-Congratulations, now you have understood how to train NLModel with your dataset
+Congratulations, now you have learned how to train entity in NL Studio.

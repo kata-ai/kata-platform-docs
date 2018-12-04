@@ -1,28 +1,57 @@
 ---
 id: deployment-guide-how-to-deploy
-title: Deployment Guide Introduction
+title: How To Deploy
+prev: deployment-guide-introduction
 ---
 
-### **About Project**
+## How to Deploy
 
-Project system is introduced to keep things more organized and to avoid clutter by putting everything you need in one place. A project contains one bot design, one NL, and one CMS.
+First of all, you need to create a project and a bot with at least a flow, a state and an intent. You may follow this tutorial to create a bot [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4). In this guideline, we will explain step by step on how to set up environments and deploy your project to LINE messenger.
 
-[Docs](http://related-docs/)
+### Create deployment
 
-### **About Revision List**
+We have to create a deployment first. Find the “Deployment” menu on the left sidebar.
+![dg-1](./images/dg-1.png)Click on Create Deployment button on top right.
+![dg-1](./images/dg-2.png)Every deployment will use the latest revision of bot, NLU, and CMS. Those revision are shown in hash number, similar to Git. In short, the latest revision means latest published version.
 
-Revision Lists records a hash number every time you publish your bot design, NL, or CMS. You can also see people who published the revision along with the changelog.
+This is how we use these three different terms for deployment version:
 
-[Docs](http://related-docs/)
+- Patch for tiny changes (e.g. copywriting)
+- Minor for small issues.
+- Major for hot bug that needs to be fixed.
 
-### **About Deployment**
+However, feel free to define this term with your own development team.
 
-Project deployment on Kata | Platform 3.0 will refer to the latest revision of bot, NL, and CMS. You can also restore an earlier version of a deployment using 'Rollback' feature.
+Next step, choose the Deployment Version, for example choose Patch.
+![dg-1](./images/dg-3.png)Successfully created deployment will appear like this
+![dg-1](./images/dg-4.png)**Rollback Deployment**
 
-[Docs](http://related-docs/)
+You can see Rollback and View button in every deployment. Rollback feature will be enabled when you have more than 1 deployment (because you can't rollback to the latest version, of course.)
 
-### **About Environment**
+This is how it looks like if you have more than 1 deployment:
+![dg-1](./images/dg-5.png)Rolling back to previous version will create a new deployment version, in this case version 3.00, using targeted revision hash number (version 1.00)
 
-To help you ensure only high quality and robust bots are delivered to your users, now Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production.
+Please note that rolling back a deployment will also revert your training data to the targeted version. For example:
 
-[Docs](http://related-docs/)
+- Version 2 (latest) has 100 training data
+- Version 1 has 50 training data.
+
+Rolling back deployment to version 1 will result in you having only 50 training data. We do this to prevent inconsistencies in the bot structure. However, you can always rollback to version 2 should you need to.
+
+### Create Environment
+
+Kata | Platform 3.0 allows you to set up 3 separate environments in your project: Development, Staging, and Production. Inside each environment, you can add as many messaging channel as you like. You have to setup environment first before integrating to messaging channel.
+
+In this tutorial, we will try to setup Production environment. Click on Environment menu under Deploy and you will be shown 3 available environments.
+![dg-1](./images/dg-6.png)
+Click “Create Environment” button in Production.
+
+The first field we have to fill in is deployment version. Choose 0.0.1 (shown on the previous step) as deployment version in Production.
+
+Another field we have to fill in is environment URL. This URL is used to access CMS Client later. You can read the full explanation about CMS Client [here](http://sss.c/).
+![dg-1](./images/dg-7.png)Successfully created environment will look like this
+![dg-1](./images/dg-8.png)Next, we need to create channel.
+
+Click on Create Channel on Production environment and you will be redirected to Create Channel page.
+![dg-1](./images/dg-9.png)Next, click “Create Channel” and fill in as follows
+![dg-1](./images/dg-10.png)Then, continue to LINE developer console to fill in those fields. You can view the explanation in [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4)
