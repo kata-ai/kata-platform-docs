@@ -319,7 +319,8 @@ Note:
 
 Twitter has `quickreply` that quite similar with action button. Follow this code to put `quickreply` :
 
-```type: "template"
+```yaml
+type: "template"
 options:
     type: "button" | "confirm"
     items:
