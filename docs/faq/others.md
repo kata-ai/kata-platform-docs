@@ -358,13 +358,13 @@ RAW
 
 flatten: false
 
-```yml
+```
 { 'intent': [{ 'type': 'trait', 'score': 1, 'value': 'mainMenu' }] }
 ```
 
 flatten: true
 
-```yml
+```
 {
   'intentArray': [{ 'type': 'trait', 'score': 1, 'value': 'mainMenu' }],
   'intent': { 'type': 'trait', 'score': 1, 'value': 'mainMenu' },
@@ -375,12 +375,12 @@ VALUE
 
 flatten: false
 
-```yml
+```
 { 'intent': ['mainMenu'] }
 ```
 
 flatten: true
 
-```yml
+```
 { 'intentArray': ['mainMenu'], 'intent': 'mainMenu' }
 ```
