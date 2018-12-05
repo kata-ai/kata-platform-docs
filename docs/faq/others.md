@@ -309,7 +309,8 @@ Note:
 
 2. Then, call the configuration in action :
 
-```actions :
+```yaml
+    actions :
        	options :
                	text: $(config.googleApiKey)
 ```
