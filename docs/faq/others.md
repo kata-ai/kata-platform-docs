@@ -266,24 +266,24 @@ burstMessageResponse
 1. Execute create folder command, `cd folder/`
 2. Execute `kata nl-init nama-nl`, please fill in `nlu.yml` content as below :
 
-```
+```yaml
 name: nlu_name (Model Name)
 lang: id
 entities:
-    intent:
-        type: trait
-        profile: intent
-        labels:
-            - greet
-            - cancel
-            - ask
-    faq:
-        type: trait
-        profile: faq
-        root: intent
-        labels:
-            - askB
-            - askA
+  intent:
+    type: trait
+    profile: intent
+    labels:
+      - greet
+      - cancel
+      - ask
+  faq:
+    type: trait
+    profile: faq
+    root: intent
+    labels:
+      - askB
+      - askA
 ```
 
 3. Execute `kata nl-push`then execute `create/update nlu`
@@ -339,15 +339,15 @@ You may use `metadata.channelType` in Bot configuration
 
 ### **Config in bot.yml**
 
-```nlus:
-       mynl:
-          type: nl
-          options:
-              nluId:"user:nlu-name"
-              token:"token"
-              output:<type>
-              threshold:<number>
-              flatten:true  #optional, default false
+```yaml
+nlus:
+  mynl:
+    type: nl
+    options: nluId:"user:nlu-name"
+      token: "token"
+      output: <type>
+      threshold: <number>
+      flatten: true #optional, default false
 ```
 
 If flatten is enabled, first object in array will be the value of the entity with entity name as the key
