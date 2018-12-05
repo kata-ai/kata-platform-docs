@@ -310,9 +310,9 @@ Note:
 2. Then, call the configuration in action :
 
 ```yaml
-    actions :
-       	options :
-               	text: $(config.googleApiKey)
+actions:
+  options:
+    text: $(config.googleApiKey)
 ```
 
 ## If FB messenger & LINE has action button which use URL, how about Twitter? Is there any alternative way such as action text URL?
@@ -337,7 +337,7 @@ You may use `metadata.channelType` in Bot configuration
 
 ## How to use Flatten in NLUs?
 
-**Config in bot.yml**
+### **Config in bot.yml**
 
 ```nlus:
        mynl:
@@ -352,24 +352,35 @@ You may use `metadata.channelType` in Bot configuration
 
 If flatten is enabled, first object in array will be the value of the entity with entity name as the key
 
-**Output Type**
+### **Output Type**
 
 RAW
 
 flatten: false
 
-`{intent:[{ type:'trait', score:1, value:'mainMenu'}]`
+```yml
+{ 'intent': [{ 'type': 'trait', 'score': 1, 'value': 'mainMenu' }] }
+```
 
 flatten: true
 
-`{ intentArray:[{ type:'trait', score:1, value:'mainMenu'}],intent:{ type:'trait', score:1, value:'mainMenu'}}}`
+```yml
+{
+  'intentArray': [{ 'type': 'trait', 'score': 1, 'value': 'mainMenu' }],
+  'intent': { 'type': 'trait', 'score': 1, 'value': 'mainMenu' },
+}
+```
 
 VALUE
 
 flatten: false
 
-`{ intent:['mainMenu']}`
+```yml
+{ 'intent': ['mainMenu'] }
+```
 
 flatten: true
 
-`{intentArray:['mainMenu'],intent:'mainMenu'}`
+```yml
+{ 'intentArray': ['mainMenu'], 'intent': 'mainMenu' }
+```
