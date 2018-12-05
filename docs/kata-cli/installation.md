@@ -14,7 +14,7 @@ Soon, we will implement Kata-CLI 2.0 because of our updated platform to 3.0. In 
 To install Kata-CLI in global mode, run this command in your terminal:
 
 ```shell
-npm install -g Kata-CLI
+npm install -g kata-cli
 ```
 
 This is the preferred method to install Kata-CLI, as it will always install the most recent stable release.
