@@ -179,10 +179,9 @@ Click “Create” to create the intent. Your screen should look like this
 
 ### Create a State Named init
 
-Every flow must have at least one state. Because we haven't created any state in `order` flow, we have to create one. Let's create a state called `init` . Set the state as initial and then enable self-transition.
+Every flow must have at least one state. Because we haven't created any state in `order` flow, we have to create one. Let's create a state called `init`.
 
 ![bse-31](/images/tutorial/bot-studio/bse-31.png)
-![bse-32](/images/tutorial/bot-studio/bse-32.png)
 
 Click “Create” button to create initial state.
 
@@ -323,6 +322,9 @@ In this step we will learn how to create “Ask quantity” state.
 In this step we will create `pizzaQuantity` state to handle order quantity. The type of action we will use is in this state is Text. Click on “+” button on `order` flow and fill the form as follows
 ![bse-54](/images/tutorial/bot-studio/bse-54.png)
 
+Then you have to make self-transition in Transition tab as follow
+![bse-54_1](/images/tutorial/bot-studio/bse-54_1.png)
+
 Result :
 ![bse-55](/images/tutorial/bot-studio/bse-55.png)
 
@@ -404,7 +406,7 @@ In `done` state, we will complete the order by saying thank you and end the conv
 
 ![bse-73](/images/tutorial/bot-studio/bse-73.png)
 
-Result:
+Also, don't forget to add self transition in the state. Result:
 ![bse-74](/images/tutorial/bot-studio/bse-74.png)
 
 ### Create a transition from confirmPizza to done
