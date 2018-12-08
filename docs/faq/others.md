@@ -337,7 +337,7 @@ You may use `metadata.channelType` in Bot configuration
 
 ## How to use Flatten in NLUs?
 
-### **Config in bot.yml**
+### Config in bot.yml
 
 ```yaml
 nlus:
@@ -347,14 +347,12 @@ nlus:
       token: "token"
       output: <type>
       threshold: <number>
-      flatten: true #optional, default false
+      flatten: true # optional, default false
 ```
 
 If flatten is enabled, first object in array will be the value of the entity with entity name as the key
 
-### **Output Type**
-
-RAW
+### Output Type: Raw
 
 flatten: false
 
@@ -371,7 +369,7 @@ flatten: true
 }
 ```
 
-VALUE
+### Output Type: Value
 
 flatten: false
 
