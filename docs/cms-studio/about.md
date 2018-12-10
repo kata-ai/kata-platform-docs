@@ -8,7 +8,7 @@ CMS Studio allows you to build a custom workspace where everyone in your team ca
 
 Every dashboard will have its own namespace that you can define under Deploy - Environment Menu.
 
-### **About Page, Form, and Element**
+### About Page, Form, and Element
 
 Before you start building your workspace, you need to understand these components:
 

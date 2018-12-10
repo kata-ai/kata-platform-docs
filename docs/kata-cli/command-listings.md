@@ -32,7 +32,7 @@ This command is accessible by user with role as **admin** :
 
 The list of command below is accessible by user with role as **user** and **team**:
 
-## **Project environment related command**
+## Project environment related command
 
 We implement several new commands to manage Project:
 
@@ -42,7 +42,7 @@ We implement several new commands to manage Project:
 | `kata list-project`   | to display current projects that you have                                                 |
 | `kata select-project` | to select project that you want to use, any bot operation will be related to that project |
 
-## **Bot related command**
+## Bot related command
 
 Please notice that there are also updated commands from the Bot Environment:
 
@@ -64,7 +64,7 @@ Please notice that there are also updated commands from the Bot Environment:
 | `kata set <prop> <value>`                            |
 | `kata switch <roleType> [userName or teamName]`      | to switch between `user` and `team` role. Parameter <roleType> must be `user` or `team`. |
 
-## **Deprecated Commands**
+## Deprecated Commands
 
 Sad to say that there are several commands which are no longer in use :(
 

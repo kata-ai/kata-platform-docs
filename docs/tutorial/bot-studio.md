@@ -28,9 +28,9 @@ You will get a confirmation email once our team has verified your account.
 
 You may follow the instructions provided in the confirmation email to activate and start using your account.
 
-## **Create a Project**
+## Create a Project
 
-### **Login to Kata | Platform**
+### Login to Kata | Platform
 
 On your browser, open [_http://platform.kata.ai/login_](http://new-platform.katalabs.io/login) and enter your username & password.
 
@@ -38,7 +38,7 @@ On your browser, open [_http://platform.kata.ai/login_](http://new-platform.kata
 
 Click "Login" to continue.
 
-### **Create a project**
+### Create a project
 
 After you logged in, you will be taken to the Project Page.
 
@@ -52,9 +52,9 @@ NLU language is used to determine which language model you want to use. Currentl
 
 You can also choose NLU Visibility to be public or private. If you choose public, **all Kata | Platform users** can utilize your NLU using root and inherit function.
 
-## **Create Fallback Flow**
+## Create Fallback Flow
 
-### **Create fallback flow**
+### Create fallback flow
 
 Once you create a project, you will be redirected to the Bot Studio menu.
 
@@ -72,7 +72,7 @@ Next, click “Create Flow” button to create `fallback` flow. Set flow to acti
 
 ![bse-9](/images/tutorial/bot-studio/bse-9.png)
 
-### **Create fallback intent**
+### Create fallback intent
 
 After you have created `fallback` flow, we will create new intent by pressing the Intents tab on the sub-menu. Then, we will create a new intent for `fallback` flow. Click “Create Intent” button to create.
 

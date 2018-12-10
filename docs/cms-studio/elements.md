@@ -7,33 +7,33 @@ next: cms-studio-dashboard
 
 Elements are the component where you can set customizable bot contents in your CMS. Here are the elements we provide on CMS Studio:
 
-## **Single Elements**
+## Single Elements
 
-- Text
+- **Text**
 
 ![cmss-1](./images/cmss-1.png)
 
-- Text Area
+- **Text Area**
 
 ![cmss-2](./images/cmss-2.png)
 
-- Text List
+- **Text List**
 
 ![cmss-3](./images/cmss-3.png)
 
-- Slider
+- **Slider**
 
 ![cmss-4](./images/cmss-4.png)
 
-- Dropdown
+- **Dropdown**
 
 ![cmss-5](./images/cmss-5.png)
 
-- Toggle
+- **Toggle**
 
 ![cmss-6](./images/cmss-6.png)
 
-## **FAQ Table**
+## FAQ Table
 
 Use this table to maintain FAQ-related knowledge of your bot. Since we have implemented our own Natural Language Model, specifically for FAQ-related contents to this FAQ Table, you don't need to do extra training on NL Studio.
 
