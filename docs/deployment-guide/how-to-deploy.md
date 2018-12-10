@@ -16,9 +16,9 @@ We have to create a deployment first. Find the “Deployment” menu on the left
 
 This is how we use these three different terms for deployment version:
 
-- Patch for tiny changes (e.g. copywriting)
-- Minor for small issues.
-- Major for hot bug that needs to be fixed.
+- Patch for tiny changes (e.g. copywriting, bugfix).
+- Minor for new feature.
+- Major for major revamp in the bot structure.
 
 However, feel free to define this term with your own development team.
 
