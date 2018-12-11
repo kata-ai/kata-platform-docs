@@ -201,6 +201,11 @@
         "id": "nl-studio-tutorial",
         "slug": "/tutorial/nl-studio/",
         "title": "NL Studio Tutorial"
+      },
+      {
+        "id": "integration-chatbot-with-nl-studio",
+        "slug": "/tutorial/integration-chatbot-with-nl-studio/",
+        "title": "Integration Chatbot with NL Studio"
       }
     ]
   },

@@ -2,12 +2,12 @@
 id: nl-studio-tutorial
 title: NL Studio Tutorial
 prev: bot-studio-tutorial
-next: bot-template-tutorial
+next: integration-chatbot-with-nl-studio
 ---
 
 ## Introduction
 
-In [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4), we learned how to make keyword-based chatbot to order pizza. However, keyword-based chatbot is not so smart. In this tutorial we will learn how to enhance the chatbot using NL Studio.
+In [Bot studio tutorial](/tutorial/bot-studio/), we learned how to make keyword-based chatbot to order pizza. However, keyword-based chatbot is not so smart. In this tutorial we will learn how to enhance the chatbot using NL Studio.
 
 ## Creating a NL Model with NL Studio
 
