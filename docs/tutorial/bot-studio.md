@@ -212,6 +212,9 @@ Click on “Create Action” to finalize. Next step is to create an action calle
 Click on “Create Action” button. Your form should look like this
 ![bse-37](/images/tutorial/bot-studio/bse-37.png)
 
+Then you have to make self-transition in Transition tab as follow
+![bse-37-1](/images/tutorial/bot-studio/bse-37-1.png)
+
 Click “Create” to create the state. Successfully created state will look like this
 ![bse-38](/images/tutorial/bot-studio/bse-38.png)
 
@@ -220,8 +223,11 @@ Click “Create” to create the state. Successfully created state will look lik
 Previous step is an example to create action to **show pizza menu in text.** Let's try to update the state into Carousel action type.
 
 To update the state, click on `showPizza` state and an update state form will appear
-![bse-39](/images/tutorial/bot-studio/bse-39.png)Then, remove all actions in the state by clicking “x” on each action.
+![bse-39](/images/tutorial/bot-studio/bse-39.png)
+
+Then, remove all actions in the state by clicking “x” on each action.
 ![bse-40](/images/tutorial/bot-studio/bse-40.png)
+
 After removing available actions, we will create an action called `pizzaMenu` as Carousel action type.
 
 Click on “Add” actions button then click on “+” button to create a new action. Choose Carousel action type to continue.
@@ -302,9 +308,10 @@ Successfully created intent looks like this
 Now, we will create a transition between two states that we have created before.
 
 Click the green dot on `init` state, and a connector line will appear. Connect that line to `showPizza` state. If you do it right, a Create Transition form will appear.
-
 ![bse-52](/images/tutorial/bot-studio/bse-52.png)
+
 Fill in the form with these data, and click “Create”
+![bse-52-1](/images/tutorial/bot-studio/bse-52-1.png)
 
 ### Create 'reenter' intent
 
@@ -368,19 +375,20 @@ Successfully created NLU will look like this
 
 ### Create confirmPizza state
 
-Now we will create `confirmPizza` state to handle order confirmation. We will also store chosen pizza & quantity information in this state. Select `order` flow and click on “+” button to create `confirmPizza` state .
+Now we will create `confirmPizza` state to handle order confirmation. We will also store chosen pizza & quantity information in this state. Select `order` flow and click on “+” button to create `confirmPizza` state.
 ![bse-64](/images/tutorial/bot-studio/bse-64.png)
 
-Click Create Action. Your screen should look like this
+## Add mapping in onTransit tab
+
+![bse-67](/images/tutorial/bot-studio/bse-67.png)
+
+Don't forget to add self-transition in a state. Click Create Action. Your screen should look like this
 ![bse-65](/images/tutorial/bot-studio/bse-65.png)
 
 ### Create a transition from pizzaQuantity to confirmPizza
 
 We will make a transition by storing value (mapping) from pizza quantity **and** chosen pizza type. Click the blue dot on `pizzaQuantity` and drag the line to `confirmPizza` state to create a transition. Create Transition form will appear after you successfully connected the states.
 ![bse-66](/images/tutorial/bot-studio/bse-66.png)
-
-Add mapping in onTransit tab
-![bse-67](/images/tutorial/bot-studio/bse-67.png)
 
 Result will be shown as follows
 ![bse-68](/images/tutorial/bot-studio/bse-68.png)
