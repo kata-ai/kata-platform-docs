@@ -23,6 +23,6 @@ Yes, you still can use this as usual
 
 Yes, you should be able to build your own NL and CMS under a migrated Project. Should something goes wrong, feel free to reach out to us at support@kata.ai
 
-## In case of any questions or issues, to whom should I talk to?
+## I have other questions/issues, to whom should I talk to?
 
 Please contact us at support@kata.ai
