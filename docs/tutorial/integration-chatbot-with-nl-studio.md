@@ -6,7 +6,7 @@ prev: nl-studio-tutorial
 
 ## Introduction
 
-In this tutorial, we will create a simple conversation bot and integrated to NL studio. For pre-condition, you must create a bot by follow this tutorial in here [Bot studio tutorial](/tutorial/bot-studio/). You will create a NLModel which able to process pizza ordering orders. Further explanation for NLStudio, you may see in here [NL Studio Guideline - English](/tutorial/nl-studio/)
+In this tutorial, we will create a simple conversation bot and integrated to NL studio. For pre-condition, you must create a bot by follow this tutorial in here [Bot studio tutorial](/tutorial/bot-studio/). You will create a NLModel which able to process pizza ordering orders. Further explanation for NLStudio, you may see in here [NL Studio Guideline](/tutorial/nl-studio/)
 
 Let's start !
 
@@ -78,5 +78,4 @@ Click on Publish bot to save your bot.
 Voila, your bot is successfully integrated. Let's start in bot emulator
 ![bnl-18](/images/tutorial/bot-nl/bnl-18.png)
 
-Then testing to your social media
-<Screenshot>
+Then testing to your channel
