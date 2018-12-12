@@ -430,7 +430,7 @@ Congratulations! Now your chat bot is done. Next, we will try to make a bot with
 
 ## Improving NLUs using NLStudio
 
-Before you begin, you can see our NLStudio full tutorial on links (link tutorial NLStudio). In this section, you will create a NLModel which able to process pizza ordering orders. Let's start.
+Before you begin, you can see our NLStudio full tutorial on [here](https://docs.kata.ai/tutorial/nl-studio/). In this section, you will create a NLModel which able to process pizza ordering orders. Let's start.
 
 ### Create new NLU
 
