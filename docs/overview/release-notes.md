@@ -5,8 +5,6 @@ description: What's new in the Kata Platform
 next: about
 ---
 
-Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.
-
 ## What's New
 
 ### Project System
