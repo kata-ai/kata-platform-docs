@@ -9,7 +9,7 @@ module.exports = {
     sidebarSubtext: 'Documentation',
     siteLastUpdated: new Date().toISOString(),
     description:
-      "Kata Platform 2.5 is the incremental update to the 2.0 version that was launched in December 2017. We're building 2.5 based on the mission that every component built now will be used in the next upcoming version.",
+      'Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.',
     version: '2.5',
     siteUrl: 'https://docs.kata.ai',
     keywords:
