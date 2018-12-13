@@ -13,7 +13,7 @@ module.exports = {
     version: '2.5',
     siteUrl: 'https://docs.kata.ai',
     keywords:
-      'kata.ai, kata-ai, kata platform, kata platform 2.5, artificial intelligence, ai, chatbot, documentation',
+      'kata.ai, kata-ai, kata platform, artificial intelligence, ai, chatbot, documentation',
     author: {
       name: 'Kata.ai',
       url: 'https://kata.ai',
