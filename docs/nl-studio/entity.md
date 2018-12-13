@@ -35,7 +35,7 @@ An entity consists of these following definitions:
 - `belongsTo : string` - to define relationship between entity. Feature belongsTo can only be used for entity in same NLU.
 - `labels : string[]`\*\* - labels are used to determine what class an entity will be classified.
 - `inherit : string` - inherit is used to duplicate _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate model that has been trained even though training data is not included. This makes entity immediately predict although no training has been carried out.
-- `dictionary : { [key : string] : string[] }` -  dictionary keywords for entity type `dict`.
+- `dictionary : { [key : string] : string[] }` - dictionary keywords for entity type `dict`.
 
 **Footnotes**
 
@@ -177,7 +177,7 @@ entities:
     root: kata:ner/ner:location
 ```
 
-Using the structure above, you can discover words which is 'origin' or 'destination'. Words that are origin and destination are assumed to be location name. Another implementation if you don't want to use entity from Kata Team is by creating your own entity 'location' and make the entity 'origin' and 'destination' root to your own entity 'location'.
+Using the structure above, you can discover words which is `origin` or `destination`. Words that are origin and destination are assumed to be location name. Another implementation if you don't want to use entity from Kata Team is by creating your own entity `location` and make the entity `origin` and `destination` root to your own entity `location`.
 
 **kata:qisg/qisg[:greetings or :instructions or :question or :statement]**
 
@@ -218,7 +218,7 @@ entities:
       - thank_you
 ```
 
-From above structure, it is assumed that 'question_type' entity and 'greeting_type' are each specific forms from 'qisg' entity with 'question' label and 'greeting'. As for 'intent' entity which have more general labels, use root 'qisg' to help classification process without specifying what labels affect.
+From above structure, it is assumed that `question_type` entity and `greeting_type` are each specific forms from `qisg` entity with `question` label and `greeting`. As for `intent` entity which have more general labels, use root `qisg` to help classification process without specifying what labels affect.
 
 Above examples are samples for root usage and utilization. For the implementation itself, it is not required to be exactly as same as above example.
 

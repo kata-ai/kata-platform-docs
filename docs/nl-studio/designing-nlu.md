@@ -198,7 +198,7 @@ entities
             - ask_pizza_recipe
 ```
 
-Using nl-v3, user able to find out whether a sentence has an ask_pizza_recipe intent. To find out specific type of pizza, use pizza entity.
+Using nl-v3, user able to find out whether a sentence has an `ask_pizza_recipe` intent. To find out specific type of pizza, use pizza entity.
 
 Do above action to simplify introduction of words, which is limited product names, in created BOT domain. It is not recommended to use this method for general words.
 
@@ -218,7 +218,6 @@ Some flow in a bot can have a special NL for a flow where an input for the flow 
 Some states in a bot may get similar input, however it have different meanings depending on what state is running. It can be given a condition to run this NL in certain states only in BOT studio Example:
 
 - `YesNo` NL which can be used in various flows, but it is specific to states that require user confirmation.
-
 
 **Notes**
 
