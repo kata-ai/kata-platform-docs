@@ -26,3 +26,13 @@ method:
     code: $include(./some/code.js)
     entry: module.exports
 ```
+
+```js
+// ./some/code.js
+
+function otherMethod(x) {
+  return x * x;
+}
+
+module.exports = otherMethod;
+```
