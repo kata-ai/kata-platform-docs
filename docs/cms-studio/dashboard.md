@@ -13,6 +13,6 @@ Once you've done building the CMS on CMS Studio, you can invite users/clients to
 ### Few things to note:
 
 - You have to invite users for **every CMS Environment**. Meaning, if your CMS have more than one Environments, you have to re-invite all users one by one.
-- You can only invite Kata Platform users to Kata Dashboard. So make sure your client already has registered account on Kata Platform before you invite them. We're in the process of building the ability to invite unregistered users, more on this soon.
+- You can only invite Kata Platform users to Kata Dashboard. So make sure your client already has registered account on Kata Platform before you invite them. In the future update, we will support inviting non-Kata Platform users.
 
 ![cmss-8](./images/cmss-8.jpg)
