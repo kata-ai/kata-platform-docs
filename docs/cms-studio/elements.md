@@ -35,8 +35,8 @@ Elements are the component where you can set customizable bot contents in your C
 
 ## FAQ Table
 
-Use this table to maintain FAQ-related knowledge of your bot. Since we have implemented our own Natural Language Model, specifically for FAQ-related contents to this FAQ Table, you don't need to do extra training on NL Studio.
+Use this table to maintain FAQ-related knowledge of your bot. All content entered here will be automatically trained into your NL model.
 
-You can create as many **labels** as you like, depending on how many topics you would like to handle under this FAQ. Every **question** will be considered as training data and will enrich the existing Natural Language Model, so the more the merrier. You can also put more than one **answers** as variations to avoid any repetitive responses.
+You can create as many **labels** as you like, depending on how many topics you would like to handle under this FAQ. Every **question** will be considered as training data and will enrich the existing Natural Language Model. You can also put more than one **answers** as variations to avoid any repetitive responses.
 
 ![cmss-7](./images/cmss-7.png)
