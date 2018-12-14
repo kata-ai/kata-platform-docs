@@ -2,6 +2,7 @@
 id: kata-cli-best-practice
 title: Best Practice
 prev: kata-cli-command-listings
+next: kata-cli-nlu-project
 ---
 
 We hope that you can get a smooth experience in working with Kata-CLI by following several best practice steps:
