@@ -186,6 +186,11 @@
         "id": "kata-cli-best-practice",
         "slug": "/kata-cli/best-practice/",
         "title": "Best Practice"
+      },
+      {
+        "id": "kata-cli-nlu-project",
+        "slug": "/kata-cli/nlu-project/",
+        "title": "NLU Project"
       }
     ]
   },
