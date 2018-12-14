@@ -4,7 +4,8 @@ title: Installation Kata CLI
 next: kata-cli-command-listings
 ---
 
-Kata Command Line Interface (Kata CLI) is a tool for creating bots with Kata Markup Language (Kata ML) and helps managing the bots with command line/shell of various operating systems. 
+Kata Command Line Interface (Kata CLI) is a tool for creating bots with Kata Markup Language (Kata ML) and helps managing the bots with command line/shell of various operating systems.
+For more information, check our website ([http://kata.ai/en](http://kata.ai/en)).
 
 ## Installation
 
@@ -17,6 +18,7 @@ npm install -g kata-cli
 This is the preferred method to install Kata-CLI, as it will always install the most recent stable release.
 
 ## Upgrading to 2.0
+
 We upgraded Kata-CLI version into 2.0 along with our Platform to 3.0. There are a number of small backwards incompatible changes with version 2.0. See the full descriptions [here](https://github.com/kata-ai/kata-cli/blob/develop/CHANGELOG.md). **Make sure to update Kata-CLI to our latest stable version before doing some fun with your Bot**.
 
 ```shell
@@ -37,6 +39,7 @@ or to be exact, you can add `@version-number`
 ```
 
 Then, check kata-cli upgraded version.
+
 ```shell
 ➜  kata --version
    Kata CLI version 2.0.4
