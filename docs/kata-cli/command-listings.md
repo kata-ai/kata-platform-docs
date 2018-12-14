@@ -71,7 +71,7 @@ Please notice that there are also updated commands from the Bot Environment:
 
 ## Deprecated Commands
 
-### Permanently deprecated:
+_Permanently deprecated:_
 
 - `kata deploy <name> [version]`
 - `kata session-get <id> [deploymentId]`
