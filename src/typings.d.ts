@@ -1,6 +1,10 @@
 // graphql query strings
 declare const graphql: (query: TemplateStringsArray) => void;
 
+interface Window {
+  __LUNR__: { [key: string]: any };
+}
+
 interface CSSModule {
   [className: string]: string;
 }

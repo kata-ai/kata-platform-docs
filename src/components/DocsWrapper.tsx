@@ -10,12 +10,11 @@ const DocsWrapper = styled<DocsWrapperProps, 'article'>('article')`
   flex-direction: column;
   width: 100%;
   position: relative;
-  padding: 24px;
-  padding-bottom: 3rem;
+  padding: 24px 24px 3rem;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
     flex-direction: ${props => props.hasToc && 'row-reverse'};
-    padding: 48px;
+    padding: 24px 48px 3rem;
   }
 
   @media (max-width: ${props => props.theme.breakpoints.lg - 1}px) {

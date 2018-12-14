@@ -24,6 +24,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@kata-kit/form": "^0.6.3",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-styled-components": "^1.9.4",
     "classnames": "^2.2.5",
@@ -33,6 +34,7 @@
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-layout": "^1.0.10",
+    "gatsby-plugin-lunr": "^1.2.0",
     "gatsby-plugin-manifest": "^2.0.12",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cache": "^1.0.0",
@@ -52,6 +54,8 @@
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-remark": "^2.1.15",
     "gatsby-transformer-sharp": "^2.1.9",
+    "lodash.isnil": "^4.0.0",
+    "lodash.truncate": "^4.4.2",
     "moment": "^2.22.2",
     "polished": "^2.3.1",
     "prism-themes": "^1.0.1",
@@ -60,6 +64,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-media-match": "^1.8.1",
+    "remove-markdown": "^0.3.0",
     "styled-components": "^3.3.3",
     "typescript": "^3.2.2"
   },

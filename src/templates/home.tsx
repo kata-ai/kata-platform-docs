@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import Page from '../components/Page';
@@ -11,6 +11,7 @@ import DocsHeader from '../components/DocsHeader';
 import TocWrapper from '../components/TocWrapper';
 import Footer from '../components/Footer';
 import DocsContribution from '../components/DocsContribution';
+import SearchWrapper from '../components/SearchWrapper';
 
 import { SiteMetadata } from '../interfaces/gatsby';
 import styled from '../utils/styled';
@@ -62,6 +63,11 @@ class HomepageTemplate extends React.Component<HomepageTemplateProps, HomepageTe
           <title>{siteMetadata.title}</title>
           <meta property="og:title" content="Home" />
         </Helmet>
+        <SearchWrapper>
+          <Container>
+            <Link to="/search">Search in docs...</Link>
+          </Container>
+        </SearchWrapper>
         <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
           {markdownRemark.tableOfContents && (
             <TocWrapper
