@@ -2,6 +2,7 @@
 id: kata-cli-nlu-project
 title: NLU Project
 prev: kata-cli-best-practice
+next: deployment-tutorial
 ---
 
 An NLU must be under a project. Therefore, we need to define a project, before we create an NLU.

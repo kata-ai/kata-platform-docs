@@ -191,6 +191,11 @@
         "id": "kata-cli-nlu-project",
         "slug": "/kata-cli/nlu-project/",
         "title": "NLU Project"
+      },
+      {
+        "id": "deployment-tutorial",
+        "slug": "/kata-cli/deployment-tutorial/",
+        "title": "Deployment Tutorial"
       }
     ]
   },
