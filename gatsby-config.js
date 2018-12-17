@@ -1,6 +1,12 @@
 'use strict';
 
+const isNil = require('lodash.isnil');
+const truncate = require('lodash.truncate');
+const removeMarkdown = require('remove-markdown');
+
 require('dotenv').config();
+
+const siteUrl = 'https://docs.kata.ai';
 
 module.exports = {
   siteMetadata: {
@@ -11,7 +17,7 @@ module.exports = {
     description:
       'Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.',
     version: '2.5',
-    siteUrl: 'https://docs.kata.ai',
+    siteUrl,
     keywords:
       'kata.ai, kata-ai, kata platform, artificial intelligence, ai, chatbot, documentation',
     author: {
@@ -77,6 +83,37 @@ module.exports = {
       }
     },
     'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-plugin-lunr',
+      options: {
+        languages: [
+          {
+            name: 'en',
+            // A function for filtering nodes. () => true by default
+            filterNodes: node => !isNil(node.frontmatter)
+          }
+        ],
+        fields: [
+          { name: 'title', store: true, attributes: { boost: 20 } },
+          { name: 'content' },
+          { name: 'excerpt', store: true },
+          { name: 'url', store: true }
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            content: node => node.rawMarkdownBody,
+            excerpt: node => {
+              // remove the hella dirty markdown body and return just plain string
+              return truncate(removeMarkdown(node.rawMarkdownBody).replace(/\n/g, ' '), {
+                length: 150
+              });
+            },
+            url: node => node.fields.slug
+          }
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {

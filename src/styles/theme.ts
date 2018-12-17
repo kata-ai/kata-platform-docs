@@ -95,7 +95,7 @@ const theme: Theme = {
   containerWidth: {
     md: 720,
     lg: 800,
-    xl: 800
+    xl: 984
   },
 
   // Dimensions

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import Page from '../components/Page';
@@ -12,6 +12,7 @@ import TocWrapper from '../components/TocWrapper';
 import Footer from '../components/Footer';
 import TocFloatingButton from '../components/TocFloatingButton';
 import DocsContribution from '../components/DocsContribution';
+import SearchWrapper from '../components/SearchWrapper';
 
 import { MenuNode } from '../interfaces/nodes';
 import { SiteMetadata } from '../interfaces/gatsby';
@@ -80,6 +81,11 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
             content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
           />
         </Helmet>
+        <SearchWrapper>
+          <Container xl>
+            <Link to="/search">Search in docs...</Link>
+          </Container>
+        </SearchWrapper>
         <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
           {markdownRemark.tableOfContents && (
             <TocWrapper
