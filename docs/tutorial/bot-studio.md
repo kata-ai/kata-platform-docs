@@ -637,7 +637,7 @@ Click “Create” to generate webhook URL from Kata | Platform.
 
 ![bse-110](/images/tutorial/bot-studio/bse-110.png)
 
-After webhook URL is generated, go to Messaging Settings in LINE developer console to enable webhook.
+After webhook URL is generated, go to Messaging Settings in LINE developer console to enable webhook. **Please check that you already enable the webhook by click on Enable in "Use Webhoooks" section which placed above Webhook URL field**
 
 ![bse-111](/images/tutorial/bot-studio/bse-111.png)
 Click “Update” then paste the webhook URL to LINE developer console.
