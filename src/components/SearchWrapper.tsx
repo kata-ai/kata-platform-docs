@@ -1,9 +1,6 @@
 import styled from '../utils/styled';
 
 const SearchWrapper = styled('div')`
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
   width: 100%;
   position: relative;
   padding: 24px 24px 0;
