@@ -1,6 +1,6 @@
 import styled from '../utils/styled';
 
-const SearchWrapper = styled('article')`
+const SearchWrapper = styled('div')`
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -9,7 +9,7 @@ const SearchWrapper = styled('article')`
   padding: 24px 24px 0;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}px) {
-    padding: 48px 48px 0;
+    padding: 24px 48px 0;
   }
 `;
 
