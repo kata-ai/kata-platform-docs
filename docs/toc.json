@@ -216,6 +216,11 @@
         "id": "integration-chatbot-with-nl-studio",
         "slug": "/tutorial/integration-chatbot-with-nl-studio/",
         "title": "Integration Chatbot with NL Studio"
+      },
+      {
+        "id": "integration-chatbot-with-cms-studio",
+        "slug": "/tutorial/integration-chatbot-with-cms-studio/",
+        "title": "Integration Chatbot with CMS Studio"
       }
     ]
   },
