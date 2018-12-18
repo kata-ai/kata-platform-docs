@@ -19,6 +19,7 @@ We assume at this stage you already deployed your bot. If you haven't, you can l
 ### Create Environment
 
 Click on Create Environment.
+
 ![bcms-1](./images/bot-cms/bcms-1.png)
 
 Environment URL will be used as a web address where your client can access the dashboard. For demo purpose, we will name it “my-cms”
