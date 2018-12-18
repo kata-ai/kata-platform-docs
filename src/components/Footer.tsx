@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import { format } from 'date-fns';
 import styled from '../utils/styled';
 import Container from './Container';
 import { SocialMedia } from '../interfaces/gatsby';
@@ -96,7 +96,7 @@ const Footer: React.SFC<FooterProps> = ({ version, siteLastUpdated, socials }) =
         <FooterLeft>
           <p>&copy; 2018 Kata.ai. All rights reserved.</p>
           <p>
-            Version {version}. Last updated {moment(siteLastUpdated).format('D MMMM YYYY')}.
+            Version {version}. Last updated {format(new Date(siteLastUpdated), 'D MMMM YYYY')}.
           </p>
         </FooterLeft>
         <FooterRight>
