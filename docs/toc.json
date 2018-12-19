@@ -131,6 +131,11 @@
         "id": "nl-studio-using-kata-cli",
         "slug": "/nl-studio/using-kata-cli/",
         "title": "NL Studio using Kata-CLI"
+      },
+      {
+        "id": "nl-studio-nl-prediction-api",
+        "slug": "/nl-studio/nl-prediction-api/",
+        "title": "NL Prediction API"
       }
     ]
   },
