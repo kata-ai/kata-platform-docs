@@ -52,7 +52,7 @@ Then, click on “Order Pizza” form you've just created
 
 ![bcms-8](./images/bot-cms/bcms-8.png)
 
-### Introduction to text boX element
+### Introduction to Text Box Element
 
 For the first use case, we will use Text Box elements to change bot response in confirmPizza State.
 
@@ -170,7 +170,7 @@ Click Update Action to update your action. **Then click on Update** to update st
 
 Afterward, publish your bot by clicking Publish.
 
-## Deploy CMS & BOT Revision
+## Deploy CMS & Bot Revision
 
 Go to Deploy menu to deploy the newest version of your bot. Click on New Deployment, choose any deployment version and fill in change log. Then, click on Submit.
 
