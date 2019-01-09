@@ -261,47 +261,6 @@ Afterward, go to BOT menu and go down to “Configuration” sub menu. Next, cop
 burstMessageResponse
 ```
 
-## How to do bulk training in CLI ?
-
-1. Execute create folder command, `cd folder/`
-2. Execute `kata nl-init nama-nl`, please fill in `nlu.yml` content as below :
-
-```yaml
-name: nlu_name (Model Name)
-lang: id
-entities:
-  intent:
-    type: trait
-    profile: intent
-    labels:
-      - greet
-      - cancel
-      - ask
-  faq:
-    type: trait
-    profile: faq
-    root: intent
-    labels:
-      - askB
-      - askA
-```
-
-3. Execute `kata nl-push`then execute `create/update nlu`
-4. Prepare file `file_train.txt`, which consists of:
-
-```hi #intent:greet
-selamat pagi #intent:greet
-gimana narik debit? #intent:ask #faq:askDebit
-```
-
-5. Execute `kata nl-train -f file_train.txt`
-
-Note:
-
-- Training syntax for entity type **trait** :
-  `kalimat #entity_trait:label_nya`
-- If NLU is already created in NL-Studio, you must still create file `nlu.yml` but no need to execute `kata nl-push`. So that, you may directly train inside the folder by executing `kata nl-train`
-
 ## Is there any configurable field where we can put our google map api key due to location action usage?
 
 1. For setup your Google API Key, put in config in bot studio:
@@ -382,3 +341,7 @@ flatten: true
 ```
 { 'intentArray': ['mainMenu'], 'intent': 'mainMenu' }
 ```
+
+## How to reinit session in kataCLI ?
+
+Execute `kata console` then `clear()`
