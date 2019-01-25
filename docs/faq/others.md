@@ -345,3 +345,19 @@ flatten: true
 ## How to reinit session in kataCLI ?
 
 Execute `kata console` then `clear()`
+
+## How many seconds for timeout action type API hit in Kata?
+
+Kata put 5 Seconds for timeout condition when hit API
+
+## How to login as team in Kata-CLI ?
+
+1. First, execute `kata login` and login using your username
+
+2. Then, run `kata switch-team <TeamName>` for switch into team user
+
+## I invited by someone as his team, but in my account the team didn't show. What should I do ?
+
+1. Try to relogin (read : logout then login again)
+
+2. Then, you shall see your team is available in account switcher
