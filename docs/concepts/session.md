@@ -30,7 +30,7 @@ A Session consists of following fields:
 
 ## Context and Data
 
-Context is a flow specific information that lives only during the lifetime of a flow. It will erased when flow is closed. A session stores the context of every open flow. Data is a flow-agnostic persistent storage. It is accessible from every flow and doesn't have a lifetime.
+Context is a flow specific information that lives only during the lifetime of a flow. It will be cleared whenever the flow is closed. A session stores the context of every open flow. Data is a flow-agnostic persistent storage. It is accessible from every flow and doesn't have a lifetime.
 
 ## Linking Data
 
