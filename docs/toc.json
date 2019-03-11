@@ -136,6 +136,11 @@
         "id": "nl-studio-nl-prediction-api",
         "slug": "/nl-studio/nl-prediction-api/",
         "title": "NL Prediction API"
+      },
+      {
+        "id": "nl-studio-tutorials",
+        "slug": "/nl-studio/tutorials/",
+        "title": "Tutorials"
       }
     ]
   },
