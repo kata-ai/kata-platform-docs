@@ -2,6 +2,7 @@
 id: nl-studio-using-kata-cli
 title: NL Studio using Kata-CLI
 prev: nl-studio-training-guideline
+next: nl-studio-nl-prediction-api
 ---
 
 As prerequisites to create NL using Kata-CLI, install Kata-CLI on your device and login with your account.
