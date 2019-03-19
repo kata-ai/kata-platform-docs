@@ -119,7 +119,7 @@ There are 3 things that we have defined on CMS, which are:
 This information will be used in Bot Studio to sync a value from your dashboard. To do that, we have to enter a code with this format on the action we want to sync:
 
 ```
-$(cms.pages.[page_label].[form_label].[element_ID].value)
+$(cms.[page_label].[form_label].[element_ID].value)
 ```
 
 ### Change Value in confirmPizza State
@@ -127,7 +127,7 @@ $(cms.pages.[page_label].[form_label].[element_ID].value)
 In this case, this is what we will put on `confirmPizza` action on Bot Studio.
 
 ```
-$(cms.pages.textResponse.orderPizza.askingConfirmation.value)
+$(cms.textResponse.orderPizza.askingConfirmation.value)
 ```
 
 To update the action, you have to go back to Bot Studio and click on confirmPizza state.
@@ -143,7 +143,7 @@ Do you want to order $(context.pizza)?
 with this code:
 
 ```
-$(cms.pages.textResponse.orderPizza.askingConfirmation.value)
+$(cms.textResponse.orderPizza.askingConfirmation.value)
 ```
 
 ![bcms-18](./images/bot-cms/bcms-18.png)
@@ -159,7 +159,7 @@ Click on init state in fallback flow.
 Click on init state to update the action's value. Fill in the value as follows
 
 ```
-$(cms.pages.textResponse.orderPizza.sorryMessage.value)
+$(cms.textResponse.orderPizza.sorryMessage.value)
 ```
 
 ![bcms-20](./images/bot-cms/bcms-20.png)

@@ -19,7 +19,7 @@ There are many types of actions:
 Example:
 
 ```yaml
-actions:
+myAction:
   type: text
   options:
     text: hello $(data.name)!
@@ -72,13 +72,13 @@ Example:
 
 ```yaml
 actions:
-    nextAction:
-        type: command
-        command: next
-  intents:
-    next:
-        type: command
-        condition: content == "next"
+  nextAction:
+    type: command
+    command: next
+intents:
+  next:
+    type: command
+    condition: content == "next"
 ```
 
 Note: Command can also be used to trigger other flow.
