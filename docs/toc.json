@@ -3,14 +3,19 @@
     "title": "Overview",
     "items": [
       {
-        "id": "release-notes",
-        "slug": "/overview/release-notes/",
-        "title": "Release Notes"
-      },
-      {
         "id": "about",
         "slug": "/overview/about/",
         "title": "About"
+      },
+      {
+        "id": "platform-overview",
+        "slug": "/overview/platform-overview/",
+        "title": "Platform Overview"
+      },
+      {
+        "id": "release-notes",
+        "slug": "/overview/release-notes/",
+        "title": "Release Notes"
       },
       {
         "id": "introduction-to-project",

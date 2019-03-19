@@ -2,7 +2,8 @@
 id: release-notes
 title: Release Notes - Kata Platform 3.0
 description: What's new in the Kata Platform
-next: about
+prev: platform-overview
+next: introduction-to-project
 ---
 
 ## What's New
