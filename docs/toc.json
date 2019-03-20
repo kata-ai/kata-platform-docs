@@ -118,6 +118,11 @@
         "title": "Entity"
       },
       {
+        "id": "nl-studio-kataent",
+        "slug": "/nl-studio/kataent/",
+        "title": "kataent"
+      },
+      {
         "id": "nl-studio-designing-nlu",
         "slug": "/nl-studio/designing-nlu/",
         "title": "Designing NLU"
