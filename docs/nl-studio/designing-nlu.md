@@ -1,7 +1,7 @@
 ---
 id: nl-studio-designing-nlu
 title: Designing NLU
-prev: nl-studio-kataent
+prev: nl-studio-entity
 next: nl-studio-training-guideline
 ---
 

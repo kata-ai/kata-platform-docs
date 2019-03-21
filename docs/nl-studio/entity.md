@@ -2,7 +2,7 @@
 id: nl-studio-entity
 title: 'Entity'
 prev: nl-studio-nlu
-next: nl-studio-kataent
+next: nl-studio-designing-nlu
 ---
 
 Entity is everything you want to extract from a human language text with NLU. For example, given a human language sentence input that wants to know the words whether its person name or the location name. Therefore, person name and location name are entities you want to extract for.
