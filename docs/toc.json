@@ -118,11 +118,6 @@
         "title": "Entity"
       },
       {
-        "id": "nl-studio-super-model",
-        "slug": "/nl-studio/super-model/",
-        "title": "Super Model (beta)"
-      },
-      {
         "id": "nl-studio-designing-nlu",
         "slug": "/nl-studio/designing-nlu/",
         "title": "Designing NLU"
@@ -141,6 +136,11 @@
         "id": "nl-studio-nl-prediction-api",
         "slug": "/nl-studio/nl-prediction-api/",
         "title": "NL Prediction API"
+      },
+      {
+        "id": "nl-studio-super-model",
+        "slug": "/nl-studio/super-model/",
+        "title": "Super Model (beta)"
       }
     ]
   },

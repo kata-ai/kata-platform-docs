@@ -47,6 +47,6 @@ Go to [http://aksara.kata.ai](http://aksara.kata.ai/) to see our Design Language
 
 ### Super Model
 
-Super Model is a highly maintained pre-built entity for Users to use without training. New projects would automatically have a Kata Entity, named `kata`, for tagging common task like person name, location, datetime, email, number, etc. For more details, refer to docs NL Studio > Super Model
+Super Model is a highly maintained pre-built entity for Users to use without training. New projects would automatically have a Kata Entity, named `kata`, for tagging common task like person name, location, datetime, email, number, etc. For more details, go to docs **NL Studio > Super Model**
 
 We hope Kata Platform 3.0 will help you build smarter chatbots in shorter development time. It is our mission to democratize AI and help the community to build chatbot solution. For any inquiries, contact us at support@kata.ai

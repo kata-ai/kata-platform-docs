@@ -47,7 +47,7 @@ Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you
 Currently the training data that User give is not directly influence the model to ensure model's quality, but every correction that User give would be saved and evaluate later for model's improvement. In order to rise the quality of Kata Entity, we encourage you to give correction every time you see error in prediction.
 
 **Can I add or delete labels in kataent?**
-Kata Entity can not be edited or updated. Give suggestion to us if you feel there's labels that should be included.
+Kata Entity can not be edited or updated. Give suggestion to us if you feel there are labels that should be included.
 
 **How to add this entity to existing Project?**
 Currently Kata Entity only available for new Projects.
