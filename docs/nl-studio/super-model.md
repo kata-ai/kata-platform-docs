@@ -4,6 +4,8 @@ title: 'Super Model'
 prev: nl-studio-nl-prediction-api
 ---
 
+Super Model is a highly maintained pre-built entity for Users to use without training. This feature aims to help Users build their NL fastly and easily.
+
 ## Kata Entity
 
 Introducting Kata Entity, `kata`, the default entity tagger that User can use without training data.
