@@ -6,7 +6,13 @@ const path = require('path');
 const BLOG_POST_SLUG_REGEX = /release-notes\/([\d]{4})-([\d]{2})-([\d]{2})-(.+)$/;
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, createRedirect } = actions;
+
+  // Redirect old Release Notes page
+  createRedirect({
+    fromPath: '/overview/release-notes',
+    toPath: '/release-notes'
+  });
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
   // interpreter if not a single content uses it. Therefore, we're putting them
