@@ -7,7 +7,7 @@ import Container from '../components/Container';
 import { MenuNode } from '../interfaces/nodes';
 import MarkdownContent from '../components/MarkdownContent';
 import DocsWrapper from '../components/DocsWrapper';
-import DocsHeader from '../components/DocsHeader';
+import DocsHeader from '../components/docs/DocsHeader';
 import TocWrapper from '../components/TocWrapper';
 import Footer from '../components/Footer';
 import DocsContribution from '../components/DocsContribution';
