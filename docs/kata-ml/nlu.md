@@ -167,7 +167,11 @@ mynl:
     entity: <entityName>  # only for output: phrase
     threshold: <number>   # confidence rate, if less than treshold bot wouldn't recognize as this intent
     flatten: true         # optional, default false
+```
 
+Examples:
+
+```yaml
 ## usage in intent for output type value
 nlus:
   mynl:
