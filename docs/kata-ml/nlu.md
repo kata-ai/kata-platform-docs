@@ -201,32 +201,31 @@ nlus:
   mynl2:
     type: nl
     options:
-        nluId: <nluId>
-        output: phrase
-        entity: <entityName>
-        threshold: 0.7
+      nluId: <nluId>
+      output: phrase
+      entity: <entityName>
+      threshold: 0.7
 
 intents:
-  yes:
+  credentials:
     classifier:
       nlu: mynl # use the previous bot's nlu
-      expression: "intent == 'yes'"
+      expression: "intent == 'giveCredentials'"
     attributes:
-        person:
-            nlu: mynl2
-            path: person   # <label> of mynl2's entity <enityName>
-        location:
-            nlu: mynl2
-            path: location # <label> of mynl2's entity <enityName>
+      person:
+        nlu: mynl2
+        path: person   # <label> of mynl2's entity <enityName>
+      location:
+        nlu: mynl2
+        path: location # <label> of mynl2's entity <enityName>
   name:
-      initial: true
-      classifier:
-          nlu: mynl2
-          expression: person # <label> of mynl2's entity <enityName>
-      attributes:
-        person:
-            nlu: mynl2
-            path: person     # <label>
+    classifier:
+      nlu: mynl2
+      expression: person # <label> of mynl2's entity <enityName>
+    attributes:
+      person:
+        nlu: mynl2
+        path: person     # <label>
 
 # alternative approach
 nlus:
@@ -237,21 +236,21 @@ nlus:
 
 intents:
   yes:
-      classifier:
-          nlu: mynl3
-          options:
-              output: value
-              threshold: 0.5
-              flatten: true
-          expression: "intent == 'yes'"
-      attributes:
-          person:
-              nlu: mynl3
-              path: person
-              options:
-                  output: phrase
-                  entity: ner
-                  threshold: 0.7
+    classifier:
+      nlu: mynl3
+      options:
+        output: value
+        threshold: 0.5
+        flatten: true
+      expression: "intent == 'yes'"
+    attributes:
+      person:
+        nlu: mynl3
+        path: person
+        options:
+          output: phrase
+          entity: ner
+          threshold: 0.7
 ```
 
 ## Wit Intent NLU
