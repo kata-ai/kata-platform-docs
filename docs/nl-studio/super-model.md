@@ -43,7 +43,7 @@ Currently, there are thirteen common labels that Users can achieve when using Ka
 ## FAQs
 
 **How to use Kata Entity in BOT?**
-Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you can use it as attributes. For more details, refer to documentation **Kata ML > NLU > NL Studio NLU**
+Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you can use it as attributes. For more details, refer to documentation [click here](/kata-ml/nlu/#nl-studio-nlu)
 
 **Why my Kata Entity is not improved after I input training data it?**
 Currently the training data that User give is not directly influence the model to ensure model's quality, but every correction that User give would be saved and evaluate later for model's improvement. In order to rise the quality of Kata Entity, we encourage you to give correction every time you see error in prediction.
