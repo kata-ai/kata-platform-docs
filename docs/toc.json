@@ -3,14 +3,14 @@
     "title": "Overview",
     "items": [
       {
-        "id": "release-notes",
-        "slug": "/overview/release-notes/",
-        "title": "Release Notes"
-      },
-      {
         "id": "about",
         "slug": "/overview/about/",
         "title": "About"
+      },
+      {
+        "id": "release-notes",
+        "slug": "/release-notes/",
+        "title": "Release Notes"
       },
       {
         "id": "introduction-to-project",

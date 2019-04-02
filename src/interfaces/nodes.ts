@@ -8,3 +8,7 @@ export interface MenuNode {
   title: string;
   items: MenuItem[];
 }
+
+export interface GatsbyNode<T> {
+  node: T;
+}

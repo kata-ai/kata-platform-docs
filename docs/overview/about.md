@@ -1,6 +1,7 @@
 ---
 id: about
 title: About Kata Bot Platform
+description: Kata Bot Platform is a platform for building enterprise scale bots with ease.
 prev: release-notes
 next: introduction-to-project
 ---
