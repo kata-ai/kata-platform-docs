@@ -22,7 +22,7 @@ Kata Entity is our first of many Super Model to come. Kata Entity lets you extra
 
 ### Labels
 
-There are 13 common that you can utilize.
+There are 13 common labels that you can utilize.
 
 | **Label**   | **Description**                                                                   | **Examples**                                                                        |
 | ----------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ There are 13 common that you can utilize.
 ## FAQs
 
 **How to use Kata Entity in BOT?**
-Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you can use it as attributes. For more details, refer to documentation [click here](/kata-ml/nlu/#nl-studio-nlu)
+Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you can use it as attributes. For more details, refer to this [documentation](/kata-ml/nlu/#nl-studio-nlu)
 
 **How to add this entity to my existing Project?**
 Currently, Kata Entity is only available for new Projects. You can create a new project and use it as stated above.
