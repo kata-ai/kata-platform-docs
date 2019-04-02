@@ -8,21 +8,21 @@ Super Model is a highly maintained pre-built entity for Users to use without tra
 
 ## Kata Entity
 
-Introducting Kata Entity, `kata`, the default entity tagger that User can use without training data.
+Kata Entity is our first of many Super Model to come. Kata Entity lets you extract specific words in a sentence, like a person's name, location, and more.
 
-### Descriptions
+### About Kata Entity
 
-- This entity will be auto added in **NEW Project/NLU**.
-- The entity can be used without adding any training data.
-- The model for this entity is maintained by Team Kata and all Users will automatically get the updated version whenever Team Kata improved it.
+- This entity will be added automatically when you create a NEW Project. You can find it on Entities page.
+- You can use this entity without adding any training data.
+- The model for this entity is maintained by Team Kata and all users will automatically get the updated version whenever Team Kata improved it.
 - Once you delete this entity, you can't retrieve it back, be careful when doing that.
-- Training this entity won’t give immediate effect but we encourage you to give feedback if you found any error in prediction as it would become valuable improvements for our models.
+- Training this entity won't affect the prediction result, but we encourage you to do so if you find any mispredictions, as we would use it to improve our models.
 
 ![nlsg-6](./images/nlsg-6.png)
 
 ### Labels
 
-Currently, there are thirteen common labels that Users can achieve when using Kata Entity.
+There are 13 common that you can utilize.
 
 | **Label**   | **Description**                                                                   | **Examples**                                                                        |
 | ----------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -45,14 +45,14 @@ Currently, there are thirteen common labels that Users can achieve when using Ka
 **How to use Kata Entity in BOT?**
 Same as using any other NL from NL Studio, simply add the NL in Bot's NL and you can use it as attributes. For more details, refer to documentation [click here](/kata-ml/nlu/#nl-studio-nlu)
 
-**Why my Kata Entity is not improved after I input training data it?**
-Currently the training data that User give is not directly influence the model to ensure model's quality, but every correction that User give would be saved and evaluate later for model's improvement. In order to rise the quality of Kata Entity, we encourage you to give correction every time you see error in prediction.
+**How to add this entity to my existing Project?**
+Currently, Kata Entity is only available for new Projects. You can create a new project and use it as stated above.
 
-**Can I add or delete labels in kataent?**
-Kata Entity can not be edited or updated. Give suggestion to us if you feel there are labels that should be included.
+**Why is the prediction result is not improved after I add training data?**
+Currently, the training data that you add does not directly influence the model to ensure model's quality, but every correction that you give would be saved and evaluated later for the model's improvement. In order to improve the quality of Kata Entity, we encourage you to give correction every time you see errors in prediction.
 
-**How to add this entity to existing Project?**
-Currently Kata Entity only available for new Projects.
+**Can I add or delete labels in entity `kata`?**
+Kata Entity can not be edited or updated. Feel free to give us suggestions if you feel there are labels that should be included.
 
 **Is this available in English?**
-Currently Kata Entity only available for NLU Bahasa Indonesia
+Currently, Kata Entity only available for NLU Bahasa Indonesia
