@@ -18,6 +18,8 @@ Introducting Kata Entity, `kata`, the default entity tagger that User can use wi
 - Once you delete this entity, you can't retrieve it back, be careful when doing that.
 - Training this entity won’t give immediate effect but we encourage you to give feedback if you found any error in prediction as it would become valuable improvements for our models.
 
+![nlsg-6](./images/nlsg-6.png)
+
 ### Labels
 
 Currently, there are thirteen common labels that Users can achieve when using Kata Entity.
