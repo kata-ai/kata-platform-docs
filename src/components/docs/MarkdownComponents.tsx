@@ -20,6 +20,10 @@ export const H2 = styled('h2')`
   margin-top: 24px;
   font-size: ${fontSizes.tera};
   line-height: ${lineHeights.tera};
+
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 export const H3 = styled('h3')`
@@ -27,6 +31,10 @@ export const H3 = styled('h3')`
   margin-top: 24px;
   font-size: ${fontSizes.giga};
   line-height: ${lineHeights.giga};
+
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 export const H4 = styled('h4')`
@@ -34,6 +42,10 @@ export const H4 = styled('h4')`
   margin-top: 24px;
   font-size: ${fontSizes.mega};
   line-height: ${lineHeights.mega};
+
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 export const H5 = styled('h5')`
@@ -41,6 +53,10 @@ export const H5 = styled('h5')`
   margin-top: 24px;
   font-size: ${fontSizes.kilo};
   line-height: ${lineHeights.kilo};
+
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 export const P = styled<{ isDocs?: boolean }, 'p'>('p')`
