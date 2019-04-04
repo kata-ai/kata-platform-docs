@@ -1,6 +1,7 @@
 ---
 id: introduction-to-project
 title: Introduction to Project
+description: Introducing Projects. Everything you need in one place.
 prev: about
 ---
 

@@ -2,8 +2,17 @@
 
 const path = require('path');
 
+// Regex to parse date and title from the filename
+const BLOG_POST_SLUG_REGEX = /release-notes\/([\d]{4})-([\d]{2})-([\d]{2})-(.+)$/;
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, createRedirect } = actions;
+
+  // Redirect old Release Notes page
+  createRedirect({
+    fromPath: '/overview/release-notes',
+    toPath: '/release-notes'
+  });
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
   // interpreter if not a single content uses it. Therefore, we're putting them
@@ -12,10 +21,31 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, redirect_from, layout } = node.frontmatter;
+      const { permalink, redirect_from, layout, date } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
+
+      if (!slug && relativePath.includes('release-notes')) {
+        // Generate final path + graphql fields for blog posts
+        const match = BLOG_POST_SLUG_REGEX.exec(relativePath);
+        if (match) {
+          const year = match[1];
+          const month = match[2];
+          const day = match[3];
+
+          const pubDate = date
+            ? new Date(date)
+            : new Date(Number.parseInt(year), Number.parseInt(month) - 1, Number.parseInt(day));
+
+          // Blog posts are sorted by date and display the date in their header.
+          createNodeField({
+            node,
+            name: 'date',
+            value: pubDate.toJSON()
+          });
+        }
+      }
 
       if (!slug) {
         if (relativePath === 'index.md') {

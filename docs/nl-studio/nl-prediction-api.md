@@ -2,6 +2,7 @@
 id: nl-studio-nl-prediction-api
 title: 'NL Prediction API'
 prev: nl-studio-using-kata-cli
+next: nl-studio-super-model
 ---
 
 Now you can use your Natural Language Model everywhere. We provide an NL Prediction API, so you can integrate this to your application.

@@ -161,20 +161,96 @@ mynl:
   options:
     nluId: <nluId>
     token: <nluToken>
-    output: <type>        # raw or value
+    output: <type> # raw - return the raw prediction result from NL Studio
+                   # value - return the value of each NLU's entity
+                   # phrase - only for NL Studio entity type 'phrase'
+    entity: <entityName>  # only for output: phrase
     threshold: <number>   # confidence rate, if less than treshold bot wouldn't recognize as this intent
-    flatten: true         #optional, default false
+    flatten: true         # optional, default false
+```
 
-## usage in intent
+Examples:
+
+```yaml
+## usage in intent for output type value
+nlus:
+  mynl:
+    type: nl
+    options:
+      nluId: <nluId>
+      output: value
+      threshold: 0.5
+      flatten: true
+
 intents:
   yes:
     classifier:
       nlu: mynl
-      expression: "intent == 'yes'"
+      expression: "intent == 'yes'" # <entityName> == <label> of entity type 'trait'
   name:
     classifier:
       nlu: mynl
-      expression: "ner == 'person'"
+      expression: ner # <entityName> of entity type 'phrase'
+    attributes:
+      person:
+        nlu: mynl
+        path: ner     # <entityName>
+
+## usage in intent for output type phrase
+nlus:
+  mynl2:
+    type: nl
+    options:
+      nluId: <nluId>
+      output: phrase
+      entity: <entityName>
+      threshold: 0.7
+
+intents:
+  credentials:
+    classifier:
+      nlu: mynl # use the previous bot's nlu
+      expression: "intent == 'giveCredentials'"
+    attributes:
+      person:
+        nlu: mynl2
+        path: person   # <label> of mynl2's entity <enityName>
+      location:
+        nlu: mynl2
+        path: location # <label> of mynl2's entity <enityName>
+  name:
+    classifier:
+      nlu: mynl2
+      expression: person # <label> of mynl2's entity <enityName>
+    attributes:
+      person:
+        nlu: mynl2
+        path: person     # <label>
+
+# alternative approach
+nlus:
+  mynl3:
+    type: nl
+    options:
+      nluId: <nluId>
+
+intents:
+  yes:
+    classifier:
+      nlu: mynl3
+      options:
+        output: value
+        threshold: 0.5
+        flatten: true
+      expression: "intent == 'yes'"
+    attributes:
+      person:
+        nlu: mynl3
+        path: person
+        options:
+          output: phrase
+          entity: ner
+          threshold: 0.7
 ```
 
 ## Wit Intent NLU

@@ -3,14 +3,14 @@
     "title": "Overview",
     "items": [
       {
-        "id": "release-notes",
-        "slug": "/overview/release-notes/",
-        "title": "Release Notes"
-      },
-      {
         "id": "about",
         "slug": "/overview/about/",
         "title": "About"
+      },
+      {
+        "id": "release-notes",
+        "slug": "/release-notes/",
+        "title": "Release Notes"
       },
       {
         "id": "introduction-to-project",
@@ -136,6 +136,11 @@
         "id": "nl-studio-nl-prediction-api",
         "slug": "/nl-studio/nl-prediction-api/",
         "title": "NL Prediction API"
+      },
+      {
+        "id": "nl-studio-super-model",
+        "slug": "/nl-studio/super-model/",
+        "title": "Super Model (beta)"
       }
     ]
   },
