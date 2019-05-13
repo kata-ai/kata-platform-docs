@@ -1,5 +1,6 @@
 ---
 id: platform-overview
+permalink: /overview/
 title: Platform Overview
 prev: about
 next: release-notes
@@ -7,7 +8,7 @@ next: release-notes
 
 Kata Platform provides several technologies to help you build your chatbot better and get it to production quickly.
 
-## Kata Markup Language
+## Kata Markup Language (KataML)
 
 Developing a simple chatbot is easy, but how do you scale with ever growing features and capabilities? To answer that we developed **KataML**, a YAML based markup language tailored for bot builders. Writing your bots in KataML allows you to focus on the user experience instead of the code structure, and you will less likely to produce spaghetti code while growing your bot capabilities. KataML also let you embed javascript code in case you need more powerful scripting capability.
 
@@ -19,7 +20,7 @@ You can read the KataML specification [here](/kata-ml/overview/).
 
 **Kata Platform** brings together all of the elements to create intelligent chatbot in a single, integrated platform. It provides a graphical interface to let you design, train, and manage your chatbot without compromise.
 
-![Figure 4](./images/release-notes/kata-platform-3-0.jpg)
+![Figure 4](./images/kata-platform-3-0.jpg)
 
 ## Kata CLI
 
