@@ -18,7 +18,7 @@ In this guide, we'll show you how to create your first NLU model using NL Studio
 
 ## Training NLU
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt reiciendis nemo praesentium deleniti. Ratione nostrum laudantium reiciendis? Laborum nisi, quo fuga amet dicta vitae quas! Eveniet numquam modi mollitia illum.
+Training your NLU model will make your chatbot smarter. In this guide, we'll show how to improve your NLU model by training it with conversation data.
 
 [View Tutorial](/nl-studio)
 
@@ -26,6 +26,6 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt reiciendis nemo p
 
 ## Using NLU in Bot Studio
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt reiciendis nemo praesentium deleniti. Ratione nostrum laudantium reiciendis? Laborum nisi, quo fuga amet dicta vitae quas! Eveniet numquam modi mollitia illum.
+In this guide, we'll try to integrate the NLU model we just built and trained into our chatbot.
 
 [View Tutorial](/nl-studio)
