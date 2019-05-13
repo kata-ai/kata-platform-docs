@@ -4,44 +4,29 @@ import { Helmet } from 'react-helmet';
 
 import Page from '../components/Page';
 import Container from '../components/Container';
-import MarkdownContent from '../components/MarkdownContent';
 import DocsWrapper from '../components/DocsWrapper';
 import DocsHeader from '../components/docs/DocsHeader';
-import Pagination from '../components/Pagination';
-import TocWrapper from '../components/TocWrapper';
 import Footer from '../components/Footer';
 import TocFloatingButton from '../components/TocFloatingButton';
 import DocsContribution from '../components/DocsContribution';
 import SearchWrapper from '../components/SearchWrapper';
 
-import { MenuNode } from '../interfaces/nodes';
-import { SiteMetadata } from '../interfaces/gatsby';
+import { SiteMetadata, UpdatePost } from '../interfaces/gatsby';
 
-import getPageById from '../utils/getPageById';
 import styled from '../utils/styled';
+import VersionUpdate from '../components/updates/VersionUpdate';
+import TocWrapper from '../components/TocWrapper';
+import { GatsbyNode } from '../interfaces/nodes';
 
 interface PageTemplateProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
     };
-    sectionList: {
-      edges: Array<{
-        node: MenuNode;
-      }>;
+    latestPosts: {
+      edges: GatsbyNode<UpdatePost>[];
     };
-    markdownRemark: {
-      html: string;
-      tableOfContents: string;
-      excerpt: string;
-      frontmatter: {
-        id: string;
-        title: string;
-        description: string;
-        prev?: string;
-        next?: string;
-      };
-    };
+    markdownRemark: UpdatePost;
   };
 }
 
@@ -59,11 +44,9 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
   }
 
   public render() {
-    const { markdownRemark, sectionList, site } = this.props.data;
+    const { markdownRemark, latestPosts, site } = this.props.data;
+    const { tocIsOpen } = this.state;
     const { siteMetadata } = site;
-    const { prev, next } = markdownRemark.frontmatter;
-    const prevPage = getPageById(sectionList.edges, prev);
-    const nextPage = getPageById(sectionList.edges, next);
 
     return (
       <Page docsPage>
@@ -71,39 +54,36 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
           <title>
             {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
           </title>
-          <meta
-            name="description"
-            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
-          />
+          <meta name="description" content={markdownRemark.excerpt} />
           <meta property="og:title" content={markdownRemark.frontmatter.title} />
-          <meta
-            property="og:description"
-            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
-          />
+          <meta property="og:description" content={markdownRemark.excerpt} />
         </Helmet>
         <SearchWrapper>
           <Container xl>
             <Link to="/search">Search in docs...</Link>
           </Container>
         </SearchWrapper>
-        <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
-          {markdownRemark.tableOfContents && (
-            <TocWrapper
-              isOpen={this.state.tocIsOpen}
-              onClick={this.toggleToc}
-              dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
-            />
-          )}
+        <DocsWrapper hasToc>
+          <TocWrapper isOpen={tocIsOpen} onClick={this.toggleToc}>
+            <ul>
+              <li>
+                <Link to="/release-notes">All Releases</Link>
+              </li>
+              {latestPosts.edges.map(({ node }) => (
+                <li key={node.id}>
+                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </TocWrapper>
           <Container>
             <DocsHeader>
-              <h1>{markdownRemark.frontmatter.title}</h1>
+              <h1>Release Notes</h1>
+              <p>The latest news, updates, and changes on Kata Platform.</p>
             </DocsHeader>
-            <MarkdownContent html={markdownRemark.html} />
+            <VersionUpdate post={markdownRemark} />
             <FooterWrapper>
               <DocsContribution />
-              <Container>
-                {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-              </Container>
               <Footer
                 version={siteMetadata.version}
                 siteLastUpdated={siteMetadata.siteLastUpdated}
@@ -125,7 +105,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
 export default PageTemplate;
 
 export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
+  query UpdatesTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
@@ -148,29 +128,49 @@ export const query = graphql`
         }
       }
     }
-    sectionList: allTocJson {
+    latestPosts: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/release-notes/" } }
+      sort: { fields: [fields___date], order: DESC }
+    ) {
       edges {
         node {
-          title
-          items {
-            id
+          id
+          fields {
             slug
+            layout
+          }
+          frontmatter {
             title
+            version
+            category
           }
         }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      tableOfContents
-      excerpt
-      frontmatter {
-        id
-        title
-        description
-        prev
-        next
+      id
+      fields {
+        slug
+        layout
       }
+      frontmatter {
+        title
+        version
+        category
+        header_image {
+          ... on File {
+            childImageSharp {
+              fluid(maxWidth: 752) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        date
+        date_formatted: date(formatString: "MMMM DD, YYYY")
+      }
+      excerpt
+      htmlAst
     }
   }
 `;

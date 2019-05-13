@@ -10,7 +10,7 @@ import { ThemeProvider } from '../utils/styled';
 import SearchBox from '../components/SearchBox';
 import DocsWrapper from '../components/DocsWrapper';
 import Container from '../components/Container';
-import DocsHeader from '../components/DocsHeader';
+import DocsHeader from '../components/docs/DocsHeader';
 
 interface Props {
   data: {

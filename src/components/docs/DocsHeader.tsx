@@ -1,4 +1,4 @@
-import styled from '../utils/styled';
+import styled from '../../utils/styled';
 
 const DocsHeader = styled('header')`
   margin-bottom: 40px;
@@ -9,6 +9,10 @@ const DocsHeader = styled('header')`
     font-size: ${props => props.theme.dimensions.headingSizes.h1}px;
     color: ${props => props.theme.colors.ink};
     line-height: ${props => props.theme.dimensions.lineHeight.heading.h1}px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 `;
 

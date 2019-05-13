@@ -9,12 +9,12 @@
       },
       {
         "id": "platform-overview",
-        "slug": "/overview/platform-overview/",
+        "slug": "/overview/",
         "title": "Platform Overview"
       },
       {
         "id": "release-notes",
-        "slug": "/overview/release-notes/",
+        "slug": "/release-notes/",
         "title": "Release Notes"
       },
       {
@@ -141,6 +141,11 @@
         "id": "nl-studio-nl-prediction-api",
         "slug": "/nl-studio/nl-prediction-api/",
         "title": "NL Prediction API"
+      },
+      {
+        "id": "nl-studio-super-model",
+        "slug": "/nl-studio/super-model/",
+        "title": "Super Model (beta)"
       },
       {
         "id": "nl-studio-tutorials",
