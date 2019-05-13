@@ -1,6 +1,6 @@
 ---
 id: nl-studio-tutorials
-title: Guides
+title: Tutorials
 prev: nl-studio-using-kata-cli
 ---
 
@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit exercitationem su
 
 ## Creating Your First NLU Model
 
-In this guide, we'll show you how to create your first NLU model using NL Studio, which you can use to improve your chatbot.
+In this tutorial, we'll show you how to create your first NLU model using NL Studio, which you can use to improve your chatbot.
 
 [View Tutorial](./creating-your-first-nlu-model)
 
@@ -18,7 +18,7 @@ In this guide, we'll show you how to create your first NLU model using NL Studio
 
 ## Training NLU
 
-Training your NLU model will make your chatbot smarter. In this guide, we'll show how to improve your NLU model by training it with conversation data.
+Training your NLU model will make your chatbot smarter. In this tutorial, we'll show how to improve your NLU model by training it with conversation data.
 
 [View Tutorial](/nl-studio)
 

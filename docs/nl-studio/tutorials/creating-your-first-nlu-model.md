@@ -1,6 +1,7 @@
 ---
 id: nl-studio-tutorials-nlu-model
 title: 'Creating Your First NLU Model'
+description: In this guide, we'll show you how to create your first NLU model using NL Studio, which you can use to improve your chatbot.
 ---
 
 In this guide, we'll show you how to create your first NLU model using NL Studio, which you can use to improve your chatbot.
