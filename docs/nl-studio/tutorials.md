@@ -1,6 +1,6 @@
 ---
 id: nl-studio-tutorials
-title: Tutorials
+title: Guides
 prev: nl-studio-using-kata-cli
 ---
 
@@ -8,11 +8,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit exercitationem su
 
 ---
 
-## Creating an NLU Entity
+## Creating Your First NLU Model
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt reiciendis nemo praesentium deleniti. Ratione nostrum laudantium reiciendis? Laborum nisi, quo fuga amet dicta vitae quas! Eveniet numquam modi mollitia illum.
+In this guide, we'll show you how to create your first NLU model using NL Studio, which you can use to improve your chatbot.
 
-[View Tutorial](./creating-an-nlu-entity)
+[View Tutorial](./creating-your-first-nlu-model)
 
 ---
 
