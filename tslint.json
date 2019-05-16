@@ -1,6 +1,10 @@
 {
-  "extends": ["tslint-config-kata"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["tslint-config-kata/react", "tslint-config-prettier"],
   "rules": {
-    "interface-name": [true, "never-prefix"]
+    "prettier": true
+  },
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts", "coverage/lcov-report/*.js"]
   }
 }

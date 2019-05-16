@@ -47,6 +47,14 @@ const VersionUpdatesPage: React.SFC<Props> = ({ data }) => {
       <Helmet>
         <title>Release Notes &middot; {siteMetadata.title}</title>
         <meta property="og:title" content="Release Notes" />
+        <meta
+          name="description"
+          content="The latest news, updates, and changes on Kata Platform."
+        />
+        <meta
+          property="og:description"
+          content="The latest news, updates, and changes on Kata Platform."
+        />
       </Helmet>
       <SearchWrapper>
         <Container xl>
