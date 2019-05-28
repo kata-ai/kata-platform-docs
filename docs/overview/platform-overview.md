@@ -26,6 +26,8 @@ You can read the KataML specification [here](/kata-ml/overview/).
 
 Meet your devops assistant: **Kata CLI**. If you are a developer and already using git or heroku, you will be familiar with Kata CLI. With the CLI, you can easily deploy, update and integrate your bots. Just type the appropriate command in the terminal.
 
+[Read the Kata CLI Documentation here &rarr;](https://github.com/kata-ai/kata-cli)
+
 ![Figure 5](./images/about/figure-5.png)
 
 ## Automated Testing
