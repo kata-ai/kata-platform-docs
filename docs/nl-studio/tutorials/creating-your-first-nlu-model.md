@@ -43,7 +43,7 @@ We will go into what entity type we'll use for each one of them in the next sect
 
 The entity type "Trait" can be used to classify a sentence into particular classes. We can also use this to determine the intention of a user based on their input. Click [here](/nl-studio/entity/#trait) to learn about the "Trait" entity type.
 
-Let's say that the user can use our chatbot for 4 different options. We can
+Let's say that the user can use our chatbot for 4 different options. We can add a unique label these options to put in our entity.
 
 - Start a pizza order (label: `order`)
 - Ask the available pizza menu/options (label: `askOptions`)
@@ -54,6 +54,7 @@ Then, create our Trait entity called `intent` with the "intent" classifier with 
 
 ```yml
 entities:
+  # ...
   intent:
     type: trait
     profile: intent
