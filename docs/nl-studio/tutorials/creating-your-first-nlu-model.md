@@ -8,7 +8,13 @@ In this tutorial, we'll show you how to create your first NLU model using NL Stu
 
 ## Login to Kata Platform
 
-Before we start, make sure that you're logged in to the Kata Platform. Go to [platform.kata.ai/login](https://platform.kata.ai/login) and type in your credentials.
+Before we start, make sure that you're logged in, either through the Kata Platform dashboard or the Kata CLI. To login via the dashboard, go to [platform.kata.ai/login](https://platform.kata.ai/login) and type in your credentials.
+
+To login via the CLI, type the following:
+
+```sh-session
+$ kata login
+```
 
 ## Designing Entities
 
@@ -35,4 +41,27 @@ We will go into what entity type we'll use for each one of them in the next sect
 
 ## Capturing User Intent
 
-[TODO intent]
+The entity type "Trait" can be used to classify a sentence into particular classes. We can also use this to determine the intention of a user based on their input. Click [here](/nl-studio/entity/#trait) to learn about the "Trait" entity type.
+
+Let's say that the user can use our chatbot for 4 different options. We can
+
+- Start a pizza order (label: `order`)
+- Ask the available pizza menu/options (label: `askOptions`)
+- Confirm an open order (label: `confirm`)
+- Cancel an open order (label: `cancel`)
+
+Then, create our Trait entity called `intent` with the "intent" classifier with the labels we just created.
+
+```yml
+entities:
+  intent:
+    type: trait
+    profile: intent
+    labels:
+      - order
+      - askOptions
+      - confirm
+      - cancel
+```
+
+[TODO: example image in botstudio]
