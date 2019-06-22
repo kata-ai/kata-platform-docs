@@ -1,6 +1,8 @@
-[{
+[
+  {
     "title": "Overview",
-    "items": [{
+    "items": [
+      {
         "id": "about",
         "slug": "/overview/about/",
         "title": "About"
@@ -19,7 +21,8 @@
   },
   {
     "title": "Concepts",
-    "items": [{
+    "items": [
+      {
         "id": "bot",
         "slug": "/concepts/bot/",
         "title": "Bot"
@@ -63,7 +66,8 @@
   },
   {
     "title": "Kata ML Spec",
-    "items": [{
+    "items": [
+      {
         "id": "kata-ml-overview",
         "slug": "/kata-ml/overview/",
         "title": "Overview"
@@ -102,7 +106,8 @@
   },
   {
     "title": "NL Studio",
-    "items": [{
+    "items": [
+      {
         "id": "nl-studio-nlu",
         "slug": "/nl-studio/nlu/",
         "title": "NLU"
@@ -141,7 +146,8 @@
   },
   {
     "title": "CMS Studio",
-    "items": [{
+    "items": [
+      {
         "id": "cms-studio-about",
         "slug": "/cms-studio/about/",
         "title": "About"
@@ -160,7 +166,8 @@
   },
   {
     "title": "Deployment Guide",
-    "items": [{
+    "items": [
+      {
         "id": "deployment-guide-introduction",
         "slug": "/deployment-guide/introduction/",
         "title": "Introduction"
@@ -174,7 +181,8 @@
   },
   {
     "title": "Kata CLI Guide",
-    "items": [{
+    "items": [
+      {
         "id": "kata-cli-installation",
         "slug": "/kata-cli/installation/",
         "title": "Installation"
@@ -203,7 +211,8 @@
   },
   {
     "title": "Tutorial",
-    "items": [{
+    "items": [
+      {
         "id": "hello-world-tutorial",
         "slug": "/tutorial/hello-world/",
         "title": "Hello World"
@@ -232,7 +241,8 @@
   },
   {
     "title": "FAQs",
-    "items": [{
+    "items": [
+      {
         "id": "faq",
         "slug": "/faq/faq",
         "title": "Kata Platform 3.0 FAQ"
