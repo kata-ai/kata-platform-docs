@@ -213,6 +213,11 @@
     "title": "Tutorial",
     "items": [
       {
+        "id": "hello-world-tutorial",
+        "slug": "/tutorial/hello-world/",
+        "title": "Hello World"
+      },
+      {
         "id": "bot-studio-tutorial",
         "slug": "/tutorial/bot-studio/",
         "title": "Bot Studio Tutorial"

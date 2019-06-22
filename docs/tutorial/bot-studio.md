@@ -1,6 +1,7 @@
 ---
 id: bot-studio-tutorial
 title: Bot Studio Tutorial
+prev: hello-world-tutorial
 next: nl-studio-tutorial
 ---
 
