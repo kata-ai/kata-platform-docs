@@ -1,59 +1,47 @@
 import React from 'react';
-import { RouteComponentProps } from '@reach/router';
-import { graphql, StaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { graphql, StaticQuery } from 'gatsby';
+import { WindowLocation } from '@reach/router';
 
-import Navigation from '../components/Navigation';
-import LayoutRoot from '../components/LayoutRoot';
-import LayoutMain from '../components/LayoutMain';
-import theme from '../styles/theme';
-import { ThemeProvider } from '../utils/styled';
-import { MenuNode } from '../interfaces/nodes';
-import { SiteMetadata } from '../interfaces/gatsby';
+import { AksaraReset } from 'components/foundations';
+import { LayoutRoot } from 'components/layout/LayoutRoot';
+import { LayoutMain } from 'components/layout/LayoutMain';
+import { Navigation } from 'components/layout/Navigation';
+import { Overlay } from 'components/layout/Overlay';
 
-import '../assets/fonts/museo-sans-rounded.css';
-import '../assets/fonts/league-mono.css';
-import '../styles/globals';
-import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css';
+import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
+import { SiteMetadata } from 'interfaces/gatsby';
 
-interface WrapperProps extends RouteComponentProps<{}> {}
+import 'typeface-barlow';
+import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
-interface WrapperState {
-  drawerIsOpen: boolean;
+interface IndexLayoutProps {
+  location?: WindowLocation;
+  navHidden?: boolean;
 }
 
-interface QueryData {
+interface DataProps {
   site: {
     siteMetadata: SiteMetadata;
   };
   navigationMenus: {
-    edges: Array<{
-      node: MenuNode;
-    }>;
+    edges: Edge<MenuNode>[];
+  };
+  headerMenus: {
+    edges: Edge<HeaderMenuItem>[];
   };
 }
 
-class IndexLayout extends React.Component<WrapperProps, WrapperState> {
-  constructor(props: WrapperProps) {
-    super(props);
+const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
+  return (
+    <StaticQuery query={query}>
+      {(data: DataProps) => {
+        const { siteMetadata } = data.site;
 
-    this.state = {
-      drawerIsOpen: false
-    };
-  }
-
-  render() {
-    const { children, location } = this.props;
-    const { drawerIsOpen } = this.state;
-
-    return (
-      <StaticQuery query={query}>
-        {(data: QueryData) => {
-          const { siteMetadata } = data.site;
-
-          return (
-            <ThemeProvider theme={theme}>
-              <LayoutRoot>
+        return (
+          <NavigationContextProvider>
+            <AksaraReset>
+              <LayoutRoot title={siteMetadata.sidebarTitle || siteMetadata.title} headerMenus={data.headerMenus.edges}>
                 <Helmet>
                   <title>{siteMetadata.title}</title>
                   <meta name="description" content={siteMetadata.description} />
@@ -61,36 +49,24 @@ class IndexLayout extends React.Component<WrapperProps, WrapperState> {
                   <meta property="og:type" content="website" />
                   <meta property="og:site_name" content={siteMetadata.title} />
                   <meta property="og:description" content={siteMetadata.description} />
-                  <meta
-                    property="og:url"
-                    content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`}
-                  />
+                  <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
                 </Helmet>
+                <Overlay />
                 <Navigation
                   title={siteMetadata.sidebarTitle || siteMetadata.title}
-                  subtitle={siteMetadata.sidebarSubtext}
                   navigation={data.navigationMenus.edges}
-                  open={drawerIsOpen}
-                  onCloseNavMenu={this.closeDrawer}
-                  toggleDrawer={this.toggleDrawer}
+                  headerMenus={data.headerMenus.edges}
+                  navHidden={navHidden}
                 />
                 <LayoutMain>{children}</LayoutMain>
               </LayoutRoot>
-            </ThemeProvider>
-          );
-        }}
-      </StaticQuery>
-    );
-  }
-
-  private toggleDrawer = () => {
-    this.setState({ drawerIsOpen: !this.state.drawerIsOpen });
-  };
-
-  private closeDrawer = () => {
-    this.setState({ drawerIsOpen: false });
-  };
-}
+            </AksaraReset>
+          </NavigationContextProvider>
+        );
+      }}
+    </StaticQuery>
+  );
+};
 
 export default IndexLayout;
 
@@ -100,10 +76,7 @@ const query = graphql`
       siteMetadata {
         title
         sidebarTitle
-        sidebarSubtext
-        siteLastUpdated
         description
-        version
         siteUrl
         keywords
         author {
@@ -122,6 +95,17 @@ const query = graphql`
             slug
             title
           }
+        }
+      }
+    }
+    headerMenus: allMenuJson {
+      edges {
+        node {
+          id
+          label
+          href
+          exact
+          external
         }
       }
     }
