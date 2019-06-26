@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { dimensions, colors } from 'utils/variables';
+import { dimensions, colors, breakpoints } from 'utils/variables';
 
 interface HeaderLogoProps {
-  noSidebar?: boolean;
+  navHidden?: boolean;
 }
 
 const hasSidebar = css`
@@ -21,7 +21,11 @@ const HeaderLogo = styled('div')<HeaderLogoProps>`
   height: 100%;
   padding: 0 24px;
 
-  ${props => (props.noSidebar ? hasNoSidebar : hasSidebar)}
+  ${props => (props.navHidden ? hasNoSidebar : hasSidebar)}
+
+  @media (max-width: ${breakpoints.lg - 1}px) {
+    display: none;
+  }
 `;
 
 export default HeaderLogo;

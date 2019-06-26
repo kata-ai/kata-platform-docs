@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { graphql, StaticQuery, Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 import { SkipNavLink } from '@reach/skip-nav';
 
@@ -82,6 +82,7 @@ interface LayoutRootProps {
   location?: WindowLocation;
   title: string;
   headerMenus?: Edge<HeaderMenuItem>[];
+  navHidden?: boolean;
 }
 
 interface DataProps {
@@ -90,85 +91,77 @@ interface DataProps {
   };
 }
 
-const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location, title, headerMenus }) => {
+const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
   const { dispatch } = React.useContext(NavigationContext);
+  const data: DataProps = useStaticQuery(query);
+  const { siteMetadata } = data.site;
 
   return (
-    <StaticQuery query={query}>
-      {(data: DataProps) => {
-        const { siteMetadata } = data.site;
+    <StyledLayoutRoot className={className}>
+      <Helmet>
+        <title>{siteMetadata.title}</title>
+        <meta name="description" content={siteMetadata.description} />
+        <meta name="keywords" content={siteMetadata.keywords} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.description} />
+        <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+      </Helmet>
+      <SkipNavLink />
 
-        return (
-          <StyledLayoutRoot className={className}>
-            <Helmet>
-              <title>{siteMetadata.title}</title>
-              <meta name="description" content={siteMetadata.description} />
-              <meta name="keywords" content={siteMetadata.keywords} />
-              <meta property="og:type" content="website" />
-              <meta property="og:site_name" content={siteMetadata.title} />
-              <meta property="og:description" content={siteMetadata.description} />
-              <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
-            </Helmet>
-            <SkipNavLink />
+      <Header fixed>
+        <HeaderInner>
+          <HeaderLogo navHidden={navHidden}>
+            <HomepageLink
+              to="/"
+              size={determineFontDimensions('heading', 400)}
+              onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
+            >
+              <img src={logo} alt={title} />
+            </HomepageLink>
+          </HeaderLogo>
+          <HeaderRight hideOnDesktop>
+            <NavButton
+              icon="hamburger"
+              fill={colors.grey05}
+              onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
+            >
+              Toggle Drawer
+            </NavButton>
+            <LogoWrapper>
+              <HomepageLink
+                to="/"
+                size={determineFontDimensions('heading', 400)}
+                onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
+              >
+                <img src={logo} alt={title} />
+              </HomepageLink>
+            </LogoWrapper>
+          </HeaderRight>
+          <HeaderRight hideOnMobile>
+            <DocumentationMenu>
+              {headerMenus &&
+                headerMenus.map(({ node }) => {
+                  if (node.external) {
+                    return (
+                      <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                        {node.label}
+                      </a>
+                    );
+                  }
 
-            <Header fixed>
-              <HeaderInner hideOnDesktop>
-                <HeaderRight>
-                  <NavButton
-                    icon="hamburger"
-                    fill={colors.grey05}
-                    onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
-                  >
-                    Toggle Drawer
-                  </NavButton>
-                  <LogoWrapper>
-                    <HomepageLink
-                      to="/"
-                      size={determineFontDimensions('heading', 400)}
-                      onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
-                    >
-                      <img src={logo} alt={title} />
-                    </HomepageLink>
-                  </LogoWrapper>
-                </HeaderRight>
-              </HeaderInner>
-              <HeaderInner hideOnMobile>
-                <HeaderLogo>
-                  <HomepageLink
-                    to="/"
-                    size={determineFontDimensions('heading', 400)}
-                    onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
-                  >
-                    <img src={logo} alt={title} />
-                  </HomepageLink>
-                </HeaderLogo>
-                <HeaderRight>
-                  <DocumentationMenu>
-                    {headerMenus &&
-                      headerMenus.map(({ node }) => {
-                        if (node.external) {
-                          return (
-                            <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
-                              {node.label}
-                            </a>
-                          );
-                        }
-
-                        return (
-                          <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
-                            {node.label}
-                          </Link>
-                        );
-                      })}
-                  </DocumentationMenu>
-                </HeaderRight>
-              </HeaderInner>
-            </Header>
-            {children}
-          </StyledLayoutRoot>
-        );
-      }}
-    </StaticQuery>
+                  return (
+                    <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                      {node.label}
+                    </Link>
+                  );
+                })}
+            </DocumentationMenu>
+          </HeaderRight>
+        </HeaderInner>
+      </Header>
+      {children}
+    </StyledLayoutRoot>
   );
 };
 

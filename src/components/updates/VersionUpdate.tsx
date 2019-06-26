@@ -8,6 +8,7 @@ import { UpdatePost } from '../../interfaces/gatsby';
 import UpdateIcon from './UpdateIcon';
 import { MarkdownContent } from 'components/page/Markdown';
 import { breakpoints, colors } from 'utils/variables';
+import { Heading, Text } from 'components/foundations';
 
 interface VersionUpdateProps {
   post: UpdatePost;
@@ -21,28 +22,15 @@ const PostHeaderIcon = styled('div')`
 const PostHeaderRight = styled('div')`
   flex: 1 1 auto;
   margin-left: 24px;
-  padding-top: 8px;
   padding-bottom: 24px;
-`;
-
-const Title = styled('h1')`
-  margin: 0;
-  font-weight: 500;
-`;
-
-const Time = styled('time')`
-  display: block;
-  margin-top: 8px;
-  margin-bottom: 0;
-  font-weight: 300;
 `;
 
 const HeaderLine = styled('div')`
   flex: 1 1 auto;
-  width: 4px;
+  width: 2px;
   min-height: 34px;
   margin-left: 18px;
-  background-color: ${colors.grey03};
+  background-color: ${colors.grey02};
 `;
 
 const PostHeader = styled('header')`
@@ -58,7 +46,7 @@ const PostContent = styled('section')`
 
 const PostBody = styled('div')`
   padding: 24px;
-  border: 1px solid ${colors.grey03};
+  border: 1px solid ${colors.grey02};
   border-top: none;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -75,12 +63,10 @@ const PostTitle = styled('h2')`
 `;
 
 const FooterLine = styled('div')`
-  width: 4px;
-  height: 72px;
+  width: 2px;
+  height: 32px;
   margin-left: 18px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-color: ${colors.grey03};
+  background-color: ${colors.grey02};
 `;
 
 const PostFooter = styled('div')``;
@@ -88,10 +74,6 @@ const PostFooter = styled('div')``;
 const Root = styled('article')`
   display: flex;
   flex-direction: column;
-
-  &:not(:last-child) {
-    margin-bottom: 4px;
-  }
 
   &:last-child,
   &:last-of-type {
@@ -109,8 +91,12 @@ const VersionUpdate: React.FC<VersionUpdateProps> = ({ post }) => (
         <HeaderLine />
       </PostHeaderIcon>
       <PostHeaderRight>
-        <Title>{post.frontmatter.title}</Title>
-        <Time dateTime={post.frontmatter.date}>{post.frontmatter.date_formatted}</Time>
+        <Heading size={500} lineHeight="40px" m={0}>
+          {post.frontmatter.title}
+        </Heading>
+        <Text as="time" size={300} color="grey04" mt="xs" {...{ dateTime: post.frontmatter.date }}>
+          {post.frontmatter.date_formatted}
+        </Text>
       </PostHeaderRight>
     </PostHeader>
     <PostContent>

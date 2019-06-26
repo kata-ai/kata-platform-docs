@@ -73,7 +73,9 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
             <Container>
               <DocsHeader title="Release Notes" subtitle="The latest news, updates, and changes on Kata Platform." />
 
-              <VersionUpdate post={markdownRemark} />
+              <PostsList>
+                <VersionUpdate post={markdownRemark} />
+              </PostsList>
               <FooterWrapper>
                 <DocsContribution />
                 <Footer
@@ -94,6 +96,10 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
     this.setState({ tocIsOpen: !this.state.tocIsOpen });
   };
 }
+
+const PostsList = styled('div')`
+  margin-top: 32px;
+`;
 
 export default PageTemplate;
 

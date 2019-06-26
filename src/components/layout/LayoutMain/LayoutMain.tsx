@@ -5,11 +5,13 @@ import { NavigationContext } from '../Navigation/NavigationContext';
 import { breakpoints, dimensions } from 'utils/variables';
 
 interface LayoutMainInnerProps {
-  className?: string;
   isNavigationOpen?: boolean;
+  navHidden?: boolean;
 }
 
-interface LayoutMainProps extends LayoutMainInnerProps {}
+interface LayoutMainProps extends LayoutMainInnerProps {
+  className?: string;
+}
 
 const StyledLayoutMain = styled('main')<LayoutMainInnerProps>`
   display: flex;
@@ -19,15 +21,15 @@ const StyledLayoutMain = styled('main')<LayoutMainInnerProps>`
   transition: margin-left 0.3s ease;
 
   @media (min-width: ${breakpoints.lg}px) {
-    margin-left: ${dimensions.widths.sidebar.lg}px;
+    margin-left: ${props => (props.navHidden ? 0 : dimensions.widths.sidebar.lg)}px;
   }
 `;
 
-const LayoutMain: React.SFC<LayoutMainProps> = ({ children, className }) => {
+const LayoutMain: React.SFC<LayoutMainProps> = ({ children, navHidden, className }) => {
   const { state } = React.useContext(NavigationContext);
 
   return (
-    <StyledLayoutMain id="reach-skip-nav" className={className} isNavigationOpen={state.isOpen}>
+    <StyledLayoutMain id="reach-skip-nav" className={className} isNavigationOpen={state.isOpen} navHidden={navHidden}>
       {children}
     </StyledLayoutMain>
   );

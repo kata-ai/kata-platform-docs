@@ -8,6 +8,14 @@ interface MarkdownContentProps {
 }
 
 const Section = styled('section')`
+  h1,
+  h2,
+  h3 {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+  }
+
   .gatsby-highlight {
     margin: ${space.sm}px 0;
   }

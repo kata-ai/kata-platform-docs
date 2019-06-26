@@ -14,6 +14,13 @@
     "external": false
   },
   {
+    "id": "release-notes",
+    "label": "Release Notes",
+    "href": "/release-notes",
+    "exact": false,
+    "external": false
+  },
+  {
     "id": "github",
     "label": "GitHub",
     "href": "https://github.com/kata-ai/grundgesetz-skeleton",

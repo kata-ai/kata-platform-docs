@@ -86,7 +86,7 @@ const VersionUpdatesPage: React.SFC<Props> = ({ data }) => {
 };
 
 const PostsList = styled('div')`
-  margin-top: 24px;
+  margin-top: 32px;
 `;
 
 export default VersionUpdatesPage;

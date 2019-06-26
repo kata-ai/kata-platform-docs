@@ -28,9 +28,6 @@ function getBackgroundcolor(colorKey?: string) {
 
 function getIconColor(colorKey?: string) {
   switch (colorKey) {
-    case 'minor': {
-      return colors.grey09;
-    }
     default: {
       return colors.white;
     }
@@ -74,5 +71,9 @@ const Root = styled('div')<UpdateIconProps>`
   background-color: ${props => getBackgroundcolor(props.iconType)};
   overflow: hidden;
 `;
+
+UpdateIcon.defaultProps = {
+  iconType: 'patch'
+};
 
 export default UpdateIcon;
