@@ -31,9 +31,14 @@ const TutorialPage: React.SFC<Props> = ({ data }) => (
           <DocsHeader title="Tutorial" subtitle="A list of tutorials for using Kata Platform." />
           <MarkdownContent>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores in hic optio maxime! Mollitia iusto
-              suscipit voluptates magnam doloremque, praesentium enim eos repellendus, exercitationem quod illo hic
-              maxime neque quas.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nisi perferendis nihil quos, dignissimos
+              distinctio, eos, corporis minus cupiditate ratione delectus accusamus enim molestiae atque! Provident
+              accusantium esse asperiores molestias?
+            </p>
+            <p>
+              Ut, tempore explicabo quod omnis accusamus esse soluta dolores hic, impedit cum repudiandae architecto,
+              consectetur numquam magni? Explicabo quas odit alias molestiae hic itaque, tempora facere asperiores iste
+              ad non.
             </p>
           </MarkdownContent>
         </Container>
