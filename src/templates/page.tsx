@@ -18,6 +18,7 @@ import { Pagination } from 'components/ui/Pagination';
 import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
 import IndexLayout from 'layouts';
 import renderAst from 'utils/renderAst';
+import { DocsContribution } from 'components/docs/DocsContribution';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -72,6 +73,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <Container>
             <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
             <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <DocsContribution />
             <FooterWrapper>
               {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
               <Footer

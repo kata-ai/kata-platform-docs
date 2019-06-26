@@ -15,6 +15,7 @@ import { Footer, FooterWrapper } from 'components/layout/Footer';
 import IndexLayout from 'layouts';
 import renderAst from 'utils/renderAst';
 import { SiteMetadata } from 'interfaces/gatsby';
+import { DocsContribution } from 'components/docs/DocsContribution';
 
 interface PageTemplateProps extends RouteComponentProps {
   data: {
@@ -52,6 +53,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           <Container>
             <DocsHeader title={frontmatter.title} />
             <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <DocsContribution />
             <FooterWrapper>
               <Footer
                 version={siteMetadata.version}
