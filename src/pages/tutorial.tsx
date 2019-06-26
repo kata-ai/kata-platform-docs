@@ -28,7 +28,7 @@ const TutorialPage: React.SFC<Props> = ({ data }) => (
       </Helmet>
       <DocsWrapper>
         <Container>
-          <DocsHeader title="Tutorial" />
+          <DocsHeader title="Tutorial" subtitle="A list of tutorials for using Kata Platform." />
           <MarkdownContent>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores in hic optio maxime! Mollitia iusto
