@@ -1,4 +1,5 @@
 ---
+layout: faq-page
 id: faq-others
 title: Others FAQ
 ---

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { dimensions, breakpoints, colors, layerIndexes } from 'utils/variables';
+import { dimensions, breakpoints, colors, layerIndexes, space } from 'utils/variables';
 
 interface ToggleableProps {
   isOpen?: boolean;
@@ -9,7 +9,6 @@ const TocWrapper = styled('section')<ToggleableProps>`
   display: block;
   margin-left: 24px;
   font-size: 13px;
-  line-height: 28px;
 
   @media (min-width: ${breakpoints.xl}px) {
     flex: 0 0 240px;
@@ -53,6 +52,10 @@ const TocWrapper = styled('section')<ToggleableProps>`
 
     ul {
       border-left: none;
+    }
+
+    li {
+      margin: ${space.xs}px 0;
     }
   }
 

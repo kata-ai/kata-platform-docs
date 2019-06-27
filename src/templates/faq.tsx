@@ -17,7 +17,7 @@ import renderAst from 'utils/renderAst';
 import { SiteMetadata } from 'interfaces/gatsby';
 import { DocsContribution } from 'components/docs/DocsContribution';
 
-interface HomeTemplateProps extends RouteComponentProps {
+interface PageTemplateProps extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
@@ -39,13 +39,13 @@ interface HomeTemplateProps extends RouteComponentProps {
   };
 }
 
-const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
+const FAQTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter } = markdownRemark;
   const { siteMetadata } = site;
 
   return (
-    <IndexLayout>
+    <IndexLayout navHidden>
       <Page docsPage>
         <Helmet>
           <meta property="og:title" content="Home" />
@@ -69,10 +69,10 @@ const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
   );
 };
 
-export default HomeTemplate;
+export default FAQTemplate;
 
 export const query = graphql`
-  query HomeTemplateQuery($slug: String!) {
+  query FAQTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title

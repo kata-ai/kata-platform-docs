@@ -238,25 +238,5 @@
         "title": "Integration Chatbot with CMS Studio"
       }
     ]
-  },
-  {
-    "title": "FAQs",
-    "items": [
-      {
-        "id": "faq",
-        "slug": "/faq/faq",
-        "title": "Kata Platform 3.0 FAQ"
-      },
-      {
-        "id": "faq-migration",
-        "slug": "/faq/migration/",
-        "title": "Migration FAQ"
-      },
-      {
-        "id": "faq-others",
-        "slug": "/faq/others/",
-        "title": "Others FAQ"
-      }
-    ]
   }
 ]

@@ -8,7 +8,7 @@ interface DocsHeaderProps {
 
 const DocsHeader: React.FC<DocsHeaderProps> = ({ title, subtitle }) => {
   return (
-    <Box as="header" mb="md">
+    <Box as="header" mb="xl">
       <Heading as="h1" size={800} color="grey09" fontFamily="sansSerif">
         {title}
       </Heading>
