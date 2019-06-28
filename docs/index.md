@@ -4,8 +4,6 @@ id: index
 title: Welcome to Kata Platform Docs!
 ---
 
-<img src="./release-3.svg" alt="Kata Platform 3.0 illustration" style="display: block; width: 100%; max-width: 600px; margin: 24px auto;" />
+Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs. We hope Kata Platform 3.0 will help you build smarter chatbots in shorter development time. It is our mission to democratize AI and help the community to build chatbot solution.
 
-Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.
-
-[Check out what's new!](./release-notes/)
+[Check out what's new! &rarr;](./release-notes/)

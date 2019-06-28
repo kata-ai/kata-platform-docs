@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+import { space } from 'utils/variables';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { RouteComponentProps } from '@reach/router';
@@ -16,6 +18,8 @@ import IndexLayout from 'layouts';
 import renderAst from 'utils/renderAst';
 import { SiteMetadata } from 'interfaces/gatsby';
 import { DocsContribution } from 'components/docs/DocsContribution';
+
+import illustration from 'assets/images/main-illustration.svg';
 
 interface HomeTemplateProps extends RouteComponentProps {
   data: {
@@ -39,6 +43,10 @@ interface HomeTemplateProps extends RouteComponentProps {
   };
 }
 
+const HomepageIllustration = styled('img')`
+  margin-bottom: ${space.xl}px;
+`;
+
 const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter } = markdownRemark;
@@ -52,7 +60,8 @@ const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
         </Helmet>
         <DocsWrapper>
           <Container>
-            <DocsHeader title={frontmatter.title} subtitle={frontmatter.description} />
+            <HomepageIllustration src={illustration} alt="Kata Platform" />
+            <DocsHeader title={frontmatter.title} subtitle={frontmatter.description} margin="md" />
             <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
             <DocsContribution />
             <FooterWrapper>
