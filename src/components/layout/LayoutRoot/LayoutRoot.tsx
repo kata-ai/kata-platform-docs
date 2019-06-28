@@ -16,6 +16,8 @@ import { isActive } from 'utils/helpers';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 
 import logo from 'assets/images/logo-docs.svg';
+import { ButtonStyles } from 'components/ui/Button';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const StyledLayoutRoot = styled('div')`
   display: flex;
@@ -71,6 +73,10 @@ const HomepageLink = styled(Link)<FontSizeProps>`
     color: ${colors.grey09};
     text-decoration: none;
   }
+`;
+
+const LoginButton = styled(OutboundLink)`
+  ${ButtonStyles}
 `;
 
 interface FontSizeProps {
@@ -157,6 +163,17 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location,
                   );
                 })}
             </DocumentationMenu>
+            <div>
+              <LoginButton
+                variant="primary"
+                size={'md' as any}
+                href="https://platform.kata.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Login
+              </LoginButton>
+            </div>
           </HeaderRight>
         </HeaderInner>
       </Header>
