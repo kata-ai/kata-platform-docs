@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { InputText } from '@kata-kit/form';
-import { colors } from 'utils/variables';
+import { colors, space } from 'utils/variables';
+import { InputText } from 'components/ui/Input';
 
 interface SearchPageProps {
   lng?: string;
+  layout?: string;
 }
 
 interface SearchPageState {
@@ -28,14 +29,22 @@ const ResultExcerpt = styled('p')`
 `;
 
 const SearchResult = styled('div')`
-  margin: 24px 0;
   padding: 16px;
-  border: 1px solid ${colors.grey03};
-  border-radius: 4px;
+  border-bottom: 1px solid ${colors.grey02};
 `;
 
 const SearchResultLink = styled(Link)`
   color: inherit;
+
+  ${SearchResult} {
+    border-bottom: 1px solid ${colors.grey02};
+  }
+
+  &:last-child {
+    ${SearchResult} {
+      border-bottom: none;
+    }
+  }
 
   &:hover,
   &:focus {
@@ -53,9 +62,38 @@ const SearchResultLink = styled(Link)`
   }
 `;
 
+const SearchResultsDesktop = css`
+  position: absolute;
+  right: -69px;
+  width: 430px;
+  height: 315px;
+  overflow-y: auto;
+  z-index: 50;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+`;
+
+const SearchResults = styled('div')<SearchPageProps>`
+  margin-top: 11px;
+  padding: 0 16px;
+  border: 1px solid ${colors.grey02};
+  background-color: ${colors.white};
+
+  ${props => props.layout === 'desktop' && SearchResultsDesktop}
+`;
+
+const SearchInputText = styled(InputText)`
+  margin-right: ${space.md}px;
+`;
+
+const Root = styled('div')<SearchPageProps>`
+  position: relative;
+`;
+
 export default class SearchBox extends React.Component<SearchPageProps, SearchPageState> {
   static defaultProps = {
-    lng: 'en'
+    lng: 'en',
+    layout: 'default'
   };
 
   constructor(props: SearchPageProps) {
@@ -67,23 +105,29 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
   }
 
   render() {
+    const { layout } = this.props;
+
     return (
-      <div>
-        <InputText
-          type="text"
-          placeholder="Type what you're looking for..."
+      <Root layout={this.props.layout}>
+        <SearchInputText
+          placeholder={layout === 'default' ? "Type what you're looking for..." : 'Search...'}
           value={this.state.query}
           onChange={this.search}
+          block={layout === 'default'}
         />
-        {this.state.results.map(page => (
-          <SearchResultLink to={page.url}>
-            <SearchResult>
-              <ResultTitle>{page.title}</ResultTitle>
-              {page.excerpt && <ResultExcerpt>{page.excerpt}</ResultExcerpt>}
-            </SearchResult>
-          </SearchResultLink>
-        ))}
-      </div>
+        {this.state.results && this.state.results.length !== 0 && (
+          <SearchResults layout={layout}>
+            {this.state.results.map(page => (
+              <SearchResultLink to={page.url}>
+                <SearchResult>
+                  <ResultTitle>{page.title}</ResultTitle>
+                  {page.excerpt && <ResultExcerpt>{page.excerpt}</ResultExcerpt>}
+                </SearchResult>
+              </SearchResultLink>
+            ))}
+          </SearchResults>
+        )}
+      </Root>
     );
   }
 

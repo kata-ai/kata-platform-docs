@@ -8,11 +8,6 @@
         "title": "About"
       },
       {
-        "id": "release-notes",
-        "slug": "/release-notes/",
-        "title": "Release Notes"
-      },
-      {
         "id": "introduction-to-project",
         "slug": "/overview/introduction-to-project/",
         "title": "Introduction to Project"

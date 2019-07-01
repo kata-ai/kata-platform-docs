@@ -58,7 +58,7 @@ const ToggleMenuList = styled('li')`
 
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ node }) => {
   return (
-    <Box mb="md">
+    <Box mb="xl">
       <Heading as="h3" size={100} color="grey04" mb="sm">
         {node.title}
       </Heading>
