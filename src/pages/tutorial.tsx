@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import { SiteMetadata } from '../interfaces/gatsby';
@@ -9,6 +9,7 @@ import { DocsWrapper } from 'components/docs/DocsWrapper';
 import { Container } from 'components/layout/Container';
 import { DocsHeader } from 'components/docs/DocsHeader';
 import { MarkdownContent } from 'components/page/Markdown';
+import styled from 'styled-components';
 
 interface Props {
   data: {
@@ -18,8 +19,10 @@ interface Props {
   };
 }
 
-// FIXME: ThemeProvider is required because for some reason the 404 page doesn't mount
-// the <Layout /> component. This will be fixed when we got the time to upgrade to Gatsby v2
+const TutorialCard = styled(Link)`
+  /**/
+`;
+
 const TutorialPage: React.SFC<Props> = ({ data }) => (
   <IndexLayout navHidden>
     <Page docsPage>
@@ -30,6 +33,11 @@ const TutorialPage: React.SFC<Props> = ({ data }) => (
         <Container>
           <DocsHeader title="Tutorial" subtitle="A list of tutorials for using Kata Platform." />
           <MarkdownContent>
+            <TutorialCard to="/tutorial/">
+              <h2>Creating a simple Hello World chatbot</h2>
+              <p>This is a quick start how to build a 'Hello World' chatbot.</p>
+              <p>link</p>
+            </TutorialCard>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nisi perferendis nihil quos, dignissimos
               distinctio, eos, corporis minus cupiditate ratione delectus accusamus enim molestiae atque! Provident

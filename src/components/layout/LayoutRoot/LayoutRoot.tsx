@@ -11,14 +11,13 @@ import { NavigationContext, NavigationActionTypes } from '../Navigation/Navigati
 import { determineFontDimensions } from 'components/foundations';
 
 import { SiteMetadata } from 'interfaces/gatsby';
-import { breakpoints, colors, textSizes, space } from 'utils/variables';
+import { breakpoints, colors, textSizes } from 'utils/variables';
 import { isActive } from 'utils/helpers';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 
 import logo from 'assets/images/logo-docs.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import { InputText } from 'components/ui/Input';
 import SearchBox from 'components/search/SearchBox';
 
 const StyledLayoutRoot = styled('div')`
@@ -85,10 +84,6 @@ const DesktopHeaderRight = styled('div')`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
-
-const SearchInputText = styled(InputText)`
-  margin-right: ${space.md}px;
 `;
 
 interface FontSizeProps {

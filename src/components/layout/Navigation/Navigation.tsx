@@ -1,10 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { Heading } from 'components/foundations';
-import { colors, layerIndexes, breakpoints, dimensions } from 'utils/variables';
+import { ButtonStyles } from 'components/ui/Button';
+import { colors, layerIndexes, breakpoints, dimensions, space } from 'utils/variables';
 import { isActive } from 'utils/helpers';
 
 import { NavigationContext, NavigationActionTypes } from './NavigationContext';
@@ -127,7 +129,7 @@ const DocumentationMenu = styled('div')`
   padding: 16px 24px;
   border-bottom: 1px solid ${colors.grey02};
 
-  a {
+  & .menu-link {
     padding: 8px 0;
     color: ${colors.grey07};
 
@@ -147,6 +149,10 @@ const DocumentationNav = styled('div')`
   display: flex;
   flex-direction: column;
   padding: 24px;
+`;
+
+const LoginButton = styled(OutboundLink)`
+  ${ButtonStyles}
 `;
 
 interface NavigationProps {
@@ -182,14 +188,14 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
                       {node.label}
                     </a>
                   );
                 }
 
                 return (
-                  <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
                     {node.label}
                   </Link>
                 );
@@ -203,18 +209,30 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
                       {node.label}
                     </a>
                   );
                 }
 
                 return (
-                  <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
                     {node.label}
                   </Link>
                 );
               })}
+
+            <LoginButton
+              variant="primary"
+              size={'md' as any}
+              href="https://platform.kata.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              block
+              style={{ marginTop: space.md }}
+            >
+              Login
+            </LoginButton>
           </DocumentationMenu>
           <DocumentationNav onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}>
             {navigation &&
