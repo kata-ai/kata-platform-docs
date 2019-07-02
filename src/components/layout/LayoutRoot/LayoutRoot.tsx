@@ -19,6 +19,7 @@ import logo from 'assets/images/logo-docs.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import SearchBox from 'components/search/SearchBox';
+import SearchIcon from '../Header/SearchIcon';
 
 const StyledLayoutRoot = styled('div')`
   display: flex;
@@ -105,6 +106,7 @@ interface DataProps {
 }
 
 const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
@@ -150,6 +152,13 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location,
                 <img src={logo} alt={title} />
               </HomepageLink>
             </LogoWrapper>
+            {isSearchOpen ? (
+              <SearchBox layout="mobile" onSearchClear={() => setIsSearchOpen(false)} />
+            ) : (
+              <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
+                <SearchIcon />
+              </button>
+            )}
           </HeaderRight>
           <HeaderRight hideOnMobile>
             <DocumentationMenu>
