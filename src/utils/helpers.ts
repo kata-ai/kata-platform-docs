@@ -21,12 +21,12 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
 function isDocsPath(location: WindowLocation) {
   const { pathname } = location;
   return (
-    pathname.includes('overview') ||
-    pathname.includes('concepts') ||
-    pathname.includes('kata-ml') ||
-    pathname.includes('nl-studio') ||
-    pathname.includes('cms-studio') ||
-    pathname.includes('deployment-guide')
+    pathname.includes('/overview/') ||
+    pathname.includes('/concepts/') ||
+    pathname.includes('/kata-ml/') ||
+    pathname.includes('/nl-studio/') ||
+    pathname.includes('/cms-studio/') ||
+    pathname.includes('/deployment-guide/')
   );
 }
 

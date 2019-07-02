@@ -17,7 +17,7 @@ import IndexLayout from 'layouts';
 import renderAst from 'utils/renderAst';
 import { DocsContribution } from 'components/docs/DocsContribution';
 
-interface FAQPageTemplateProps extends RouteComponentProps {
+interface TutorialPageTemplateProps extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
@@ -37,7 +37,7 @@ interface FAQPageTemplateProps extends RouteComponentProps {
   };
 }
 
-const FAQPageTemplate: React.SFC<FAQPageTemplateProps> = ({ data }) => {
+const TutorialPageTemplate: React.SFC<TutorialPageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, site } = data;
   const { siteMetadata } = site;
@@ -80,10 +80,10 @@ const FAQPageTemplate: React.SFC<FAQPageTemplateProps> = ({ data }) => {
   );
 };
 
-export default FAQPageTemplate;
+export default TutorialPageTemplate;
 
 export const query = graphql`
-  query FAQPageTemplateQuery($slug: String!) {
+  query TutorialPageTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
