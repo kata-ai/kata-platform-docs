@@ -3,15 +3,51 @@ import styled from 'styled-components';
 import { colors } from 'utils/variables';
 import { Omit } from 'utility-types';
 import SearchIcon from 'components/layout/Header/SearchIcon';
+import CloseIcon from 'components/layout/Header/CloseIcon';
 
 export interface InputTextProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
   block?: boolean;
+  clearable?: boolean;
+  onClearButtonClick?: () => void;
 }
 
-const Icon = styled(SearchIcon)`
+const Icon = styled('div')`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 16px;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: auto;
+`;
+
+const CloseButton = styled('button')`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+
+  svg {
+    path {
+      fill: ${colors.grey03};
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    svg {
+      path {
+        fill: ${colors.grey05};
+      }
+    }
+  }
 `;
 
 const Root = styled('div')<{ disabled?: boolean; block?: boolean }>`
@@ -107,13 +143,32 @@ const Input = styled('input')`
   }
 `;
 
-export function InputText({ className, style, block, ...rest }: InputTextProps) {
-  const ref = React.useRef<HTMLInputElement>(null);
-
+function InputText(
+  { className, style, block, onClearButtonClick, value, ...rest }: InputTextProps,
+  ref: React.Ref<HTMLInputElement>
+) {
   return (
     <Root className={className} style={style} block={block}>
       <Input type="text" {...rest} ref={ref} />
-      <Icon height={16} width={16} />
+      {value ? (
+        <Icon
+          onClick={() => {
+            if (onClearButtonClick) {
+              onClearButtonClick();
+            }
+          }}
+        >
+          <CloseButton>
+            <CloseIcon height={16} width={16} />
+          </CloseButton>
+        </Icon>
+      ) : (
+        <Icon>
+          <SearchIcon height={16} width={16} />
+        </Icon>
+      )}
     </Root>
   );
 }
+
+export default React.forwardRef(InputText);

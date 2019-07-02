@@ -106,6 +106,7 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
 
   render() {
     const { layout } = this.props;
+    const ref = React.createRef<HTMLInputElement>();
 
     return (
       <Root layout={this.props.layout}>
@@ -113,6 +114,14 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
           placeholder={layout === 'default' ? "Type what you're looking for..." : 'Search...'}
           value={this.state.query}
           onChange={this.search}
+          ref={ref}
+          onClearButtonClick={() => {
+            // Don't even ask.
+            if (ref.current) {
+              ref.current.value = '';
+            }
+            this.setState({ results: [], query: '' });
+          }}
           block={layout === 'default'}
         />
         {this.state.results && this.state.results.length !== 0 && (
