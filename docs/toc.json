@@ -175,36 +175,6 @@
     ]
   },
   {
-    "title": "Kata CLI Guide",
-    "items": [
-      {
-        "id": "kata-cli-installation",
-        "slug": "/kata-cli/installation/",
-        "title": "Installation"
-      },
-      {
-        "id": "kata-cli-command-listings",
-        "slug": "/kata-cli/command-listings/",
-        "title": "Command Listings"
-      },
-      {
-        "id": "kata-cli-best-practice",
-        "slug": "/kata-cli/best-practice/",
-        "title": "Best Practice"
-      },
-      {
-        "id": "kata-cli-nlu-project",
-        "slug": "/kata-cli/nlu-project/",
-        "title": "NLU Project"
-      },
-      {
-        "id": "deployment-tutorial",
-        "slug": "/kata-cli/deployment-tutorial/",
-        "title": "Deployment Tutorial"
-      }
-    ]
-  },
-  {
     "title": "Tutorial",
     "items": [
       {
