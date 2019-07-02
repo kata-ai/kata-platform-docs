@@ -144,13 +144,25 @@ const Input = styled('input')`
 `;
 
 function InputText(
-  { className, style, block, onClearButtonClick, value, ...rest }: InputTextProps,
+  { className, style, block, clearable, onClearButtonClick, value, ...rest }: InputTextProps,
   ref: React.Ref<HTMLInputElement>
 ) {
   return (
     <Root className={className} style={style} block={block}>
       <Input type="text" {...rest} ref={ref} />
-      {value ? (
+      {clearable ? (
+        <Icon
+          onClick={() => {
+            if (onClearButtonClick) {
+              onClearButtonClick();
+            }
+          }}
+        >
+          <CloseButton>
+            <CloseIcon height={16} width={16} />
+          </CloseButton>
+        </Icon>
+      ) : value ? (
         <Icon
           onClick={() => {
             if (onClearButtonClick) {

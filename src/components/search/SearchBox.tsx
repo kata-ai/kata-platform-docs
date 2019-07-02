@@ -143,6 +143,24 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
       query: '',
       results: []
     };
+
+    this.onEscKeypress = this.onEscKeypress.bind(this);
+  }
+
+  onEscKeypress(event: KeyboardEvent) {
+    if (event.keyCode === 27) {
+      if (this.props.onSearchClear) {
+        this.props.onSearchClear();
+      }
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.onEscKeypress, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onEscKeypress, false);
   }
 
   render() {
@@ -157,6 +175,7 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
             value={this.state.query}
             onChange={this.search}
             ref={ref}
+            clearable={layout === 'mobile'}
             onClearButtonClick={() => {
               // Don't even ask.
               if (ref.current) {
@@ -197,8 +216,14 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
   }
 
   search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value;
-    const results = this.getSearchResults(query);
-    this.setState({ results, query });
+    if (!event.target.value) {
+      if (this.props.onSearchClear) {
+        this.props.onSearchClear();
+      }
+    } else {
+      const query = event.target.value;
+      const results = this.getSearchResults(query);
+      this.setState({ results, query });
+    }
   };
 }
