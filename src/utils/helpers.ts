@@ -1,4 +1,4 @@
-import { LinkGetProps } from '@reach/router';
+import { LinkGetProps, WindowLocation } from '@reach/router';
 import { MenuNode, TocItem, Edge } from 'interfaces/nodes';
 import { Color, themeProps, Space } from '../components/Theme';
 
@@ -17,10 +17,22 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
   return flattenedSectionItems.find(item => item.id === templateFile);
 };
 
+function isDocsPath(location: WindowLocation) {
+  const { pathname } = location;
+  return (
+    pathname.includes('overview') ||
+    pathname.includes('concepts') ||
+    pathname.includes('kata-ml') ||
+    pathname.includes('nl-studio') ||
+    pathname.includes('cms-studio') ||
+    pathname.includes('deployment-guide')
+  );
+}
+
 /** Workaround for activeClassName: https://github.com/gatsbyjs/gatsby/issues/7737 */
-export const isActive = (exact: boolean = false) => ({ isPartiallyCurrent, isCurrent }: LinkGetProps) => {
+export const isActive = (exact: boolean = false) => ({ isPartiallyCurrent, isCurrent, location }: LinkGetProps) => {
   if (exact) {
-    return isCurrent ? { className: 'active' } : {};
+    return isCurrent || isDocsPath(location) ? { className: 'active' } : {};
   }
 
   return isPartiallyCurrent ? { className: 'active' } : {};
