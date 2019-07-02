@@ -51,6 +51,7 @@ const ToggleMenuList = styled('li')`
     &.active {
       color: ${colors.grey07};
       background-color: ${colors.blue01};
+      font-weight: 500;
       border-color: transparent;
     }
   }
