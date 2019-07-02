@@ -173,35 +173,5 @@
         "title": "How to Deploy"
       }
     ]
-  },
-  {
-    "title": "Tutorial",
-    "items": [
-      {
-        "id": "hello-world-tutorial",
-        "slug": "/tutorial/hello-world/",
-        "title": "Hello World"
-      },
-      {
-        "id": "bot-studio-tutorial",
-        "slug": "/tutorial/bot-studio/",
-        "title": "Bot Studio Tutorial"
-      },
-      {
-        "id": "nl-studio-tutorial",
-        "slug": "/tutorial/nl-studio/",
-        "title": "NL Studio Tutorial"
-      },
-      {
-        "id": "integration-chatbot-with-nl-studio",
-        "slug": "/tutorial/integration-chatbot-with-nl-studio/",
-        "title": "Integration Chatbot with NL Studio"
-      },
-      {
-        "id": "integration-chatbot-with-cms-studio",
-        "slug": "/tutorial/integration-chatbot-with-cms-studio/",
-        "title": "Integration Chatbot with CMS Studio"
-      }
-    ]
   }
 ]

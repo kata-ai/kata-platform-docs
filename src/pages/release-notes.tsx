@@ -43,7 +43,7 @@ const VersionUpdatesPage: React.SFC<Props> = ({ data }) => {
   };
 
   return (
-    <IndexLayout>
+    <IndexLayout navHidden>
       <Page docsPage>
         <Helmet>
           <title>Release Notes &middot; {siteMetadata.title}</title>
