@@ -26,16 +26,16 @@ export const ol = (props: any) => <UnorderedList as="ol" {...props} />;
 export const li = (props: any) => <Paragraph size={400} as="li" color="grey07" my="xxs" {...props} />;
 export const table = styled('table')`
   width: 100%;
-  margin-bottom: 24px;
-  font-size: ${textSizes[400].fontSize};
-  line-height: ${textSizes[400].lineHeight};
+  margin: ${space.lg}px 0;
+  font-size: ${textSizes[400].fontSize}px;
+  line-height: ${textSizes[400].lineHeight}px;
   border-collapse: collapse;
 
   thead {
     border-bottom: 2px solid ${colors.grey02};
 
     th {
-      padding: 8px 16px;
+      padding: ${space.xs}px ${space.sm}px;
       font-style: normal;
       font-stretch: normal;
       font-weight: 700;
@@ -43,19 +43,35 @@ export const table = styled('table')`
       text-transform: uppercase;
       text-align: left;
       color: ${colors.grey09};
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 
   tfoot {
     tr {
       td {
-        padding: 16px 16px 8px;
+        padding: ${space.xs}px ${space.sm}px;
         vertical-align: top;
         font-style: normal;
         font-stretch: normal;
         font-weight: 700;
         letter-spacing: -0.01em;
         text-transform: uppercase;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
       }
     }
   }
@@ -63,11 +79,19 @@ export const table = styled('table')`
   tbody {
     tr {
       td {
-        padding: 16px 16px 8px;
+        padding: ${space.xs}px ${space.sm}px;
         vertical-align: top;
-        font-size: ${textSizes[400].fontSize};
-        line-height: ${textSizes[400].lineHeight};
+        font-size: ${textSizes[400].fontSize}px;
+        line-height: ${textSizes[400].lineHeight}px;
         color: ${colors.grey07};
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
       }
     }
   }
