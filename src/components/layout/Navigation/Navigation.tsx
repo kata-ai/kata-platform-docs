@@ -200,6 +200,18 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
                   </Link>
                 );
               })}
+
+            <LoginButton
+              variant="primary"
+              size={'md' as any}
+              href="https://platform.kata.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              block
+              style={{ marginTop: space.md }}
+            >
+              Login
+            </LoginButton>
           </DocumentationMenu>
         </WrapperInner>
       ) : (

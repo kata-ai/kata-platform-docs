@@ -81,6 +81,13 @@ const LoginButton = styled(OutboundLink)`
   ${ButtonStyles}
 `;
 
+const UnstyledSearchButton = styled('button')`
+  margin: 0;
+  padding: 8px;
+  background: none;
+  border: none;
+`;
+
 const DesktopHeaderRight = styled('div')`
   display: flex;
   flex-direction: row;
@@ -155,9 +162,9 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location,
             {isSearchOpen ? (
               <SearchBox layout="mobile" onSearchClear={() => setIsSearchOpen(false)} />
             ) : (
-              <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
+              <UnstyledSearchButton onClick={() => setIsSearchOpen(!isSearchOpen)}>
                 <SearchIcon />
-              </button>
+              </UnstyledSearchButton>
             )}
           </HeaderRight>
           <HeaderRight hideOnMobile>
