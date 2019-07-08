@@ -65,6 +65,7 @@ const TutorialCardImage = styled('div')`
 `;
 
 const TutorialCardContent = styled('div')`
+  width: 100%;
   flex: 1 1 auto;
 
   &:not(:first-child) {
