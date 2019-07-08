@@ -10,11 +10,12 @@ import IndexLayout from 'layouts';
 import { Edge } from 'interfaces/nodes';
 import { Page } from 'components/layout/Page';
 import { DocsWrapper } from 'components/docs/DocsWrapper';
-import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
+import { TocWrapper } from 'components/docs/TableOfContents';
 import { Container } from 'components/layout/Container';
 import { DocsHeader } from 'components/docs/DocsHeader';
 import { DocsContribution } from 'components/docs/DocsContribution';
 import { Footer } from 'components/layout/Footer';
+import { BackToTopButton } from 'components/docs/BackToTopButton';
 
 interface PageTemplateProps {
   data: {
@@ -85,7 +86,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
                 />
               </FooterWrapper>
             </Container>
-            <TocFloatingButton tocIsOpen={this.state.tocIsOpen} onClick={this.toggleToc} />
+            <BackToTopButton href="#" />
           </DocsWrapper>
         </Page>
       </IndexLayout>

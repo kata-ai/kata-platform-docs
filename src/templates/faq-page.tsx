@@ -12,10 +12,11 @@ import { DocsHeader } from 'components/docs/DocsHeader';
 import { MarkdownContent } from 'components/page/Markdown';
 
 import { FooterWrapper, Footer } from 'components/layout/Footer';
-import { TocWrapper, TocFloatingButton } from 'components/docs/TableOfContents';
+import { TocWrapper } from 'components/docs/TableOfContents';
 import IndexLayout from 'layouts';
 import renderAst from 'utils/renderAst';
 import { DocsContribution } from 'components/docs/DocsContribution';
+import { BackToTopButton } from 'components/docs/BackToTopButton';
 
 interface FAQPageTemplateProps extends RouteComponentProps {
   data: {
@@ -73,7 +74,7 @@ const FAQPageTemplate: React.SFC<FAQPageTemplateProps> = ({ data }) => {
               />
             </FooterWrapper>
           </Container>
-          <TocFloatingButton tocIsOpen={tocIsOpen} onClick={() => setTocIsOpen(!tocIsOpen)} />
+          <BackToTopButton href="#" />
         </DocsWrapper>
       </Page>
     </IndexLayout>
