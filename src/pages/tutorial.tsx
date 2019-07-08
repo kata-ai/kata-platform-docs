@@ -48,7 +48,7 @@ const TutorialPage: React.SFC<Props> = ({ data }) => {
     <IndexLayout navHidden>
       <Page docsPage>
         <Helmet>
-          <title>Search &middot; {data.site.siteMetadata.title}</title>
+          <title>Tutorial &middot; {data.site.siteMetadata.title}</title>
         </Helmet>
         <DocsWrapper>
           <Container>
@@ -113,13 +113,22 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        sidebarTitle
+        sidebarSubtext
+        siteLastUpdated
         description
+        version
         siteUrl
         keywords
         author {
           name
           url
           email
+        }
+        socials {
+          name
+          imgpath
+          url
         }
       }
     }
