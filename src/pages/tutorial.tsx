@@ -97,7 +97,7 @@ const TutorialPage: React.SFC<Props> = ({ data }) => {
                 </TutorialCardImage>
                 <TutorialCardContent>
                   <Heading size={600} mb="sm">
-                    Creating a simple Hello World chatbot
+                    Creating a Simple Hello World Chatbot
                   </Heading>
                   <Paragraph>
                     Building a chatbot on Kata | Platform is quick and easy, even with a lack of programming knowledge.
