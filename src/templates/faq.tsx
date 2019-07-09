@@ -48,7 +48,12 @@ const FAQTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
     <IndexLayout navHidden>
       <Page docsPage>
         <Helmet>
-          <meta property="og:title" content="Home" />
+          <title>
+            {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
+          </title>
+          <meta name="description" content={markdownRemark.excerpt} />
+          <meta property="og:title" content={markdownRemark.frontmatter.title} />
+          <meta property="og:description" content={markdownRemark.excerpt} />
         </Helmet>
         <DocsWrapper>
           <Container>
