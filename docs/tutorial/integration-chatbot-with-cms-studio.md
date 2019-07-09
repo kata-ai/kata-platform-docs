@@ -1,4 +1,5 @@
 ---
+layout: tutorial
 id: integration-chatbot-with-cms-studio
 title: Integration Chatbot with CMS Studio Tutorial
 prev: integration-chatbot-with-nl-studio

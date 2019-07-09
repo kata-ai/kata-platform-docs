@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [100],
+  "editor.rulers": [120],
   "editor.formatOnSave": true,
   "files.encoding": "utf8",
   "files.trimTrailingWhitespace": true,
@@ -10,5 +10,6 @@
   "search.exclude": {
     "public/**": true,
     "node_modules/**": true
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

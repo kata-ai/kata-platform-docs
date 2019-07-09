@@ -18,8 +18,7 @@ module.exports = {
       'Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.',
     version: '3.1.1',
     siteUrl,
-    keywords:
-      'kata.ai, kata-ai, kata platform, artificial intelligence, ai, chatbot, documentation',
+    keywords: 'kata.ai, kata-ai, kata platform, artificial intelligence, ai, chatbot, documentation',
     author: {
       name: 'Kata.ai',
       url: 'https://kata.ai',
@@ -120,13 +119,8 @@ module.exports = {
         siteUrl: 'https://docs.kata.ai'
       }
     },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/layouts/index.tsx`)
-      }
-    },
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-resolve-src',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',

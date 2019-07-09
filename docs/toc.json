@@ -8,11 +8,6 @@
         "title": "About"
       },
       {
-        "id": "release-notes",
-        "slug": "/release-notes/",
-        "title": "Release Notes"
-      },
-      {
         "id": "introduction-to-project",
         "slug": "/overview/introduction-to-project/",
         "title": "Introduction to Project"
@@ -165,7 +160,7 @@
     ]
   },
   {
-    "title": "Deployment Guide",
+    "title": "Deployment",
     "items": [
       {
         "id": "deployment-guide-introduction",
@@ -176,86 +171,6 @@
         "id": "deployment-guide-how-to-deploy",
         "slug": "/deployment-guide/how-to-deploy/",
         "title": "How to Deploy"
-      }
-    ]
-  },
-  {
-    "title": "Kata CLI Guide",
-    "items": [
-      {
-        "id": "kata-cli-installation",
-        "slug": "/kata-cli/installation/",
-        "title": "Installation"
-      },
-      {
-        "id": "kata-cli-command-listings",
-        "slug": "/kata-cli/command-listings/",
-        "title": "Command Listings"
-      },
-      {
-        "id": "kata-cli-best-practice",
-        "slug": "/kata-cli/best-practice/",
-        "title": "Best Practice"
-      },
-      {
-        "id": "kata-cli-nlu-project",
-        "slug": "/kata-cli/nlu-project/",
-        "title": "NLU Project"
-      },
-      {
-        "id": "deployment-tutorial",
-        "slug": "/kata-cli/deployment-tutorial/",
-        "title": "Deployment Tutorial"
-      }
-    ]
-  },
-  {
-    "title": "Tutorial",
-    "items": [
-      {
-        "id": "hello-world-tutorial",
-        "slug": "/tutorial/hello-world/",
-        "title": "Hello World"
-      },
-      {
-        "id": "bot-studio-tutorial",
-        "slug": "/tutorial/bot-studio/",
-        "title": "Bot Studio Tutorial"
-      },
-      {
-        "id": "nl-studio-tutorial",
-        "slug": "/tutorial/nl-studio/",
-        "title": "NL Studio Tutorial"
-      },
-      {
-        "id": "integration-chatbot-with-nl-studio",
-        "slug": "/tutorial/integration-chatbot-with-nl-studio/",
-        "title": "Integration Chatbot with NL Studio"
-      },
-      {
-        "id": "integration-chatbot-with-cms-studio",
-        "slug": "/tutorial/integration-chatbot-with-cms-studio/",
-        "title": "Integration Chatbot with CMS Studio"
-      }
-    ]
-  },
-  {
-    "title": "FAQs",
-    "items": [
-      {
-        "id": "faq",
-        "slug": "/faq/faq",
-        "title": "Kata Platform 3.0 FAQ"
-      },
-      {
-        "id": "faq-migration",
-        "slug": "/faq/migration/",
-        "title": "Migration FAQ"
-      },
-      {
-        "id": "faq-others",
-        "slug": "/faq/others/",
-        "title": "Others FAQ"
       }
     ]
   }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from '../../utils/styled';
-import { colors, fontSizes } from '../../styles/variables';
+import styled from 'styled-components';
+
 import { UpdatePost } from '../../interfaces/gatsby';
-import { GatsbyNode } from '../../interfaces/nodes';
+import { Edge } from '../../interfaces/nodes';
+import { colors } from 'utils/variables';
 
 interface UpdatesListProps {
-  postsList?: GatsbyNode<UpdatePost>[];
+  postsList?: Edge<UpdatePost>[];
 }
 
 const ToggleMenuListLink = styled(Link)`
@@ -14,7 +15,7 @@ const ToggleMenuListLink = styled(Link)`
   padding: 8px;
   border-radius: 4px;
   font-weight: 500;
-  color: ${colors.neutral08};
+  color: ${colors.grey07};
 
   &:hover,
   &:focus {
@@ -22,24 +23,22 @@ const ToggleMenuListLink = styled(Link)`
   }
 
   &:hover {
-    background-color: ${colors.neutral03};
+    background-color: ${colors.grey02};
   }
 
   &:focus {
-    background-color: ${colors.neutral08};
-    color: ${colors.neutral01};
+    background-color: ${colors.grey08};
+    color: ${colors.white};
   }
 
   &.active {
-    background-color: ${colors.kata02};
-    color: ${colors.neutral01};
+    background-color: ${colors.blue05};
+    color: ${colors.white};
   }
 `;
 
 const SectionHeading = styled('h4')`
   margin-top: 0;
-  font-size: ${fontSizes.giga};
-  line-height: ${fontSizes.giga};
   font-weight: 500;
 `;
 

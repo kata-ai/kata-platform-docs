@@ -1,43 +1,42 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { RouteComponentProps } from '@reach/router';
 
-import Page from '../components/Page';
-import Container from '../components/Container';
-import MarkdownContent from '../components/MarkdownContent';
-import DocsWrapper from '../components/DocsWrapper';
-import DocsHeader from '../components/docs/DocsHeader';
-import Pagination from '../components/Pagination';
-import TocWrapper from '../components/TocWrapper';
-import Footer from '../components/Footer';
-import TocFloatingButton from '../components/TocFloatingButton';
-import DocsContribution from '../components/DocsContribution';
-import SearchWrapper from '../components/SearchWrapper';
+import { getPageById } from 'utils/helpers';
+import { MenuNode, Edge } from 'interfaces/nodes';
+import { SiteMetadata } from 'interfaces/gatsby';
 
-import { MenuNode } from '../interfaces/nodes';
-import { SiteMetadata } from '../interfaces/gatsby';
+import { Page } from 'components/layout/Page';
+import { Container } from 'components/layout/Container';
+import { DocsWrapper } from 'components/docs/DocsWrapper';
+import { DocsHeader } from 'components/docs/DocsHeader';
+import { MarkdownContent } from 'components/page/Markdown';
 
-import getPageById from '../utils/getPageById';
-import styled from '../utils/styled';
+import { FooterWrapper, Footer } from 'components/layout/Footer';
+import { Pagination } from 'components/ui/Pagination';
+import { TocWrapper } from 'components/docs/TableOfContents';
+import IndexLayout from 'layouts';
+import renderAst from 'utils/renderAst';
+import { DocsContribution } from 'components/docs/DocsContribution';
+import { BackToTopButton } from 'components/docs/BackToTopButton';
 
-interface PageTemplateProps {
+interface PageTemplateProps extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
     };
     sectionList: {
-      edges: Array<{
-        node: MenuNode;
-      }>;
+      edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      html: string;
+      htmlAst: any;
       tableOfContents: string;
       excerpt: string;
       frontmatter: {
         id: string;
         title: string;
-        description: string;
+        description?: string;
         prev?: string;
         next?: string;
       };
@@ -45,65 +44,39 @@ interface PageTemplateProps {
   };
 }
 
-interface PageTemplateState {
-  tocIsOpen: boolean;
-}
+const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+  const [tocIsOpen, setTocIsOpen] = React.useState(false);
+  const { markdownRemark, sectionList, site } = data;
+  const { siteMetadata } = site;
+  const { prev, next } = markdownRemark.frontmatter;
+  const prevPage = getPageById(sectionList.edges, prev);
+  const nextPage = getPageById(sectionList.edges, next);
 
-class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState> {
-  constructor(props: PageTemplateProps) {
-    super(props);
-
-    this.state = {
-      tocIsOpen: false
-    };
-  }
-
-  public render() {
-    const { markdownRemark, sectionList, site } = this.props.data;
-    const { siteMetadata } = site;
-    const { prev, next } = markdownRemark.frontmatter;
-    const prevPage = getPageById(sectionList.edges, prev);
-    const nextPage = getPageById(sectionList.edges, next);
-
-    return (
+  return (
+    <IndexLayout>
       <Page docsPage>
         <Helmet>
           <title>
             {markdownRemark.frontmatter.title} &middot; {site.siteMetadata.title}
           </title>
-          <meta
-            name="description"
-            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
-          />
+          <meta name="description" content={markdownRemark.excerpt} />
           <meta property="og:title" content={markdownRemark.frontmatter.title} />
-          <meta
-            property="og:description"
-            content={markdownRemark.frontmatter.description || markdownRemark.excerpt}
-          />
+          <meta property="og:description" content={markdownRemark.excerpt} />
         </Helmet>
-        <SearchWrapper>
-          <Container xl>
-            <Link to="/search">Search in docs...</Link>
-          </Container>
-        </SearchWrapper>
         <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
           {markdownRemark.tableOfContents && (
             <TocWrapper
-              isOpen={this.state.tocIsOpen}
-              onClick={this.toggleToc}
+              isOpen={tocIsOpen}
+              onClick={() => setTocIsOpen(!tocIsOpen)}
               dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
             />
           )}
           <Container>
-            <DocsHeader>
-              <h1>{markdownRemark.frontmatter.title}</h1>
-            </DocsHeader>
-            <MarkdownContent html={markdownRemark.html} />
+            <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
+            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <DocsContribution />
             <FooterWrapper>
-              <DocsContribution />
-              <Container>
-                {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
-              </Container>
+              {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
               <Footer
                 version={siteMetadata.version}
                 siteLastUpdated={siteMetadata.siteLastUpdated}
@@ -111,16 +84,12 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
               />
             </FooterWrapper>
           </Container>
-          <TocFloatingButton tocIsOpen={this.state.tocIsOpen} onClick={this.toggleToc} />
+          <BackToTopButton href="#" />
         </DocsWrapper>
       </Page>
-    );
-  }
-
-  private toggleToc = () => {
-    this.setState({ tocIsOpen: !this.state.tocIsOpen });
-  };
-}
+    </IndexLayout>
+  );
+};
 
 export default PageTemplate;
 
@@ -161,7 +130,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       tableOfContents
       excerpt
       frontmatter {
@@ -173,9 +142,4 @@ export const query = graphql`
       }
     }
   }
-`;
-
-const FooterWrapper = styled('div')`
-  margin-top: 40px;
-  padding: 0;
 `;

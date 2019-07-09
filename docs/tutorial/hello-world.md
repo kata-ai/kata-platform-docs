@@ -1,12 +1,10 @@
 ---
+layout: tutorial
 id: hello-world-tutorial
-title: Hello World
+title: Creating a simple Hello World chatbot
+description: This is a quick start how to build a 'Hello World' chatbot
 next: bot-studio-tutorial
 ---
-
-## Introduction
-
-This is a quick start how to build a 'Hello World' chatbot
 
 ## Create a Project
 

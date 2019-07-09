@@ -1,38 +1,41 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import styled from 'styled-components';
+import { space } from 'utils/variables';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { RouteComponentProps } from '@reach/router';
 
-import Page from '../components/Page';
-import Container from '../components/Container';
-import { MenuNode } from '../interfaces/nodes';
-import MarkdownContent from '../components/MarkdownContent';
-import DocsWrapper from '../components/DocsWrapper';
-import DocsHeader from '../components/docs/DocsHeader';
-import TocWrapper from '../components/TocWrapper';
-import Footer from '../components/Footer';
-import DocsContribution from '../components/DocsContribution';
-import SearchWrapper from '../components/SearchWrapper';
+import { Page } from 'components/layout/Page';
 
-import { SiteMetadata } from '../interfaces/gatsby';
-import styled from '../utils/styled';
+import { Container } from 'components/layout/Container';
+import { DocsWrapper } from 'components/docs/DocsWrapper';
+import { DocsHeader } from 'components/docs/DocsHeader';
+import MarkdownContent from 'components/page/Markdown/MarkdownContent';
 
-interface HomepageTemplateProps {
+import { MenuNode, Edge } from 'interfaces/nodes';
+import { Footer, FooterWrapper } from 'components/layout/Footer';
+import IndexLayout from 'layouts';
+import renderAst from 'utils/renderAst';
+import { SiteMetadata } from 'interfaces/gatsby';
+import { DocsContribution } from 'components/docs/DocsContribution';
+
+import illustration from 'assets/images/main-illustration.svg';
+
+interface HomeTemplateProps extends RouteComponentProps {
   data: {
     site: {
       siteMetadata: SiteMetadata;
     };
     sectionList: {
-      edges: Array<{
-        node: MenuNode;
-      }>;
+      edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      html: string;
-      tableOfContents: string;
+      htmlAst: any;
       excerpt: string;
       frontmatter: {
         id: string;
         title: string;
+        description?: string;
         prev?: string;
         next?: string;
       };
@@ -40,53 +43,28 @@ interface HomepageTemplateProps {
   };
 }
 
-interface HomepageTemplateState {
-  tocIsOpen: boolean;
-}
+const HomepageIllustration = styled('img')`
+  margin-bottom: ${space.xl}px;
+`;
 
-class HomepageTemplate extends React.Component<HomepageTemplateProps, HomepageTemplateState> {
-  constructor(props: HomepageTemplateProps) {
-    super(props);
+const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
+  const { markdownRemark, site } = data;
+  const { frontmatter } = markdownRemark;
+  const { siteMetadata } = site;
 
-    this.state = {
-      tocIsOpen: false
-    };
-  }
-
-  render() {
-    const { markdownRemark, site } = this.props.data;
-    const { siteMetadata } = site;
-
-    return (
+  return (
+    <IndexLayout>
       <Page docsPage>
         <Helmet>
-          <title>{siteMetadata.title}</title>
           <meta property="og:title" content="Home" />
         </Helmet>
-        <SearchWrapper>
+        <DocsWrapper>
           <Container>
-            <Link to="/search">Search in docs...</Link>
-          </Container>
-        </SearchWrapper>
-        <DocsWrapper hasToc={!!markdownRemark.tableOfContents}>
-          {markdownRemark.tableOfContents && (
-            <TocWrapper
-              isOpen={this.state.tocIsOpen}
-              onClick={this.toggleToc}
-              dangerouslySetInnerHTML={{ __html: markdownRemark.tableOfContents }}
-            />
-          )}
-          <Container>
-            <DocsHeader>
-              <h1>
-                {markdownRemark.frontmatter.title !== 'Home'
-                  ? markdownRemark.frontmatter.title
-                  : siteMetadata.title}
-              </h1>
-            </DocsHeader>
-            <MarkdownContent html={markdownRemark.html} />
+            <HomepageIllustration src={illustration} alt="Kata Platform" />
+            <DocsHeader title={frontmatter.title} subtitle={frontmatter.description} margin="md" />
+            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <DocsContribution />
             <FooterWrapper>
-              <DocsContribution />
               <Footer
                 version={siteMetadata.version}
                 siteLastUpdated={siteMetadata.siteLastUpdated}
@@ -96,15 +74,11 @@ class HomepageTemplate extends React.Component<HomepageTemplateProps, HomepageTe
           </Container>
         </DocsWrapper>
       </Page>
-    );
-  }
+    </IndexLayout>
+  );
+};
 
-  private toggleToc = () => {
-    this.setState({ tocIsOpen: !this.state.tocIsOpen });
-  };
-}
-
-export default HomepageTemplate;
+export default HomeTemplate;
 
 export const query = graphql`
   query HomeTemplateQuery($slug: String!) {
@@ -131,19 +105,15 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       excerpt
       frontmatter {
         id
         title
+        description
         prev
         next
       }
     }
   }
-`;
-
-const FooterWrapper = styled('div')`
-  margin-top: 40px;
-  padding: 0;
 `;

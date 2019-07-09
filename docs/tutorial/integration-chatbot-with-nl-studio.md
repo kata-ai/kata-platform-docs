@@ -1,4 +1,5 @@
 ---
+layout: tutorial
 id: integration-chatbot-with-nl-studio
 title: Integration Chatbot with NL Studio Tutorial
 prev: nl-studio-tutorial

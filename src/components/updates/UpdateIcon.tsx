@@ -1,7 +1,7 @@
 // tslint:disable: max-line-length
 import React from 'react';
-import styled from '../../utils/styled';
-import { colors } from '../../styles/variables';
+import { colors } from 'utils/variables';
+import styled from 'styled-components';
 
 interface UpdateIconProps {
   iconType?: string;
@@ -12,27 +12,24 @@ interface UpdateIconProps {
 function getBackgroundcolor(colorKey?: string) {
   switch (colorKey) {
     case 'major': {
-      return colors.red01;
+      return colors.red05;
     }
     case 'minor': {
-      return colors.yellow02;
+      return colors.yellow05;
     }
     case 'patch': {
-      return colors.green01;
+      return colors.green05;
     }
     default: {
-      return colors.neutral02;
+      return colors.grey01;
     }
   }
 }
 
 function getIconColor(colorKey?: string) {
   switch (colorKey) {
-    case 'minor': {
-      return colors.neutral08;
-    }
     default: {
-      return colors.neutral01;
+      return colors.white;
     }
   }
 }
@@ -61,7 +58,7 @@ const UpdateIcon: React.FC<UpdateIconProps> = ({ withImage, ...rest }) => (
   </Root>
 );
 
-const Root = styled<UpdateIconProps, 'div'>('div')`
+const Root = styled('div')<UpdateIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,5 +71,9 @@ const Root = styled<UpdateIconProps, 'div'>('div')`
   background-color: ${props => getBackgroundcolor(props.iconType)};
   overflow: hidden;
 `;
+
+UpdateIcon.defaultProps = {
+  iconType: 'patch'
+};
 
 export default UpdateIcon;
