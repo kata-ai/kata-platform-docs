@@ -173,5 +173,20 @@
         "title": "How to Deploy"
       }
     ]
+  },
+  {
+    "title": "Channels",
+    "items": [
+      {
+        "id": "channel-telegram",
+        "slug": "/channels/telegram/",
+        "title": "Telegram"
+      },
+      {
+        "id": "channel-fb-messenger",
+        "slug": "/channels/fb-messenger/",
+        "title": "Facebook Messenger"
+      }
+    ]
   }
 ]
