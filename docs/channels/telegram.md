@@ -4,7 +4,7 @@ title: Telegram
 next: channel-fb-messenger
 ---
 
-Telegram, as one of the social media that is rising in popularity, has become an option for a brand to engage the customer. In this tutorial, we will learn to connect our bot with Telegram. You can use the bot you created in the [Hello World tutorial](/tutorial/hello-world/) to start integrating your bot with Telegram.
+Telegram, as one of the social media that is rising in popularity, has become an option for a brand to engage the customer. In this section, we will learn to connect our bot with Telegram. You can use the bot you created in the [Hello World tutorial](/tutorial/hello-world/) to start integrating your bot with Telegram.
 
 ## Register Your Bot in Telegram
 
