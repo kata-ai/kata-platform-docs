@@ -26,7 +26,8 @@ function isDocsPath(location: WindowLocation) {
     pathname.includes('/kata-ml/') ||
     pathname.includes('/nl-studio/') ||
     pathname.includes('/cms-studio/') ||
-    pathname.includes('/deployment-guide/')
+    pathname.includes('/deployment-guide/') ||
+    pathname.includes('/channels/')
   );
 }
 
