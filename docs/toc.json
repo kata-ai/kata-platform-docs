@@ -175,6 +175,21 @@
     ]
   },
   {
+    "title": "Modules",
+    "items": [
+      {
+        "id": "modules-introduction",
+        "slug": "/modules/introduction/",
+        "title": "Introduction to Modules"
+      },
+      {
+        "id": "modules-list",
+        "slug": "/modules/module-list/",
+        "title": "Modules List"
+      }
+    ]
+  },
+  {
     "title": "Channels",
     "items": [
       {
