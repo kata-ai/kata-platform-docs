@@ -22,7 +22,7 @@ export const h6 = (props: any) => <Heading size={400} as="h6" mt="xl" color="gre
 export const p = (props: any) => <Paragraph size={400} mt="sm" color="grey07" {...props} />;
 export const hr = (props: any) => <HorizontalRule {...props} />;
 export const ul = (props: any) => <UnorderedList {...props} />;
-export const ol = (props: any) => <UnorderedList as="ol" {...props} />;
+export const ol = (props: any) => <UnorderedList as="ol" color="grey07" my="xxs" {...props} />;
 export const li = (props: any) => <Paragraph size={400} as="li" color="grey07" my="xxs" {...props} />;
 export const table = styled('table')`
   width: 100%;

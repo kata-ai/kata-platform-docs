@@ -34,7 +34,7 @@ You may follow the instructions provided in the confirmation email to activate a
 
 ### Login to Kata | Platform
 
-On your browser, open [_http://platform.kata.ai/login_](http://new-platform.katalabs.io/login) and enter your username & password.
+On your browser, open [platform.kata.ai/login](https://platform.kata.ai/login) and enter your username & password.
 
 ![bse-4](/images/tutorial/bot-studio/bse-4.png)
 

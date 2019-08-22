@@ -27,7 +27,8 @@ function isDocsPath(location: WindowLocation) {
     pathname.includes('/nl-studio/') ||
     pathname.includes('/cms-studio/') ||
     pathname.includes('/deployment-guide/') ||
-    pathname.includes('/channels/')
+    pathname.includes('/channels/') ||
+    pathname.includes('/modules/')
   );
 }
 
