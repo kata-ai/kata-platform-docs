@@ -6,7 +6,7 @@ prev: deployment-guide-introduction
 
 ## How to Deploy
 
-First of all, you need to create a project and a bot with at least a flow, a state and an intent. You may follow this tutorial to create a bot [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4). In this guideline, we will explain step by step on how to set up environments and deploy your project to LINE messenger.
+First of all, you need to create a project and a bot with at least a flow, a state and an intent. You may follow this tutorial to create a bot [Bot studio tutorial](https://docs.kata.ai/tutorial/bot-studio/). In this guideline, we will explain step by step on how to set up environments and deploy your project to LINE messenger.
 
 ### Create deployment
 
@@ -81,4 +81,4 @@ Next, click “Create Channel” and fill in as follows
 
 ![dg-1](./images/dg-10.png)
 
-Then, continue to LINE developer console to fill in those fields. You can view the explanation in [Bot studio tutorial](https://temankata.quip.com/xln7AZ62Cno4)
+Then, continue to LINE developer console to fill in those fields. You can view the explanation in [Bot studio tutorial](https://docs.kata.ai/tutorial/bot-studio/)
