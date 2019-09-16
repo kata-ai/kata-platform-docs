@@ -54,7 +54,7 @@ Entity with type dict (dictionary) aims to simplify and speed up the training pr
 There are several rules you must follow when defining a dictionary:
 
 - All list of words in dictionary must be written in lowercase. It can detect if the input words is in uppercase, but when defining the dictionary it need to be written all in lowercase.
-- Write the dictionary key in camelCase or snake*case. Do not insert symbols other than underscore `*` as the dictionary key. You can put any symbols in the list of words, but do not put on the dictionary key. For example:
+- Write the dictionary key in `camelCase` or `snake_case`. *Do not insert symbols other than underscore `_` as the dictionary key*. You can put any symbols in the list of words, but do not put on the dictionary key. For example:
 
 Below is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
 
