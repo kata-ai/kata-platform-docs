@@ -9,7 +9,7 @@ Entity is a thing that you want to extract from a human language input. For exam
 
 To extract the informations, you need a trained machine learning model. The model is responsible to extract a specific entity based on its task. Knowing that, it can be concluded that **_each entity has its own model._**
 
-Bellow is an input example and its extracted entities.
+Below is an input example and its extracted entities.
 
 ```
 # Input
@@ -44,9 +44,7 @@ To create an entity, you need to include these parameters:
 
 ## Dictionary
 
-Entity with type dict (dictionary) aims to simplify and speed up the training process for specific words that need to be detected according to its domain, for example product names. It is not recommended to create an entity dictionary for general words such as question words and verbs.
-
-Profiles that can be used for this entity type dict are:
+Entity with type dict (dictionary) aims to simplify and speed up the training process for specific words that need to be detected according to its domain, for example product names. It is not recommended to create an entity dictionary for general words such as question words and verbs. Profiles that can be used for this entity type dict are:
 
 - **default**
   - _Entity Tagger default_ with dictionary (keyword) input by users
@@ -58,13 +56,13 @@ There are several rules you must follow when defining a dictionary:
 - All list of words in dictionary must be written in lowercase. It can detect if the input words is in uppercase, but when defining the dictionary it need to be written all in lowercase.
 - Write the dictionary key in camelCase or snake*case. Do not insert symbols other than underscore `*` as the dictionary key. You can put any symbols in the list of words, but do not put on the dictionary key. For example:
 
-Bellow is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
+Below is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
 
 ![nlsg-2](./images/nlsg-2.jpg)
 
 ![nlsg-3](./images/nlsg-3.jpg)
 
-Bellow is an example on how you SHOULD NOT define the dictionary:
+Below is an example on how you SHOULD NOT define the dictionary:
 
 ```yaml
 entities:
@@ -82,9 +80,7 @@ entities:
 
 ## Phrase
 
-Entity type phrase is an entity tagger that aim to tag general words for its specific case. Bellow is the list of models that can be used for this type.
-
-Profiles that can be used for this entity type phrase are:
+Entity type phrase is an entity tagger that aim to tag general words for its specific case. Profiles that can be used for this entity type phrase are:
 
 - **default**
   - Default Word Tagger that can be used to tag freely. May fill _field labels_ as needed. Can be used if you have a large amount of training data.
@@ -142,9 +138,7 @@ Here is an example for training entity with type phrase in label 'person'.
 
 ## Trait
 
-Entity type trait is used for general text classification task. You need to define list of labels for this entity.
-
-Profiles that can be used for this entity type trait are:
+Entity type trait is used for general text classification task. You need to define list of labels for this entity. Profiles that can be used for this entity type trait are:
 
 - **default**
   - Text Classification that can be used for any task by providing large amounts of data.
