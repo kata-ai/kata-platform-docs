@@ -4,10 +4,10 @@ title: NLU
 next: nl-studio-entity
 ---
 
-Here is an explanatory concept in NL Studio and some tips for using it.
+This section will explain basic concepts in NL Studio and several tips for using it.
 
 ## Overview
 
-Natural Language Processing (NLU) in NL Studio is a collection of machine learning models which are used for transforming human language into a form that is more easily processed by machines. The model itself is a form and collection of rules resulting from training data becoming that is useful as a decision maker for an input. **_One NLU may have several entities_**
+Natural Language Understanding (NLU) in NL Studio is a collection of machine learning models which are used to transform an input of human language into a structed data that can be processed by the machine. The model itself is a set of rules that are generated from training data and is being used as a decision maker for an input. **_One NLU may have several entities_**
 
 ![nlsg-1](./images/nlsg-1.jpg)

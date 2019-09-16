@@ -5,36 +5,36 @@ prev: nl-studio-nlu
 next: nl-studio-designing-nlu
 ---
 
-Entity is everything you want to extract from a human language text with NLU. For example, given a human language sentence input that wants to know the words whether its person name or the location name. Therefore, person name and location name are entities you want to extract for.
+Entity is a thing that you want to extract from a human language input. For example, given a human language sentence, you want to get information about person name and location name from it. Therefore, person name and location name are the entities in your NLU.
 
-Ability to extract an entity require a trained machine learning model. The model is responsible for extracting each entity from a given text. So that, it can be said that **_each entity has its own model._**
+To extract the informations, you need a trained machine learning model. The model is responsible to extract a specific entity based on its task. Knowing that, it can be concluded that **_each entity has its own model._**
 
-Following example is an extraction process from human language to parameters of entity.
+Bellow is an input example and its extracted entities.
 
 ```
 # Input
 
-    Nama saya Joko, saya tinggal di Jakarta.
+    Nama saya Budi, saya tinggal di Jakarta.
 
 # Output
 
-    - entity_person = "Joko"
+    - entity_person = "Budi"
     - entity_location = "Jakarta"
     - entity_intent = "give_credential"
 ```
 
-An entity consists of these following definitions:
+To create an entity, you need to include these parameters:
 
 - `name : string`\* - entity name.
-- `type : "dict" | "phrase" | "trait"`\* - type of entity consisting of:
+- `type : "dict" | "phrase" | "trait"`\* - type of entity, consists of:
   - dict - (dictionary) _word tagger_ with dictionary support from user.
   - phrase - _word tagger_ for common words.
   - trait - _text classifier_. Classify a sentence into particular classes.
-- `profile : string`\* - profile represents a model for completing certain tasks. This model needs to be trained before use.
+- `profile : string`\* - profile represents a model to complete certain tasks. What profile can be used, depends on the type of its entity.
 - `root : string` - root is used to define the hierarchical relationship between entities and help both training and prediction processes.
 - `belongsTo : string` - to define relationship between entity. Feature belongsTo can only be used for entity in same NLU.
-- `labels : string[]`\*\* - labels are used to determine what class an entity will be classified.
-- `inherit : string` - inherit is used to duplicate _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate model that has been trained even though training data is not included. This makes entity immediately predict although no training has been carried out.
+- `labels : string[]`\*\* - labels are used to determine what classes an entity will be classified.
+- `inherit : string` - inherit is used to duplicate a _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate the trained model even though the training data itself won't be included. This ability makes the entity can immediately do prediction without training data.
 - `dictionary : { [key : string] : string[] }` - dictionary keywords for entity type `dict`.
 
 **Footnotes**
@@ -42,16 +42,21 @@ An entity consists of these following definitions:
 \*) required field<br />
 \*\*) required field for entity with type `trait`
 
-## Profile
+## Dictionary
 
-### Dictionary
+Entity with type dict (dictionary) aims to simplify and speed up the training process for specific words that need to be detected according to its domain, for example product names. It is not recommended to create an entity dictionary for general words such as question words and verbs.
 
-Entity with type dict (dictionary) aims to simplify and speed up the training process for specific words that need to be detected according to BOT domain, for example product names. It is not recommended to create an entity dictionary for general words such as question words and verbs.
+Profiles that can be used for this entity type dict are:
 
 - **default**
   - _Entity Tagger default_ with dictionary (keyword) input by users
 - **klitika**
   - Same as _default_ but automatically able to predict correctly if a word is followed by klitika in Bahasa Indonesia (-ku, -mu, -nya)
+
+There are several rules you must follow when defining a dictionary:
+
+- All list of words in dictionary must be written in lowercase. It can detect if the input words is in uppercase, but when defining the dictionary it need to be written all in lowercase.
+- Write the dictionary key in camelCase or snake*case. Do not insert symbols other than underscore `*` as the dictionary key. You can put any symbols in the list of words, but do not put on the dictionary key. For example:
 
 Bellow is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
 
@@ -59,12 +64,30 @@ Bellow is an example of entity with type dictionary. In this case, we create a b
 
 ![nlsg-3](./images/nlsg-3.jpg)
 
-### Phrase
+Bellow is an example on how you SHOULD NOT define the dictionary:
 
-Following is a description and example of using some common words tagger models.
+```yaml
+entities:
+  product:
+    type: dict
+    profile: default
+    dictionary:
+      pizza:
+        - PIZZA # do not use uppercase character in list of words
+        - Pizza
+      soda-1.2: # do not use symbol as dictionary key
+        - soda
+        - soda 1.2
+```
+
+## Phrase
+
+Entity type phrase is an entity tagger that aim to tag general words for its specific case. Bellow is the list of models that can be used for this type.
+
+Profiles that can be used for this entity type phrase are:
 
 - **default**
-  - Default Word Tagger that can be used to tag freely. May fill _field labels_ as needed. Can be used if user have a large amount of training data.
+  - Default Word Tagger that can be used to tag freely. May fill _field labels_ as needed. Can be used if you have a large amount of training data.
 - **currency**
   - Word Tagger to predict money and currency. No need to fill _field labels._
   - Example: `IDR 12,000`, `USD 15`, `seribu rupiah`
@@ -73,13 +96,13 @@ Following is a description and example of using some common words tagger models.
   - Example: [`admin@domain.com`](mailto:admin@domain.com), [`admin-2017@domain.co.id`](mailto:admin-2017@domain.co.id)
 - **entitySentiment**
 
-  - Word Tagger that can predict sentiment from the word tagged.
-  - How to use this profile is as follows :
+  - Word Tagger that can predict sentiment from the tagged word.
+  - Steps to use this profile :
 
-    1.  Define an entity (eg: items) that you want to tag
-    2.  Define entitySentiment with root to created entity. Fill in the label with sentiment (eg: positive / negative)
-    3.  Train each sentence by tagging words according to entitySentiment
-    4.  Example: rasa pizza aas sangat enak → tag train `aas (entitySentiment, label: positive)`
+    - Define an entity (eg: items) that you want to tag
+    - Define entitySentiment with root to created entity. Fill in the label with sentiment (eg: positive / negative)
+    - Train each sentence by tagging words according to entitySentiment
+    - Example: rasa pizza aas sangat enak → tag train `aas (entitySentiment, label: positive)`
 
 - **location**
   - Entity Tagger to find location names. No need to fill _field labels_
@@ -88,10 +111,10 @@ Following is a description and example of using some common words tagger models.
   - Entity Tagger to find names of people. No need to fill _field labels_
   - Example: `Jokowi`,`RA Kartini`, `Budi Eko`
 - **ner**
-  - Entity Tagger to find NER locations and names of people. Recommended labels are filled with `[location, person]`
+  - Entity Tagger to find NER locations and names of people. Recommended labels: `[location, person]`
   - Example: `Malang (label: location)`, `Siti (label: person)`
 - **number**
-  - Entity tagger to find digits in digits form or words. No need to fill _field labels._
+  - Entity tagger to find number in the form of digits and words. No need to fill _field labels._
   - Example: `100`, `8.9`, `satu`, `lima juta`, `10 ribu`
 - **phone**
   - Entity Tagger to find Indonesian telephone number format. No need to fill _field labels._
@@ -100,7 +123,7 @@ Following is a description and example of using some common words tagger models.
   - Entity Tagger to find POS (Part-of-Speech) Tags for each word. Fill labels with defined tags (Ex: Noun, Verb, Adj, Adv, etc). Tag each word in training data with correct tag to produce a good model.
   - Example: `Ibu (label: Noun)`, `pergi (label: Verb)`, `ke (label: Prep)`, `pasar (label: Noun)`
 - **preps**
-  - Entity Tagger to find words with Indonesian prepositions ("ke", "dari", "di") which around the word. Example implementation is useful to distinguish locations which are origin and destination.
+  - Entity Tagger to differ words based on Indonesian prepositions ("ke", "dari", "di") around the word. Example implementation is useful to distinguish locations which are origin and destination.
   - Implementation can be creating 1 entity with label [origin, destination] or making 2 entities where first entity to find 'origin' and the second entity to find 'destination'.
   - Example: pergi ke `Malang (entity: destination)`, dari `Bali (entity: origin)`
 - **time**
@@ -117,9 +140,11 @@ Here is an example for training entity with type phrase in label 'person'.
 
 ![nlsg-4](./images/nlsg-4.jpg)
 
-### Trait
+## Trait
 
-Here are some profiles (models) that can be used for text classification tasks.
+Entity type trait is used for general text classification task. You need to define list of labels for this entity.
+
+Profiles that can be used for this entity type trait are:
 
 - **default**
   - Text Classification that can be used for any task by providing large amounts of data.
