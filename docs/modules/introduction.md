@@ -43,3 +43,5 @@ If you decide a module isn't for you, you can remove it from your project. Pleas
 
 1. To remove the module, you have to make sure it's in **Inactive** state.
 2. Click **Remove Module**. Next, confirm the module removal by clicking **I understand, remove anyway**.
+3. Go to Deploy menu to re-deploy your bot
+4. Finally, your module will be removed
