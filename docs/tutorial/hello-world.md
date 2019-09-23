@@ -8,7 +8,7 @@ next: bot-studio-tutorial
 
 ## Create a Project
 
-First login/sign up to [http://platform.kata.ai/login](http://new-platform.katalabs.io/login)
+First login/sign up to [https://platform.kata.ai/login](https://platform.kata.ai/login)
 
 And click on “Create Project” and fill in the form. Each project contains one bot design, one NL, and one CMS.
 You will be directed to this page.
