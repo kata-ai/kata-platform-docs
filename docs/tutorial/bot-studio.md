@@ -18,7 +18,7 @@ Let's start by looking at this bot diagram, or commonly called “conversation t
 
 Create an account on Kata | Platform to start building chatbot.
 
-On your browser, open [_http://platform.kata.ai/login_](http://new-platform.katalabs.io/login) and click “Sign Up”
+On your browser, open [_https://platform.kata.ai/login_](https://platform.kata.ai/login) and click “Sign Up”
 
 ![bse-2](/images/tutorial/bot-studio/bse-2.png)
 
