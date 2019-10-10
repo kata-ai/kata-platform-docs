@@ -34,13 +34,13 @@ Next, click Create Entity. Entity has similar definition with NL Model. It will 
 
 ![nlst-4](/images/tutorial/nl-studio/nlst-4.png)
 
-Now, create an entity called `intent` that with 4 labels: `order`, `askOptions`, `confirm` and `cancel`. Further explanation about entity is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)
+Now, create an entity called `intent` that with 4 labels: `order`, `askOptions`, `confirm` and `cancel`. Further explanation about entity is explained in [NL Studio Docs](https://docs.kata.ai/nl-studio/nlu/)
 
 ![nlst-5](/images/tutorial/nl-studio/nlst-5.png)
 
 ### Create Entity Type
 
-In this entity `type`, we will create an entity with dictionary type (further explanation about entity dictionary type is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)). This entity will handle pizza type selection. Add new entity and fill in the data as follows
+In this entity `type`, we will create an entity with dictionary type (further explanation about entity dictionary type is explained in [NL Studio Docs](https://docs.kata.ai/nl-studio/nlu/)). This entity will handle pizza type selection. Add new entity and fill in the data as follows
 
 ![nlst-6](/images/tutorial/nl-studio/nlst-6.png)
 
@@ -50,7 +50,7 @@ Then, continue filling the dictionary by adding other types
 
 ### Create Entity Size
 
-Entity `size` is used to handle pizzas size. In this entity, we will use `Belongs to` feature which binds an entity under another entity (further explanation about belongsTo usage is explained in [NL Studio Guideline - English](https://temankata.quip.com/qXbtAld1g8mm)). We will put entity `size` under entity `type`.
+Entity `size` is used to handle pizzas size. In this entity, we will use `Belongs to` feature which binds an entity under another entity (further explanation about belongsTo usage is explained in [NL Studio Docs](https://docs.kata.ai/nl-studio/nlu/)). We will put entity `size` under entity `type`.
 
 ![nlst-8](/images/tutorial/nl-studio/nlst-8.png)
 
