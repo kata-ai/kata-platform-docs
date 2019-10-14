@@ -9,8 +9,11 @@ const DocsContribution: React.SFC = () => (
       Contributing to the Documentation
     </Heading>
     <Paragraph size={400}>
-      Is something missing/incorrect? Please let us know by contacting <strong>support@kata.ai</strong>. If you know how
-      to fix it straight away, don’t hesitate to{' '}
+      Is something missing/incorrect? Please let us know by contacting{' '}
+      <a href="mailto:support@kata.ai" target="_blank" rel="noopener noreferrer">
+        <strong>support@kata.ai</strong>
+      </a>{'. '}
+      If you know how to fix it straight away, don’t hesitate to{' '}
       <a href="https://github.com/kata-ai/kata-platform-docs" target="_blank" rel="noopener noreferrer">
         create a pull request
       </a>{' '}
