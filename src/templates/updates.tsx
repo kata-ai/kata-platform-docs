@@ -48,7 +48,7 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
     const { siteMetadata } = site;
 
     return (
-      <IndexLayout>
+      <IndexLayout navHidden>
         <Page docsPage>
           <Helmet>
             <title>
@@ -77,8 +77,8 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
               <PostsList>
                 <VersionUpdate post={markdownRemark} />
               </PostsList>
+              <DocsContribution />
               <FooterWrapper>
-                <DocsContribution />
                 <Footer
                   version={siteMetadata.version}
                   siteLastUpdated={siteMetadata.siteLastUpdated}
