@@ -97,7 +97,9 @@ const SearchResults = styled('div')<SearchPageProps>`
 `;
 
 const SearchInputText = styled(InputText)`
-  margin-right: ${space.md}px;
+  &:not(:last-child) {
+    margin-right: ${space.md}px;
+  }
 `;
 
 const RootDesktop = css`
