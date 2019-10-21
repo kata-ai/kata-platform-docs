@@ -88,7 +88,7 @@ const SearchResultsMobile = css`
 `;
 
 const SearchResults = styled('div')<SearchPageProps>`
-  padding: 0 16px;
+  padding: 0;
   border: 1px solid ${colors.grey02};
   background-color: ${colors.white};
 
