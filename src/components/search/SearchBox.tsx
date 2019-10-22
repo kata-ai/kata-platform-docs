@@ -96,14 +96,14 @@ const SearchResults = styled('div')<SearchPageProps>`
   ${props => props.layout === 'mobile' && SearchResultsMobile}
 `;
 
-const SearchInputText = styled(InputText)`
-  &:not(:last-child) {
-    margin-right: ${space.md}px;
-  }
-`;
+const SearchInputText = styled(InputText)``;
 
 const RootDesktop = css`
   position: relative;
+
+  &:not(:last-child) {
+    margin-right: ${space.md}px;
+  }
 `;
 
 const RootMobile = css`
