@@ -234,34 +234,6 @@ exampleFlow:
         text: 'Halo, $(result.displayName) terima kasih sudah add kami...'
 ```
 
-## How to change defaultErrorMessage and loading message info?
-
-You may change `defaultErrorMessage` from bot.yml as below:
-
-```yaml
-config:
-  defaultErrorMessage: Mohon maaf sebelumnya ada error di sistem kami nih :(
-```
-
-For changing loading message info, create a PUT request to:
-
-```
-https://<zaunUrl>/bots/<botId>/deployments/<deploymentName>/channels/<channelId>
-```
-
-Next, put request header as follows:
-
-```
-key: Authorization
-value: Bearer
-```
-
-Afterward, go to BOT menu and go down to “Configuration” sub menu. Next, copy all response without rpmLimit, agentId and webhook to options and add
-
-```
-burstMessageResponse
-```
-
 ## Is there any configurable field where we can put our google map api key due to location action usage?
 
 1. For setup your Google API Key, put in config in bot studio:
