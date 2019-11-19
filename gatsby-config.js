@@ -16,7 +16,7 @@ module.exports = {
     siteLastUpdated: new Date().toISOString(),
     description:
       'Kata Platform 3.0 is our biggest update yet. In this version, we are introducing several new features to help you build a more comprehensive solution for your needs.',
-    version: '3.4.1',
+    version: '3.5.5',
     siteUrl,
     keywords: 'kata.ai, kata-ai, kata platform, artificial intelligence, ai, chatbot, documentation',
     author: {
