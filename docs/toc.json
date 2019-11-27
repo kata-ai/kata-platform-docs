@@ -197,6 +197,11 @@
         "slug": "/channels/telegram/",
         "title": "Telegram"
       }
+      {
+        "id": "channel-fb-messenger",
+        "slug": "/channels/fb-messenger/",
+        "title": "Facebook Messenger"
+      }
     ]
   }
 ]
