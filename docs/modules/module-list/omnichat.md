@@ -13,7 +13,7 @@ In addition, Kata Omnichat also provides an agent management feature. This featu
 
 ## How to use
 
-You need to activate the Omnichat module to use it. If you don't know how, see the documentation [here](http://docs.kata.ai/module).
+You need to activate the Omnichat module to use it. If you don't know how, see the documentation [here](http://docs.kata.ai/modules/introduction).
 
 After you activated the module, we need to set default setup for Omnichat:
 
