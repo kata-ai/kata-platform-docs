@@ -20,3 +20,11 @@ FAQ Module lets your chatbot answer questions your customers often ask. It's exc
 Location Module lets your users find the nearest location of your business. This module is ideal for any industries offering face-to-face customer experiences, such as banking and retail.
 
 [**Read the Docs**](/modules/module-list/location)
+
+---
+
+## Omnichat Module
+
+The Omnichat Module connects customers to merchants via currently available messaging services in the market such as Facebook messenger (FB), Line, WhatsApp, Telegram, etc. It allows a merchant to gather all incoming messages from customers in one place and get back to them in no time.
+
+[**Read the Docs**](/modules/module-list/omnichat)
