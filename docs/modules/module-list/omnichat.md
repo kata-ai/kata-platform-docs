@@ -57,7 +57,7 @@ After you accepted the invitation as supervisor on your email, you will be redir
 
 Kata Omnichat allocates available agents by automatically assign less busier agent to a new created chat group. However, you may want to customise this rule by making your own rule. In order to do so, you need to create a webhook that manage how your agents in Kata Omnichat is assigned.
 
-![./img/omnichat/allocation](Custom Agents allocation illustration)
+![Custom Agents allocation illustration](./img/omnichat/allocation.png)
 
 To connect your webhook with Kata Omnichat, you just have to enable custom agent allocation feature in Settings page in Kata Omnichat by switching on the toggle button on the top-right of the page and provide the webhook URL in the field provided as depicted in image below. By doing so, Kata Omnichat will no longer enforce automatic rule in agent allocation for you. So you are free to do it your own way.
 
