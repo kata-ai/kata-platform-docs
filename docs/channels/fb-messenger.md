@@ -62,4 +62,3 @@ You’re all set! Let’s try the chatbot!
 ![f16](./images/fb/f16.png)
 
 It works! You can now share your newly created chatbot with your friends.
-
