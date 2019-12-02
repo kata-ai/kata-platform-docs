@@ -25,6 +25,6 @@ Location Module lets your users find the nearest location of your business. This
 
 ## Omnichat Module
 
-The Omnichat Module connects customers to merchants via currently available messaging services in the market such as Facebook messenger (FB), Line, WhatsApp, Telegram, etc. It allows a merchant to gather all incoming messages from customers in one place and get back to them in no time.
+Kata Omnichat is a centralized dashboard where you can handle all incoming messages from any messaging channels.
 
 [**Read the Docs**](/modules/module-list/omnichat)
