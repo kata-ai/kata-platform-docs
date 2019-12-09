@@ -37,9 +37,9 @@ After you deployed the project, you need to choose your desired environment to c
 
 Now, you should create the channel by selecting "Create Channel"
 ![Create Channel in Kata Platform](./images/qiscus/red_createchannel.png)
-![Create Channel in Kata Platform](./images/qiscus/red_createchannel2.png)
 
 You will now see the "Create Channel" screen. Insert the channel name, and select Qiscus as the channel type.
+![Create Channel in Kata Platform](./images/qiscus/red_createchannel2.png)
 ![Create Channel in Kata Platform](./images/qiscus/red_createchannel3.png)
 
 Then, copy and paste the previously Secret Key, Bot Email, and URL, and click "Create".
