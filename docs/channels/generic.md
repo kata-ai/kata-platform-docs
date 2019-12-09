@@ -15,11 +15,12 @@ If you have develop your chatbot, now You have to deploy your bot. You can use *
 
 1. Login to your account in kata platform <https://platform.kata.ai/>
 2. Select the project that you want to deploy
-3. Go to Deploy Menu on ***kata-platform*** sidebar, choose overview, and create ***New Deployment*** (./images/gc/select_deploy_menu.png)
+3. Go to Deploy Menu on ***kata-platform*** sidebar, choose overview, and create ***New Deployment***
+![DeployMenu](./images/gc/select_deploy_menu.png)
 
 ## Create Generic Channel in Kata Platform
 
-1. Go to Deploy Menu on ***kata-platform*** sidebar, choose Environment, and ***Create Environment*** (./images/gc/create_environment.png)
+1. Go to Deploy Menu on ***kata-platform*** sidebar, choose Environment, and ***Create Environment*** ![CreateEnvironment](./images/gc/create_environment.png)
 2. Afterthat, you must create channel and choose ***Generic*** type (./images/gc/create_channel.png)
 
 Fill the form to create your channel:
@@ -35,7 +36,8 @@ URL: <Your endpoint to retrieve data from webhook, for example http://your_domai
 
 > Note: Make sure your endpoint have public access to retrieve data from webhook
 
-After successfull make a channel you will get webhook and will use it to your app. (./images/gc/webhook.png)
+After successfull make a channel you will get webhook and will use it to your app.
+![Webhook](./images/gc/webhook.png)
 
 ## PARAMETER
 
@@ -311,5 +313,5 @@ sendMessage(data) {
 
 ## Testing Generic Channel with Postman app
 
-Here, you can use Postman to test send message to chatBot (./images/gc/testing_postman.png)
-and you will get response from chatBot to your app (./images/gc/response_from_channel.png)
+Here, you can use Postman to test send message to chatBot ![TestingWithPostman](./images/gc/testing_postman.png)
+and you will get response from chatBot to your app ![ResponseChannel](./images/gc/response_from_channel.png)
