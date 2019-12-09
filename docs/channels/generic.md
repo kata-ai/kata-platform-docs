@@ -41,7 +41,7 @@ URL: <Your endpoint to retrieve data from webhook, for example http://your_domai
 After successfull make a channel you will get webhook and will use it to your app.
 ![Webhook](./images/gc/webhook.png)
 
-## PARAMETER
+## Parameter
 
 To send a message to chatBot you must have some parameters, see the parameter below:
 
@@ -247,7 +247,7 @@ Here is the detail of messageObject that we send to your webhook:
    }
  }
 
-## GENERIC CHANNEL APP
+## Generic Channel App
 
 Here is the example of generic channel app build with NestJs framework.
 source code: https://github.com/Farhanramadhana/Generic-Channel
