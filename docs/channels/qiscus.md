@@ -54,4 +54,4 @@ Next, back to Qiscus dashboard, and go to "Bot Integration" tab. Make sure you'v
 ![Webhook URL in Qiscus](./images/qiscus/red_webhook2.png)
 
 Now, you can check your Qiscus bot in the Qiscus widget by accessing your previous html file. And, voila! It works! You can now share your newly created chatbot with your friends.
-![Qiscus Bot in Qiscus Widget](./images/qiscus/result_deployed.png)
+![Qiscus Bot in Qiscus Widget](./images/qiscus/result deployed.png)
