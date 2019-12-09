@@ -8,7 +8,7 @@ Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. T
 ## Create Qiscus Channel
 
 1. First thing first, you need to register yourself at [Qiscus Multichannel CS Chat Website](https://multichannel.qiscus.com) to create a new app. You will be asked to fill in several information regarding your account.
-![Register](./images/qiscus/sensor_registerqiscus.jpg)
+![Register](./images/qiscus/sensor_register.jpg)
 
 2. As soon as you signed up, you will get an email verification from Qiscus Multichannel CS Chat that you need to verify before you can use it. So just check your email and verify it.
 ![Verify](./images/qiscus/validate.png)
