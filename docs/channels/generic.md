@@ -21,7 +21,8 @@ If you have develop your chatbot, now You have to deploy your bot. You can use *
 ## Create Generic Channel in Kata Platform
 
 1. Go to Deploy Menu on ***kata-platform*** sidebar, choose Environment, and ***Create Environment*** ![CreateEnvironment](./images/gc/create_environment.png)
-2. Afterthat, you must create channel and choose ***Generic*** type (./images/gc/create_channel.png)
+2. Afterthat, you must create channel and choose ***Generic*** type
+![CreateChannel](./images/gc/create_channel.png)
 
 Fill the form to create your channel:
 
@@ -314,4 +315,5 @@ sendMessage(data) {
 ## Testing Generic Channel with Postman app
 
 Here, you can use Postman to test send message to chatBot ![TestingWithPostman](./images/gc/testing_postman.png)
-and you will get response from chatBot to your app ![ResponseChannel](./images/gc/response_from_channel.png)
+and you will get response from chatBot to your app
+![ResponseChannel](./images/gc/response_from_channel.png)
