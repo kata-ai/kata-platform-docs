@@ -314,6 +314,9 @@ sendMessage(data) {
 
 ## Testing Generic Channel with Postman app
 
-Here, you can use Postman to test send message to chatBot ![TestingWithPostman](./images/gc/testing_postman.png)
+Here, you can use Postman to test send message to chatBot
+![TestingWithPostman](./images/gc/testing_postman.png)
+
 and you will get response from chatBot to your app
+
 ![ResponseChannel](./images/gc/response_from_channel.png)
