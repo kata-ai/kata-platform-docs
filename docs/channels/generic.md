@@ -20,7 +20,8 @@ If you have develop your chatbot, now You have to deploy your bot. You can use *
 
 ## Create Generic Channel in Kata Platform
 
-1. Go to Deploy Menu on ***kata-platform*** sidebar, choose Environment, and ***Create Environment*** ![CreateEnvironment](./images/gc/create_environment.png)
+1. Go to Deploy Menu on ***kata-platform*** sidebar, choose Environment, and ***Create Environment***
+![CreateEnvironment](./images/gc/create_environment.png)
 2. Afterthat, you must create channel and choose ***Generic*** type
 ![CreateChannel](./images/gc/create_channel.png)
 
