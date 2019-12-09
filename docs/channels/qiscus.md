@@ -28,11 +28,13 @@ Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. T
 First, login to Kata Platform and select the project that you want to integrate with Qiscus. Then, deploy the project by selecting "Deploy" > "New Deployment".
 ![New Deployment in Kata Platform](./images/qiscus/red_newdeployment.png)
 
-Choose the Deployment Version and Deployment Change Log
+Choose the Deployment Version and fill the Deployment Change Log.
 ![Create Deployment in Kata Platform](./images/qiscus/red_newdeployment3.jpg)
 
-After you deployed the project, you need to choose your desired environment to create Qiscus channel by going through "Environment" > "Create Environment". Fill the "Environment URL" and click "Create".
+After you deployed the project, you need to choose your desired environment to create Qiscus channel by going through "Environment" > "Create Environment".
 ![Create Environment in Kata Platform](./images/qiscus/red_environmenttrue.png)
+
+Fill the "Environment URL" and click "Create".
 ![Create Environment in Kata Platform](./images/qiscus/sensor_createenvironment.jpg)
 
 Now, you should create the channel by selecting "Create Channel".
