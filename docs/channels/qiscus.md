@@ -15,12 +15,12 @@ Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. T
 
 3. After you verified your account, you can log into the Qiscus Multichannel CS Chat dashboard via [login page](https://multichannel.qiscus.com). Please fill in your credentials to get in to the dashboard.
 
-4. Once you logged in, go to the integration page, and enable the "Qiscus Widget" tab like shown on picture below
+4. Once you logged in, go to the integration page, and enable the "Qiscus Widget" tab like shown on picture below.
 ![Qiscus Widget Integration](./images/qiscus/red_qiscuswelcomepage.png)
 
 5. Copy the snippet code shown on the page and paste it into your website html. It is not set yet, you can open your html later after you integrate the bot.
 
-6. As predicted, the next step is you need to integrate the bot by enabling the "Bot Integration" in the Integration Page. You will also see Agent ID, App ID, Qiscus Secret Key, URL. These four things will be needed later in defining new channel in kata platform. There's also one blank space in "Bot Webhook URL" which can be filled later if you've created the channel in kata platform.
+6. As predicted, the next step is you need to integrate the bot by enabling the "Bot Integration" in the Integration Page. You will also see Agent ID, App ID, Qiscus Secret Key, URL. These four things will be needed later in defining new channel in Kata Platform. There's also one blank space in "Bot Webhook URL" which can be filled later if you've created the channel in Kata Platform.
 ![Bot Integration](./images/qiscus/sensor_botintegration.jpg)
 
 ## Create Qiscus Channel in Kata Platform
