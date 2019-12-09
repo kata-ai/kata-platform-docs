@@ -28,14 +28,14 @@ Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. T
 First, login to Kata Platform and select the project that you want to integrate with Qiscus. Then, deploy the project by selecting "Deploy" > "New Deployment".
 ![New Deployment in Kata Platform](./images/qiscus/red_newdeployment.png)
 
-Fill the Deployment Version and Deployment Change Log
+Choose the Deployment Version and Deployment Change Log
 ![Create Deployment in Kata Platform](./images/qiscus/red_newdeployment3.jpg)
 
-After you deployed the project, you need to choose your desired environment to create Qiscus channel by going through "Environment" > "Create Environment"
+After you deployed the project, you need to choose your desired environment to create Qiscus channel by going through "Environment" > "Create Environment". Fill the "Environment URL" and click "Create".
 ![Create Environment in Kata Platform](./images/qiscus/red_environmenttrue.png)
 ![Create Environment in Kata Platform](./images/qiscus/sensor_createenvironment.jpg)
 
-Now, you should create the channel by selecting "Create Channel"
+Now, you should create the channel by selecting "Create Channel".
 ![Create Channel in Kata Platform](./images/qiscus/red_createchannel.png)
 
 You will now see the "Create Channel" screen. Insert the channel name, and select Qiscus as the channel type.
@@ -50,7 +50,7 @@ Then, copy and paste the previously Secret Key, Bot Email, and URL, and click "C
 Once finished, you will see the newly-created channel in the list. You will also see a Webhook URL for your channel. This webhook URL will be added to the Qiscus bot. Copy the webhook URL by clicking the copy button next to the Webhook URL field.
 ![Webhook URL in Kata Platform](./images/qiscus/red_webhook.png)
 
-Next, back to Qiscus dashboard, and go to "Bot Integration" tab. Make sure you've enabled it, and then paste the webhook URL in "Bot Webhook URL".
+Next, back to Qiscus dashboard, and go to "Bot Integration" tab. Make sure you've enabled it, then paste the webhook URL in "Bot Webhook URL", and click "Connect".
 ![Webhook URL in Qiscus](./images/qiscus/red_webhook2.png)
 
 Now, you can check your Qiscus bot in the Qiscus widget by accessing your previous html file. And, voila! It works! You can now share your newly created chatbot with your friends.
