@@ -29,7 +29,7 @@ First, login to Kata Platform and select the project that you want to integrate 
 ![New Deployment in Kata Platform](./images/qiscus/red_newdeployment.png)
 
 Fill the Deployment Version and Deployment Change Log
-![Create Deployment in Kata Platform](./images/qiscus/red_newdeployment2.jpg)
+![Create Deployment in Kata Platform](./images/qiscus/red_newdeployment3.jpg)
 
 After you deployed the project, you need to choose your desired environment to create Qiscus channel by going through "Environment" > "Create Environment"
 ![Create Environment in Kata Platform](./images/qiscus/red_environmenttrue.png)
