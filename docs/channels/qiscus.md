@@ -38,7 +38,7 @@ Fill the "Environment URL" and click "Create".
 ![Create Environment in Kata Platform](./images/qiscus/sensor_createenvironment.jpg)
 
 Now, you should create the channel by selecting "Create Channel".
-![Create Channel in Kata Platform](./images/qiscus/red_createchannel.png)
+![Create Channel in Kata Platform](./images/qiscus/red_createchannel.jpg)
 
 You will now see the "Create Channel" screen. Insert the channel name, and select Qiscus as the channel type.
 ![Create Channel in Kata Platform](./images/qiscus/red_createchannel2.png)
