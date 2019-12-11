@@ -13,7 +13,7 @@ Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. T
 2. As soon as you signed up, you will get an email verification from Qiscus Multichannel CS Chat that you need to verify before you can use it. So just check your email and verify it.
 ![Verify](./images/qiscus/validate.png)
 
-3. After you verified your account, you can log into the Qiscus Multichannel CS Chat dashboard via [login page](https://multichannel.qiscus.com). Please fill in your credentials to get in to the dashboard.
+3. After you verified your account, you can log into the Qiscus Multichannel CS Chat dashboard via [login page](https://multichannel.qiscus.com). Please fill in your credentials to get into the dashboard.
 
 4. Once you logged in, go to the integration page, and enable the "Qiscus Widget" tab like shown on picture below.
 ![Qiscus Widget Integration](./images/qiscus/red_qiscuswelcomepage.png)
