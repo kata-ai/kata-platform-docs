@@ -58,6 +58,7 @@ Next, head back to Qiscus dashboard, and go to the "Bot Integration" tab. Make s
 Now, you can check your Qiscus bot in the Qiscus widget by accessing your previous html file. And, voila! It works! You can now share your newly created chatbot with your friends.
 <div style="text-align: center">
   <img src="./images/qiscus/result_deployed.png">
+  <a>test</a>
 </div>
 
 ![Qiscus Bot in Qiscus Widget](./images/qiscus/result_deployed.png)
