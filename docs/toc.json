@@ -192,15 +192,20 @@
   {
     "title": "Channels",
     "items": [
+       {
+        "id": "channel-fb-messenger",
+        "slug": "/channels/fb-messenger/",
+        "title": "Facebook Messenger"
+      },
+      {
+        "id": "channel-slack",
+        "slug": "/channels/slack/",
+        "title": "Slack"
+      },
       {
         "id": "channel-telegram",
         "slug": "/channels/telegram/",
         "title": "Telegram"
-      },
-      {
-        "id": "channel-fb-messenger",
-        "slug": "/channels/fb-messenger/",
-        "title": "Facebook Messenger"
       }
     ]
   }
