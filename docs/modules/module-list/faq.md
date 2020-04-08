@@ -30,12 +30,10 @@ After you accepted the invitation on your email, you will be redirected to Kata 
 
 (2) `answerNotFoundText` element is used to edit bot responses if the bot doesn't have the answer to users' question. For example: `Saya tidak menemukan jawaban atas pertanyaan kamu.`
 
-(3) You can also use `askQuestionAgainText` element to direct your users to flow. Example: `Ada yang ingin kamu tanyakan lagi?`
-
-(4) `faq` is used to build the knowledge-base of your FAQ. It contains:
+(3) `faq` is used to build the knowledge-base of your FAQ. It contains:
 
 1. Label: To define the main topic of the question.
-2. Question: To define how your users would ask the question. This module uses [QISG](https://docs.kata.ai/nl-studio/entity/#trait) NL type with question label. **Make sure you only add question sentences**. Other sentence type such as instruction or statement won't be recognized by the module as training data.
+2. Question: To define how your users would ask the question. This module uses [QISG](https://docs.kata.ai/nl-studio/entity/#trait) NL type with question label. 
 3. Answer: To define bot response to a question.
 
 Here's an example:
