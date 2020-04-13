@@ -30,37 +30,48 @@ After you accepted the invitation on your email, you will be redirected to Kata 
 
 (2) `answerNotFoundText` element is used to edit bot responses if the bot doesn't have the answer to users' question. For example: `Saya tidak menemukan jawaban atas pertanyaan kamu.`
 
-(3) You can also use `askQuestionAgainText` element to direct your users to flow. Example: `Ada yang ingin kamu tanyakan lagi?`
-
-(4) `faq` is used to build the knowledge-base of your FAQ. It contains:
+(3) `faq` is used to build the knowledge-base of your FAQ. It contains:
 
 1. Label: To define the main topic of the question.
-2. Question: To define how your users would ask the question. This module uses [QISG](https://docs.kata.ai/nl-studio/entity/#trait) NL type with question label. **Make sure you only add question sentences**. Other sentence type such as instruction or statement won't be recognized by the module as training data.
+2. Question: To define how your users would ask the question. This module uses [**QISG**](https://docs.kata.ai/nl-studio/entity/#trait) NL type with question label. Other sentence type such as instruction or statement won’t be recognized by the module. You shall see “Guideline for Add Question“ section
 3. Answer: To define bot response to a question.
+
+### Guideline for Adding Question
+
+For adding new questions, you can follow this guideline :
+
+1. Put only keywords which is the main topic of user’s question. For example, you have a label named `Buy Product`. You predict your user will say : `Bisa beli produk A gak?` then highlight `beli produk A` as the keyword question. 
+2. Do not use question words (5W+1H) and question mark. For example, you have a label named `Buy Product`. 
+    1. You predict your user will say : `Bisa beli produk A gak?`. Do not enter `?` , because those are too common in question sentence. Hence, the module will confuse to answer the question and may show incorrect answer.
+    2. Another example. Assume user will say : `Bagaimana cara membeli produk A?` . Do not enter `Bagaimana` as question, because module FAQ had trained question words such as `bagaimana, gimana, bgmn, how, why, `etc and it is not necessarily needed.
+3. Match the number of questions between labels. For example, you have 3 labels such as `Buy Product`, `Checkout`, and `Shipping`.  `Buy Product` label has 20 questions, but `Checkout` label only 10 questions. You must add another 10 questions in `Checkout` label.
+
 
 Here's an example:
 
 ```
-Label: Shipping
-
+Label: Create Flow
+        
 -Start-
-Question: Bagaimana cara melakukan pengiriman menggunakan ekspedisi A?
-Answer: Saat melakukan checkout, pilih ekspedisi A sebagai pilihan pengiriman produk yang kamu beli
+Question : gimana cara bikin **flow**
+Answer : Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
-
-Label: Shipping
-
+        
 -Start-
-Question: Gimana cara kirim?
-Answer: Saat melakukan checkout, pilih ekspedisi A sebagai pilihan pengiriman produk yang kamu beli
+Question: gmn sih bikin **flow **yang bener
+Answer: Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
-
-Label: Refund
-
+        
+Label : Metadata Channel
 -Start-
-Question: Gimana cara melakukan refund?
-Answer: Refund bisa dilakukan dengan mengirimkan e=mail ke support@kata.ai
--End-
+Question: penggunaan **metadata channel** gmn
+Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID
+-End
+        
+-Start-
+Question: cara pake **metadata channel** bagaimana
+Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID
+-End
 ```
 
 ## Components
