@@ -7,21 +7,21 @@ next: nl-studio-using-kata-cli
 
 ## Tips
 
-The training process is carried out to make the machine determine what answers need to be given if an input is received. This process is executed based on provided training data.
+Training process is carried out to create the model based on nlu's structure and training data.
 
-In NL Studio, the training process for an NLU will be carried out for all models in it. For example, it is known that NLU-A with entity-1, entity-2, and entity-3. Because each entity has its own model, NLU-A has 3 models that run independently. If the user enters training data for NLU-A, the user inputs training for the entity-1 model, entity-2 model, and entity-3 model.
+In NL Studio, a single training data will be used to train all entities in an NlU. For example, there is NLU-A with entity-1, entity-2, and entity-3, where ech entity represent their separate model. When user input training data for NLU-A, the training data will be used to create model for entity-1, model for entity-2, and model for entity-3.
 
-Here are some things that need to be considered in the training process.
+Here are some things to be considered when training:
 
-- **Various forms of language:** Enter training data with various forms of language such as formal, informal, slang, and long or short sentences. If you're train only one data type , it will produce a model that will only be good in the sentence form.
+- **Various language's style:** Enter training data with various language's style such as formal, informal, slang, also long and short sentences. If you only train with certain style, the model would only be good in that form.
 
-- **Avoid imbalance data between labels:** Imbalance data can cause bias between labels. When the variation in data size is small, it's not a problem. But when it gets large, it can make a word input too significant on a particular label and cause bias.
+- **Avoid imbalance data between labels:** Imbalance data can cause bias between labels.
 
-- **Counter training:** Counter training is entering process training data that is not classified into defined labels. For example, there is an entity that can predict book genres into 3 categories (horror, fiction, biography). Each label has given training data and able to discover each genres. Then the input is entered with a new category that is 'history'. Because the model can only distinguish between those 3 labels and assume that each book must be categorized into these 3 labels, the model cannot answer 'bukan ketiganya' or 'none'. This is one example of counter training importance if needed. How to do counter training is by entering data without giving any intent / tag.
+- **Counter training:** Counter training is used to tell the model that there are data that are not one of the defined labels. For example, an entity that can classify book's genre into 3 categories (horror, fiction, biography). For those three categories, the training data has been inserted. Suddenly, user try to predict a book with the genre 'history'. Because the model can only distinguish between three labels and assume that all books must be categorized into one of those three, the model can not answer 'none'. In order to introduce the 'none' label to the model, we need to do counter train by entering data without label.
 
-- **Add a new label to trained entity:** If you want or need to add a new label, train the new label with as much data as the other labels. For example an entity with 5 labels, each of which has 10 data. Then we add 1 new label, train the new label up to +- 10 data. Besides that, train 5 other labels with some new data.
+- **Add a new label to trained entity:** If you want or need to add a new label, train the new label with as much data as the other labels. For example an entity with 5 labels, each has 10 data. Then we add 1 new label, train the new label up to +- 10 data. Besides that, train 5 previous labels with some new data.
 
-- **Ambiguous data:** Avoid entering ambiguous training data into different labels. Ambiguous data can be caused by similar user input, but intent depends on asked question. For example, user can enter the message 'sudah' in the situation where the bot asks 'apakah sudah makan?' (smalltalk flow) or 'apakah sudah menikah?' (credential flow). The sentence can be considered as 'intent:doneEating' or 'intent:married'. To reduce ambiguity, avoid entering ambiguous training data into labels. If entered data is 'sudah menikah', it doesn't matter to train it as 'intent: married' because there is a word 'menikah' that could be distinguishes. For the word 'sudah' itself, it can be trained into different label, 'done'. For each state that is likely to get such an answer can be given the condition (intent = "done").
+- **Ambiguous data:** Avoid entering ambiguous training data into different labels. Ambiguous data can be caused by similar user input, but the intent itself depends on the asked question. For example, user can enter the message 'sudah' in the situation where the bot asks 'apakah sudah makan?' (smalltalk flow) or 'apakah sudah menikah?' (credential flow). The sentence can be considered as 'intent:doneEating' or 'intent:married'. To reduce ambiguity, you can't enter data 'sudah' to neither label doneEating nor married. If the data is 'sudah menikah', it doesn't matter to train it as 'intent: married' because there is a word 'menikah' that could distinguishes the labels. For the ∂ata 'sudah', train it to different label such as 'intent: done' and adjust the bot accordingly.
 
 ## Bot, NL, and Training
 
