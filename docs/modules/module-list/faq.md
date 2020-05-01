@@ -40,10 +40,8 @@ After you accepted the invitation on your email, you will be redirected to Kata 
 
 For adding new questions, you can follow this guideline :
 
-1. Put only keywords which is the main topic of user’s question. For example, you have a label named `Buy Product`. You predict your user will say : `Bisa beli produk A gak?` then highlight `beli produk A` as the keyword question. 
-2. Do not use question words (5W+1H) and question mark. For example, you have a label named `Buy Product`. 
-    1. You predict your user will say : `Bisa beli produk A gak?`. Do not enter `?` , because those are too common in question sentence. Hence, the module will confuse to answer the question and may show incorrect answer.
-    2. Another example. Assume user will say : `Bagaimana cara membeli produk A?` . Do not enter `Bagaimana` as question, because module FAQ had trained question words such as `bagaimana, gimana, bgmn, how, why, `etc and it is not necessarily needed.
+1. Enter various language style such as formal, informal, slang, also long and short sentence. For example: label `makeaflow` then example questions should be added :  “gmn cr bikin flow yg baik y”, “gimana caranya bikin flow” and ”bagaimana cara bikin flow”.
+2. Avoid entering ambiguous data into different labels. For example: `sudah` in "Apakah sudah makan" with "Apakah sudah menikah", has different meaning. Hence, avoid using `sudah` to both labels.
 3. Match the number of questions between labels. For example, you have 3 labels such as `Buy Product`, `Checkout`, and `Shipping`.  `Buy Product` label has 20 questions, but `Checkout` label only 10 questions. You must add another 10 questions in `Checkout` label.
 
 
@@ -53,23 +51,23 @@ Here's an example:
 Label: Create Flow
         
 -Start-
-Question : gimana cara bikin **flow**
+Question : gimana cara bikin flow
 Answer : Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
         
 -Start-
-Question: gmn sih bikin **flow **yang bener
+Question: gmn sih bikin flow yang bener
 Answer: Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
         
 Label : Metadata Channel
 -Start-
-Question: penggunaan **metadata channel** gmn
+Question: penggunaan metadata channel gmn
 Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID
 -End
         
 -Start-
-Question: cara pake **metadata channel** bagaimana
+Question: cara pake metadata channel bagaimana
 Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID
 -End
 ```
