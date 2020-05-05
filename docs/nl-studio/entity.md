@@ -25,7 +25,7 @@ Below is an input example and its extracted entities.
 
 To create an entity, you need to include these parameters:
 
-- `name : string`\* - entity name.
+- `name : string`\* - entity name, should only contains alphanumeric character and written in `camelCase` or `snake_case` format.
 - `type : "dict" | "phrase" | "trait"`\* - type of entity, consists of:
   - dict - (dictionary) _word tagger_ with dictionary support from user.
   - phrase - _word tagger_ for common words.
@@ -33,7 +33,7 @@ To create an entity, you need to include these parameters:
 - `profile : string`\* - profile represents a model to complete certain tasks. What profile can be used, depends on the type of its entity.
 - `root : string` - root is used to define the hierarchical relationship between entities and help both training and prediction processes.
 - `belongsTo : string` - to define relationship between entity. Feature belongsTo can only be used for entity in same NLU.
-- `labels : string[]`\*\* - labels are used to determine what classes an entity will be classified.
+- `labels : string[]`\*\* - labels are used to determine what classes an entity will be classified. Label should only contains alphanumeric character and written in `camelCase` or `snake_case` format.
 - `inherit : string` - inherit is used to duplicate a _pre-defined entity_ (entity that has been created in other NLU). In addition to the entity structure, inherit will also duplicate the trained model even though the training data itself won't be included. This ability makes the entity can immediately do prediction without training data.
 - `dictionary : { [key : string] : string[] }` - dictionary keywords for entity type `dict`.
 
@@ -54,7 +54,7 @@ Entity with type dict (dictionary) aims to simplify and speed up the training pr
 There are several rules you must follow when defining a dictionary:
 
 - All list of words in dictionary must be written in lowercase. It can detect if the input words is in uppercase, but when defining the dictionary it need to be written all in lowercase.
-- Write the dictionary key in `camelCase` or `snake_case`. *Do not insert symbols other than underscore `_` as the dictionary key*. You can put any symbols in the list of words, but do not put on the dictionary key. For example:
+- Dictionary key should only contains alphanumeric character and written in `camelCase` or `snake_case` format. You can put any symbols in the list of words, but do not put on the dictionary key.
 
 Below is an example of entity with type dictionary. In this case, we create a bot for 'pizza delivery' in which the NL need to discover 'type of pizza' from user's input.
 

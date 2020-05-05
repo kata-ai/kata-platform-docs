@@ -196,6 +196,16 @@
         "id": "channel-telegram",
         "slug": "/channels/telegram/",
         "title": "Telegram"
+      },
+      {
+        "id": "channel-slack",
+        "slug": "/channels/slack/",
+        "title": "Slack"
+      },
+      {
+        "id": "channel-freshchat",
+        "slug": "/channels/freshchat/",
+        "title": "Freshchat"
       }
     ]
   }
