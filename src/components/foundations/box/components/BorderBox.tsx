@@ -1,3 +1,4 @@
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   BackgroundProps,
   HeightProps,
@@ -30,7 +31,7 @@ export interface BorderBoxProps
 /**
  * An extended `Box` with additional hooks to set border.
  */
-export const BorderBox = styledWrapper(Box)<BorderBoxProps>`
+export const BorderBox = styledWrapper(Box).withConfig({ shouldForwardProp })<BorderBoxProps>`
   border: 1px solid ${props => getColor(props.borderColor ? props.borderColor : 'grey02')};
   ${borderRadius};
   ${props => props.noOverflow && 'overflow: hidden;'}

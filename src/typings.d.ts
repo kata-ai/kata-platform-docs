@@ -67,7 +67,7 @@ declare module '*.json' {
   export = name;
 }
 
-declare module '@reach/skip-nav' {
-  class SkipNavLink extends React.Component {}
-  class SkipNavContent extends React.Component {}
+declare module '@styled-system/should-forward-prop' {
+  declare const shouldForwardProp: <O extends object = {}>(propName: keyof O) => boolean;
+  export default shouldForwardProp;
 }
