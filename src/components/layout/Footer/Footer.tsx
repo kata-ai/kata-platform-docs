@@ -86,10 +86,10 @@ const Footer: React.FC<FooterProps> = ({ version, siteLastUpdated, socials }) =>
       <Inner>
         <FooterSection>
           <Text as="p" size={200} color="grey05">
-            Copyright &copy; {format(date, 'YYYY')} Kata.ai. All rights reserved.
+            Copyright &copy; {format(date, 'yyyy')} Kata.ai. All rights reserved.
           </Text>
           <Text as="p" size={200} color="grey05">
-            Version {version}. Last updated {format(date, 'D MMMM YYYY')}.
+            Version {version}. Last updated {format(date, 'd MMMM yyyy')}.
           </Text>
         </FooterSection>
         {socials && (
