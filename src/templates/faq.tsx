@@ -39,7 +39,7 @@ interface PageTemplateProps extends RouteComponentProps {
   };
 }
 
-const FAQTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+const FAQTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter } = markdownRemark;
   const { siteMetadata } = site;

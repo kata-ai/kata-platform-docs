@@ -5,9 +5,6 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { WindowLocation } from '@reach/router';
 import { SkipNavLink } from '@reach/skip-nav';
 
-import { Header, HeaderInner, HeaderRight, HeaderLogo } from '../Header';
-import { NavButton } from '../Navigation';
-import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
 import { determineFontDimensions } from 'components/foundations';
 
 import { SiteMetadata } from 'interfaces/gatsby';
@@ -19,6 +16,9 @@ import logo from 'assets/images/logo-docs.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import SearchBox from 'components/search/SearchBox';
+import { NavigationContext, NavigationActionTypes } from '../Navigation/NavigationContext';
+import { NavButton } from '../Navigation';
+import { Header, HeaderInner, HeaderRight, HeaderLogo } from '../Header';
 import SearchIcon from '../Header/SearchIcon';
 
 const StyledLayoutRoot = styled('div')`
@@ -112,7 +112,26 @@ interface DataProps {
   };
 }
 
-const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
+const query = graphql`
+  query LayoutRootQuery {
+    site {
+      siteMetadata {
+        title
+        sidebarTitle
+        description
+        siteUrl
+        keywords
+        author {
+          name
+          url
+          email
+        }
+      }
+    }
+  }
+`;
+
+const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
@@ -207,22 +226,3 @@ const LayoutRoot: React.SFC<LayoutRootProps> = ({ children, className, location,
 };
 
 export default LayoutRoot;
-
-const query = graphql`
-  query LayoutRootQuery {
-    site {
-      siteMetadata {
-        title
-        sidebarTitle
-        description
-        siteUrl
-        keywords
-        author {
-          name
-          url
-          email
-        }
-      }
-    }
-  }
-`;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors } from 'utils/variables';
 import { Heading, Paragraph, Box } from 'components/foundations';
 
-const DocsContribution: React.SFC = () => (
+const DocsContribution: React.FC = () => (
   <Wrapper mt="xl" pt="xl">
     <Heading size={500} mt={0} mb="sm">
       Contributing to the Documentation

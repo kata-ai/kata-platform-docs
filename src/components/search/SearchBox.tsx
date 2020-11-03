@@ -149,14 +149,6 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
     this.onEscKeypress = this.onEscKeypress.bind(this);
   }
 
-  onEscKeypress(event: KeyboardEvent) {
-    if (event.keyCode === 27) {
-      if (this.props.onSearchClear) {
-        this.props.onSearchClear();
-      }
-    }
-  }
-
   componentDidMount() {
     document.addEventListener('keydown', this.onEscKeypress, false);
   }
@@ -165,16 +157,51 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
     document.removeEventListener('keydown', this.onEscKeypress, false);
   }
 
+  onEscKeypress(event: KeyboardEvent) {
+    const { onSearchClear } = this.props;
+
+    if (event.keyCode === 27) {
+      if (onSearchClear) {
+        onSearchClear();
+      }
+    }
+  }
+
+  getSearchResults(query?: string) {
+    const { lng } = this.props;
+    if (!query || !window.__LUNR__) {
+      return [];
+    }
+    const lunrIndex = window.__LUNR__[lng || 'en'];
+    const results = lunrIndex.index.search(query);
+    return results.map(({ ref }: any) => lunrIndex.store[ref]);
+  }
+
+  search = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { onSearchClear } = this.props;
+
+    if (!event.target.value) {
+      if (onSearchClear) {
+        onSearchClear();
+      }
+    } else {
+      const query = event.target.value;
+      const results = this.getSearchResults(query);
+      this.setState({ results, query });
+    }
+  };
+
   render() {
     const { layout, onSearchClear } = this.props;
+    const { query, results } = this.state;
     const ref = React.createRef<HTMLInputElement>();
 
     return (
-      <Root layout={this.props.layout}>
+      <Root layout={layout}>
         <div className="header">
           <SearchInputText
             placeholder={layout === 'default' ? "Type what you're looking for..." : 'Search...'}
-            value={this.state.query}
+            value={query}
             onChange={this.search}
             ref={ref}
             clearable={layout === 'mobile'}
@@ -192,9 +219,9 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
             block={layout === 'default'}
           />
         </div>
-        {this.state.results && this.state.results.length !== 0 && (
+        {results && results.length !== 0 && (
           <SearchResults layout={layout}>
-            {this.state.results.map((page) => (
+            {results.map((page) => (
               <SearchResultLink to={page.url}>
                 <SearchResult>
                   <ResultTitle>{page.title}</ResultTitle>
@@ -207,25 +234,4 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
       </Root>
     );
   }
-
-  getSearchResults(query?: string) {
-    if (!query || !window.__LUNR__) {
-      return [];
-    }
-    const lunrIndex = window.__LUNR__[this.props.lng || 'en'];
-    const results = lunrIndex.index.search(query);
-    return results.map(({ ref }: any) => lunrIndex.store[ref]);
-  }
-
-  search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!event.target.value) {
-      if (this.props.onSearchClear) {
-        this.props.onSearchClear();
-      }
-    } else {
-      const query = event.target.value;
-      const results = this.getSearchResults(query);
-      this.setState({ results, query });
-    }
-  };
 }

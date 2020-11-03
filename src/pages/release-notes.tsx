@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 import { RouteComponentProps } from '@reach/router';
 import styled from 'styled-components';
 
-import { SiteMetadata, UpdatePost } from '../interfaces/gatsby';
-
 import IndexLayout from 'layouts';
 import { Footer } from 'components/layout/Footer';
 import { DocsHeader } from 'components/docs/DocsHeader';
@@ -15,6 +13,7 @@ import { Container } from 'components/layout/Container';
 import { Page } from 'components/layout/Page';
 import { Edge } from 'interfaces/nodes';
 import VersionUpdate from 'components/updates/VersionUpdate';
+import { SiteMetadata, UpdatePost } from '../interfaces/gatsby';
 
 interface Props extends RouteComponentProps {
   data: {
@@ -32,7 +31,7 @@ const FooterWrapper = styled('div')`
   padding: 0;
 `;
 
-const VersionUpdatesPage: React.SFC<Props> = ({ data }) => {
+const VersionUpdatesPage: React.FC<Props> = ({ data }) => {
   const { siteMetadata } = data.site;
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
 

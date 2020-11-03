@@ -3,9 +3,6 @@ import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 
-import { SiteMetadata, UpdatePost } from '../interfaces/gatsby';
-
-import VersionUpdate from '../components/updates/VersionUpdate';
 import IndexLayout from 'layouts';
 import { Edge } from 'interfaces/nodes';
 import { Page } from 'components/layout/Page';
@@ -16,6 +13,8 @@ import { DocsHeader } from 'components/docs/DocsHeader';
 import { DocsContribution } from 'components/docs/DocsContribution';
 import { Footer } from 'components/layout/Footer';
 import { BackToTopButton } from 'components/docs/BackToTopButton';
+import VersionUpdate from '../components/updates/VersionUpdate';
+import { SiteMetadata, UpdatePost } from '../interfaces/gatsby';
 
 interface PageTemplateProps {
   data: {
@@ -42,8 +41,15 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
     };
   }
 
+  private toggleToc = () => {
+    this.setState((prevState) => ({
+      tocIsOpen: !prevState.tocIsOpen
+    }));
+  };
+
   public render() {
-    const { markdownRemark, latestPosts, site } = this.props.data;
+    const { data } = this.props;
+    const { markdownRemark, latestPosts, site } = data;
     const { tocIsOpen } = this.state;
     const { siteMetadata } = site;
 
@@ -92,10 +98,6 @@ class PageTemplate extends React.Component<PageTemplateProps, PageTemplateState>
       </IndexLayout>
     );
   }
-
-  private toggleToc = () => {
-    this.setState({ tocIsOpen: !this.state.tocIsOpen });
-  };
 }
 
 const PostsList = styled('div')`
