@@ -11,13 +11,13 @@ interface HeaderProps {
 const Wrapper = styled('header')<HeaderProps>`
   display: flex;
   flex-direction: column;
-  position: ${props => (props.fixed ? 'fixed' : props.absolute ? 'absolute' : 'relative')};
+  position: ${(props) => (props.fixed ? 'fixed' : props.absolute ? 'absolute' : 'relative')};
   top: 0;
   left: 0;
   width: 100%;
   height: ${dimensions.heights.header}px;
   padding: 0;
-  background-color: ${props => (props.navigation ? colors.grey01 : colors.white)};
+  background-color: ${(props) => (props.navigation ? colors.grey01 : colors.white)};
   z-index: ${layerIndexes.stickyNav};
 `;
 

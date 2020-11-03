@@ -15,7 +15,7 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
   const sectionItems = sectionList.map(({ node }) => node.items);
   const flattenedSectionItems: TocItem[] = ([] as TocItem[]).concat(...sectionItems);
 
-  return flattenedSectionItems.find(item => item.id === templateFile);
+  return flattenedSectionItems.find((item) => item.id === templateFile);
 };
 
 function isDocsPath(location: WindowLocation) {

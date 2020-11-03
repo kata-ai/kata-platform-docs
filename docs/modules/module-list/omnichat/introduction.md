@@ -24,7 +24,7 @@ This step is similar to the usual project deployment. Skip this if you already u
 1. Go to **Deploy** menu to deploy your project.
 2. In **Deploy > Overview**, click **New Deployment** button to create your deployment.
 3. In **Deploy > Environment**, click **Create Environment (in Production), **then add Kata Dashboard URL. For example: dashboard.kata.ai/Omnichat-first-testing (must be unique)
-4. If you don’t have any channel in your **Environment**, you can click **Add Channel > New Channel** in **Environment**** **that has been created.
+4. If you don’t have any channel in your **Environment**, you can click **Add Channel > New Channel** in **Environment\*\*** \*\*that has been created.
 
 ### Deactivating Omnichat Module
 
@@ -33,11 +33,9 @@ This step is similar to the usual project deployment. Skip this if you already u
 3. Your module is inactive now. All of Omnichat Module's components will now have a red indicator next to their name.
 4. Finally, create a new deployment on Production to complete the process.
 
-
 ### Removing Omnichat module
 
 If you decide a module isn’t for you, you can remove it from your project. Please note that all configurations you’ve made on the components will also be removed.
 
-1. To remove the module, you have to make sure it's** **in **Inactive** state.
+1. To remove the module, you have to make sure it's **in Inactive** state.
 2. Click **Remove Module**. Next, confirm the module removal by clicking **I understand, remove anyway.**
-

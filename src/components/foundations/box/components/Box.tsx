@@ -1,4 +1,5 @@
 import * as React from 'react';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   background,
   BackgroundProps,
@@ -30,7 +31,7 @@ import {
   ZIndexProps
 } from 'styled-system';
 
-import { primitives } from 'utils/primitives';
+import { styledWrapper } from 'utils/primitives';
 
 export interface BoxProps
   extends BackgroundProps,
@@ -60,7 +61,7 @@ export interface BoxProps
  * Box is a view with all styled-system hooks added to it. You can use it as a
  * base component for all display elements.
  */
-export const Box = primitives.View<BoxProps>`
+export const Box = styledWrapper('div').withConfig({ shouldForwardProp })<BoxProps>`
   ${background};
   ${bottom};
   ${display};

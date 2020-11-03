@@ -12,11 +12,11 @@ First of all, you need to sign in to your [Freshworks account](https://web.fresh
 
 ![f1-setting](./images/freshchat/f1-setting.png)
 
-1. In order to generate the API Token in Freshchat, go to Settings → API Tokens then click on the *Generate Token* button.
+1. In order to generate the API Token in Freshchat, go to Settings → API Tokens then click on the _Generate Token_ button.
 
 ![f2-apitoken](./images/freshchat/f2-apitoken.png)
 
-2. Now, let’s create the Actor ID for our Chatbot in Freshchat, go to Settings → Team Members then click on the *Add a team member* button, in the *Roles* field you should choose *Agent.*
+2. Now, let’s create the Actor ID for our Chatbot in Freshchat, go to Settings → Team Members then click on the _Add a team member_ button, in the _Roles_ field you should choose _Agent._
 
 ![f3-teammember](./images/freshchat/f3-teammember.png)
 
@@ -41,11 +41,11 @@ Once finished, you will see the newly-created channel in the list and also see a
 
 ![f6-channelproduction](./images/freshchat/f6-channelproduction.png)
 
-Go back to Freshchat and enable the webhook configurations, go to Settings → Webhooks, then click on the *Disabled-Enabled* Toggle
+Go back to Freshchat and enable the webhook configurations, go to Settings → Webhooks, then click on the _Disabled-Enabled_ Toggle
 
 ![f7-webhook](./images/freshchat/f7-webhook.png)
 
-Fill in the Webhook field with the webhook URL you got from Kata Platform and valid email address in the Failure Notifications field, so you will get the notification whenever there’s failure in the integration. Finally, click on the *Save* button
+Fill in the Webhook field with the webhook URL you got from Kata Platform and valid email address in the Failure Notifications field, so you will get the notification whenever there’s failure in the integration. Finally, click on the _Save_ button
 
 ![f8-webhook2](./images/freshchat/f8-webhook2.png)
 

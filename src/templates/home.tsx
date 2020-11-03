@@ -30,7 +30,7 @@ interface HomeTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      htmlAst: any;
+      html: string;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -62,7 +62,7 @@ const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
           <Container>
             <HomepageIllustration src={illustration} alt="Kata Platform" />
             <DocsHeader title={frontmatter.title} subtitle={frontmatter.description} margin="md" />
-            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <MarkdownContent>{renderAst(markdownRemark.html)}</MarkdownContent>
             <DocsContribution />
             <FooterWrapper>
               <Footer
@@ -105,7 +105,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      htmlAst
+      html
       excerpt
       frontmatter {
         id

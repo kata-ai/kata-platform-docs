@@ -51,7 +51,7 @@ const CloseButton = styled('button')`
 `;
 
 const Root = styled('div')<{ disabled?: boolean; block?: boolean }>`
-  display: ${props => (props.block ? 'block' : 'inline-block')};
+  display: ${(props) => (props.block ? 'block' : 'inline-block')};
   position: relative;
 
   ${Icon} {

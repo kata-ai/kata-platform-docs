@@ -103,7 +103,7 @@ const VersionUpdate: React.FC<VersionUpdateProps> = ({ post }) => (
       <Img fluid={post.frontmatter.header_image.childImageSharp.fluid as any} style={{ maxHeight: '240px' }} />
       <PostBody>
         {post.frontmatter.subtitle && <PostTitle>{post.frontmatter.subtitle}</PostTitle>}
-        <MarkdownContent>{renderAst(post.htmlAst)}</MarkdownContent>
+        <MarkdownContent>{renderAst(post.html)}</MarkdownContent>
       </PostBody>
     </PostContent>
     <PostFooter>

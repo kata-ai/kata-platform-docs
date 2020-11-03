@@ -26,8 +26,8 @@ const Wrapper = styled('div')<HeaderInnerProps>`
   align-items: center;
   flex: 1;
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
 const HeaderInner: React.SFC<HeaderInnerProps> = ({ children, className, ...rest }) => (

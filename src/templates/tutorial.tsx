@@ -24,7 +24,7 @@ interface TutorialPageTemplateProps extends RouteComponentProps {
       siteMetadata: SiteMetadata;
     };
     markdownRemark: {
-      htmlAst: any;
+      html: string;
       tableOfContents: string;
       excerpt: string;
       frontmatter: {
@@ -64,7 +64,7 @@ const TutorialPageTemplate: React.SFC<TutorialPageTemplateProps> = ({ data }) =>
           )}
           <Container>
             <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
-            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <MarkdownContent>{renderAst(markdownRemark.html)}</MarkdownContent>
             <DocsContribution />
             <FooterWrapper>
               <Footer
@@ -108,7 +108,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      htmlAst
+      html
       tableOfContents
       excerpt
       frontmatter {

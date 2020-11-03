@@ -170,7 +170,7 @@ export const query = graphql`
         date_formatted: date(formatString: "MMMM DD, YYYY")
       }
       excerpt
-      htmlAst
+      html
     }
   }
 `;
