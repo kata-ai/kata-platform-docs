@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { NavigationContext } from '../Navigation/NavigationContext';
 import { breakpoints, dimensions } from 'utils/variables';
+import { NavigationContext } from '../Navigation/NavigationContext';
 
 interface LayoutMainInnerProps {
   isNavigationOpen?: boolean;
@@ -25,7 +25,7 @@ const StyledLayoutMain = styled('main')<LayoutMainInnerProps>`
   }
 `;
 
-const LayoutMain: React.SFC<LayoutMainProps> = ({ children, navHidden, className }) => {
+const LayoutMain: React.FC<LayoutMainProps> = ({ children, navHidden, className }) => {
   const { state } = React.useContext(NavigationContext);
 
   return (

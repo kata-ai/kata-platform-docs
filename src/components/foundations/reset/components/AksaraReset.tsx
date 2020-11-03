@@ -8,15 +8,13 @@ interface ResetProps {
   style?: React.CSSProperties;
 }
 
-export default class AksaraReset extends React.Component<ResetProps> {
-  render() {
-    const { children } = this.props;
+const AksaraReset: React.FC<ResetProps> = ({ children }) => {
+  return (
+    <Theme>
+      <GlobalStyles />
+      {children}
+    </Theme>
+  );
+};
 
-    return (
-      <Theme>
-        <GlobalStyles />
-        {children}
-      </Theme>
-    );
-  }
-}
+export default AksaraReset;

@@ -35,7 +35,7 @@ const Wrapper = styled('div')<HeaderRightProps>`
   ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
-const HeaderRight: React.SFC<HeaderRightProps> = ({ children, className, contents, ...rest }) => (
+const HeaderRight: React.FC<HeaderRightProps> = ({ children, className, contents, ...rest }) => (
   <Wrapper className={className} contents={contents} {...rest}>
     {children}
   </Wrapper>

@@ -18,7 +18,7 @@
     "format": "npm run format:src && npm run format:docs",
     "format:src": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:docs": "prettier --write \"docs/**/*.md\"",
-    "lint": "tslint 'src/**/*.{ts,tsx}' -p tsconfig.json",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "start": "serve -s public",
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
@@ -72,7 +72,7 @@
     "styled-normalize": "^8.0.7",
     "styled-system": "^5.1.5",
     "typeface-barlow": "^1.1.13",
-    "typescript": "3.5.1",
+    "typescript": "4.0.5",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
@@ -87,14 +87,19 @@
     "@types/styled-system": "^5.1.10",
     "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "gh-pages": "^3.1.0",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
-    "tslint": "^5.18.0",
-    "tslint-config-kata": "^1.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0"
+    "serve": "^11.3.2"
   },
   "config": {
     "commitizen": {

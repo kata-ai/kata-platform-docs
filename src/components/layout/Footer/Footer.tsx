@@ -95,8 +95,8 @@ const Footer: React.FC<FooterProps> = ({ version, siteLastUpdated, socials }) =>
         {socials && (
           <FooterSection>
             <SocialMediaList>
-              {socials.map((social, i) => (
-                <SocialMediaListItem key={i}>
+              {socials.map((social) => (
+                <SocialMediaListItem key={social.name}>
                   <SocialMediaLink href={social.url} target="_blank" rel="noopener noreferrer">
                     <img src={`/images/${social.imgpath}`} alt={social.name} />
                   </SocialMediaLink>

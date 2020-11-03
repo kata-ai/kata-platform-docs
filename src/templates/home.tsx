@@ -47,7 +47,7 @@ const HomepageIllustration = styled('img')`
   margin-bottom: ${space.xl}px;
 `;
 
-const HomeTemplate: React.SFC<HomeTemplateProps> = ({ data }) => {
+const HomeTemplate: React.FC<HomeTemplateProps> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter } = markdownRemark;
   const { siteMetadata } = site;

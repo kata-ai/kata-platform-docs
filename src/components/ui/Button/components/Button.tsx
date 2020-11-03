@@ -18,7 +18,7 @@ const Root = styled('button')<ButtonProps>`
  * Buttons are used to initialize an action, either in the background or
  * foreground of an experience.
  */
-export const Button: React.SFC<ButtonProps> = ({ children, className, style, ...rest }) => (
+export const Button: React.FC<ButtonProps> = ({ children, className, style, ...rest }) => (
   <Root className={className} style={style} {...rest}>
     {children}
   </Root>

@@ -38,7 +38,7 @@ interface FAQPageTemplateProps extends RouteComponentProps {
   };
 }
 
-const FAQPageTemplate: React.SFC<FAQPageTemplateProps> = ({ data }) => {
+const FAQPageTemplate: React.FC<FAQPageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, site } = data;
   const { siteMetadata } = site;

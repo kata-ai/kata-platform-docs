@@ -44,7 +44,7 @@ interface PageTemplateProps extends RouteComponentProps {
   };
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, sectionList, site } = data;
   const { siteMetadata } = site;

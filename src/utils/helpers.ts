@@ -33,7 +33,7 @@ function isDocsPath(location: WindowLocation) {
 }
 
 /** Workaround for activeClassName: https://github.com/gatsbyjs/gatsby/issues/7737 */
-export const isActive = (exact: boolean = false, additionalClassnames?: string) => ({
+export const isActive = (exact = false, additionalClassnames?: string) => ({
   isPartiallyCurrent,
   isCurrent,
   location

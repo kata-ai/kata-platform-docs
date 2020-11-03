@@ -17,12 +17,8 @@ export const themeProps = {
 /**
  * Aksara theme provider
  */
-export const Theme = (props: { children: React.ReactNode }) => {
-  return (
-    <ThemeProvider theme={themeProps}>
-      <>{props.children}</>
-    </ThemeProvider>
-  );
+export const Theme: React.FC = ({ children }) => {
+  return <ThemeProvider theme={themeProps}>{children}</ThemeProvider>;
 };
 
 export type FontSizes = typeof themeProps.fontSizes;

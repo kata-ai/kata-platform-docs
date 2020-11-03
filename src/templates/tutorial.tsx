@@ -38,7 +38,7 @@ interface TutorialPageTemplateProps extends RouteComponentProps {
   };
 }
 
-const TutorialPageTemplate: React.SFC<TutorialPageTemplateProps> = ({ data }) => {
+const TutorialPageTemplate: React.FC<TutorialPageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, site } = data;
   const { siteMetadata } = site;

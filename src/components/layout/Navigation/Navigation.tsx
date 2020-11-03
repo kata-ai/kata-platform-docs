@@ -61,6 +61,18 @@ interface WrapperInnerProps {
   hideOnDesktop?: boolean;
 }
 
+const HideOnMobile = css`
+  @media (max-width: ${breakpoints.lg - 1}px) {
+    display: none;
+  }
+`;
+
+const HideOnDesktop = css`
+  @media (min-width: ${breakpoints.lg}px) {
+    display: none;
+  }
+`;
+
 const WrapperInner = styled('nav')<WrapperInnerProps>`
   margin-top: ${dimensions.heights.header}px;
   height: calc(100vh - ${dimensions.heights.header}px);
@@ -99,18 +111,6 @@ interface HeaderInnerProps {
   hideOnMobile?: boolean;
   hideOnDesktop?: boolean;
 }
-
-const HideOnMobile = css`
-  @media (max-width: ${breakpoints.lg - 1}px) {
-    display: none;
-  }
-`;
-
-const HideOnDesktop = css`
-  @media (min-width: ${breakpoints.lg}px) {
-    display: none;
-  }
-`;
 
 const HeaderInner = styled('div')<HeaderInnerProps>`
   display: flex;
@@ -156,7 +156,6 @@ const LoginButton = styled(OutboundLink)`
 `;
 
 interface NavigationProps {
-  title: string;
   navigation?: Edge<MenuNode>[];
   headerMenus?: Edge<HeaderMenuItem>[];
   navHidden?: boolean;

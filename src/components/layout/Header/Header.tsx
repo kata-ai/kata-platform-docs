@@ -8,10 +8,22 @@ interface HeaderProps {
   fixed?: boolean;
 }
 
+const getPosition = ({ fixed, absolute }: HeaderProps) => {
+  if (fixed) {
+    return 'fixed';
+  }
+
+  if (absolute) {
+    return 'absolute';
+  }
+
+  return 'relative';
+};
+
 const Wrapper = styled('header')<HeaderProps>`
   display: flex;
   flex-direction: column;
-  position: ${(props) => (props.fixed ? 'fixed' : props.absolute ? 'absolute' : 'relative')};
+  position: ${getPosition};
   top: 0;
   left: 0;
   width: 100%;
@@ -21,7 +33,7 @@ const Wrapper = styled('header')<HeaderProps>`
   z-index: ${layerIndexes.stickyNav};
 `;
 
-const Header: React.SFC<HeaderProps> = ({ children, absolute, fixed, navigation }) => (
+const Header: React.FC<HeaderProps> = ({ children, absolute, fixed, navigation }) => (
   <Wrapper absolute={absolute} fixed={fixed} navigation={navigation}>
     {children}
   </Wrapper>

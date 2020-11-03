@@ -44,7 +44,7 @@ interface BackToTopButtonProps {
   href?: string;
 }
 
-const BackToTopButton: React.SFC<BackToTopButtonProps> = ({ className, href }) => {
+const BackToTopButton: React.FC<BackToTopButtonProps> = ({ className, href }) => {
   const handleBackToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);

@@ -30,7 +30,7 @@ const Wrapper = styled('div')<HeaderInnerProps>`
   ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
-const HeaderInner: React.SFC<HeaderInnerProps> = ({ children, className, ...rest }) => (
+const HeaderInner: React.FC<HeaderInnerProps> = ({ children, className, ...rest }) => (
   <Wrapper className={className} {...rest}>
     {children}
   </Wrapper>
