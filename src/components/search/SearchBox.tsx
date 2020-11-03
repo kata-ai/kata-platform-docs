@@ -92,8 +92,8 @@ const SearchResults = styled('div')<SearchPageProps>`
   border: 1px solid ${colors.grey02};
   background-color: ${colors.white};
 
-  ${props => props.layout === 'desktop' && SearchResultsDesktop}
-  ${props => props.layout === 'mobile' && SearchResultsMobile}
+  ${(props) => props.layout === 'desktop' && SearchResultsDesktop}
+  ${(props) => props.layout === 'mobile' && SearchResultsMobile}
 `;
 
 const SearchInputText = styled(InputText)``;
@@ -129,8 +129,8 @@ const RootMobile = css`
 `;
 
 const Root = styled('div')<SearchPageProps>`
-  ${props => props.layout === 'desktop' && RootDesktop}
-  ${props => props.layout === 'mobile' && RootMobile}
+  ${(props) => props.layout === 'desktop' && RootDesktop}
+  ${(props) => props.layout === 'mobile' && RootMobile}
 `;
 
 export default class SearchBox extends React.Component<SearchPageProps, SearchPageState> {
@@ -194,7 +194,7 @@ export default class SearchBox extends React.Component<SearchPageProps, SearchPa
         </div>
         {this.state.results && this.state.results.length !== 0 && (
           <SearchResults layout={layout}>
-            {this.state.results.map(page => (
+            {this.state.results.map((page) => (
               <SearchResultLink to={page.url}>
                 <SearchResult>
                   <ResultTitle>{page.title}</ResultTitle>

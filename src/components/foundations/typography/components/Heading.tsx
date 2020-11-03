@@ -22,7 +22,7 @@ export interface HeadingProps extends TypographyProps {
  * This is a base `Text` element to handle typography elements.
  */
 const StyledText = styled(Typography).withConfig({ shouldForwardProp })<HeadingProps>`
-  ${props => props.size === 100 && 'text-transform: uppercase;'}
+  ${(props) => props.size === 100 && 'text-transform: uppercase;'}
 `;
 
 /**

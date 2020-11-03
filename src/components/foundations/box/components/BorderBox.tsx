@@ -32,9 +32,9 @@ export interface BorderBoxProps
  * An extended `Box` with additional hooks to set border.
  */
 export const BorderBox = styledWrapper(Box).withConfig({ shouldForwardProp })<BorderBoxProps>`
-  border: 1px solid ${props => getColor(props.borderColor ? props.borderColor : 'grey02')};
+  border: 1px solid ${(props) => getColor(props.borderColor ? props.borderColor : 'grey02')};
   ${borderRadius};
-  ${props => props.noOverflow && 'overflow: hidden;'}
+  ${(props) => props.noOverflow && 'overflow: hidden;'}
 `;
 
 BorderBox.displayName = 'BorderBox';

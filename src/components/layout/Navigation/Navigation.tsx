@@ -44,7 +44,7 @@ const Wrapper = styled('aside')<ToggleableProps>`
     margin-top: 0;
     padding-bottom: 5rem;
     pointer-events: auto;
-    transform: translate(${props => (props.isOpen ? '0' : '-100%')}, 0);
+    transform: translate(${(props) => (props.isOpen ? '0' : '-100%')}, 0);
     transition: transform 0.3s ease;
   }
 
@@ -73,8 +73,8 @@ const WrapperInner = styled('nav')<WrapperInnerProps>`
     margin-top: 0;
   }
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
 const Header = styled('section')`
@@ -119,8 +119,8 @@ const HeaderInner = styled('div')<HeaderInnerProps>`
   align-items: center;
   justify-content: space-between;
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
 const DocumentationMenu = styled('div')`

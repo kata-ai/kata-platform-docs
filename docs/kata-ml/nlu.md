@@ -161,12 +161,14 @@ mynl:
   options:
     nluId: <nluId>
     token: <nluToken>
-    output: <type> # raw - return the raw prediction result from NL Studio
-                   # value - return the value of each NLU's entity
-                   # phrase - only for NL Studio entity type 'phrase'
-    entity: <entityName>  # only for output: phrase
-    threshold: <number>   # confidence rate, if less than treshold bot wouldn't recognize as this intent
-    flatten: true         # optional, default false
+    output:
+      <type>
+      # raw - return the raw prediction result from NL Studio
+      # value - return the value of each NLU's entity
+      # phrase - only for NL Studio entity type 'phrase'
+    entity: <entityName> # only for output: phrase
+    threshold: <number> # confidence rate, if less than treshold bot wouldn't recognize as this intent
+    flatten: true # optional, default false
 ```
 
 Examples:

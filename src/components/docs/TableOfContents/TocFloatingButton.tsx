@@ -12,7 +12,7 @@ const Wrapper = styled('button')<ToggleableProps>`
   bottom: 24px;
   right: 24px;
   padding: 0;
-  background-color: ${props => (props.isOpen ? colors.red06 : colors.blue06)};
+  background-color: ${(props) => (props.isOpen ? colors.red06 : colors.blue06)};
   color: ${colors.white};
   cursor: pointer;
   z-index: ${layerIndexes.overlay - 1};

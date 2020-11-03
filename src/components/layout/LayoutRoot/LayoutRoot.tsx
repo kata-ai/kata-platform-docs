@@ -66,9 +66,9 @@ const DocumentationMenu = styled('nav')`
 
 const HomepageLink = styled(Link)<FontSizeProps>`
   color: ${colors.grey09};
-  font-size: ${props => props.size.fontSize};
-  line-height: ${props => props.size.lineHeight};
-  font-weight: ${props => props.size.fontWeight};
+  font-size: ${(props) => props.size.fontSize};
+  line-height: ${(props) => props.size.lineHeight};
+  font-weight: ${(props) => props.size.fontWeight};
 
   &:hover,
   &:focus {

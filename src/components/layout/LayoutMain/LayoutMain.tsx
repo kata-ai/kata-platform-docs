@@ -21,7 +21,7 @@ const StyledLayoutMain = styled('main')<LayoutMainInnerProps>`
   transition: margin-left 0.3s ease;
 
   @media (min-width: ${breakpoints.lg}px) {
-    margin-left: ${props => (props.navHidden ? 0 : dimensions.widths.sidebar.lg)}px;
+    margin-left: ${(props) => (props.navHidden ? 0 : dimensions.widths.sidebar.lg)}px;
   }
 `;
 

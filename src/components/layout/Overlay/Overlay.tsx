@@ -27,7 +27,7 @@ const Root = styled('div')<OverlayProps>`
   visibility: hidden;
   transition: all 0.3s ease;
 
-  ${props => props.visible && Visible}
+  ${(props) => props.visible && Visible}
 `;
 
 const Overlay: React.FC = () => {
