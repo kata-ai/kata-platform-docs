@@ -1294,7 +1294,9 @@ DELETE /teams/{teamname}
 
 ### Add Member to a Team
 
+```
 POST /teams/:teamId/users/:userId
+```
 
 **Body**
 
@@ -1314,7 +1316,9 @@ interface ResponseObject {
 
 ### Remove Member from a Team
 
+```
 DELETE /teams/{teamname}/users/{username}
+```
 
 **Response:**
 
