@@ -881,7 +881,7 @@ DELETE /projects/:projectId/deployment/versions/:version
 
 ## Environment API
 
-### list ALL environments
+### List All Environments
 
 ```
 GET /projects/:projectId/environments
@@ -1041,5 +1041,181 @@ DELETE /projects/:projectId/environments/:environmentId
 ```js
 {
   ...Environment
+}
+```
+
+## Channel API
+
+### List Channels
+
+```
+GET /projects/:projectId/environments/:environmentId/channels
+```
+
+**Access Control**
+
+- `list_own_channels`
+- if session belongs to user or team
+- `list_any_channels`
+
+**Query Params**
+
+- `limit: number`
+- `page: number`
+
+**Response**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  data: Channel[];
+}
+```
+
+### Create Channel
+
+```
+POST /projects/:projectId/environments/:environmentId/channels
+```
+
+**Access Control**
+
+- `create_own_channels`
+- if session belongs to user or team
+- `create_any_channels`
+
+**Body**
+
+```js
+{
+  ...Channel
+}
+```
+
+Example:
+
+```json
+{
+  "name": "mychannelname",
+  "type": "line",
+  "options": { "token": "mytoken", "refreshToken": "myrefreshtoken", "secret": "mysecret" },
+  "url": "https://api.line.me"
+}
+```
+
+**Response:**
+
+```js
+{
+  ...Channel
+}
+```
+
+Example:
+
+```json
+{
+  "name": "my-channel-name",
+  "type": "line",
+  "url": "https://api.line.me",
+  "options": { "token": "mytoken", "refreshToken": "myrefreshtoken", "secret": "mysecret" },
+  "rpmLimit": 1000,
+  "id": "my-webhook",
+  "webhook": "https://kanal.kata.ai/receive_message/my-webhook"
+}
+```
+
+### Update Channel
+
+```
+PUT /projects/:projectId/environments/:environmentId/channels/:channelId
+```
+
+**Access Control**
+
+- `update_own_channels`
+- if session belongs to user or team
+- `update_any_channels`
+
+**Body**
+
+```js
+{
+  ...Channel
+}
+```
+
+Example:
+
+```json
+{
+  "name": "mychannelname",
+  "type": "line",
+  "options": "{\"token\":\"mytoken\",\"refreshToken\":\"myrefreshtoken\",\"secret\":\"mysecret\"}",
+  "url": "https://api.line.me"
+}
+```
+
+**Response**
+
+```js
+{
+  ...Channel
+}
+```
+
+Example:
+
+```json
+{
+  "name": "my-channel-name",
+  "type": "line",
+  "url": "https://api.line.me",
+  "options": "{\"token\":\"mytoken\",\"refreshToken\":\"myrefreshtoken\",\"secret\":\"mysecret\"}",
+  "rpmLimit": 1000,
+  "id": "my-webhook",
+  "webhook": "https://kanal.kata.ai/receive_message/my-webhook"
+}
+```
+
+### Get Channel
+
+```
+GET /projects/:projectId/environments/:environmentId/channels/:channelId
+```
+
+**Access Control**
+
+- <span id="BIBACApd9AJ">`read_own_channels`</span>
+- <span id="BIBACAReKe1">if session belongs to user or team</span>
+- <span id="BIBACAsHppH">`read_any_channels`</span>
+
+**Response**
+
+```js
+{
+  ...Channel
+}
+```
+
+### Delete Channel
+
+```
+DELETE /projects/:projectId/environments/:environmentId/channels/:channelId
+```
+
+**Access Control:**
+
+- `delete_own_channels`
+- if session belongs to user or team
+- `delete_any_channels`
+
+**Response:**
+
+```js
+{
+  ...Channel
 }
 ```
