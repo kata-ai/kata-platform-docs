@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-import { NavigationContext } from '../Navigation/NavigationContext';
 import { breakpoints, layerIndexes } from 'utils/variables';
+import { NavigationContext } from '../Navigation/NavigationContext';
 
 interface OverlayProps {
   visible?: boolean;
@@ -27,7 +27,7 @@ const Root = styled('div')<OverlayProps>`
   visibility: hidden;
   transition: all 0.3s ease;
 
-  ${props => props.visible && Visible}
+  ${(props) => props.visible && Visible}
 `;
 
 const Overlay: React.FC = () => {

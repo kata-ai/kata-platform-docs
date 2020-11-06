@@ -44,7 +44,7 @@ const Wrapper = styled('aside')<ToggleableProps>`
     margin-top: 0;
     padding-bottom: 5rem;
     pointer-events: auto;
-    transform: translate(${props => (props.isOpen ? '0' : '-100%')}, 0);
+    transform: translate(${(props) => (props.isOpen ? '0' : '-100%')}, 0);
     transition: transform 0.3s ease;
   }
 
@@ -61,6 +61,18 @@ interface WrapperInnerProps {
   hideOnDesktop?: boolean;
 }
 
+const HideOnMobile = css`
+  @media (max-width: ${breakpoints.lg - 1}px) {
+    display: none;
+  }
+`;
+
+const HideOnDesktop = css`
+  @media (min-width: ${breakpoints.lg}px) {
+    display: none;
+  }
+`;
+
 const WrapperInner = styled('nav')<WrapperInnerProps>`
   margin-top: ${dimensions.heights.header}px;
   height: calc(100vh - ${dimensions.heights.header}px);
@@ -73,8 +85,8 @@ const WrapperInner = styled('nav')<WrapperInnerProps>`
     margin-top: 0;
   }
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
 const Header = styled('section')`
@@ -100,18 +112,6 @@ interface HeaderInnerProps {
   hideOnDesktop?: boolean;
 }
 
-const HideOnMobile = css`
-  @media (max-width: ${breakpoints.lg - 1}px) {
-    display: none;
-  }
-`;
-
-const HideOnDesktop = css`
-  @media (min-width: ${breakpoints.lg}px) {
-    display: none;
-  }
-`;
-
 const HeaderInner = styled('div')<HeaderInnerProps>`
   display: flex;
   flex-direction: row;
@@ -119,8 +119,8 @@ const HeaderInner = styled('div')<HeaderInnerProps>`
   align-items: center;
   justify-content: space-between;
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
 const DocumentationMenu = styled('div')`
@@ -156,7 +156,6 @@ const LoginButton = styled(OutboundLink)`
 `;
 
 interface NavigationProps {
-  title: string;
   navigation?: Edge<MenuNode>[];
   headerMenus?: Edge<HeaderMenuItem>[];
   navHidden?: boolean;

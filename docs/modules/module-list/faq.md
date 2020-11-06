@@ -40,32 +40,31 @@ After you accepted the invitation on your email, you will be redirected to Kata 
 
 For adding new questions, you can follow this guideline :
 
-1. Enter various language style such as formal, informal, slang, also long and short sentence. For example: label `makeaflow` then example questions should be added :  “gmn cr bikin flow yg baik y”, “gimana caranya bikin flow” and ”bagaimana cara bikin flow”.
+1. Enter various language style such as formal, informal, slang, also long and short sentence. For example: label `makeaflow` then example questions should be added : “gmn cr bikin flow yg baik y”, “gimana caranya bikin flow” and ”bagaimana cara bikin flow”.
 2. Avoid entering ambiguous data into different labels. For example: `sudah` in "Apakah sudah makan" with "Apakah sudah menikah", has different meaning. Hence, avoid using `sudah` to both labels.
-3. Match the number of questions between labels. For example, you have 3 labels such as `Buy Product`, `Checkout`, and `Shipping`.  `Buy Product` label has 20 questions, but `Checkout` label only 10 questions. You must add another 10 questions in `Checkout` label.
-
+3. Match the number of questions between labels. For example, you have 3 labels such as `Buy Product`, `Checkout`, and `Shipping`. `Buy Product` label has 20 questions, but `Checkout` label only 10 questions. You must add another 10 questions in `Checkout` label.
 
 Here's an example:
 
 ```
 Label: Create Flow
-        
+
 -Start-
 Question : gimana cara bikin flow
 Answer : Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
-        
+
 -Start-
 Question: gmn sih bikin flow yang bener
 Answer: Flow itu sifatnya harus “volatile” artinya flow tersebut harus segera ditutup ketika terjadi perpindahan flow. Caranya dengan set "volatile: true"
 -End-
-        
+
 Label : Metadata Channel
 -Start-
 Question: penggunaan metadata channel gmn
 Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID
 -End
-        
+
 -Start-
 Question: cara pake metadata channel bagaimana
 Answer: Kamu bisa menggunakan metadata channel untuk membedakan respons. Setiap metadata terdiri dari: 1. Channel type2. Channel access token3. Sender ID

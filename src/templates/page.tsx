@@ -30,7 +30,7 @@ interface PageTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      htmlAst: any;
+      html: string;
       tableOfContents: string;
       excerpt: string;
       frontmatter: {
@@ -44,7 +44,7 @@ interface PageTemplateProps extends RouteComponentProps {
   };
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const { markdownRemark, sectionList, site } = data;
   const { siteMetadata } = site;
@@ -73,7 +73,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
           )}
           <Container>
             <DocsHeader title={markdownRemark.frontmatter.title} subtitle={markdownRemark.frontmatter.description} />
-            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <MarkdownContent>{renderAst(markdownRemark.html)}</MarkdownContent>
             <DocsContribution />
             <FooterWrapper>
               {(prevPage || nextPage) && <Pagination prevPage={prevPage} nextPage={nextPage} />}
@@ -130,7 +130,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      htmlAst
+      html
       tableOfContents
       excerpt
       frontmatter {

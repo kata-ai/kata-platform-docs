@@ -13,17 +13,21 @@ const HorizontalRule = styled('hr')`
   border-top: 1px solid ${colors.grey02};
 `;
 
-export const h1 = (props: any) => <Heading size={800} as="h1" fontFamily="sansSerif" color="grey09" {...props} />;
-export const h2 = (props: any) => <Heading size={600} as="h2" mt="xl" color="grey09" {...props} />;
-export const h3 = (props: any) => <Heading size={500} as="h3" mt="xl" color="grey09" {...props} />;
-export const h4 = (props: any) => <Heading size={400} as="h4" mt="xl" color="grey09" {...props} />;
-export const h5 = (props: any) => <Heading size={400} as="h5" mt="xl" color="grey09" {...props} />;
-export const h6 = (props: any) => <Heading size={400} as="h6" mt="xl" color="grey09" {...props} />;
-export const p = (props: any) => <Paragraph size={400} mt="sm" color="grey07" {...props} />;
-export const hr = (props: any) => <HorizontalRule {...props} />;
-export const ul = (props: any) => <UnorderedList {...props} />;
-export const ol = (props: any) => <UnorderedList as="ol" color="grey07" my="xxs" {...props} />;
-export const li = (props: any) => <Paragraph size={400} as="li" color="grey07" my="xxs" {...props} />;
+export const h1 = (props: JSX.IntrinsicAttributes) => (
+  <Heading size={800} as="h1" fontFamily="sansSerif" color="grey09" {...props} />
+);
+export const h2 = (props: JSX.IntrinsicAttributes) => <Heading size={600} as="h2" mt="xl" color="grey09" {...props} />;
+export const h3 = (props: JSX.IntrinsicAttributes) => <Heading size={500} as="h3" mt="xl" color="grey09" {...props} />;
+export const h4 = (props: JSX.IntrinsicAttributes) => <Heading size={400} as="h4" mt="xl" color="grey09" {...props} />;
+export const h5 = (props: JSX.IntrinsicAttributes) => <Heading size={400} as="h5" mt="xl" color="grey09" {...props} />;
+export const h6 = (props: JSX.IntrinsicAttributes) => <Heading size={400} as="h6" mt="xl" color="grey09" {...props} />;
+export const p = (props: JSX.IntrinsicAttributes) => <Paragraph size={400} mt="sm" color="grey07" {...props} />;
+export const hr = (props: JSX.IntrinsicAttributes) => <HorizontalRule {...props} />;
+export const ul = (props: JSX.IntrinsicAttributes) => <UnorderedList {...props} />;
+export const ol = (props: JSX.IntrinsicAttributes) => <UnorderedList as="ol" color="grey07" {...props} />;
+export const li = (props: JSX.IntrinsicAttributes) => (
+  <Paragraph size={400} as="li" color="grey07" my="xxs" {...props} />
+);
 export const table = styled('table')`
   width: 100%;
   margin: ${space.lg}px 0;

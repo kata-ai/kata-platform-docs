@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors } from 'utils/variables';
 import { Heading, Paragraph, Box } from 'components/foundations';
 
-const DocsContribution: React.SFC = () => (
+const DocsContribution: React.FC = () => (
   <Wrapper mt="xl" pt="xl">
     <Heading size={500} mt={0} mb="sm">
       Contributing to the Documentation
@@ -12,7 +12,8 @@ const DocsContribution: React.SFC = () => (
       Is something missing/incorrect? Please let us know by contacting{' '}
       <a href="mailto:support@kata.ai" target="_blank" rel="noopener noreferrer">
         <strong>support@kata.ai</strong>
-      </a>{'. '}
+      </a>
+      {'. '}
       If you know how to fix it straight away, don’t hesitate to{' '}
       <a href="https://github.com/kata-ai/kata-platform-docs" target="_blank" rel="noopener noreferrer">
         create a pull request

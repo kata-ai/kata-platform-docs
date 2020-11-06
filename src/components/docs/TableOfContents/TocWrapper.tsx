@@ -29,9 +29,9 @@ const TocWrapper = styled('section')<ToggleableProps>`
     padding: 24px;
     background-color: ${colors.white};
     z-index: ${layerIndexes.overlay - 5};
-    visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
-    opacity: ${props => (props.isOpen ? 1 : 0)};
-    transform: ${props => (props.isOpen ? 'translateY(0)' : 'translateY(64px)')};
+    visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
+    opacity: ${(props) => (props.isOpen ? 1 : 0)};
+    transform: ${(props) => (props.isOpen ? 'translateY(0)' : 'translateY(64px)')};
     transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     overflow-y: auto;
   }

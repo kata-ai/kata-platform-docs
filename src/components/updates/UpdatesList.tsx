@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { colors } from 'utils/variables';
 import { UpdatePost } from '../../interfaces/gatsby';
 import { Edge } from '../../interfaces/nodes';
-import { colors } from 'utils/variables';
 
 interface UpdatesListProps {
   postsList?: Edge<UpdatePost>[];
