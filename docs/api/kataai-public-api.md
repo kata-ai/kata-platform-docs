@@ -1188,9 +1188,9 @@ GET /projects/:projectId/environments/:environmentId/channels/:channelId
 
 **Access Control**
 
-- <span id="BIBACApd9AJ">`read_own_channels`</span>
-- <span id="BIBACAReKe1">if session belongs to user or team</span>
-- <span id="BIBACAsHppH">`read_any_channels`</span>
+- `read_own_channels`
+- if session belongs to user or team
+- `read_any_channels`
 
 **Response**
 
@@ -1217,5 +1217,110 @@ DELETE /projects/:projectId/environments/:environmentId/channels/:channelId
 ```js
 {
   ...Channel
+}
+```
+
+## Team API
+
+### Get Teams
+
+```
+GET /users/:userId/teams
+```
+
+**Response**
+
+```
+Team[]
+```
+
+### Create Team
+
+POST /teams
+
+**Body**
+
+```js
+{
+  ...Team
+}
+```
+
+**Response**
+
+```ts
+interface ResponseObject extends Team {
+  members: {
+    userId: string;
+    username: string;
+    roleId: string;
+    role: string;
+  }[];
+}
+```
+
+### Get Team
+
+```
+GET /teams/:teamId
+```
+
+**Response**
+
+```ts
+interface ResponseObject extends Team {
+  members: {
+    userId: string;
+    username: string;
+    roleId: string;
+    role: string;
+  }[];
+}
+```
+
+### Delete Team
+
+```
+DELETE /teams/{teamname}
+```
+
+**Response**
+
+```js
+{
+  ...Team
+}
+```
+
+### Add Member to a Team
+
+POST /teams/:teamId/users/:userId
+
+**Body**
+
+```ts
+interface RequestPayload {
+  role: string;
+}
+```
+
+**Response**
+
+```ts
+interface ResponseObject {
+  role: string;
+}
+```
+
+### Remove Member from a Team
+
+DELETE /teams/{teamname}/users/{username}
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  username: string;
+  role: string;
 }
 ```

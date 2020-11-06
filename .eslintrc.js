@@ -6,17 +6,11 @@ module.exports = {
     browser: true,
     jest: true
   },
-  extends: [
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['airbnb', 'prettier', 'plugin:prettier/recommended'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    camelcase: 'off',
     'dot-notation': 'off',
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
@@ -45,6 +39,11 @@ module.exports = {
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'prettier/@typescript-eslint'
+      ],
       parserOptions: {
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true
