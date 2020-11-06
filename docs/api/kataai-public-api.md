@@ -30,13 +30,13 @@ interface Project {
   cmsLatestRevision?: string;
 
   options: {
-    bot: boolean,
-    cms: boolean,
-    nlu: boolean,
-    timezone: number,
-    nluVisibility: "private" | "public",
-    nluLang: string,
-    nluId: string,
+    bot: boolean;
+    cms: boolean;
+    nlu: boolean;
+    timezone: number;
+    nluVisibility: 'private' | 'public';
+    nluLang: string;
+    nluId: string;
   };
 }
 ```
@@ -53,7 +53,7 @@ interface Deployment {
   nluRevision?: string;
   cmsRevision?: string;
 
-  modules: null
+  modules: null;
 }
 ```
 
@@ -75,17 +75,7 @@ interface Environment {
 interface Channel {
   id?: string;
   name: string;
-  type:
-    | "generic"
-    | "line"
-    | "fbmessenger"
-    | "telegram"
-    | "twitter"
-    | "slack"
-    | "spark"
-    | "bbm"
-    | "qiscus"
-    | "whatsapp";
+  type: 'generic' | 'line' | 'fbmessenger' | 'telegram' | 'twitter' | 'slack' | 'spark' | 'bbm' | 'qiscus' | 'whatsapp';
   url: string;
   rpmLimit?: number;
   agentId?: string;
@@ -99,16 +89,16 @@ interface Channel {
 
 ```ts
 interface Bot {
-    id: string;
-    name: string;
-    version: string;
-    desc: string;
-    lang: string;
-    timezone: number;
-    flows: { [name: string]: Flow };
-    nlus?: { [name: string]: Nlu};
-    methods?: { [name: string]: string | Method };
-    config?: JsonObject;
+  id: string;
+  name: string;
+  version: string;
+  desc: string;
+  lang: string;
+  timezone: number;
+  flows: { [name: string]: Flow };
+  nlus?: { [name: string]: Nlu };
+  methods?: { [name: string]: string | Method };
+  config?: JsonObject;
 }
 ```
 
@@ -120,13 +110,13 @@ interface Flow {
   priority?: number;
   expire?: number;
   volatile?: boolean;
-  intents: { [i: string] : Intent };
-  states?: { [i: string] : State };
+  intents: { [i: string]: Intent };
+  states?: { [i: string]: State };
   stateMapper?: string;
-  stateActions?: { [i: string] : StateAction | StateAction[] };
-  actions?: { [i: string] : Action };
-  methods?: { [name: string] : string | Method };
-  nlus?: { [name: string] : Nlu};
+  stateActions?: { [i: string]: StateAction | StateAction[] };
+  actions?: { [i: string]: Action };
+  methods?: { [name: string]: string | Method };
+  nlus?: { [name: string]: Nlu };
 }
 ```
 
@@ -135,14 +125,14 @@ interface Flow {
 ```ts
 interface Intent {
   condition?: string | string[];
-  type?: "data" | "text" | "command";
+  type?: 'data' | 'text' | 'command';
   classifier?: (IntentClassifier | string) | (IntentClassifier | string)[];
   initial?: boolean;
   priority?: number;
   fallback?: boolean;
   attributes?: {
-    [i: string]: (IntentAttribute | string);
-  }
+    [i: string]: IntentAttribute | string;
+  };
 }
 ```
 
@@ -192,7 +182,7 @@ interface StateTransition {
   condition?: string | string[];
   fallback?: boolean;
   priority?: number;
-  mapping?: string | { [name: string]: string};
+  mapping?: string | { [name: string]: string };
 }
 ```
 
@@ -238,7 +228,6 @@ interface Method {
 }
 ```
 
-
 ### Message Types
 
 **Nlu**
@@ -246,20 +235,20 @@ interface Method {
 ```ts
 interface NLU {
   name: string;
-  lang: "id" | "en";
-  visibility: "public" | "private";
+  lang: 'id' | 'en';
+  visibility: 'public' | 'private';
   entities: {
     entity_name: {
       root?: string; //username:nlu/entity_name
-      type: "dict" | "trait" | "phrase";
+      type: 'dict' | 'trait' | 'phrase';
       profile: string;
       relProfile?: string;
       labels?: string[];
       belongsTo?: string;
-      dictionary?: { [key: string]: string[]};
+      dictionary?: { [key: string]: string[] };
       resolver?: string;
-    }
-  }
+    };
+  };
 }
 ```
 
@@ -282,22 +271,24 @@ interface TrainingEntity {
   start: number;
   end: number;
   value: string;
-  belongsTo?: {entity: string, id: string};
+  belongsTo?: { entity: string; id: string };
 }
 ```
+
 ​
+
 ### Token
 
 ```ts
 interface Token {
-    id: string; // Bearer token
-    type: string;
-    label: string;
-    userId: string;
-    teamId: string;
-    botId: string;
-    roleId: string;
-    expire: number;
+  id: string; // Bearer token
+  type: string;
+  label: string;
+  userId: string;
+  teamId: string;
+  botId: string;
+  roleId: string;
+  expire: number;
 }
 ```
 
@@ -450,7 +441,6 @@ GET /projects/:projectId
 
 **Access Control**
 
-
 - `read_own_projects`
 - if project belongs to user or team
 - `read_any_projects`
@@ -485,16 +475,245 @@ PUT /projects/:projectId:
 }
 ```
 
-### Delete Project
+## Bot API
+
+### List Bots
+
+_Removed, see [List Projects](#list-projects)_
+
+### Create Bot
+
+_Removed, see [Create Project](#create-project)_
+
+### Get Bot
 
 ```
-DELETE /projects/:projectId
+GET /projects/:projectId/bot/
+```
+
+**Response**
+
+```js
+{
+  ...Bot
+}
+```
+
+### Update Bot (create new bot revision)
+
+To update bot, it is done by creating a new bot revision.
+
+```
+POST /projects/:projectId/bot/revisions/
+```
+
+**Body**
+
+```js
+{
+...Bot
+}
+```
+
+**Response**
+
+```js
+{
+  ...Bot,
+  revision: "newRevisionHash"
+}
+```
+
+**Notes**
+
+- If version already exist, it will be rejected
+
+## Bot Converse API
+
+**Overview**
+
+To converse, begin by sending initial session and then use the returned/updated session on new request
+
+```js
+let session = initial_session;
+
+while (conversing) {
+  let { responses, session } = converse(messageFromUser, session);
+  // the retuned session will be used for the next conversation
+}
+```
+
+![](./images/Docs_Engineering_blobs_VsBrLWbXbPeWHf7a3Chadw.png)
+
+### Converse
+
+```
+POST /projects/{projectId}/bot/converse
+```
+
+**Body:**
+
+```ts
+interface RequestPayload {
+  session: Session;
+  message: {
+    type: 'text';
+    content: string;
+  };
+  revision?: string;
+  tag?: string;
+  variables?: object;
+}
+```
+
+Initial session:
+
+```ts
+const initialSession: Session = {
+  channel_id: 'console-channel',
+  environment_id: 'console-environment',
+  states: {},
+  contexes: {},
+  history: [],
+  current: null,
+  meta: null,
+  timestamp: Date.now(),
+  data: {},
+  created_at: Date.now(),
+  updated_at: Date.now(),
+  session_start: Date.now(),
+  session_id: 'test~from~console',
+  id: 'test~from~console'
+};
+```
+
+Example:
+
+```json
+{
+  "session": {
+    "channel_id": "console-channel",
+    "environment_id": "console-environment",
+    "states": {},
+    "contexes": {},
+    "history": [],
+    "current": null,
+    "meta": null,
+    "timestamp": 1547107552237,
+    "data": {},
+    "created_at": 1547107552237,
+    "updated_at": 1547107552237,
+    "session_start": 1547107552237,
+    "session_id": "test~from~console",
+    "id": "test~from~console"
+  },
+  "message": {
+    "type": "text",
+    "content": "your-text-here"
+  }
+}
+```
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  messages: Message[];
+  responses: Response[];
+  session: Session;
+}
+```
+
+Example:
+
+```json
+{
+  "messages": [
+    {
+      "type": "text",
+      "content": "a",
+      "id": "34cc49f5-9634-452d-a5ec-5995be9b05b3",
+      "intent": "fallback",
+      "attributes": {}
+    }
+  ],
+  "responses": [
+    {
+      "type": "text",
+      "content": "sorry!",
+      "action": "text",
+      "id": "a268afd9-2621-465b-8d8c-c682ae4a22cb",
+      "refId": "34cc49f5-9634-452d-a5ec-5995be9b05b3",
+      "flow": "hello",
+      "intent": "fallback"
+    }
+  ],
+  "session": {
+    "id": "test~from~console",
+    "states": {},
+    "contexes": {},
+    "history": [],
+    "current": null,
+    "meta": {
+      "lastFlow": "hello",
+      "lastState": "other",
+      "end": true
+    },
+    "timestamp": 0,
+    "data": {}
+  },
+  "duration": 161
+}
+```
+
+## Draft API
+
+### Get Draft
+
+```
+GET /projects/:projectId/bot/draft
 ```
 
 **Response:**
 
 ```js
 {
-  ...Project
+  ...BotDescriptor
+}
+```
+
+### Create or Update Bot Draft
+
+```
+PUT /projects/:projectId/bot/draft
+```
+
+**Body:**
+
+```js
+{
+  ...BotDescriptor
+}
+```
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  draftId: string;
+}
+```
+
+### Delete bot draft
+
+```
+DELETE /projects/:projectId/bot/draft
+```
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  draftId: string;
 }
 ```
