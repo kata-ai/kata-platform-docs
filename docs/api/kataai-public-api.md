@@ -1328,3 +1328,358 @@ interface ResponseObject {
   role: string;
 }
 ```
+
+## NLU API
+
+### Get NLUs
+
+```
+GET /projects/:projectId/nlus
+```
+
+**Query Params:**
+
+- `limit: number`
+- `page: number`
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  data: {
+    name: string;
+    lang: string;
+    visibility: string;
+  }[];
+}
+```
+
+### Create NLU
+
+See [Create Project](#create-project)
+
+### Get NLU
+
+```
+GET /projects/:projectId/nlus/{nluName}
+```
+
+**Response**
+
+```ts
+interface ResponseObject {
+  name: string;
+  lang: string;
+  visibility: string;
+}
+```
+
+### Update NLU
+
+```
+PUT** /projects/:projectId/nlus/{nluName}
+```
+
+**Body:**
+
+```js
+{
+  ...NLU
+}
+```
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  name: string;
+  lang: string;
+  visibility: string;
+}
+```
+
+### Get Training Data
+
+```
+GET /projects/:projectId/nlus/{nluName}/training_data
+```
+
+**Query Params**
+
+- `limit: number`
+- `page: number`
+
+**Response**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  data: string[];
+}
+```
+
+### Update Training Data
+
+PUT /projects/:projectId/nlus/{nluName}/training_data/{id}
+
+**Body (raw/json)**
+
+```ts
+interface RequestPayload extends Partial<TrainingData> {}
+```
+
+**Response**
+
+```ts
+interface ResponseObject extends Partial<TrainingData> {
+  created_at: string;
+  updated_at: string;
+}
+```
+
+### Retrain NLU
+
+```
+POST /projects/:projectId/nlus/{nluName}/retrain
+```
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  count: number;
+  status: string;
+}
+```
+
+### Train NLU
+
+```
+POST /projects/:projectId/nlus/{nluName}/train
+```
+
+**Body (form-data)**
+
+```
+sentence: string[];
+```
+
+or
+
+```
+file: TrainingDataFile
+```
+
+**Response**
+
+```ts
+interface ResponseObject {
+  count: number;
+  status: string;
+}
+```
+
+### Predict NLU
+
+POST /projects/:projectId/nlus/{nluName}/predict
+
+**Body (form-data):**
+
+```
+sentence: string[];
+```
+
+or
+
+```
+file: TrainingDataFile
+```
+
+**Response**
+
+```json
+{
+  "result": {
+    "LOCATION": [
+      {
+        "score": 0.9979113603452706,
+        "value": "malang",
+        "start": 14,
+        "end": 20
+      }
+    ],
+    "PERSON": [
+      {
+        "score": 0.6948274019595797,
+        "value": "gege",
+        "start": 4,
+        "end": 8
+      }
+    ]
+  }
+}
+```
+
+### Debug NLU
+
+```
+POST /projects/:projectId/nlus/{nluName}/debug
+```
+
+**Body (form-data)**
+
+```
+sentence: string
+```
+
+**Response**
+
+```ts
+interface ResponseObject {
+  debug: JSONObject;
+}
+```
+
+## NLU Entity API
+
+### Get Entities
+
+```
+GET /projects/:projectId/nlus/{nluName}/entities
+```
+
+**Query Params:**
+
+- `limit: number`
+- `page: number`
+
+**Response:**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  data: Entity[];
+}
+```
+
+### Create Entity
+
+```
+POST /projects/:projectId/nlus/{nluName}/entities
+```
+
+**Body**
+
+```js
+{
+  ...Entity
+}
+```
+
+**Response**
+
+```js
+{
+  ...Entity
+}
+```
+
+### Get Entity
+
+```
+GET /projects/:projectId/nlus/{nluName}/entities/{entityName}
+```
+
+**Response**
+
+```js
+{
+  ...Entity
+}
+```
+
+### Update Entity
+
+```
+PUT /projects/:projectId/nlus/{nluName}/entities/{entityName}
+```
+
+**Body**
+
+```js
+{
+  ...Entity
+}
+```
+
+**Response**
+
+```js
+{
+  ...Entity
+}
+```
+
+### Delete Entity
+
+```
+DELETE /projects/:projectId/nlus/{nluName}/entities/{entityName}
+```
+
+**Response**
+
+```js
+{
+  ...Entity
+}
+```
+
+## NLU Entity Profile API
+
+### Get Profiles
+
+```
+GET /nlus/profiles
+```
+
+**Query Params**
+
+- `limit: number`
+- `page: number`
+
+**Response**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  items: string[];
+}
+```
+
+## Analytics API
+
+### List Transcript
+
+```
+GET /analytics/:botId/:environmentName/list_transcript
+```
+
+**Query Params**
+
+- `startTimeStamp: number`
+- `endTimeStamp: number`
+
+**Response**
+
+```
+{[key: string]: string}[]
+```
