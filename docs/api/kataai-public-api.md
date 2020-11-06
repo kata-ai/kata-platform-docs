@@ -370,17 +370,17 @@ POST /projects/
 
 **Body**
 
-```
-{
-  name: string,
+```ts
+interface RequestPayload {
+  name: string;
 
   options: {
-    bot: boolean,
-    cms: boolean,
-    nlu: boolean,
-    timezone: number,
-    nluVisibility: "private" | "public",
-    nluLang: "en" | "id" | string,
+    bot: boolean;
+    cms: boolean;
+    nlu: boolean;
+    timezone: number;
+    nluVisibility: 'private' | 'public';
+    nluLang: 'en' | 'id' | string;
   };
 }
 ```
@@ -551,7 +551,7 @@ while (conversing) {
 POST /projects/{projectId}/bot/converse
 ```
 
-**Body:**
+**Body**
 
 ```ts
 interface RequestPayload {
@@ -614,7 +614,7 @@ Example:
 }
 ```
 
-**Response:**
+**Response**
 
 ```ts
 interface ResponseObject {
@@ -674,7 +674,7 @@ Example:
 GET /projects/:projectId/bot/draft
 ```
 
-**Response:**
+**Response**
 
 ```js
 {
@@ -688,7 +688,7 @@ GET /projects/:projectId/bot/draft
 PUT /projects/:projectId/bot/draft
 ```
 
-**Body:**
+**Body**
 
 ```js
 {
@@ -696,7 +696,7 @@ PUT /projects/:projectId/bot/draft
 }
 ```
 
-**Response:**
+**Response**
 
 ```ts
 interface ResponseObject {
@@ -710,10 +710,336 @@ interface ResponseObject {
 DELETE /projects/:projectId/bot/draft
 ```
 
-**Response:**
+**Response**
 
 ```ts
 interface ResponseObject {
   draftId: string;
+}
+```
+
+## Deployment API
+
+### Create New Deployment Version
+
+```
+POST /projects/:projectId/deployment/versions
+```
+
+**Access Control:**
+
+- `create_own_deployments`
+- if deployment belongs to user or team
+- `create_any_deployments`
+
+**Body**
+
+```js
+{
+  ...Deployment
+}
+```
+
+Example:
+
+```json
+{
+  "version": "0.0.1",
+  "botRevision": "myBotRevisionHash",
+  "modules": null
+}
+```
+
+**Response**
+
+```js
+{
+  ...Deployment
+}
+```
+
+Example:
+
+```json
+{
+  "id": "myProjectId",
+  "name": "myProjectId~0.0.1",
+  "version": "0.0.1",
+  "botId": "myProjectId",
+  "botRevision": "myBotRevisionHash",
+  "modules": null
+}
+```
+
+### Get Latest Deployment Version
+
+```
+GET /projects/:projectId/deployment/
+```
+
+**Access Control**
+
+- `read_own_deployments`
+- if deployment belongs to user or team
+- `read_any_deployments`
+
+**Response:**
+
+```js
+{
+  ...Deployment
+}
+```
+
+### Get Deployment Version
+
+```
+GET /projects/:projectId/deployment/versions/:version
+```
+
+**Access Control**
+
+- `read_own_deployments`
+- if deployment belongs to user or team
+- `read_any_deployments`
+
+**Response:**
+
+```js
+{
+  ...Deployment
+}
+```
+
+### List Deployment Versions
+
+```
+GET /projects/:projectId/deployment/versions/
+```
+
+**Access Control**
+
+- `read_own_deployments`
+- if deployment belongs to user or team
+- `read_any_deployments`
+
+**Response**
+
+```js
+{
+  ...Deployment
+}
+```
+
+### Update Deployment Version
+
+```
+PUT /projects/:projectId/deployment/versions/:version
+```
+
+**Access Control**
+
+- `update_own_deployments`
+- if deployment belongs to user or team
+- `update_any_deployments`
+
+**Body**
+
+```js
+{
+  ...Deployment
+}
+```
+
+**Response**
+
+```js
+{
+  ...Deployment
+}
+```
+
+### Delete Deployment version
+
+```
+DELETE /projects/:projectId/deployment/versions/:version
+```
+
+**Access Control**
+
+- `delete_own_deployments`
+- if deployment belongs to user or team
+- `delete_any_deployments`
+
+**Response:**
+
+```js
+{
+  ...Deployment
+}
+```
+
+## Environment API
+
+### list ALL environments
+
+```
+GET /projects/:projectId/environments
+```
+
+**Access Control**
+
+- `list_own_environments`
+- if environments belongs to user or team
+- `list_any_environments`
+
+**Query Params**
+
+- `limit: number`
+- `page: number`
+
+**Response**
+
+```ts
+interface ResponseObject {
+  page: number;
+  limit: number;
+  total: number;
+  data: Deployment[];
+}
+```
+
+### Get Environment
+
+```
+GET /projects/:projectId/environments/:environmentId:
+```
+
+**Access Control**
+
+- `list_own_environments`
+- if environments belongs to user or team
+- `list_any_environments`
+
+**Response**
+
+```js
+{
+  ...Environment
+}
+```
+
+### Create Environment
+
+```
+POST /projects/:projectId/environments
+```
+
+**Access Control:**
+
+- `create_own_environments`
+- if environments belongs to user or team
+- `create_any_environments`
+
+**Body**
+
+```ts
+interface RequestPayload {
+  depId: projectId;
+  depVersion: deployment.version;
+  name;
+  slug;
+}
+```
+
+depVersion: the selected deployment version
+
+Example
+
+```json
+{
+  "depId": "projectId",
+  "depVersion": "0.0.1",
+  "name": "Development",
+  "slug": "katatelco-dev"
+}
+```
+
+**Response**
+
+```js
+{
+  ...Environment
+}
+```
+
+Example:
+
+```json
+{
+  "id": "unique-id",
+  "depId": "projectId",
+  "depVersion": "0.0.1",
+  "name": "Development",
+  "slug": "katatelco-dev",
+  "channels": []
+}
+```
+
+### Update Environment
+
+Update Environment can be used to change the Deployment version
+
+```
+PUT /projects/:projectId/environments/:environmentId
+```
+
+**Access Control**
+
+- `update_own_environments`
+- if environments deployment belongs to user or team
+- `update_any_environments`
+
+**Body:**
+
+```ts
+interface RequestPayload {
+  depVersion: deployment.version;
+}
+```
+
+Example
+
+```json
+{
+  "depVersion": "0.0.2"
+}
+```
+
+**Response**
+
+```js
+{
+  ...Environment
+}
+```
+
+### Delete Environments
+
+```
+DELETE /projects/:projectId/environments/:environmentId
+```
+
+**Access Control**
+
+- `delete_own_environments`
+- if environments belongs to user or team
+- `delete_any_environments`
+
+**Response:**
+
+```js
+{
+  ...Environment
 }
 ```
