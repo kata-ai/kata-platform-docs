@@ -190,6 +190,16 @@
     ]
   },
   {
+    "title": "API",
+    "items": [
+      {
+        "id": "kataai-public-api",
+        "slug": "/api/kataai-public-api",
+        "title": "Kata.ai Public API"
+      }
+    ]
+  },
+  {
     "title": "Channels",
     "items": [
       {
