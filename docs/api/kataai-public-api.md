@@ -3,16 +3,6 @@ id: kataai-public-api
 title: Kata.ai Public API
 ---
 
-## Overview
-
-To deploy a bot to a channel you need to create:
-
-- Create a Project, with `bot: true`. It would create one bot under one project.
-- Create a Deployment of the selected Project, with the selected botRevision
-- Info: deploymentId equals projectId
-- Create an Environment of the selected Deployment
-- Add a Channel of the selected Environment
-
 ## Data Structure
 
 ### Project
@@ -528,144 +518,6 @@ POST /projects/:projectId/bot/revisions/
 
 - If version already exist, it will be rejected
 
-## Bot Converse API
-
-**Overview**
-
-To converse, begin by sending initial session and then use the returned/updated session on new request
-
-```js
-let session = initial_session;
-
-while (conversing) {
-  let { responses, session } = converse(messageFromUser, session);
-  // the retuned session will be used for the next conversation
-}
-```
-
-![](./images/Docs_Engineering_blobs_VsBrLWbXbPeWHf7a3Chadw.png)
-
-### Converse
-
-```
-POST /projects/{projectId}/bot/converse
-```
-
-**Body**
-
-```ts
-interface RequestPayload {
-  session: Session;
-  message: {
-    type: 'text';
-    content: string;
-  };
-  revision?: string;
-  tag?: string;
-  variables?: object;
-}
-```
-
-Initial session:
-
-```ts
-const initialSession: Session = {
-  channel_id: 'console-channel',
-  environment_id: 'console-environment',
-  states: {},
-  contexes: {},
-  history: [],
-  current: null,
-  meta: null,
-  timestamp: Date.now(),
-  data: {},
-  created_at: Date.now(),
-  updated_at: Date.now(),
-  session_start: Date.now(),
-  session_id: 'test~from~console',
-  id: 'test~from~console'
-};
-```
-
-Example:
-
-```json
-{
-  "session": {
-    "channel_id": "console-channel",
-    "environment_id": "console-environment",
-    "states": {},
-    "contexes": {},
-    "history": [],
-    "current": null,
-    "meta": null,
-    "timestamp": 1547107552237,
-    "data": {},
-    "created_at": 1547107552237,
-    "updated_at": 1547107552237,
-    "session_start": 1547107552237,
-    "session_id": "test~from~console",
-    "id": "test~from~console"
-  },
-  "message": {
-    "type": "text",
-    "content": "your-text-here"
-  }
-}
-```
-
-**Response**
-
-```ts
-interface ResponseObject {
-  messages: Message[];
-  responses: Response[];
-  session: Session;
-}
-```
-
-Example:
-
-```json
-{
-  "messages": [
-    {
-      "type": "text",
-      "content": "a",
-      "id": "34cc49f5-9634-452d-a5ec-5995be9b05b3",
-      "intent": "fallback",
-      "attributes": {}
-    }
-  ],
-  "responses": [
-    {
-      "type": "text",
-      "content": "sorry!",
-      "action": "text",
-      "id": "a268afd9-2621-465b-8d8c-c682ae4a22cb",
-      "refId": "34cc49f5-9634-452d-a5ec-5995be9b05b3",
-      "flow": "hello",
-      "intent": "fallback"
-    }
-  ],
-  "session": {
-    "id": "test~from~console",
-    "states": {},
-    "contexes": {},
-    "history": [],
-    "current": null,
-    "meta": {
-      "lastFlow": "hello",
-      "lastState": "other",
-      "end": true
-    },
-    "timestamp": 0,
-    "data": {}
-  },
-  "duration": 161
-}
-```
-
 ## Draft API
 
 ### Get Draft
@@ -1024,26 +876,6 @@ Example
 }
 ```
 
-### Delete Environments
-
-```
-DELETE /projects/:projectId/environments/:environmentId
-```
-
-**Access Control**
-
-- `delete_own_environments`
-- if environments belongs to user or team
-- `delete_any_environments`
-
-**Response:**
-
-```js
-{
-  ...Environment
-}
-```
-
 ## Channel API
 
 ### List Channels
@@ -1310,21 +1142,6 @@ interface RequestPayload {
 
 ```ts
 interface ResponseObject {
-  role: string;
-}
-```
-
-### Remove Member from a Team
-
-```
-DELETE /teams/{teamname}/users/{username}
-```
-
-**Response:**
-
-```ts
-interface ResponseObject {
-  username: string;
   role: string;
 }
 ```
