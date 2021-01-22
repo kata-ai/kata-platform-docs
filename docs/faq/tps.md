@@ -16,24 +16,14 @@ It means we limit the incoming & outgoing message traffic in Kata Platform. Thin
 
 We separate the categories of the project into two: Paid Project & Free Project.
 
-- **For Paid Project:** we offer a choice of 3, 5, 10, 15, 30, 60 TPS limit exclusively for each Paid Project (our Rate Card is shown below), also each Paid Project will have a verified badge in Kata Platform.
-
-| TPS | Estimated MAU | API Integrations | Tech Support Availability | Analytics & Reporting | Monthly Subscription |
-| --- | ------------- | ---------------- | ------------------------- | --------------------- | -------------------- |
-| 3   | ~500          | Up to 1 API      | Office Hours              | Basic                 | **IDR5,000,000**     |
-| 5   | ~1,000        | Up to 1 API      | Office Hours              | Basic                 | **IDR7,000,000**     |
-| 10  | ~5,000        | Up to 2 APIs     | Office Hours              | Basic                 | **IDR15,000,000**    |
-| 15  | ~15,000       | Up to 5 APIs     | Office Hours              | Basic                 | **IDR30,000,000**    |
-| 30  | ~50,000       | Up to 10 APIs    | Office Hours              | Advanced              | **IDR60,000,000**    |
-| 60  | ~80,000       | Unlimited APIs   | 24/7 Support              | Advanced              | **IDR100,000,000**   |
-
+- **For Paid Project:** we offer an exclusive TPS limit for each Paid Project, also all Paid Project will have a verified badge in Kata Platform to.
 - **For Free Project:** we offer a shared TPS limit across the Free Project’s user.
 
 Should you need help to upgrade from Free Project to Paid Project or upgrade your TPS limit, please contact us (<business@kata.ai>) and we’ll be happy to assist you.
 
 ## What is the impact of the TPS limit for my project?
 
-Imagine a queue, when your project has reached the TPS limit the next message will have to wait until the previous message has done processing. So your user will experience a delay in receiving or sending the message. We will also send an email notification if the Project has reached the TPS limit.
+When your project has reached the TPS limit, the next message will have to wait until the previous message has done processing. Resulting in your user to experience a delay in receiving or sending the message. So, the bigger your TPS limit the bigger your project’s bandwidth to process the message, resulting in less delay. It’s especially important if your project has a big customer base. We will also send an email notification every time your Paid Project has reached the TPS limit.
 
 ## Does the TPS limit apply to all channels in Kata Platform?
 
