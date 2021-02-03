@@ -6,7 +6,7 @@ title: TPS FAQ
 
 ## What is TPS in Kata Platform?
 
-TPS stands for Transaction per Second, Transaction consists of incoming & outgoing message traffic through Kata Platform. Now we have a limit for the transaction happening in each project in Kata Platform.
+TPS stands for Transaction per Second, Transaction consists of incoming & outgoing message traffic through Kata Platform. So, we have a limit for the transaction happening in each project in Kata Platform.
 
 ## What do you mean by limit for the transaction?
 
@@ -16,7 +16,7 @@ It means we limit the incoming & outgoing message traffic in Kata Platform. Thin
 
 We separate the categories of the project into two: Paid Project & Free Project.
 
-- **For Paid Project:** we offer an exclusive TPS limit for each Paid Project, also all Paid Project will have a verified badge in Kata Platform to.
+- **For Paid Project:** we offer an exclusive TPS limit for each Paid Project, also all Paid Project will have a verified badge in Kata Platform.
 
 ![faq-tps-1](./images/faq-tps-1.png)
 
@@ -26,7 +26,7 @@ Should you need help to upgrade from Free Project to Paid Project or upgrade you
 
 ## What is the impact of the TPS limit for my project?
 
-When your project has reached the TPS limit, the next message will have to wait until the previous message has done processing. Resulting in your user to experience a delay in receiving or sending the message. So, the bigger your TPS limit the bigger your project’s bandwidth to process the message, resulting in less delay. It’s especially important if your project has a big customer base. We will also send an email notification to the project creator when the Paid Project has reached the TPS limit.
+When your project has reached the TPS limit, the next message will have to wait until the previous message has done processing. Resulting in your user to experience a delay in receiving or sending the message. So, the bigger your TPS limit, the bigger your project’s bandwidth to process the message, resulting in less delay. It’s especially important if your project has a big customer base. We will also send an email notification to the project creator when the Paid Project has reached the TPS limit.
 
 ## Does the TPS limit apply to all channels in Kata Platform?
 
@@ -39,3 +39,11 @@ Unfortunately no, but you’re free to choose among the subscription plan we hav
 ## How do I upgrade my Free Project to Paid Project?
 
 We’re glad you decide to support us! Please let us know your interest via email: <business@kata.ai> and we would be happy to assist you.
+
+## Does using the emulator in Kata Platform count as transaction usage?
+
+No, emulator usage isn’t affected by the TPS limiter.
+
+## Does TPS limiter apply also for on premise deployment?
+
+Currently no, TPS limiter only apply on cloud deployment.
