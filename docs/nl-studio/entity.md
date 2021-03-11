@@ -91,14 +91,12 @@ Entity type phrase is an entity tagger that aim to tag general words for its spe
   - Word Tagger to predict words in e-mail format. No need to fill _field labels._
   - Example: [`admin@domain.com`](mailto:admin@domain.com), [`admin-2017@domain.co.id`](mailto:admin-2017@domain.co.id)
 - **entitySentiment**
-
   - Word Tagger that can predict sentiment from the tagged word.
   - Steps to use this profile :
-
-    - Define an entity (eg: items) that you want to tag
-    - Define entitySentiment with root to created entity. Fill in the label with sentiment (eg: positive / negative)
-    - Train each sentence by tagging words according to entitySentiment
-    - Example: rasa pizza aas sangat enak → tag train `aas (entitySentiment, label: positive)`
+    1. Define an entity (eg: items) that you want to tag
+    2. Define entitySentiment with root to created entity. Fill in the label with sentiment (eg: positive / negative)
+    3. Train each sentence by tagging words according to entitySentiment
+    4. Example: rasa pizza aas sangat enak → tag train `aas (entitySentiment, label: positive)`
 
 - **location**
   - Entity Tagger to find location names. No need to fill _field labels_
