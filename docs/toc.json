@@ -203,6 +203,11 @@
     "title": "Channels",
     "items": [
       {
+        "id": "channel-generic",
+        "slug": "/channels/generic/",
+        "title": "Generic Channel"
+      },
+      {
         "id": "channel-fb-messenger",
         "slug": "/channels/fb-messenger/",
         "title": "Facebook Messenger"
