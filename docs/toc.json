@@ -203,9 +203,9 @@
     "title": "Channels",
     "items": [
       {
-        "id": "channel-slack",
-        "slug": "/channels/slack/",
-        "title": "Slack"
+        "id": "channel-fb-messenger",
+        "slug": "/channels/fb-messenger/",
+        "title": "Facebook Messenger"
       },
       {
         "id": "channel-freshchat",
@@ -216,6 +216,11 @@
         "id": "channel-qiscus",
         "slug": "/channels/qiscus/",
         "title": "Qiscus"
+      },
+      {
+        "id": "channel-slack",
+        "slug": "/channels/slack/",
+        "title": "Slack"
       },
       {
         "id": "channel-telegram",
