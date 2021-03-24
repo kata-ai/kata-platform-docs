@@ -15,6 +15,14 @@ Read questions about the platform & migration from Platform 2.x to 3.0.
 
 ---
 
+## TPS FAQ
+
+Questions about Transaction per Second (TPS) limit on Kata Platform.
+
+[**Read TPS FAQ**](/faq/tps)
+
+---
+
 ## Others FAQ
 
 Other questions about Kata Platform.

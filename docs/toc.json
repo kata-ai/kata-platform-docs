@@ -190,12 +190,27 @@
     ]
   },
   {
+    "title": "API",
+    "items": [
+      {
+        "id": "kataai-public-api",
+        "slug": "/api/kataai-public-api",
+        "title": "Kata.ai Public API"
+      }
+    ]
+  },
+  {
     "title": "Channels",
     "items": [
        {
         "id": "channel-fb-messenger",
         "slug": "/channels/fb-messenger/",
         "title": "Facebook Messenger"
+      },
+      {
+        "id": "channel-freshchat",
+        "slug": "/channels/freshchat/",
+        "title": "Freshchat"
       },
       {
         "id": "channel-slack",

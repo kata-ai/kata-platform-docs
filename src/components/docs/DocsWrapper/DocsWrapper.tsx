@@ -13,7 +13,7 @@ const DocsWrapper = styled('article')<DocsWrapperProps>`
   padding: 32px;
 
   @media (min-width: ${breakpoints.lg}px) {
-    flex-direction: ${props => props.hasToc && 'row-reverse'};
+    flex-direction: ${(props) => props.hasToc && 'row-reverse'};
   }
 
   @media (max-width: ${breakpoints.lg - 1}px) {

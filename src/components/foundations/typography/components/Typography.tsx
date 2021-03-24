@@ -1,3 +1,4 @@
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   display,
   maxWidth,
@@ -22,7 +23,7 @@ import {
   LetterSpacingProps
 } from 'styled-system';
 
-import { primitives } from 'utils/primitives';
+import { styledWrapper as styled } from 'utils/primitives';
 
 export interface TypographyProps
   extends DisplayProps,
@@ -42,7 +43,7 @@ export interface TypographyProps
 /**
  * This is a base `Text` element to handle typography elements.
  */
-export const Typography = primitives.Text<TypographyProps>`
+export const Typography = styled('div').withConfig({ shouldForwardProp })<TypographyProps>`
   ${display};
   ${maxWidth};
   ${space};

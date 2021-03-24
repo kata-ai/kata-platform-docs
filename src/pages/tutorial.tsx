@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { SiteMetadata } from '../interfaces/gatsby';
 import IndexLayout from 'layouts';
 import { Page } from 'components/layout/Page';
 import { DocsWrapper } from 'components/docs/DocsWrapper';
@@ -19,6 +18,7 @@ import illustration1 from 'assets/images/tutorials/spot-hello-world.svg';
 import illustration2 from 'assets/images/tutorials/spot-cms.svg';
 import illustration3 from 'assets/images/tutorials/spot-nl-studio.svg';
 import illustration4 from 'assets/images/tutorials/spot-nl-studio-integration.svg';
+import { SiteMetadata } from '../interfaces/gatsby';
 
 interface Props {
   data: {
@@ -77,7 +77,7 @@ const TutorialCardContent = styled('div')`
   }
 `;
 
-const TutorialPage: React.SFC<Props> = ({ data }) => {
+const TutorialPage: React.FC<Props> = ({ data }) => {
   const { site } = data;
   const { siteMetadata } = site;
 
@@ -101,8 +101,8 @@ const TutorialPage: React.SFC<Props> = ({ data }) => {
                   </Heading>
                   <Paragraph>
                     Building a chatbot on Kata | Platform is quick and easy, even with a lack of programming knowledge.
-                    In this tutorial, we will learn how to create a simple bot that says "Hello World" when you message
-                    it.
+                    In this tutorial, we will learn how to create a simple bot that says &quot;Hello World&quot; when
+                    you message it.
                   </Paragraph>
                 </TutorialCardContent>
               </TutorialCard>

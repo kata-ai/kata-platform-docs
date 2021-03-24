@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { SiteMetadata } from '../interfaces/gatsby';
-import SearchBox from '../components/search/SearchBox';
 import IndexLayout from 'layouts';
 import { Page } from 'components/layout/Page';
 import { DocsWrapper } from 'components/docs/DocsWrapper';
 import { Container } from 'components/layout/Container';
 import { DocsHeader } from 'components/docs/DocsHeader';
+import SearchBox from '../components/search/SearchBox';
+import { SiteMetadata } from '../interfaces/gatsby';
 
 interface Props {
   data: {
@@ -20,7 +20,7 @@ interface Props {
 
 // FIXME: ThemeProvider is required because for some reason the 404 page doesn't mount
 // the <Layout /> component. This will be fixed when we got the time to upgrade to Gatsby v2
-const SearchPage: React.SFC<Props> = ({ data }) => (
+const SearchPage: React.FC<Props> = ({ data }) => (
   <IndexLayout>
     <Page docsPage>
       <Helmet>

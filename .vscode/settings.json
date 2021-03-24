@@ -11,6 +11,5 @@
     "public/**": true,
     "node_modules/**": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "prettier.disableLanguages": ["markdown"]
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -26,7 +26,7 @@ interface PageTemplateProps extends RouteComponentProps {
       edges: Edge<MenuNode>[];
     };
     markdownRemark: {
-      htmlAst: any;
+      html: string;
       excerpt: string;
       frontmatter: {
         id: string;
@@ -39,7 +39,7 @@ interface PageTemplateProps extends RouteComponentProps {
   };
 }
 
-const FAQTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
+const FAQTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter } = markdownRemark;
   const { siteMetadata } = site;
@@ -58,7 +58,7 @@ const FAQTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
         <DocsWrapper>
           <Container>
             <DocsHeader title={frontmatter.title} subtitle={frontmatter.description} />
-            <MarkdownContent>{renderAst(markdownRemark.htmlAst)}</MarkdownContent>
+            <MarkdownContent>{renderAst(markdownRemark.html)}</MarkdownContent>
             <DocsContribution />
             <FooterWrapper>
               <Footer
@@ -101,7 +101,7 @@ export const query = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      htmlAst
+      html
       excerpt
       frontmatter {
         id

@@ -2,13 +2,13 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+import { MarkdownContent } from 'components/page/Markdown';
+import { breakpoints, colors } from 'utils/variables';
+import { Heading, Text } from 'components/foundations';
 import renderAst from '../../utils/renderAst';
 import { UpdatePost } from '../../interfaces/gatsby';
 
 import UpdateIcon from './UpdateIcon';
-import { MarkdownContent } from 'components/page/Markdown';
-import { breakpoints, colors } from 'utils/variables';
-import { Heading, Text } from 'components/foundations';
 
 interface VersionUpdateProps {
   post: UpdatePost;
@@ -103,7 +103,7 @@ const VersionUpdate: React.FC<VersionUpdateProps> = ({ post }) => (
       <Img fluid={post.frontmatter.header_image.childImageSharp.fluid as any} style={{ maxHeight: '240px' }} />
       <PostBody>
         {post.frontmatter.subtitle && <PostTitle>{post.frontmatter.subtitle}</PostTitle>}
-        <MarkdownContent>{renderAst(post.htmlAst)}</MarkdownContent>
+        <MarkdownContent>{renderAst(post.html)}</MarkdownContent>
       </PostBody>
     </PostContent>
     <PostFooter>

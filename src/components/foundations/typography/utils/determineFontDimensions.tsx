@@ -6,7 +6,7 @@ import { themeProps, FontSizes } from 'components/Theme';
  * @param textType Either `text` or `heading`.
  * @param size The size key.
  */
-export function determineFontDimensions(textType: keyof FontSizes, size: number = 400) {
+export function determineFontDimensions(textType: keyof FontSizes, size = 400) {
   const match: any = (themeProps.fontSizes[textType] as any)[size];
 
   if (textType === 'heading') {

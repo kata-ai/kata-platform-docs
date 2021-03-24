@@ -238,7 +238,6 @@ exampleFlow:
 
 1. For setup your Google API Key, put in config in bot studio:
    `googleApiKey: thisisgoogleapikey`
-
 2. Then, call the configuration in action :
 
 ```yaml
@@ -326,19 +325,16 @@ Kata put 5 Seconds for timeout condition when hit API
 ## How to login as team in Kata-CLI ?
 
 1. First, execute `kata login` and login using your username
-
 2. Then, run `kata switch-team <TeamName>` for switch into team user
 
 ## I invited by someone as his team, but in my account the team didn't show. What should I do ?
 
 1. Try to relogin (read : logout then login again)
-
 2. Then, you shall see your team is available in account switcher
 
 ## I got an error which written "Errror: Max Recursion of 3 is reached". How to fix this error ?
 
 This error defines when your bot is move to another state more than 3 times. Solutions :
 
-1. Go to bot configuration 
-
+1. Go to bot configuration
 2. Write : `maxRecursion: 10`

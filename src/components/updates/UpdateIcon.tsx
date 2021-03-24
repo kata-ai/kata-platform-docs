@@ -62,13 +62,13 @@ const Root = styled('div')<UpdateIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${props => (props.large ? '40px' : '24px')};
-  height: ${props => (props.large ? '40px' : '24px')};
+  width: ${(props) => (props.large ? '40px' : '24px')};
+  height: ${(props) => (props.large ? '40px' : '24px')};
   font-size: 1rem;
   line-height: 1;
   vertical-align: middle;
   border-radius: 50%;
-  background-color: ${props => getBackgroundcolor(props.iconType)};
+  background-color: ${(props) => getBackgroundcolor(props.iconType)};
   overflow: hidden;
 `;
 

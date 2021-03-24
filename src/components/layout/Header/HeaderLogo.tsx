@@ -21,7 +21,7 @@ const HeaderLogo = styled('div')<HeaderLogoProps>`
   height: 100%;
   padding: 0 24px;
 
-  ${props => (props.navHidden ? hasNoSidebar : hasSidebar)}
+  ${(props) => (props.navHidden ? hasNoSidebar : hasSidebar)}
 
   @media (max-width: ${breakpoints.lg - 1}px) {
     display: none;

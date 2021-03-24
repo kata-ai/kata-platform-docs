@@ -17,7 +17,7 @@ interface Props extends RouteComponentProps {
   };
 }
 
-const NotFoundPage: React.SFC<Props> = ({ data }) => (
+const NotFoundPage: React.FC<Props> = ({ data }) => (
   <IndexLayout navHidden>
     <Page>
       <Helmet>
@@ -29,7 +29,7 @@ const NotFoundPage: React.SFC<Props> = ({ data }) => (
             404
           </Heading>
           <Text as="p" size={400} color="grey07">
-            We can't find the page you're looking for.
+            We can&apos;t find the page you&apos;re looking for.
           </Text>
           <Text as="p" size={400} color="grey07">
             <Link to="/">Go back?</Link>

@@ -43,11 +43,11 @@ const reducer: React.Reducer<NavigationState, NavigationActions> = (state, actio
   }
 };
 
-function NavigationContextProvider(props: { children: React.ReactNode }) {
+function NavigationContextProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const value = { state, dispatch };
 
-  return <NavigationContext.Provider value={value}>{props.children}</NavigationContext.Provider>;
+  return <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>;
 }
 
 const NavigationContextConsumer = NavigationContext.Consumer;
