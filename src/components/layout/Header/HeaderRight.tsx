@@ -27,15 +27,15 @@ const Wrapper = styled('div')<HeaderRightProps>`
   align-items: center;
   flex: 1;
   height: 100%;
-  justify-content: ${props => props.contents};
+  justify-content: ${(props) => props.contents};
   padding: 0 24px;
   border-bottom: 1px solid ${colors.grey02};
 
-  ${props => props.hideOnMobile && HideOnMobile}
-  ${props => props.hideOnDesktop && HideOnDesktop}
+  ${(props) => props.hideOnMobile && HideOnMobile}
+  ${(props) => props.hideOnDesktop && HideOnDesktop}
 `;
 
-const HeaderRight: React.SFC<HeaderRightProps> = ({ children, className, contents, ...rest }) => (
+const HeaderRight: React.FC<HeaderRightProps> = ({ children, className, contents, ...rest }) => (
   <Wrapper className={className} contents={contents} {...rest}>
     {children}
   </Wrapper>

@@ -15,7 +15,7 @@ export const getPageById = (sectionList: Edge<MenuNode>[], templateFile?: string
   const sectionItems = sectionList.map(({ node }) => node.items);
   const flattenedSectionItems: TocItem[] = ([] as TocItem[]).concat(...sectionItems);
 
-  return flattenedSectionItems.find(item => item.id === templateFile);
+  return flattenedSectionItems.find((item) => item.id === templateFile);
 };
 
 function isDocsPath(location: WindowLocation) {
@@ -33,7 +33,7 @@ function isDocsPath(location: WindowLocation) {
 }
 
 /** Workaround for activeClassName: https://github.com/gatsbyjs/gatsby/issues/7737 */
-export const isActive = (exact: boolean = false, additionalClassnames?: string) => ({
+export const isActive = (exact = false, additionalClassnames?: string) => ({
   isPartiallyCurrent,
   isCurrent,
   location

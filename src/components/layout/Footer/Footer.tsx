@@ -86,17 +86,17 @@ const Footer: React.FC<FooterProps> = ({ version, siteLastUpdated, socials }) =>
       <Inner>
         <FooterSection>
           <Text as="p" size={200} color="grey05">
-            Copyright &copy; {format(date, 'YYYY')} Kata.ai. All rights reserved.
+            Copyright &copy; {format(date, 'yyyy')} Kata.ai. All rights reserved.
           </Text>
           <Text as="p" size={200} color="grey05">
-            Version {version}. Last updated {format(date, 'D MMMM YYYY')}.
+            Version {version}. Last updated {format(date, 'd MMMM yyyy')}.
           </Text>
         </FooterSection>
         {socials && (
           <FooterSection>
             <SocialMediaList>
-              {socials.map((social, i) => (
-                <SocialMediaListItem key={i}>
+              {socials.map((social) => (
+                <SocialMediaListItem key={social.name}>
                   <SocialMediaLink href={social.url} target="_blank" rel="noopener noreferrer">
                     <img src={`/images/${social.imgpath}`} alt={social.name} />
                   </SocialMediaLink>

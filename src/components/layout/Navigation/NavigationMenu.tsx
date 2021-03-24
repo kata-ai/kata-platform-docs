@@ -64,7 +64,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ node }) => {
         {node.title}
       </Heading>
       <ToggleMenu>
-        {node.items.map(item => (
+        {node.items.map((item) => (
           <ToggleMenuList key={item.id}>
             <Link to={item.slug} getProps={isActive()}>
               {item.title}

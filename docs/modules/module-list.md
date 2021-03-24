@@ -20,3 +20,11 @@ FAQ Module lets your chatbot answer questions your customers often ask. It's exc
 Location Module lets your users find the nearest location of your business. This module is ideal for any industries offering face-to-face customer experiences, such as banking and retail.
 
 [**Read the Docs**](/modules/module-list/location)
+
+---
+
+## Omnichat Module
+
+Kata Omnichat is a centralized dashboard where you can handle all incoming messages from any messaging channels.
+
+[**Read the Docs**](/modules/module-list/omnichat)

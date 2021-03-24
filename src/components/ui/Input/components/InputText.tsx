@@ -51,7 +51,7 @@ const CloseButton = styled('button')`
 `;
 
 const Root = styled('div')<{ disabled?: boolean; block?: boolean }>`
-  display: ${props => (props.block ? 'block' : 'inline-block')};
+  display: ${(props) => (props.block ? 'block' : 'inline-block')};
   position: relative;
 
   ${Icon} {
@@ -147,38 +147,50 @@ function InputText(
   { className, style, block, clearable, onClearButtonClick, value, ...rest }: InputTextProps,
   ref: React.Ref<HTMLInputElement>
 ) {
+  const renderIcon = () => {
+    if (clearable) {
+      return (
+        <Icon
+          onClick={() => {
+            if (onClearButtonClick) {
+              onClearButtonClick();
+            }
+          }}
+        >
+          <CloseButton>
+            <CloseIcon height={16} width={16} />
+          </CloseButton>
+        </Icon>
+      );
+    }
+
+    if (value) {
+      return (
+        <Icon
+          onClick={() => {
+            if (onClearButtonClick) {
+              onClearButtonClick();
+            }
+          }}
+        >
+          <CloseButton>
+            <CloseIcon height={16} width={16} />
+          </CloseButton>
+        </Icon>
+      );
+    }
+
+    return (
+      <Icon>
+        <SearchIcon height={16} width={16} />
+      </Icon>
+    );
+  };
+
   return (
     <Root className={className} style={style} block={block}>
       <Input type="text" {...rest} ref={ref} />
-      {clearable ? (
-        <Icon
-          onClick={() => {
-            if (onClearButtonClick) {
-              onClearButtonClick();
-            }
-          }}
-        >
-          <CloseButton>
-            <CloseIcon height={16} width={16} />
-          </CloseButton>
-        </Icon>
-      ) : value ? (
-        <Icon
-          onClick={() => {
-            if (onClearButtonClick) {
-              onClearButtonClick();
-            }
-          }}
-        >
-          <CloseButton>
-            <CloseIcon height={16} width={16} />
-          </CloseButton>
-        </Icon>
-      ) : (
-        <Icon>
-          <SearchIcon height={16} width={16} />
-        </Icon>
-      )}
+      {renderIcon()}
     </Root>
   );
 }

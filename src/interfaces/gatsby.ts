@@ -45,5 +45,5 @@ export interface UpdatePost {
     date_formatted: string;
   };
   excerpt: string;
-  htmlAst: object;
+  html: string;
 }

@@ -12,7 +12,7 @@ const Wrapper = styled('button')<ToggleableProps>`
   bottom: 24px;
   right: 24px;
   padding: 0;
-  background-color: ${props => (props.isOpen ? colors.red06 : colors.blue06)};
+  background-color: ${(props) => (props.isOpen ? colors.red06 : colors.blue06)};
   color: ${colors.white};
   cursor: pointer;
   z-index: ${layerIndexes.overlay - 1};
@@ -55,7 +55,7 @@ interface TocFloatingButtonProps {
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const TocFloatingButton: React.SFC<TocFloatingButtonProps> = ({ className, tocIsOpen, onClick }) => (
+const TocFloatingButton: React.FC<TocFloatingButtonProps> = ({ className, tocIsOpen, onClick }) => (
   <Wrapper className={className} onClick={onClick} isOpen={tocIsOpen} aria-label="Toggle Table of Contents">
     <Inner isOpen={tocIsOpen} className={tocIsOpen ? 'is-open' : undefined}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

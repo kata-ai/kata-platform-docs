@@ -32,7 +32,7 @@ There are 13 common labels that you can utilize.
 | Phone       | General phone                                                                     | +62 80123456789, (021) 3456789, 021-5678-9012                                       |
 | Datetime    | Date and time                                                                     | hari ini, 17 Agustus 1945, tahun 2019, besok, 17/9/45, jam 3 siang, pagi ini, 19:00 |
 | Number      | Number in digit, number in word, sequence of number, mix number in digit and word | 123, 92, 9.000, satu, dua, tiga ribu, dua tiga, delapan tujuh, 9 juta, 5rb          |
-| Currency    | Currency name, money                                                              | IDR, SGD, rupiah, US dollar, Rp 5000, 5 ribu rupihah, $3, 9 USD                     |
+| Currency    | Currency name, money                                                              | IDR, SGD, rupiah, US dollar, Rp 5000, 5 ribu rupihah, \$3, 9 USD                    |
 | Area        | Unit area                                                                         | 5 meter persegi, sepuluh m2, 200 ha                                                 |
 | Duration    | Unit duration                                                                     | 3 jam, 10 detik, 5 jam 30 menit, sehari, dua hari                                   |
 | Length      | Unit lenght                                                                       | 5 meter, delapan cm                                                                 |

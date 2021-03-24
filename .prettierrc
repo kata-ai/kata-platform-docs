@@ -3,5 +3,15 @@
   "printWidth": 120,
   "tabWidth": 2,
   "singleQuote": true,
-  "semi": true
+  "semi": true,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "**/*.md",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }

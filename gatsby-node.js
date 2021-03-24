@@ -1,3 +1,5 @@
+/* eslint-disable strict */
+
 'use strict';
 
 const path = require('path');
@@ -36,7 +38,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
           const pubDate = date
             ? new Date(date)
-            : new Date(Number.parseInt(year), Number.parseInt(month) - 1, Number.parseInt(day));
+            : new Date(Number.parseInt(year, 10), Number.parseInt(month, 10) - 1, Number.parseInt(day, 10));
 
           // Blog posts are sorted by date and display the date in their header.
           createNodeField({
@@ -76,6 +78,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: 'redirect',
         value: redirect_from ? JSON.stringify(redirect_from) : ''
       });
+
+      break;
+    }
+    default: {
+      break;
     }
   }
 };
@@ -137,7 +144,7 @@ exports.createPages = async ({ graphql, actions }) => {
         toRedirect = [toRedirect];
       }
 
-      toRedirect.forEach(fromPath => {
+      toRedirect.forEach((fromPath) => {
         if (redirectToSlugMap[fromPath] != null) {
           console.error(
             `Duplicate redirect detected from "${fromPath}" to:\n` +

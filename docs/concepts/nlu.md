@@ -20,8 +20,8 @@ First we will use VerstandClassifier NLU to extract label and score of a text.
 ```yaml
 myNLU:
   type: verstandClassifier
-  ? options
-  model: someModelId
+  options:
+    model: someModelId
 ```
 
 We know that the output of verstandClassifier is `string[]`, or `null` if no match found. Now we want to rename from snake-case to hyphenated case. So we create a method called hyphenate.

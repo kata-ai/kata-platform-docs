@@ -147,7 +147,7 @@ interface PaginationProps {
   nextPage?: TocItem;
 }
 
-const Pagination: React.SFC<PaginationProps> = ({ prevPage, nextPage }) => (
+const Pagination: React.FC<PaginationProps> = ({ prevPage, nextPage }) => (
   <Wrapper>
     <WrapperInner>
       <PaginationItem>
