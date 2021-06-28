@@ -39,6 +39,7 @@ const PostHeader = styled('header')`
 `;
 
 const PostContent = styled('section')`
+  border: 1px solid ${colors.grey02};
   border-radius: 6px;
   overflow: hidden;
   z-index: 1;
@@ -46,7 +47,6 @@ const PostContent = styled('section')`
 
 const PostBody = styled('div')`
   padding: 24px;
-  border: 1px solid ${colors.grey02};
   border-top: none;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -100,7 +100,9 @@ const VersionUpdate: React.FC<VersionUpdateProps> = ({ post }) => (
       </PostHeaderRight>
     </PostHeader>
     <PostContent>
-      <Img fluid={post.frontmatter.header_image.childImageSharp.fluid as any} style={{ maxHeight: '240px' }} />
+      {post.frontmatter.header_image?.childImageSharp && (
+        <Img fluid={post.frontmatter.header_image.childImageSharp.fluid as any} style={{ maxHeight: '240px' }} />
+      )}
       <PostBody>
         {post.frontmatter.subtitle && <PostTitle>{post.frontmatter.subtitle}</PostTitle>}
         <MarkdownContent>{renderAst(post.html)}</MarkdownContent>

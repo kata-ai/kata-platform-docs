@@ -34,7 +34,7 @@ export interface UpdatePost {
     subtitle?: string;
     category: string;
     version: string;
-    header_image: {
+    header_image?: {
       childImageSharp: {
         fluid: {
           [key: string]: any;
