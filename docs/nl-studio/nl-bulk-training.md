@@ -12,19 +12,13 @@ Previously, the bulk training process was very technical because developers need
 
 Now, you can use the new Bulk Training on the Platform GUI itself to train more than 200 sentences/training data at once. These are the screenshots of our newest feature.
 
-![nl-bulk1](./images/bulk-training-1.png)
+![Upload training data file](./images/bulk-training-1.png)
 
-_Caption: Upload training data file_
-
-![nl-bulk2](./images/bulk-training-2.png)
-
-_Caption: Preview from uploaded training data from file_
+![Preview from uploaded training data from file](./images/bulk-training-2.png)
 
 You can click on this [video tutorial](https://youtu.be/qcxQqMI-Khs) or go to the NLU -> Training menu (check the screenshot below).
 
-![nl-bulk3](./images/bulk-training-3.png)
-
-_Caption: Video tutorial in bulk training_
+![Video tutorial in bulk training](./images/bulk-training-3.png)
 
 ## Why do we need this feature?
 
@@ -71,9 +65,7 @@ Labels: greetings, thank you
 
 6. The result goes here:
 
-![nl-bulk4](./images/bulk-training-4.png)
-
-_Caption: Create entity type &quot;trait&quot;_
+![Create entity type &quot;trait&quot;](./images/bulk-training-4.png)
 
 7. Click **Create** to finalize creating a new entity with &quot;greetings&quot; and &quot;thank you&quot; labels.
 
@@ -100,9 +92,7 @@ Labels: person
 
 4. The result goes here:
 
-![nl-bulk5](./images/bulk-training-5.png)
-
-_Caption: Create entity type &quot;phrase&quot;_
+![Create entity type &quot;phrase&quot;](./images/bulk-training-5.png)
 
 5. Click **Create** to create new entity with &quot;person&quot; label.
 
@@ -165,18 +155,14 @@ Prerequisites: Training data has been created as a .txt extension file.
 4. Wait for the upload process.
 5. After the upload is complete, you can review the training data file in Platform GUI.
 
-![nl-bulk6](./images/bulk-training-6.png)
-
-_Caption: Preview training data_
+![Preview training data](./images/bulk-training-6.png)
 
 6. Click on the **Train** button to train the data.
 7. You will see a customer satisfaction survey after using the feature.
 8. Fill in the survey, then click X to close the dialog.
 9. You have successfully trained your NL model with the uploaded data.
 
-![nl-bulk7](./images/bulk-training-7.png)
-
-_Caption: Successfully trained the training data_
+![Successfully trained the training data](./images/bulk-training-7.png)
 
 ## Error messages
 
