@@ -6,7 +6,7 @@ prev: nl-studio-super-model
 
 ## What is bulk training?
 
-Great NL models are a fundamental part of making a great chatbot and approximately 70% of all chatbot projects use NL models instead of a keyword-based approach.
+Great NL models are a fundamental part of making a great chatbot and approximately 70% of all chatbot projects use NL models instead of a keyword-based approach, based on our Kata.ai projects data.
 
 Previously, the bulk training process was very technical because developers needed to use KataCLI and view the results on the Platform GUI ([www.platform.kata.ai](http://www.platform.kata.ai/)). This back and forth switching of tools was required to do training.
 
