@@ -12,7 +12,7 @@ import { Overlay } from 'components/layout/Overlay';
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { SiteMetadata } from 'interfaces/gatsby';
 
-import 'typeface-barlow';
+import 'typeface-inter';
 import { NavigationContextProvider } from 'components/layout/Navigation/NavigationContext';
 
 interface IndexLayoutProps {
