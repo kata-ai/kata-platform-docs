@@ -2,6 +2,7 @@
 id: nl-studio-super-model
 title: 'Super Model'
 prev: nl-studio-nl-prediction-api
+next: nl-studio-nl-bulk-training
 ---
 
 Super Model is a highly maintained entity that you can use right out of the box. This feature lets you build your NL faster and easier without training.

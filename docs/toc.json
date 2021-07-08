@@ -136,6 +136,11 @@
         "id": "nl-studio-super-model",
         "slug": "/nl-studio/super-model/",
         "title": "Super Model (beta)"
+      },
+      {
+        "id": "nl-studio-nl-bulk-training",
+        "slug": "/nl-studio/nl-bulk-training/",
+        "title": "NL Bulk Training"
       }
     ]
   },
