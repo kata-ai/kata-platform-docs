@@ -18,6 +18,8 @@ import illustration1 from 'assets/images/tutorials/spot-hello-world.svg';
 import illustration2 from 'assets/images/tutorials/spot-cms.svg';
 import illustration3 from 'assets/images/tutorials/spot-nl-studio.svg';
 import illustration4 from 'assets/images/tutorials/spot-nl-studio-integration.svg';
+import illustration5 from 'assets/images/tutorials/spot-ig-handover.svg';
+import illustration6 from 'assets/images/tutorials/spot-simple-handover.svg';
 import { SiteMetadata } from '../interfaces/gatsby';
 
 interface Props {
@@ -145,6 +147,36 @@ const TutorialPage: React.FC<Props> = ({ data }) => {
                   </Heading>
                   <Paragraph>
                     In this tutorial, we will integrate the pizza ordering bot we just created with NL Studio.
+                  </Paragraph>
+                </TutorialCardContent>
+              </TutorialCard>
+              <TutorialCard to="/tutorial/create-igdm-bot-handover-from-chatbot-to-agent">
+                <TutorialCardImage>
+                  <img src={illustration5} alt="" />
+                </TutorialCardImage>
+                <TutorialCardContent>
+                  <Heading size={600} mb="sm">
+                    Create Instagram Bot Handover from Chatbot to Agent Tutorial
+                  </Heading>
+                  <Paragraph>
+                    In this tutorial, we will create an Instagram chatbot that is able to send conversations to human
+                    agents, also known as “Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots
+                    with human agents.
+                  </Paragraph>
+                </TutorialCardContent>
+              </TutorialCard>
+              <TutorialCard to="/tutorial/create-simple-bot-handover-from-chatbot-to-agent">
+                <TutorialCardImage>
+                  <img src={illustration6} alt="" />
+                </TutorialCardImage>
+                <TutorialCardContent>
+                  <Heading size={600} mb="sm">
+                    Create Simple Handover from Chatbot to Agent Tutorial
+                  </Heading>
+                  <Paragraph>
+                    In this tutorial, we will create a chatbot that is able to handoff conversations to human agents,
+                    also known as “Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with
+                    human agents.
                   </Paragraph>
                 </TutorialCardContent>
               </TutorialCard>
