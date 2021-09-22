@@ -1,7 +1,8 @@
 ---
+prev: channel-slack
 id: channel-telegram
 title: Telegram
-next: channel-fb-messenger
+next: channel-igdm
 ---
 
 Telegram, as one of the social media that is rising in popularity, has become an option for a brand to engage the customer. In this section, we will learn to connect our bot with Telegram. You can use the bot you created in the [Hello World tutorial](/tutorial/hello-world/) to start integrating your bot with Telegram.

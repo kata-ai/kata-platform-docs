@@ -236,6 +236,11 @@
         "id": "channel-telegram",
         "slug": "/channels/telegram/",
         "title": "Telegram"
+      },
+      {
+        "id": "channel-igdm",
+        "slug": "/channels/instagramDM/",
+        "title": "Instagram DM"
       }
     ]
   }

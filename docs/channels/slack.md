@@ -1,4 +1,5 @@
 ---
+prev: channel-qiscus
 id: channel-slack
 title: Slack
 next: channel-telegram
