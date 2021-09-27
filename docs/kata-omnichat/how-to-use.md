@@ -4,7 +4,7 @@ prev: setup-agent-bot
 title: How to Use
 ---
 
-**Change Password**
+## Change Password
 
 1. Go to **Profile Settings** in the bottom right corner.
 
