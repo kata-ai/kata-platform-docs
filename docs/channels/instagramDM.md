@@ -40,7 +40,7 @@ Disclaimer:
 
 -   Because Instagram Story will be deleted every 24 hours, it is expected that the story attachments will disappear too.
 
--   Chatbots cannot "read" the Instagram Story Mention content, but human agents can see the attachment. Tips: If your customers mention your account in the complaint context and your chatbot cannot satisfy them with the solutions, the agent can take over the conversation. Learn more about [take over conversation](https://drive.google.com/open?id=1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI).
+-   Chatbots cannot "read" the Instagram Story Mention content, but human agents can see the attachment. Tips: If your customers mention your account in the complaint context and your chatbot cannot satisfy them with the solutions, the agent can take over the conversation. Learn more about [take over conversation](/omnichat).
 
 ### How to Use
 
@@ -136,9 +136,9 @@ Here is the screenshot of the feature
 
 #### How to Use
 
-Ice Breaker setup must be done in [Omnichat](https://drive.google.com/open?id=1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI). Hence, we need to create an Inbox and connect it to Instagram DM. Follow this tutorial on [how to create an Inbox](https://drive.google.com/open?id=1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI).
+Ice Breaker setup must be done in [Omnichat](/omnichat). Hence, we need to create an Inbox and connect it to Instagram DM. Follow this tutorial on [how to create an Inbox](/omnichat).
 
-Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](https://drive.google.com/open?id=1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI).
+Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/omnichat).
 
 # Available Soon
 
@@ -174,4 +174,4 @@ It will be applied in the **intent** feature to trigger automatic replies from I
 
 # Tutorial for Instagram Chatbot
 
-Go to this tutorial for creating a simple Instagram DM chatbot: [Create Instagram Bot Handover from Chatbot to Agent Tutorial](https://docs.google.com/document/d/1RJMfv9I2BcGZJ3PMjI0kAxKVbATyqE37m0rH5yxRPy4/edit?usp=sharing)
+Go to this tutorial for creating a simple Instagram DM chatbot: [Create Instagram Bot Handover from Chatbot to Agent Tutorial](/tutorial/create-igdm-bot-handover-from-chatbot-to-agent)

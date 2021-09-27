@@ -10,7 +10,7 @@ Kata Platform ([platform.kata.ai](www.platform.kata.ai)) is a platform to create
 
 Currently, we’ve launched Instagram chatbot with various features, such as End-users can receive automated replies by creating an Instagram story that mentioned brand, receive automated replies by replying to brand Instagram story, receive bot responses in image, text, quick reply, ice breaker (for first-time users only) and generic template (similar with a carousel in other messaging platforms). Learn more about [Instagram DM Automation](/channels/instagramDM/).
 
-In this tutorial, we will create an Instagram chatbot that is able to send conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Learn more about [Omnichat](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit).
+In this tutorial, we will create an Instagram chatbot that is able to send conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Learn more about [Omnichat](/omnichat).
 
 # Chatbot Flow
 
@@ -86,7 +86,7 @@ Before we jump into the tutorial, let’s see the scenario for the conversation.
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Direct Message
 
-In this part, we are going to create a greeting flow to respond to end-users who greet the brand's bot via direct message, **but** **not** via Ice Breaker. For example, the end-user says "hi" to the bot and does not want to choose via Ice Breaker. Learn more about [Ice Breaker](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit).
+In this part, we are going to create a greeting flow to respond to end-users who greet the brand's bot via direct message, **but** **not** via Ice Breaker. For example, the end-user says "hi" to the bot and does not want to choose via Ice Breaker. Learn more about [Ice Breaker](/omnichat).
 
 ## Objective: Create greetings state to define how to respond
 
@@ -171,7 +171,7 @@ intent == "greetingsIntent"
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Mention
 
-In this part, we are going to create a greeting flow to respond to end-users who mentioned the brand’s Instagram account in the end-users Instagram Stories. End-user will receive an automatic message in a direct message. Learn more about [Instagram Story Mention](https://docs.google.com/document/u/0/d/1Sbuk29qOGwk8tu05Lbd9Ppu1xSWifxoMFXjJo2Go9_s/edit).
+In this part, we are going to create a greeting flow to respond to end-users who mentioned the brand’s Instagram account in the end-users Instagram Stories. End-user will receive an automatic message in a direct message. Learn more about [Instagram Story Mention](/omnichat).
 
 ## Objective: Catch end-users who mentioned the brand’s in the end-users Instagram Story
 
@@ -231,7 +231,7 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Reply
 
-In this part, we are going to create a greeting flow to respond to end-users who reply to the brand's Instagram Story. Learn more about [Instagram Story Reply](https://docs.google.com/document/u/0/d/1Sbuk29qOGwk8tu05Lbd9Ppu1xSWifxoMFXjJo2Go9_s/edit).
+In this part, we are going to create a greeting flow to respond to end-users who reply to the brand's Instagram Story. Learn more about [Instagram Story Reply](/omnichat).
 
 ## Objective: Catch end-users who reply to the brand’s Instagram Story
 
@@ -291,7 +291,7 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 # Create Quick Replies
 
-In this step, we will create bot responses named quick reply. Learn more about [Quick Reply for Instagram Messaging](https://docs.google.com/document/u/0/d/1Sbuk29qOGwk8tu05Lbd9Ppu1xSWifxoMFXjJo2Go9_s/edit).
+In this step, we will create bot responses named quick reply. Learn more about [Quick Reply for Instagram Messaging](/omnichat).
 
 ## Objective: Show available FAQ topics to end-user
 
@@ -479,7 +479,7 @@ content == "Daftar kartu kredit"
 
 # Create Generic Template (Carousel)
 
-In this step, we will create bot responses named generic template. Learn more about [Generic Template for Instagram Messaging](https://docs.google.com/document/u/0/d/1Sbuk29qOGwk8tu05Lbd9Ppu1xSWifxoMFXjJo2Go9_s/edit).
+In this step, we will create bot responses named generic template. Learn more about [Generic Template for Instagram Messaging](/omnichat).
 
 ## Objective: Show bot response of generic template ("carousel") to end-users
 
@@ -1135,9 +1135,9 @@ In this step, you will need an Omnichat ([https://omnichat.kata.ai](https://omni
 
 Follow these tutorials in Omnichat to continue:
 
-1. Register a new Omnichat account in Omnichat. Learn more about how to [register account in Omnichat](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit)
+1. Register a new Omnichat account in Omnichat. Learn more about how to [register account in Omnichat](/omnichat)
 
-2. Create a new channel inbox. Learn more about [create inbox in Omnichat](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit)
+2. Create a new channel inbox. Learn more about [create inbox in Omnichat](/omnichat)
 
     1. For IGDM chatbot: Section **How to Set Up > Connect to Instagram Messaging**
 
@@ -1145,7 +1145,7 @@ Follow these tutorials in Omnichat to continue:
 
 # Create Agent Bot in Omnichat
 
-Follow the tutorial in Omnichat to continue. Continue to [create agent bot](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit).
+Follow the tutorial in Omnichat to continue. Continue to [create agent bot](/omnichat).
 
 ## Connect Bot to Omnichat
 
@@ -1191,7 +1191,7 @@ Follow the tutorial in Omnichat to continue. Continue to [create agent bot](http
 
 # Update Instagram Bot to Use Ice Breaker
 
-Ice Breaker is useful for first-time users can understand the available menu or topics in your Instagram bot. To use Ice Breaker, we need to create an Instagram inbox as a prerequisite. Learn more about [Ice Breaker](https://docs.google.com/document/u/0/d/1Sbuk29qOGwk8tu05Lbd9Ppu1xSWifxoMFXjJo2Go9_s/edit).
+Ice Breaker is useful for first-time users can understand the available menu or topics in your Instagram bot. To use Ice Breaker, we need to create an Instagram inbox as a prerequisite. Learn more about [Ice Breaker](/omnichat).
 
 Also, you need to successfully finish the Instagram bot until connect to agent bot Omnichat. Go back to the first step.
 
@@ -1217,7 +1217,7 @@ Berbicara dengan CS</td>
 
 ## Objective: Create Ice Breaker in your Instagram inbox
 
-Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](https://docs.google.com/document/u/0/d/1bH-XQjoSagXaaDkGOgyQozz_dpxF0aDc9-YHnygJzHI/edit).
+Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/omnichat).
 
 ## Objective: Create intent to trigger bot response if end-users click all Ice Breaker
 
