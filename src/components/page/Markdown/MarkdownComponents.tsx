@@ -84,10 +84,12 @@ export const table = styled('table')`
     tr {
       td {
         padding: ${space.xs}px ${space.sm}px;
+        min-width: 15vw;
         vertical-align: top;
         font-size: ${textSizes[400].fontSize}px;
         line-height: ${textSizes[400].lineHeight}px;
         color: ${colors.grey07};
+        overflow-wrap: anywhere;
 
         &:first-child {
           padding-left: 0;

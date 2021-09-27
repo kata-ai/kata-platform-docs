@@ -13,6 +13,7 @@ import { isActive } from 'utils/helpers';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 
 import logo from 'assets/images/logo-docs.svg';
+import omnichatLogo from 'assets/images/omnichat-logo-docs.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import SearchBox from 'components/search/SearchBox';
@@ -136,6 +137,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
+  const isOmnichat = window.location.pathname.split('/').includes('kata-omnichat');
 
   return (
     <StyledLayoutRoot className={className}>
@@ -158,7 +160,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
               size={determineFontDimensions('heading', 400)}
               onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
             >
-              <img src={logo} alt={title} />
+              <img src={isOmnichat ? omnichatLogo : logo} alt={title} />
             </HomepageLink>
           </HeaderLogo>
           <HeaderRight hideOnDesktop>

@@ -7,7 +7,7 @@ prev: create-igdm-bot-handover-from-chatbot-to-agent
 
 Kata Platform ([platform.kata.ai](www.platform.kata.ai)) is a platform to create chatbots and train them with Natural Language Processing (NLP). You can create any chatbots for any use-cases, such as FAQ, campaign, customer service, handover to human agents, and more.
 
-In this tutorial, we will create a chatbot that is able to handoff conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Check this [documentation](/omnichat) for Kata Omnichat explanation.
+In this tutorial, we will create a chatbot that is able to handoff conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Check this [documentation](/kata-omnichat) for Kata Omnichat explanation.
 
 # Simple Chatbot Flow
 
@@ -26,7 +26,7 @@ Before we jump into the tutorial, let’s see the scenario for the conversation.
 
 ## Objective: Register your new account and login to the Platform
 
-1. Go to [www.platform.kata.ai](www.platform.kata.ai) and click **Sign Up** to create new account
+1. Go to [https://platform.kata.ai](https://platform.kata.ai) and click **Sign Up** to create new account
 
 2. Input required fields in sign up page: **Username, email address, role and captcha**
 
@@ -40,7 +40,7 @@ Before we jump into the tutorial, let’s see the scenario for the conversation.
 
 ### _Login to Kata Platform and create project_
 
-1. Open your browser, then open the URL [www.platform.kata.ai/login](www.platform.kata.ai/login) and enter your username & password.
+1. Open your browser, then open the URL [https://platform.kata.ai/login](https://platform.kata.ai/login) and enter your username & password.
 
 2. Click **"Login"** to continue.
 

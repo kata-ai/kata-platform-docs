@@ -40,7 +40,7 @@ Disclaimer:
 
 -   Because Instagram Story will be deleted every 24 hours, it is expected that the story attachments will disappear too.
 
--   Chatbots cannot "read" the Instagram Story Mention content, but human agents can see the attachment. Tips: If your customers mention your account in the complaint context and your chatbot cannot satisfy them with the solutions, the agent can take over the conversation. Learn more about [take over conversation](/omnichat).
+-   Chatbots cannot "read" the Instagram Story Mention content, but human agents can see the attachment. Tips: If your customers mention your account in the complaint context and your chatbot cannot satisfy them with the solutions, the agent can take over the conversation. Learn more about [take over conversation](/kata-omnichat).
 
 ### How to Use
 
@@ -136,9 +136,9 @@ Here is the screenshot of the feature
 
 #### How to Use
 
-Ice Breaker setup must be done in [Omnichat](/omnichat). Hence, we need to create an Inbox and connect it to Instagram DM. Follow this tutorial on [how to create an Inbox](/omnichat).
+Ice Breaker setup must be done in [Omnichat](/kata-omnichat). Hence, we need to create an Inbox and connect it to Instagram DM. Follow this tutorial on [how to create an Inbox](/kata-omnichat).
 
-Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/omnichat).
+Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/channels/instagramDM).
 
 # Available Soon
 
