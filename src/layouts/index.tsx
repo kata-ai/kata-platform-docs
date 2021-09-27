@@ -92,7 +92,7 @@ const query = graphql`
 const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
   const { site, headerMenus, navigationMenus, omnichatNavigationMenus }: DataProps = useStaticQuery(query);
   const { siteMetadata } = site;
-  const isOmnichat = window.location.pathname.split('/').includes('kata-omnichat');
+  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
 
   return (
     <NavigationContextProvider>

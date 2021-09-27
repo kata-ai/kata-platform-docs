@@ -137,7 +137,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
-  const isOmnichat = window.location.pathname.split('/').includes('kata-omnichat');
+  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
 
   return (
     <StyledLayoutRoot className={className}>

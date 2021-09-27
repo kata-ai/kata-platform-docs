@@ -52,7 +52,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const { markdownRemark, sectionList, sectionListOmni, site } = data;
   const { siteMetadata } = site;
   const { prev, next } = markdownRemark.frontmatter;
-  const isOmnichat = window.location.pathname.split('/').includes('kata-omnichat');
+  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
   const prevPage = isOmnichat ? getPageById(sectionListOmni.edges, prev) : getPageById(sectionList.edges, prev);
   const nextPage = isOmnichat ? getPageById(sectionListOmni.edges, next) : getPageById(sectionList.edges, next);
 
