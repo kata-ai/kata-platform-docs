@@ -1,4 +1,5 @@
 ---
+prev: generic-channel
 id: channel-fb-messenger
 title: Facebook Messenger
 next: channel-slack

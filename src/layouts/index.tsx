@@ -27,6 +27,9 @@ interface DataProps {
   navigationMenus: {
     edges: Edge<MenuNode>[];
   };
+  omnichatNavigationMenus: {
+    edges: Edge<MenuNode>[];
+  };
   headerMenus: {
     edges: Edge<HeaderMenuItem>[];
   };
@@ -60,6 +63,18 @@ const query = graphql`
         }
       }
     }
+    omnichatNavigationMenus: allTocOmnichatJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
     headerMenus: allMenuJson {
       edges {
         node {
@@ -75,8 +90,9 @@ const query = graphql`
 `;
 
 const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
-  const { site, headerMenus, navigationMenus }: DataProps = useStaticQuery(query);
+  const { site, headerMenus, navigationMenus, omnichatNavigationMenus }: DataProps = useStaticQuery(query);
   const { siteMetadata } = site;
+  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
 
   return (
     <NavigationContextProvider>
@@ -96,7 +112,11 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden
             <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
           </Helmet>
           <Overlay />
-          <Navigation navigation={navigationMenus.edges} headerMenus={headerMenus.edges} navHidden={navHidden} />
+          <Navigation
+            navigation={isOmnichat ? omnichatNavigationMenus.edges : navigationMenus.edges}
+            headerMenus={headerMenus.edges}
+            navHidden={navHidden}
+          />
           <LayoutMain navHidden={navHidden}>{children}</LayoutMain>
         </LayoutRoot>
       </AksaraReset>

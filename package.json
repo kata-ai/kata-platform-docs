@@ -9,9 +9,12 @@
   ],
   "license": "MIT",
   "main": "n/a",
+  "resolutions": {
+    "webpack": "5.52.1"
+  },
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf public",
+    "clean": "rimraf public && gatsby clean",
     "commit": "git cz",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",

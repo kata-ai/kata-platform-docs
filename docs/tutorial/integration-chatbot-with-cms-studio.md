@@ -3,6 +3,7 @@ layout: tutorial
 id: integration-chatbot-with-cms-studio
 title: Integration Chatbot with CMS Studio Tutorial
 prev: integration-chatbot-with-nl-studio
+next: create-igdm-bot-handover-from-chatbot-to-agent
 ---
 
 ## Introduction
@@ -63,9 +64,9 @@ Click on Text Box element in left sidebar to add it to your form.
 
 Added element is shown as above. Our next step is to fill in label and ID, and default value.
 
-- Label is a title for the element, so try to use any word that is easy to understand.
-- ID is used to define the element in bot. Every element's ID is unique, and will be used as a code later on.
-- Default value is the value you want to put on the bot, for example the copywriting.
+-   Label is a title for the element, so try to use any word that is easy to understand.
+-   ID is used to define the element in bot. Every element's ID is unique, and will be used as a code later on.
+-   Default value is the value you want to put on the bot, for example the copywriting.
 
 ### Add Asking Confirmation Text to Form
 
@@ -113,9 +114,9 @@ Fill in e-mail and choose Development environment . Then click Add to send an in
 
 There are 3 things that we have defined on CMS, which are:
 
-- `Page_label` in Page (ex: `textResponse`)
-- `Form_label` in Form (ex: `orderPizza`)
-- `ID` in Element. (ex: `askingConfirmation`)
+-   `Page_label` in Page (ex: `textResponse`)
+-   `Form_label` in Form (ex: `orderPizza`)
+-   `ID` in Element. (ex: `askingConfirmation`)
 
 This information will be used in Bot Studio to sync a value from your dashboard. To do that, we have to enter a code with this format on the action we want to sync:
 

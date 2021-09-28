@@ -1,6 +1,8 @@
 ---
+prev: channel-freshchat
 id: channel-qiscus
 title: Qiscus
+next: channel-slack
 ---
 
 Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. They also provide multichannel customer service chat solution which is now getting popular as it is best designed for everyone to enhance their customer service experiences using multiple channels and bot-human collaboration customer service. In this section, we will learn on how to connect our bot with Qiscus thorough these following steps.

@@ -1,7 +1,8 @@
 ---
+prev: channel-fb-messenger
 id: channel-freshchat
 title: Freshchat
-next: channel-slack
+next: channel-qiscus
 ---
 
 Freshchat’s live chat software is the fastest way for you to engage with your website visitors, provide assistance, and convert leads to happy customers. In this section, we will learn to connect our bot with Freshchat. You can use the bot you created in the Hello World tutorial (https://docs.kata.ai/tutorial/hello-world/) to start integrating your bot with Freshchat.

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Introduction",
+    "items": [
+      {
+        "id": "omnichat-about",
+        "slug": "/kata-omnichat/omnichat-about",
+        "title": "About Kata Omnichat"
+      }
+    ]
+  },
+  {
+    "title": "How To",
+    "items": [
+      {
+        "id": "general-setup",
+        "slug": "/kata-omnichat/general-setup",
+        "title": "How to Set Up"
+      },
+      {
+        "id": "setup-agent-bot",
+        "slug": "/kata-omnichat/setup-agent-bot",
+        "title": "How to Set Up Agent Bot"
+      },
+      {
+        "id": "how-to-use",
+        "slug": "/kata-omnichat/how-to-use",
+        "title": "How to Use"
+      }
+    ]
+  }
+]

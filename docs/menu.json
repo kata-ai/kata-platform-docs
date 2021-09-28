@@ -39,5 +39,11 @@
     "label": "Support",
     "href": "http://bit.ly/JoinTemanKata",
     "external": true
+  },
+  {
+    "id": "kata-omnichat",
+    "label": "Kata Omnichat",
+    "href": "/kata-omnichat",
+    "external": false
   }
 ]

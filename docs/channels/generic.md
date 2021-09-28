@@ -1,6 +1,7 @@
 ---
 id: generic-channel
 title: Generic Channel
+next: channel-fb-messenger
 ---
 
 In this documentation, We will learn how to build ***a chatBot*** app using Kata Platform and connect it to Generic Channel. Generic Channel can be used for the channel that is not yet available in Kata Platform, so you can make a “wrapper”. Here, we use our app that we build using NestJs *(you can use other programming language or framework to make your app)* to communicate with chatBot.

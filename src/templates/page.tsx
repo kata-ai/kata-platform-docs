@@ -26,6 +26,9 @@ interface PageTemplateProps extends RouteComponentProps {
     site: {
       siteMetadata: SiteMetadata;
     };
+    sectionListOmni: {
+      edges: Edge<MenuNode>[];
+    };
     sectionList: {
       edges: Edge<MenuNode>[];
     };
@@ -46,11 +49,12 @@ interface PageTemplateProps extends RouteComponentProps {
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
-  const { markdownRemark, sectionList, site } = data;
+  const { markdownRemark, sectionList, sectionListOmni, site } = data;
   const { siteMetadata } = site;
   const { prev, next } = markdownRemark.frontmatter;
-  const prevPage = getPageById(sectionList.edges, prev);
-  const nextPage = getPageById(sectionList.edges, next);
+  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
+  const prevPage = isOmnichat ? getPageById(sectionListOmni.edges, prev) : getPageById(sectionList.edges, prev);
+  const nextPage = isOmnichat ? getPageById(sectionListOmni.edges, next) : getPageById(sectionList.edges, next);
 
   return (
     <IndexLayout>
@@ -114,6 +118,18 @@ export const query = graphql`
           name
           imgpath
           url
+        }
+      }
+    }
+    sectionListOmni: allTocOmnichatJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
         }
       }
     }
