@@ -20,7 +20,7 @@ Whenever your customers engage you via Instagram Story, you can send an automate
 
 2. Click to **Flow > Conversation Flow > Intent > Create Intent.**
 
-3. Choose **Data** for the **Intent Type **dropdown
+3. Choose **Data** for the **Intent Type** dropdown
 
 4. Click **Add Condition** and fill in
 
