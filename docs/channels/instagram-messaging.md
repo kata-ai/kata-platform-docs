@@ -138,7 +138,7 @@ Here is the screenshot of the feature
 
 Ice Breaker setup must be done in [Omnichat](/kata-omnichat). Hence, we need to create an Inbox and connect it to Instagram DM. Follow this tutorial on [how to create an Inbox](/kata-omnichat).
 
-Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/channels/instagramDM).
+Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/channels/instagram-messaging).
 
 # Available Soon
 

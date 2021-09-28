@@ -112,7 +112,7 @@ title: How to Use
 
 5. Customers will be offered to choose whether they want to be handovered to agents or not. If they choose "yes", then there will be an agent assigned for them.
 
-6. Customers will receive Instagram automation various responses such as: text, image, carousel ("generic template"), quick replies, and “heart” sticker when liking a message (coming soon). Learn more about [how to use Instagram DM automation](/channels/instagramDM).
+6. Customers will receive Instagram automation various responses such as: text, image, carousel ("generic template"), quick replies, and “heart” sticker when liking a message (coming soon). Learn more about [how to use Instagram DM automation](/channels/instagram-messaging).
 
 7. During chatbot-customer conversation, agents can take over the conversation if users add an "agent bot" in the Inbox. Learn more about [set up agent bot in Omnichat](kata-omnichat/how-to-setup-agent-bot).
 

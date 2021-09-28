@@ -8,7 +8,7 @@ next: create-simple-bot-handover-from-chatbot-to-agent
 
 Kata Platform ([platform.kata.ai](https://platform.kata.ai)) is a platform to create chatbots and train them with Natural Language Processing (NLP). You can create any chatbots for any use-cases, such as FAQ, campaign, customer service, handover to human agents, and more.
 
-Currently, we’ve launched Instagram chatbot with various features, such as End-users can receive automated replies by creating an Instagram story that mentioned brand, receive automated replies by replying to brand Instagram story, receive bot responses in image, text, quick reply, ice breaker (for first-time users only) and generic template (similar with a carousel in other messaging platforms). Learn more about [Instagram DM Automation](/channels/instagramDM/).
+Currently, we’ve launched Instagram chatbot with various features, such as End-users can receive automated replies by creating an Instagram story that mentioned brand, receive automated replies by replying to brand Instagram story, receive bot responses in image, text, quick reply, ice breaker (for first-time users only) and generic template (similar with a carousel in other messaging platforms). Learn more about [Instagram DM Automation](/channels/instagram-messaging/).
 
 In this tutorial, we will create an Instagram chatbot that is able to send conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Learn more about [Omnichat](/kata-omnichat).
 
@@ -62,7 +62,7 @@ Conversation flow table details can be seen [here](https://drive.google.com/file
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Direct Message
 
-In this part, we are going to create a greeting flow to respond to end-users who greet the brand's bot via direct message, **but** **not** via Ice Breaker. For example, the end-user says "hi" to the bot and does not want to choose via Ice Breaker. Learn more about [Ice Breaker](/channels/instagramDM).
+In this part, we are going to create a greeting flow to respond to end-users who greet the brand's bot via direct message, **but** **not** via Ice Breaker. For example, the end-user says "hi" to the bot and does not want to choose via Ice Breaker. Learn more about [Ice Breaker](/channels/instagram-messaging).
 
 ## Objective: Create greetings state to define how to respond
 
@@ -147,7 +147,7 @@ intent == "greetingsIntent"
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Mention
 
-In this part, we are going to create a greeting flow to respond to end-users who mentioned the brand’s Instagram account in the end-users Instagram Stories. End-user will receive an automatic message in a direct message. Learn more about [Instagram Story Mention](/channels/instagramDM).
+In this part, we are going to create a greeting flow to respond to end-users who mentioned the brand’s Instagram account in the end-users Instagram Stories. End-user will receive an automatic message in a direct message. Learn more about [Instagram Story Mention](/channels/instagram-messaging).
 
 ## Objective: Catch end-users who mentioned the brand’s in the end-users Instagram Story
 
@@ -207,7 +207,7 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Reply
 
-In this part, we are going to create a greeting flow to respond to end-users who reply to the brand's Instagram Story. Learn more about [Instagram Story Reply](/channels/instagramDM).
+In this part, we are going to create a greeting flow to respond to end-users who reply to the brand's Instagram Story. Learn more about [Instagram Story Reply](/channels/instagram-messaging).
 
 ## Objective: Catch end-users who reply to the brand’s Instagram Story
 
@@ -267,7 +267,7 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 # Create Quick Replies
 
-In this step, we will create bot responses named quick reply. Learn more about [Quick Reply for Instagram Messaging](/channels/instagramDM).
+In this step, we will create bot responses named quick reply. Learn more about [Quick Reply for Instagram Messaging](/channels/instagram-messaging).
 
 ## Objective: Show available FAQ topics to end-user
 
