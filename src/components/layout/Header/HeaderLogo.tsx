@@ -17,6 +17,9 @@ const hasNoSidebar = css`
 const HeaderLogo = styled('div')<HeaderLogoProps>`
   display: flex;
   align-items: center;
+  background: ${colors.white};
+  justify-content: center;
+  border-bottom: 1px solid ${colors.grey02};
   width: ${dimensions.widths.sidebar.lg}px;
   height: 100%;
   padding: 0 24px;
