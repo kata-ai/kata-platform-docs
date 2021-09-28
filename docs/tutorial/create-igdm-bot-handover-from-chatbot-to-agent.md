@@ -1111,9 +1111,9 @@ In this step, you will need an Omnichat ([https://kata-omnichat.kata.ai](https:/
 
 Follow these tutorials in Omnichat to continue:
 
-1. Register a new Omnichat account in Omnichat. Learn more about how to [register account in Omnichat](/kata-omnichat)
+1. Register a new Omnichat account in Omnichat. Learn more about how to [register account in Omnichat](/kata-omnichat/general-setup/#self-onboarding)
 
-2. Create a new channel inbox. Learn more about [create inbox in Omnichat](/kata-omnichat)
+2. Create a new channel inbox. Learn more about [create inbox in Omnichat](/kata-omnichat/general-setup)
 
     1. For IGDM chatbot: Section **How to Set Up > Connect to Instagram Messaging**
 
@@ -1167,7 +1167,7 @@ Follow the tutorial in Omnichat to continue. Continue to [create agent bot](/kat
 
 # Update Instagram Bot to Use Ice Breaker
 
-Ice Breaker is useful for first-time users can understand the available menu or topics in your Instagram bot. To use Ice Breaker, we need to create an Instagram inbox as a prerequisite. Learn more about [Ice Breaker](/kata-omnichat).
+Ice Breaker is useful for first-time users can understand the available menu or topics in your Instagram bot. To use Ice Breaker, we need to create an Instagram inbox as a prerequisite. Learn more about [Ice Breaker](/channels/instagram-messaging/#sending-ice-breaker-reply).
 
 Also, you need to successfully finish the Instagram bot until connect to agent bot Omnichat. Go back to the first step.
 
@@ -1179,7 +1179,7 @@ Before we jump to the tutorial, here is the general conversation flow for using 
 
 ## Objective: Create Ice Breaker in your Instagram inbox
 
-Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omnichat).
+Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omnichat/how-to-use/#inbox-management).
 
 ## Objective: Create intent to trigger bot response if end-users click all Ice Breaker
 
@@ -1291,7 +1291,7 @@ intent == "csIceBreaker"
 
 ## Objective: Publish updated bot and deploy to Omnichat again
 
-Follow the tutorial to [finalize your bot](#heading=h.humcfq1f7cf6).
+Follow the tutorial to [finalize your bot](/tutorial/create-igdm-bot-handover-from-chatbot-to-agent/#finalize-your-new-bot).
 
 # Final Demo
 
