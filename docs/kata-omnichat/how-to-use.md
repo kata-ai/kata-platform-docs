@@ -84,7 +84,7 @@ title: How to Use
 
 1. Customer started to chat to users’ WABA number
 
-2. During chatbot and customer conversation, customers can request handover to agents or agents can take over the conversation if users add an "agent bot" in the inbox. Learn more about [setup agent bot in Omnichat](/kata-omnichat/how-to-setup-agent-bot).
+2. During chatbot and customer conversation, customers can request handover to agents or agents can take over the conversation if users add an "agent bot" in the inbox. Learn more about [setup agent bot in Omnichat](/kata-omnichat/setup-agent-bot).
 
 ![image alt text](./images/image_12.png)
 
@@ -114,7 +114,7 @@ title: How to Use
 
 6. Customers will receive Instagram automation various responses such as: text, image, carousel ("generic template"), quick replies, and “heart” sticker when liking a message (coming soon). Learn more about [how to use Instagram DM automation](/channels/instagram-messaging).
 
-7. During chatbot-customer conversation, agents can take over the conversation if users add an "agent bot" in the Inbox. Learn more about [set up agent bot in Omnichat](kata-omnichat/how-to-setup-agent-bot).
+7. During chatbot-customer conversation, agents can take over the conversation if users add an "agent bot" in the Inbox. Learn more about [set up agent bot in Omnichat](kata-omnichat/setup-agent-bot).
 
 8. Customers can send and receive messages until agents resolve the conversation (if they choose to be handovered) or end the conversation with chatbot.
 

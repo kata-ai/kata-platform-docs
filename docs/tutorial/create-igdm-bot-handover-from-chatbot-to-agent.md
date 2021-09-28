@@ -997,11 +997,11 @@ intent == "greetingsIntent" || intent == "toMenuIntent"
 
 ### Create a "bye" state to end conversation and show thank you response
 
-1. Click** "+"** icon in bottom left to create a new state
+1. Click **"+"** icon in bottom left to create a new state
 
 2. Fill in the state name with "bye"
 
-3. Turn on toggle** End State**
+3. Turn on toggle **End State**
 
 4. Click **"Add action",** then click “+” to create a new action
 
@@ -1103,7 +1103,7 @@ content == "2"
 
 5. Click **Create** to finalize
 
-6. You will notice the button is changed into the Create** Channel** button.
+6. You will notice the button is changed into the Create **Channel** button.
 
 In this step, you will need an Omnichat ([https://kata-omnichat.kata.ai](https://omnichat.kata.ai)) account and an Omnichat inbox to deploy the bot. Let’s get started!
 
