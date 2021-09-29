@@ -7,7 +7,7 @@ title: How to Set Up
 
 ## Self-Onboarding
 
-To watch the video, go to [https://youtu.be/VNgf-ciA-xA](https://youtu.be/VNgf-ciA-xA)
+<iframe width="600" height="300" src="https://www.youtube.com/embed/fTMnCy9NE2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. Go to [https://omnichat.kata.ai/](https://omnichat.kata.ai/) and click **"Create New Account"**. After that, fill in your **Work email** and **Password.**
 
@@ -21,6 +21,8 @@ To watch the video, go to [https://youtu.be/VNgf-ciA-xA](https://youtu.be/VNgf-c
 
 ## Connect Omnichat to Instagram Messaging
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/_IXQVfd5AjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 1. In the **Getting Started** page, you have to click the **Connect** button in **Instagram Messaging**. Or, you can go to **Inboxes** menu, click **Add new inbox** button and click **Instagram** channel.
 
 2. You will see the **Get Started** page of Instagram Messaging and follow all the steps, including answering some of integration questions.
@@ -31,6 +33,8 @@ To watch the video, go to [https://youtu.be/VNgf-ciA-xA](https://youtu.be/VNgf-c
 
 ## Register Your WhatsApp Business
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/LQvbdPoQXgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 1. In the **Getting Started** page, you have to click the **Register** in **WhatsApp Business.**
 
 2. You will be directed to [https://business.kata.ai](https://business.kata.ai) and have to follow all the steps for registering your WhatsApp Business number.
@@ -38,6 +42,8 @@ To watch the video, go to [https://youtu.be/VNgf-ciA-xA](https://youtu.be/VNgf-c
 3. After you successfully register your WhatsApp Business, you can go back to Kata Omnichat to set up WhatsApp as your channel in this dashboard.
 
 ## Connect to Your WhatsApp Business API Account
+
+<iframe width="600" height="300" src="https://www.youtube.com/embed/s08qliazqMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. In the **Getting Started** page, you have to click the **Connect** button in **WhatsApp Business API**. Or, you can go to **Inboxes** menu, click **Add new inbox** button and click **WhatsApp Business API** channel.
    1
