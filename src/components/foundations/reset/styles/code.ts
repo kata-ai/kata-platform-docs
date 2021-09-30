@@ -149,6 +149,20 @@ const code = css`
     outline-offset: 0.4em;
   }
 
+  blockquote {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    background: #F5F6F8;
+    border-radius: 8px;
+  }
+
+  blockquote > p {
+    font-size: 14px !important;
+    color: #6A7A8A !important;
+  }
+
   /* overrides color-values for the Line Numbers plugin
    * http://prismjs.com/plugins/line-numbers/
    */
