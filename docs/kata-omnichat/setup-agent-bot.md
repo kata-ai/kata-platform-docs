@@ -25,6 +25,8 @@ Agent bot is a feature to integrate your Kata Platform chatbot with Omnichat as 
 
 ![image alt text](./images/image_3.png)
 
+> Add agent bot configuration in Kata Omnichat
+
 ## Create Agent Bot from Kata Platform
 
 For this tutorial, go to [Create Simple Handover from Chatbot to Agent Tutorial](/tutorial/create-simple-bot-handover-from-chatbot-to-agent)

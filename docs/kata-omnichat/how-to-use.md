@@ -14,13 +14,25 @@ title: How to Use
 
 ![image alt text](./images/image_4.png)
 
+> Change Password in the Profile Settings
+
 ## Inbox Management
 
 1. Click the **"Inboxes"** menu in the sidebar, then click **“Settings”** on any Inbox.
 
 2. **For IGDM**, there are 5 submenu under Settings: **Account, Collaborators, Business Hours, Quick Reply** and **Ice Breaker.**
 
-![image alt text](./images/image_5.png)![image alt text](./images/image_6.png)![image alt text](./images/image_7.png)
+![image alt text](./images/image_5.png)
+
+> Quick Reply List in Inbox Management
+
+![image alt text](./images/image_6.png)
+
+> Set Business Hours in Inbox Management
+
+![image alt text](./images/image_7.png)
+
+> Add Ice Breaker in Inbox Management
 
 3. **For WABA API**, there are only 3 submenu under settings: **Account** and **Collaborators** and **Business Hours**.
 
@@ -42,6 +54,8 @@ title: How to Use
 
 ![image alt text](./images/image_8.png)
 
+> Add Ice Breaker in Inbox Management
+
 3. Add **Agent Name**, **Email** and **Role,** then click **Add Agent** to send an invitation to your agent.
 
 4. Once your agents accept the invitation by setting up the password, they can start to explore the dashboard.
@@ -54,6 +68,8 @@ title: How to Use
 
 ![image alt text](./images/image_9.png)
 
+> Add Canned Responses
+
 3. Create the **Short Code** and fill in the content we want to send it quickly to customers.
 
 ## Conversation in Agent-side
@@ -63,6 +79,8 @@ title: How to Use
 2. After agents have been assigned to an Inbox by admin, they can receive messages from customers.
 
 ![image alt text](./images/image_10.png)
+
+> Conversation in Agent-side
 
 3. Agents can reply using text, emoticon, image/file and canned responses.
 
@@ -76,6 +94,8 @@ title: How to Use
 
 ![image alt text](./images/image_11.png)
 
+> Edit Contact in Customer Details
+
 3. Agents can close the conversation by clicking on the **"Resolve"** button, then the conversation will back to bot.
 
 4. Agents can add **"Private Note"** that might help other agents to understand the latest context of each conversation.
@@ -88,6 +108,8 @@ title: How to Use
 
 ![image alt text](./images/image_12.png)
 
+> Conversation in Customer-side for WABA Automation
+
 3. Customers can send and receive messages until agents resolve the conversation (if they choose to be handovered) and the conversation will be handed off again to agent bot or end the conversation with chatbot.
 
 ## Conversation in Customer-side for WABA Direct with No Automation
@@ -98,6 +120,8 @@ title: How to Use
 
 ![image alt text](./images/image_13.png)
 
+> Conversation in Customer-side for WABA Direct with No Automation
+
 ## Conversation in Customer-side for IGDM Automation
 
 1. Customers send messages to the Instagram account
@@ -105,6 +129,8 @@ title: How to Use
 2. Also, customers can reply to the brand's Instagram Story (**Instagram Story Reply**) or mention the brand's Instagram account in the customer's Instagram Story (**Instagram Story Mention**). Disclaimer: Customers’ Instagram account must be public if they want to send Instagram Story Reply and Instagram Story Mention to a brand, otherwise it cannot be replied by bot. If customers’ accounts are private, then the brand must request to follow the customers first.
 
 ![image alt text](./images/image_14.png)
+
+> Conversation in Customer-side for IGDM Automation
 
 3. If the conversation is new, customers can select Ice Breaker topics or directly type a message.
 
@@ -160,6 +186,10 @@ title: How to Use
 
 ![image alt text](./images/image_15.png)
 
+> Takeover agent bot to human agent
+
 4. Conversation with chatbot is paused and you can type to reply to the end-user. Your reply will be seen in the blue message.
 
 ![image alt text](./images/image_16.png)
+
+> Successfully takeover from agent bot to human agent

@@ -31,6 +31,8 @@ title: How to Set Up
 
 ![image alt text](./images/image_0.png)
 
+> Get Started to Create Inbox with Instagram Messaging
+
 ## Register Your WhatsApp Business
 
 <iframe width="600" height="300" src="https://www.youtube.com/embed/LQvbdPoQXgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -55,4 +57,8 @@ title: How to Set Up
 
 ![image alt text](./images/image_1.png)
 
+> Copy the Webhook URL into the Business Dashboard
+
 ![image alt text](./images/image_2.png)
+
+> Paste the Webhook URL into the Business Dashboard
