@@ -9,6 +9,8 @@ Kata Platform ([platform.kata.ai](www.platform.kata.ai)) is a platform to create
 
 In this tutorial, we will create a chatbot that is able to handoff conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Check this [documentation](/kata-omnichat) for Kata Omnichat explanation.
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/dAHnoTX4BUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Simple Chatbot Flow
 
 Before we jump into the tutorial, let’s see the scenario for the conversation. We will create a chatbot using _keywords_ which when customers enter "1" to end the conversation or “2” to do the handover.
@@ -109,6 +111,8 @@ Main keyword: hi
 
 ![image alt text](./images/simple-handover/image_1.png)
 
+> Add more keywords for greetings
+
 6. Click **"Create"** to save the NLUs
 
 ### Create "greetings" intent to catch user’s input
@@ -121,6 +125,8 @@ Main keyword: hi
 
 ![image alt text](./images/simple-handover/image_2.png)
 
+> Create intent and create mapping with greetings keyword
+
 4. Then, click **Create**.
 
 ## Objective: Connect "init" and “greetings” states by creating a transition
@@ -132,6 +138,8 @@ Main keyword: hi
 2. Fill in the transition as follow
 
 ![image alt text](./images/simple-handover/image_3.png)
+
+> Create transition
 
 3. Click **"Create Transition"**
 
@@ -162,6 +170,8 @@ Main keyword: satu
 
 ![image alt text](./images/simple-handover/image_4.png)
 
+> Create keywords to identify input from chatbot users when choosing menu
+
 6. Click **"Create"** to save the NLUs
 
 ### Create an intent "menu" to catch the end-user's input
@@ -173,6 +183,8 @@ Main keyword: satu
 3. Fill in the intent as follows. This intent will catch the end-user's input after typing "1" or “2”. Adding a classifier with “menu” to define this intent will be executed whenever a sentence has the “menu” keyword. Add attributes and choose NLU “menu”, because we have 2 main keywords that need to be understood by the intent to execute the handover path or end conversation path.
 
 ![image alt text](./images/simple-handover/image_5.png)
+
+> Create intent for showing main menu and mapping from created keywords
 
 4. Then, click **Create**.
 
@@ -226,6 +238,8 @@ Mohon menunggu, ya. Sedang kami hubungkan ke CS Bank ABC yang tersedia! 😊
 
 ![image alt text](./images/simple-handover/image_6.png)
 
+> Create transition and mapping if chatbot users choose "1", then execute handover state
+
 3. Click **Create**
 
 # Create End Conversation Flow
@@ -258,6 +272,8 @@ Terima kasih sudah menghubungi Bank ABC 😊
 
 ![image alt text](./images/simple-handover/image_7.png)
 
+> Create transition and mapping if chatbot users choose "2", then execute end conversation
+
 3. Click **Create**
 
 # Finalize Your New Bot
@@ -272,6 +288,8 @@ Terima kasih sudah menghubungi Bank ABC 😊
 
 ![image alt text](./images/simple-handover/image_8.png)
 
+> Final conversation flow
+
 ## Objective: Testing your bot in emulator
 
 1. On the bottom of your right screen, there is a small button named **"Test NLU".** Click the **button** to start.
@@ -280,7 +298,11 @@ Terima kasih sudah menghubungi Bank ABC 😊
 
 ![image alt text](./images/simple-handover/image_9.png)
 
+> Testing your bot in emulator by typing "hi"
+
 ![image alt text](./images/simple-handover/image_10.png)
+
+> Testing bot by typing "1" or "2"
 
 3. If you want to **restart** the session, click refresh icon which is placed at the bottom
 
@@ -296,6 +318,8 @@ Terima kasih sudah menghubungi Bank ABC 😊
 
 ![image alt text](./images/simple-handover/image_11.png)
 
+> Create new deployment
+
 4. Click **Submit** to finish the deployment
 
 ### Create new environment as prerequisites to deploy the bot to channel
@@ -303,6 +327,8 @@ Terima kasih sudah menghubungi Bank ABC 😊
 1. Go to the **Environment** menu which is placed under the current menu ("Overview"). If you successfully entered the Environment menu, you will see a page like this. These 3 environments represent that your chatbot will be tested in development or staging first, before go live as in Production stage
 
 ![image alt text](./images/simple-handover/image_12.png)
+
+> Set up environment
 
 2. Click the **Create Environment** button in the Development environment and you will see a drawer to create new environment
 
@@ -338,6 +364,8 @@ Follow the tutorial below in Omnichat to continue: Section **How to Set Up Agent
 
 ![image alt text](./images/simple-handover/image_13.png)
 
+> Create new agent bot
+
 2. Next, open the Kata Platform URL ([https://platform.kata.ai](https://platform.kata.ai)) and do login
 
 3. Click your project that already had a chatbot and deployed
@@ -345,6 +373,8 @@ Follow the tutorial below in Omnichat to continue: Section **How to Set Up Agent
 4. Then, go to the menu: Deploy > Environment. You will see this screen.
 
 ![image alt text](./images/simple-handover/image_14.png)
+
+> Set up channel again to paste access token from Omnichat
 
 5. Click Create Channel button to start connect and you will see an empty channel table
 
@@ -366,6 +396,8 @@ Follow the tutorial below in Omnichat to continue: Section **How to Set Up Agent
 
 ![image alt text](./images/simple-handover/image_15.png)
 
+> Edit agent bot to paste webhook URL from Platform
+
 3. Click "Edit" button in the agent bot configuration
 
 4. A drawer will appear to fill in the Platform webhook URL. Paste your chatbot webhook URL
@@ -375,6 +407,8 @@ Follow the tutorial below in Omnichat to continue: Section **How to Set Up Agent
 6. Lastly, turn on the toggle in Activate Agent Bot. Your chatbot is already connected to the Omnichat inbox and ready to use!
 
 ![image alt text](./images/simple-handover/image_16.png)
+
+> Activate agent bot and final step
 
 # Final Demo
 

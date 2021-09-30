@@ -12,6 +12,8 @@ Currently, we’ve launched Instagram chatbot with various features, such as End
 
 In this tutorial, we will create an Instagram chatbot that is able to send conversations to human agents, also known as "Agent Handover''. We will use the Kata Omnichat dashboard to connect chatbots with human agents. Learn more about [Omnichat](/kata-omnichat).
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/dAHnoTX4BUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Chatbot Flow
 
 Before we jump into the tutorial, let’s see the scenario for the conversation. We will create a chatbot using _keywords_.
@@ -119,6 +121,8 @@ Main keyword: greetings
 
 ![image alt text](./images/ig-handover/image_1.png)
 
+> Create "greetings" keyword
+
 6. Click **"Create"** to save the NLUs
 
 ### Create "greetingsIntent" intent to catch user’s input
@@ -130,6 +134,8 @@ Main keyword: greetings
 3. Fill in the intent as follows. The choice of "Intent type" is text, which means it will catch incoming messages with text only. We also set up the intent into “As Initial”, which means the intent will be executed for the first time. On classifier, use “greetings” NLUs that we’ve created in the previous step to connect the intent with creating keywords for greetings.
 
 ![image alt text](./images/ig-handover/image_2.png)
+
+> Create intent and create mapping with greetings keyword
 
 ## Objective: Connect "init" and “greetingsState” states by creating a transition
 
@@ -160,6 +166,8 @@ In this part, we are going to create a greeting flow to respond to end-users who
 3. Fill in the intent as follows. We set up the intent into "As Initial", which means the intent will be executed for the first time. Choose intent type into data, because we will use a payload named story_mention.
 
 ![image alt text](./images/ig-handover/image_3.png)
+
+> Create intent for Instagram Story Mention feature
 
 4. Then, click **Create**.
 
@@ -203,6 +211,8 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 ![image alt text](./images/ig-handover/image_4.png)
 
+> Create transition and define which intent to trigger the next state "igMentionedState"
+
 3. Click **"Create Transition"**
 
 # Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Reply
@@ -220,6 +230,8 @@ In this part, we are going to create a greeting flow to respond to end-users who
 3. Fill in the intent as follows. We set up the intent into "As Initial", which means the intent will be executed for the first time. Choose intent type into data, because we will use a payload named story_reply.
 
 ![image alt text](./images/ig-handover/image_5.png)
+
+> Create intent for Instagram Story Reply
 
 5. Then, click **Create**.
 
@@ -263,6 +275,8 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 ![image alt text](./images/ig-handover/image_6.png)
 
+> Create transition and define which intent to trigger the next state "igStoryReply"
+
 3. Click **"Create Transition"**
 
 # Create Quick Replies
@@ -296,6 +310,8 @@ Pilih topik yang kamu inginkan 😊
 6. Fill in the fields as follow
 
 ![image alt text](./images/ig-handover/image_7.png)
+
+> Create message in quick replies
 
 7. Click button Create Action
 
@@ -883,6 +899,8 @@ The self-transition will make the actions under state will be repeatedly shown i
 
 ![image alt text](./images/ig-handover/image_8.png)
 
+> Create intent to catch command for triggering next flow
+
 4. Click Create to finalize
 
 ## Objective: Connect all bot responses states to confirmState
@@ -975,6 +993,8 @@ toMenu
 
 ![image alt text](./images/ig-handover/image_9.png)
 
+> Create intent to catch command for showing main menu again
+
 4. Then, click **Create**.
 
 ### Update transition condition from "init" to “greetingsState”
@@ -1049,6 +1069,8 @@ content == "2"
 
 ![image alt text](./images/ig-handover/image_10.png)
 
+> Create intent for being "guard" before fallback flow
+
 4. Click Create to finalize
 
 # Finalize Your New Bot
@@ -1063,6 +1085,8 @@ content == "2"
 
 ![image alt text](./images/ig-handover/image_11.png)
 
+> Final conversation flow
+
 ## Objective: Testing your bot in emulator
 
 1. On the bottom of your right screen, there is a small button named **"Test Chatbot".** Click the **button** to start.
@@ -1071,7 +1095,11 @@ content == "2"
 
 ![image alt text](./images/ig-handover/image_12.png)
 
+> Testing your bot by typing "hai"
+
 ![image alt text](./images/ig-handover/image_13.png)
+
+> Testing another action response, this example is for text action
 
 3. If you want to **restart** the session, click refresh icon which is placed at the bottom
 
@@ -1087,6 +1115,8 @@ content == "2"
 
 ![image alt text](./images/ig-handover/image_14.png)
 
+> Create new deployment
+
 4. Click **Submit** to finish the deployment
 
 ### Create a new environment as prerequisites to deploy the bot to channel
@@ -1094,6 +1124,8 @@ content == "2"
 1. Go to the **Environment** menu which is placed under the current menu ("Overview"). If you successfully entered the Environment menu, you will see a page like this. These 3 environments represent that your chatbot will be tested in development or staging first before go live as in Production stage.
 
 ![image alt text](./images/ig-handover/image_15.png)
+
+> Set up environment, then set up Omnichat channel
 
 2. Click the **Create Environment** button in the Development environment and you will see a drawer to create a new environment
 
@@ -1129,6 +1161,8 @@ Follow the tutorial in Omnichat to continue. Continue to [create agent bot](/kat
 
 ![image alt text](./images/ig-handover/image_16.png)
 
+> Create agent bot
+
 2. Next, open the Kata Platform URL ([https://platform.kata.ai](https://platform.kata.ai)) and do login
 
 3. Click your project that already had a chatbot and deployed
@@ -1136,6 +1170,8 @@ Follow the tutorial in Omnichat to continue. Continue to [create agent bot](/kat
 4. Then, go to the menu: Deploy > Environment. You will see this screen.
 
 ![image alt text](./images/ig-handover/image_17.png)
+
+> Click button "Create channel" to continue copying access token from Omnichat
 
 5. Click Create Channel button to start to connect and you will see an empty channel table
 
@@ -1156,6 +1192,8 @@ Follow the tutorial in Omnichat to continue. Continue to [create agent bot](/kat
 2. Go to menu: Settings > Integrations > Agent Bot. You will see this screen and information that you’re still in the first step to finalize
 
 ![image alt text](./images/ig-handover/image_18.png)
+
+> Edit the agent bot to paste webhook URL from Kata Platform
 
 3. Click "Edit" button in the agent bot configuration
 
@@ -1193,6 +1231,8 @@ Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omni
 
 ![image alt text](./images/ig-handover/image_19.png)
 
+> Edit the agent bot to paste webhook URL from Kata Platform
+
 4. Then, click **Create**.
 
 ### Create intent for Promo menu
@@ -1204,6 +1244,8 @@ Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omni
 3. Fill in the intent as follows. This intent will trigger the promo state to show promo response when end-user click "Promo" in Ice Breaker feature
 
 ![image alt text](./images/ig-handover/image_20.png)
+
+> Create intent for triggering Promo state when user click Ice Breaker with Promo item
 
 5. Then, click **Create**.
 
@@ -1217,6 +1259,8 @@ Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omni
 
 ![image alt text](./images/ig-handover/image_21.png)
 
+> Create intent for triggering Lokasi state when user click Ice Breaker with Location item
+
 4. Then, click **Create**.
 
 ### Create intent for "Berbicara dengan CS" menu
@@ -1228,6 +1272,8 @@ Follow the tutorial on [how to set up Ice Breaker in Instagram Inbox](/kata-omni
 3. Fill in the intent as follows. This intent will trigger the handover state to handover end-user to human agent when end-user click "Berbicara dengan CS" in Ice Breaker feature
 
 ![image alt text](./images/ig-handover/image_22.png)
+
+> Create intent for triggering CS state item
 
 4. Then, click **Create**.
 
