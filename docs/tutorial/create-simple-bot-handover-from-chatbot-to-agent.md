@@ -416,4 +416,6 @@ We provide video tutorials and interaction demos for agent bot Omnichat features
 
 -   Create simple bot handover video tutorial
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/pbqou7Wr4Tc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 -   Chatbot interaction with end-user and handover to human agent

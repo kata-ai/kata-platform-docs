@@ -1345,6 +1345,8 @@ We provide video tutorials and interaction demo for Instagram chatbot features. 
 
 -   Create Instagram bot handover video tutorial
 
+<iframe width="600" height="300" src="https://www.youtube.com/embed/dAHnoTX4BUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 -   Ice Breaker interaction with end-users
 
 -   Instagram Story Mention interaction with end-users
