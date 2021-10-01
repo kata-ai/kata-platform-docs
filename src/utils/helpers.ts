@@ -28,8 +28,7 @@ function isDocsPath(location: WindowLocation) {
     pathname.includes('/cms-studio/') ||
     pathname.includes('/deployment-guide/') ||
     pathname.includes('/channels/') ||
-    pathname.includes('/modules/') ||
-    pathname.includes('/kata-omnichat/')
+    pathname.includes('/modules/')
   );
 }
 
