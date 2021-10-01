@@ -107,6 +107,20 @@ const Header = styled('section')`
   }
 `;
 
+const Label = styled('div')`
+  display: flex;
+  margin-left: 4px;
+  max-height: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  background: #EAFDF5;
+  border-radius: 8px;
+  color: #0C965A;
+`;
+
+
 interface HeaderInnerProps {
   hideOnMobile?: boolean;
   hideOnDesktop?: boolean;
@@ -130,6 +144,7 @@ const DocumentationMenu = styled('div')`
   border-bottom: 1px solid ${colors.grey02};
 
   & .menu-link {
+    display: flex;
     padding: 8px 0;
     color: ${colors.grey07};
 
@@ -187,16 +202,20 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label}
-                    </a>
+                    <>
+                      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+                        {node.label} {node.new && <Label>New</Label>}
+                      </a>
+                    </>
                   );
                 }
 
                 return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label}
-                  </Link>
+                  <>
+                    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+                      {node.label} {node.new && <Label>New</Label>}
+                    </Link>
+                  </>
                 );
               })}
 
@@ -220,16 +239,20 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label}
-                    </a>
+                    <>
+                      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+                        {node.label} {node.new && <Label>New</Label>}
+                      </a>
+                    </>
                   );
                 }
 
                 return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label}
-                  </Link>
+                  <>
+                    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+                      {node.label} {node.new && <Label>New</Label>}
+                    </Link>
+                  </>
                 );
               })}
 

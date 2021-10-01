@@ -44,6 +44,7 @@
     "id": "kata-omnichat",
     "label": "Kata Omnichat",
     "href": "/kata-omnichat",
+    "new": true,
     "external": false
   }
 ]

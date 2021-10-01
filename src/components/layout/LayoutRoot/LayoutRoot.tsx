@@ -95,6 +95,20 @@ const DesktopHeaderRight = styled('div')`
   align-items: center;
 `;
 
+const Label = styled('div')`
+  display: flex;
+  margin-left: 4px;
+  margin-top: 8px;
+  max-height: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  background: #EAFDF5;
+  border-radius: 8px;
+  color: #0C965A;
+`;
+
 interface FontSizeProps {
   size: ReturnType<typeof determineFontDimensions>;
 }
@@ -177,7 +191,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                 size={determineFontDimensions('heading', 400)}
                 onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
               >
-                <img src={logo} alt={title} />
+                <img src={isOmnichat ? omnichatLogo :logo} alt={title} />
               </HomepageLink>
             </LogoWrapper>
             {isSearchOpen ? (
@@ -194,16 +208,22 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                 headerMenus.map(({ node }) => {
                   if (node.external) {
                     return (
-                      <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
-                        {node.label}
-                      </a>
+                      <>
+                        <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                          {node.label}
+                        </a>
+                        {node.new && <Label>New</Label>}
+                      </>
                     );
                   }
 
                   return (
-                    <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
-                      {node.label}
-                    </Link>
+                    <>
+                      <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                        {node.label}
+                      </Link>
+                      {node.new && <Label>New</Label>}
+                    </>
                   );
                 })}
             </DocumentationMenu>
