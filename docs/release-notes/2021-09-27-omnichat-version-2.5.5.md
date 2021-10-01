@@ -3,6 +3,7 @@ layout: updates
 title: 'Kata Omnichat 2.5.5'
 version: '2.5.5'
 category: 'major'
+header_image: './images/platform-3.15.0/header.png'
 date: 2021-09-27T12:01:00+07:00
 ---
 

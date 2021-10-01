@@ -202,20 +202,16 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <>
-                      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                        {node.label} {node.new && <Label>New</Label>}
-                      </a>
-                    </>
+                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+                      {node.label} {node.new && <Label>New</Label>}
+                    </a>
                   );
                 }
 
                 return (
-                  <>
-                    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                      {node.label} {node.new && <Label>New</Label>}
-                    </Link>
-                  </>
+                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+                    {node.label} {node.new && <Label>New</Label>}
+                  </Link>
                 );
               })}
 
@@ -239,20 +235,16 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
               headerMenus.map(({ node }) => {
                 if (node.external) {
                   return (
-                    <>
-                      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                        {node.label} {node.new && <Label>New</Label>}
-                      </a>
-                    </>
+                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+                      {node.label} {node.new && <Label>New</Label>}
+                    </a>
                   );
                 }
 
                 return (
-                  <>
-                    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                      {node.label} {node.new && <Label>New</Label>}
-                    </Link>
-                  </>
+                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+                    {node.label} {node.new && <Label>New</Label>}
+                  </Link>
                 );
               })}
 

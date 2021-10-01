@@ -148,10 +148,16 @@ const query = graphql`
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const [isOmnichat, setIsOmnichat] = React.useState(false);
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
-  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
+
+  React.useEffect(() => {
+    if (window) {
+      setIsOmnichat(window.location.pathname.includes('kata-omnichat'));
+    }
+  }, []);
 
   return (
     <StyledLayoutRoot className={className}>
