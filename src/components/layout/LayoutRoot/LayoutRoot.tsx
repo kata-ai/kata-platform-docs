@@ -6,6 +6,7 @@ import { WindowLocation } from '@reach/router';
 import { SkipNavLink } from '@reach/skip-nav';
 
 import { determineFontDimensions } from 'components/foundations';
+import { LabelNew } from 'components/ui/Label';
 
 import { SiteMetadata } from 'interfaces/gatsby';
 import { breakpoints, colors, textSizes } from 'utils/variables';
@@ -43,6 +44,7 @@ const LogoWrapper = styled('div')`
 const DocumentationMenu = styled('nav')`
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   a {
     padding: 8px 0;
@@ -95,20 +97,6 @@ const DesktopHeaderRight = styled('div')`
   align-items: center;
 `;
 
-const Label = styled('div')`
-  display: flex;
-  margin-left: 4px;
-  margin-top: 8px;
-  max-height: 20px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 8px;
-  background: #EAFDF5;
-  border-radius: 8px;
-  color: #0C965A;
-`;
-
 interface FontSizeProps {
   size: ReturnType<typeof determineFontDimensions>;
 }
@@ -157,7 +145,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
     if (window) {
       setIsOmnichat(window.location.pathname.includes('kata-omnichat'));
     }
-  }, []);
+  }, [isOmnichat, setIsOmnichat]);
 
   return (
     <StyledLayoutRoot className={className}>
@@ -218,7 +206,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                         <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
                           {node.label}
                         </a>
-                        {node.new && <Label>New</Label>}
+                        {node.new && <LabelNew />}
                       </>
                     );
                   }
@@ -228,7 +216,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                       <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
                         {node.label}
                       </Link>
-                      {node.new && <Label>New</Label>}
+                      {node.new && <LabelNew />}
                     </>
                   );
                 })}

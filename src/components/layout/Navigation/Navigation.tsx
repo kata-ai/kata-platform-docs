@@ -5,6 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { Heading } from 'components/foundations';
+import { LabelNew } from 'components/ui/Label';
 import { ButtonStyles } from 'components/ui/Button';
 import { colors, layerIndexes, breakpoints, dimensions, space } from 'utils/variables';
 import { isActive } from 'utils/helpers';
@@ -107,20 +108,6 @@ const Header = styled('section')`
   }
 `;
 
-const Label = styled('div')`
-  display: flex;
-  margin-left: 4px;
-  max-height: 20px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 8px;
-  background: #EAFDF5;
-  border-radius: 8px;
-  color: #0C965A;
-`;
-
-
 interface HeaderInnerProps {
   hideOnMobile?: boolean;
   hideOnDesktop?: boolean;
@@ -203,14 +190,14 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
                 if (node.external) {
                   return (
                     <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label} {node.new && <Label>New</Label>}
+                      {node.label} {node.new && <LabelNew />}
                     </a>
                   );
                 }
 
                 return (
                   <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label} {node.new && <Label>New</Label>}
+                    {node.label} {node.new && <LabelNew />}
                   </Link>
                 );
               })}
@@ -236,14 +223,14 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
                 if (node.external) {
                   return (
                     <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label} {node.new && <Label>New</Label>}
+                      {node.label} {node.new && <LabelNew />}
                     </a>
                   );
                 }
 
                 return (
                   <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label} {node.new && <Label>New</Label>}
+                    {node.label} {node.new && <LabelNew />}
                   </Link>
                 );
               })}
