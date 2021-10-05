@@ -248,8 +248,12 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
             </LoginButton>
           </DocumentationMenu>
           <DocumentationNav onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}>
-            {navigation &&
-              navigation.map(({ node }) => <NavigationMenu key={node.title} menuKey={node.title} node={node} />)}
+              {navigation &&
+                navigation.map(({ node }) => <>
+                  {node.title !== 'API' && <NavigationMenu key={node.title} menuKey={node.title} node={node} />}
+                </>
+                )
+              }
           </DocumentationNav>
         </WrapperInner>
       )}
