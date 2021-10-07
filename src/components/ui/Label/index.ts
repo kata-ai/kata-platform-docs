@@ -1,1 +1,1 @@
-export { default as LabelNew } from './LabelNew';
+export { default as LabelNew } from './Label';
