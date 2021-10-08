@@ -163,6 +163,22 @@ interface NavigationProps {
   navHidden?: boolean;
 }
 
+const NodeLink: React.FC<{node: HeaderMenuItem}> = ({ node }) => {
+  if (node.external) {
+    return (
+      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+        {node.label} {node.new && <LabelNew />}
+      </a>
+    );
+  }
+
+  return (
+    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+      {node.label} {node.new && <LabelNew />}
+    </Link>
+  );
+}
+
 function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
   const { state, dispatch } = React.useContext(NavigationContext);
 
@@ -187,19 +203,7 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
           <DocumentationMenu>
             {headerMenus &&
               headerMenus.map(({ node }) => {
-                if (node.external) {
-                  return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label} {node.new && <LabelNew />}
-                    </a>
-                  );
-                }
-
-                return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label} {node.new && <LabelNew />}
-                  </Link>
-                );
+                return ( <NodeLink node={node} /> )
               })}
 
             <LoginButton
@@ -220,19 +224,7 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
           <DocumentationMenu>
             {headerMenus &&
               headerMenus.map(({ node }) => {
-                if (node.external) {
-                  return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label} {node.new && <LabelNew />}
-                    </a>
-                  );
-                }
-
-                return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label} {node.new && <LabelNew />}
-                  </Link>
-                );
+                return ( <NodeLink node={node} /> )
               })}
 
             <LoginButton
