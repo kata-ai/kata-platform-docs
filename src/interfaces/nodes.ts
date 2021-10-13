@@ -3,6 +3,7 @@ export interface HeaderMenuItem {
   label: string;
   href: string;
   exact?: boolean;
+  new?: boolean;
   external: boolean;
 }
 

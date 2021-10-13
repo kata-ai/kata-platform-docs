@@ -82,6 +82,7 @@ const query = graphql`
           label
           href
           exact
+          new
           external
         }
       }

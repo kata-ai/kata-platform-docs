@@ -6,6 +6,7 @@ import { WindowLocation } from '@reach/router';
 import { SkipNavLink } from '@reach/skip-nav';
 
 import { determineFontDimensions } from 'components/foundations';
+import { LabelNew } from 'components/ui/Label';
 
 import { SiteMetadata } from 'interfaces/gatsby';
 import { breakpoints, colors, textSizes } from 'utils/variables';
@@ -43,6 +44,7 @@ const LogoWrapper = styled('div')`
 const DocumentationMenu = styled('nav')`
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   a {
     padding: 8px 0;
@@ -134,10 +136,16 @@ const query = graphql`
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const [isOmnichat, setIsOmnichat] = React.useState(false);
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
-  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
+
+  React.useEffect(() => {
+    if (window) {
+      setIsOmnichat(window.location.pathname.includes('kata-omnichat'));
+    }
+  }, [isOmnichat, setIsOmnichat]);
 
   return (
     <StyledLayoutRoot className={className}>
@@ -177,7 +185,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                 size={determineFontDimensions('heading', 400)}
                 onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
               >
-                <img src={logo} alt={title} />
+                <img src={isOmnichat ? omnichatLogo :logo} alt={title} />
               </HomepageLink>
             </LogoWrapper>
             {isSearchOpen ? (
@@ -194,16 +202,22 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
                 headerMenus.map(({ node }) => {
                   if (node.external) {
                     return (
-                      <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
-                        {node.label}
-                      </a>
+                      <>
+                        <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                          {node.label}
+                        </a>
+                        {node.new && <LabelNew />}
+                      </>
                     );
                   }
 
                   return (
-                    <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
-                      {node.label}
-                    </Link>
+                    <>
+                      <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                        {node.label}
+                      </Link>
+                      {node.new && <LabelNew />}
+                    </>
                   );
                 })}
             </DocumentationMenu>

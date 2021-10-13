@@ -5,6 +5,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { MenuNode, Edge, HeaderMenuItem } from 'interfaces/nodes';
 import { Heading } from 'components/foundations';
+import { LabelNew } from 'components/ui/Label';
 import { ButtonStyles } from 'components/ui/Button';
 import { colors, layerIndexes, breakpoints, dimensions, space } from 'utils/variables';
 import { isActive } from 'utils/helpers';
@@ -130,6 +131,7 @@ const DocumentationMenu = styled('div')`
   border-bottom: 1px solid ${colors.grey02};
 
   & .menu-link {
+    display: flex;
     padding: 8px 0;
     color: ${colors.grey07};
 
@@ -161,6 +163,22 @@ interface NavigationProps {
   navHidden?: boolean;
 }
 
+const NodeLink: React.FC<{node: HeaderMenuItem}> = ({ node }) => {
+  if (node.external) {
+    return (
+      <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
+        {node.label} {node.new && <LabelNew />}
+      </a>
+    );
+  }
+
+  return (
+    <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
+      {node.label} {node.new && <LabelNew />}
+    </Link>
+  );
+}
+
 function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
   const { state, dispatch } = React.useContext(NavigationContext);
 
@@ -185,19 +203,7 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
           <DocumentationMenu>
             {headerMenus &&
               headerMenus.map(({ node }) => {
-                if (node.external) {
-                  return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label}
-                    </a>
-                  );
-                }
-
-                return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label}
-                  </Link>
-                );
+                return ( <NodeLink node={node} /> )
               })}
 
             <LoginButton
@@ -218,19 +224,7 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
           <DocumentationMenu>
             {headerMenus &&
               headerMenus.map(({ node }) => {
-                if (node.external) {
-                  return (
-                    <a key={node.id} className="menu-link" href={node.href} target="_blank" rel="noopener noreferrer">
-                      {node.label}
-                    </a>
-                  );
-                }
-
-                return (
-                  <Link key={node.id} className="menu-link" getProps={isActive(node.exact, 'menu-link')} to={node.href}>
-                    {node.label}
-                  </Link>
-                );
+                return ( <NodeLink node={node} /> )
               })}
 
             <LoginButton
@@ -246,8 +240,12 @@ function Navigation({ navigation, headerMenus, navHidden }: NavigationProps) {
             </LoginButton>
           </DocumentationMenu>
           <DocumentationNav onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}>
-            {navigation &&
-              navigation.map(({ node }) => <NavigationMenu key={node.title} menuKey={node.title} node={node} />)}
+              {navigation &&
+                navigation.map(({ node }) => <>
+                  {node.title !== 'API' && <NavigationMenu key={node.title} menuKey={node.title} node={node} />}
+                </>
+                )
+              }
           </DocumentationNav>
         </WrapperInner>
       )}
