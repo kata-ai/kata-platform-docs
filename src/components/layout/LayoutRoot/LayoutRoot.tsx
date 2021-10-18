@@ -13,8 +13,9 @@ import { breakpoints, colors, textSizes } from 'utils/variables';
 import { isActive } from 'utils/helpers';
 import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 
-import logo from 'assets/images/logo-docs.svg';
+import mainLogo from 'assets/images/logo-docs.svg';
 import omnichatLogo from 'assets/images/omnichat-logo-docs.svg';
+import businessDashboardLogo from 'assets/images/business-dashboard-logo-docs.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import SearchBox from 'components/search/SearchBox';
@@ -136,27 +137,38 @@ const query = graphql`
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, title, headerMenus, navHidden }) => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
-  const [isOmnichat, setIsOmnichat] = React.useState(false);
+  const [logo, setLogo] = React.useState(mainLogo);
   const { dispatch } = React.useContext(NavigationContext);
   const data: DataProps = useStaticQuery(query);
   const { siteMetadata } = data.site;
 
-  React.useEffect(() => {
+  const renderLogo = () => {
     if (window) {
-      setIsOmnichat(window.location.pathname.includes('kata-omnichat'));
+      const pathname = window.location.pathname;
+      if (pathname.includes('kata-omnichat')) {
+        setLogo(omnichatLogo);
+      } else if (pathname.includes('business-dashboard')){
+        setLogo(businessDashboardLogo);
+      } else {
+        setLogo(mainLogo);
+      }
     }
-  }, [isOmnichat, setIsOmnichat]);
+  };
+
+  React.useEffect(() => {
+    renderLogo();
+  }, [window, logo]);
 
   return (
     <StyledLayoutRoot className={className}>
       <Helmet>
         <title>{siteMetadata.title}</title>
-        <meta name="description" content={siteMetadata.description} />
-        <meta name="keywords" content={siteMetadata.keywords} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={siteMetadata.title} />
-        <meta property="og:description" content={siteMetadata.description} />
-        <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+        <meta name='description' content={siteMetadata.description} />
+        <meta name='keywords' content={siteMetadata.keywords} />
+        <meta property='og:type' content='website' />
+        <meta property='og:site_name' content={siteMetadata.title} />
+        <meta property='og:description' content={siteMetadata.description} />
+        <meta property='og:url' content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
       </Helmet>
       <SkipNavLink />
 
@@ -164,16 +176,16 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
         <HeaderInner>
           <HeaderLogo navHidden={navHidden}>
             <HomepageLink
-              to="/"
+              to='/'
               size={determineFontDimensions('heading', 400)}
               onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
             >
-              <img src={isOmnichat ? omnichatLogo : logo} alt={title} />
+              <img src={logo} alt={title} />
             </HomepageLink>
           </HeaderLogo>
           <HeaderRight hideOnDesktop>
             <NavButton
-              icon="hamburger"
+              icon='hamburger'
               fill={colors.grey05}
               onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
             >
@@ -181,15 +193,15 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
             </NavButton>
             <LogoWrapper>
               <HomepageLink
-                to="/"
+                to='/'
                 size={determineFontDimensions('heading', 400)}
                 onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
               >
-                <img src={isOmnichat ? omnichatLogo :logo} alt={title} />
+                <img src={logo} alt={title} />
               </HomepageLink>
             </LogoWrapper>
             {isSearchOpen ? (
-              <SearchBox layout="mobile" onSearchClear={() => setIsSearchOpen(false)} />
+              <SearchBox layout='mobile' onSearchClear={() => setIsSearchOpen(false)} />
             ) : (
               <UnstyledSearchButton onClick={() => setIsSearchOpen(!isSearchOpen)}>
                 <SearchIcon />
@@ -199,36 +211,36 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
           <HeaderRight hideOnMobile>
             <DocumentationMenu>
               {headerMenus &&
-                headerMenus.map(({ node }) => {
-                  if (node.external) {
-                    return (
-                      <>
-                        <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
-                          {node.label}
-                        </a>
-                        {node.new && <LabelNew />}
-                      </>
-                    );
-                  }
-
+              headerMenus.map(({ node }) => {
+                if (node.external) {
                   return (
                     <>
-                      <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                      <a key={node.id} href={node.href} target='_blank' rel='noopener noreferrer'>
                         {node.label}
-                      </Link>
+                      </a>
                       {node.new && <LabelNew />}
                     </>
                   );
-                })}
+                }
+
+                return (
+                  <>
+                    <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
+                      {node.label}
+                    </Link>
+                    {node.new && <LabelNew />}
+                  </>
+                );
+              })}
             </DocumentationMenu>
             <DesktopHeaderRight>
-              <SearchBox layout="desktop" />
+              <SearchBox layout='desktop' />
               <LoginButton
-                variant="primary"
+                variant='primary'
                 size={'md' as any}
-                href="https://platform.kata.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href='https://platform.kata.ai/'
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Login
               </LoginButton>

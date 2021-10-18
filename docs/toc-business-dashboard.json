@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Introduction",
+    "items": [
+      {
+        "id": "omnichat-about",
+        "slug": "/business-dashboard/omnichat-about",
+        "title": "About Business Dashboard"
+      }
+    ]
+  },
+  {
+    "title": "How To",
+    "items": [
+      {
+        "id": "general-setup",
+        "slug": "/business-dashboard/general-setup",
+        "title": "How to Set Up"
+      },
+      {
+        "id": "setup-agent-bot",
+        "slug": "/business-dashboard/setup-agent-bot",
+        "title": "How to Set Up Agent Bot"
+      },
+      {
+        "id": "how-to-use",
+        "slug": "/business-dashboard/how-to-use",
+        "title": "How to Use"
+      }
+    ]
+  }
+]
