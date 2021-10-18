@@ -46,5 +46,12 @@
     "href": "/kata-omnichat",
     "new": true,
     "external": false
+  },
+  {
+    "id": "business-dashboard",
+    "label": "Business Dashboard",
+    "href": "/business-dashboard",
+    "new": true,
+    "external": false
   }
 ]
