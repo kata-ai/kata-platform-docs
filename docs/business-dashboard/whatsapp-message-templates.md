@@ -121,10 +121,10 @@ For all variables you created throughout your template message content, you have
 
     Example: {{1}}, {{2}}, {{3}}
 
-3. ITemplate message contains potentially abusive/threatening content is not allowed:
+3. Template message contains potentially abusive/threatening content is not allowed:
 
     a. Threaten customers with a course of legal action will be rejected
 
     b. Threaten the customer if they don’t pay their loan will also be rejected
-4. Additional best practice guidelines are outlined here.
+4. Additional best practice guidelines are outlined [here](https://developers.facebook.com/docs/whatsapp/message-templates/guidelines).
 
