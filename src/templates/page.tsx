@@ -60,18 +60,17 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
   const nextPage = getPageById(section, next);
 
   React.useEffect(() => {
-      if (window) {
-        const pathname = window.location.pathname;
-        if (pathname.includes('kata-omnichat')) {
-          setSection(sectionListOmni.edges);
-        } else if (pathname.includes('business-dashboard')){
-          setSection(sectionListBusinessDashboard.edges);
-        } else {
-          setSection(sectionList.edges);
-        }
+    if (window) {
+      const pathname = window.location.pathname;
+      if (pathname.includes('kata-omnichat')) {
+        setSection(sectionListOmni.edges);
+      } else if (pathname.includes('business-dashboard')) {
+        setSection(sectionListBusinessDashboard.edges);
+      } else {
+        setSection(sectionList.edges);
       }
-  },[window, section])
-
+    }
+  }, [section]);
 
   return (
     <IndexLayout>

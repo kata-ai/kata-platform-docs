@@ -106,7 +106,8 @@ const query = graphql`
 `;
 
 const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
-  const { site, headerMenus, navigationMenus, omnichatNavigationMenus, businessDashboardMenus }: DataProps = useStaticQuery(query);
+  const { site, headerMenus, navigationMenus, omnichatNavigationMenus, businessDashboardMenus }: DataProps =
+    useStaticQuery(query);
   const [section, setSection] = React.useState<Edge<MenuNode>[]>(navigationMenus.edges);
   const { siteMetadata } = site;
 
@@ -115,13 +116,13 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden
       const pathname = window.location.pathname;
       if (pathname.includes('kata-omnichat')) {
         setSection(omnichatNavigationMenus.edges);
-      } else if (pathname.includes('business-dashboard')){
+      } else if (pathname.includes('business-dashboard')) {
         setSection(businessDashboardMenus.edges);
       } else {
         setSection(navigationMenus.edges);
       }
     }
-  },[window, section])
+  }, [section]);
 
   return (
     <NavigationContextProvider>
@@ -141,11 +142,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden
             <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
           </Helmet>
           <Overlay />
-          <Navigation
-            navigation={section}
-            headerMenus={headerMenus.edges}
-            navHidden={navHidden}
-          />
+          <Navigation navigation={section} headerMenus={headerMenus.edges} navHidden={navHidden} />
           <LayoutMain navHidden={navHidden}>{children}</LayoutMain>
         </LayoutRoot>
       </AksaraReset>

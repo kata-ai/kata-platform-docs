@@ -147,7 +147,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
       const pathname = window.location.pathname;
       if (pathname.includes('kata-omnichat')) {
         setLogo(omnichatLogo);
-      } else if (pathname.includes('business-dashboard')){
+      } else if (pathname.includes('business-dashboard')) {
         setLogo(businessDashboardLogo);
       } else {
         setLogo(mainLogo);
@@ -157,18 +157,18 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
 
   React.useEffect(() => {
     renderLogo();
-  }, [window, logo]);
+  }, []);
 
   return (
     <StyledLayoutRoot className={className}>
       <Helmet>
         <title>{siteMetadata.title}</title>
-        <meta name='description' content={siteMetadata.description} />
-        <meta name='keywords' content={siteMetadata.keywords} />
-        <meta property='og:type' content='website' />
-        <meta property='og:site_name' content={siteMetadata.title} />
-        <meta property='og:description' content={siteMetadata.description} />
-        <meta property='og:url' content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
+        <meta name="description" content={siteMetadata.description} />
+        <meta name="keywords" content={siteMetadata.keywords} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.description} />
+        <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
       </Helmet>
       <SkipNavLink />
 
@@ -176,7 +176,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
         <HeaderInner>
           <HeaderLogo navHidden={navHidden}>
             <HomepageLink
-              to='/'
+              to="/"
               size={determineFontDimensions('heading', 400)}
               onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
             >
@@ -185,7 +185,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
           </HeaderLogo>
           <HeaderRight hideOnDesktop>
             <NavButton
-              icon='hamburger'
+              icon="hamburger"
               fill={colors.grey05}
               onClick={() => dispatch({ type: NavigationActionTypes.TOGGLE_DRAWER })}
             >
@@ -193,7 +193,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
             </NavButton>
             <LogoWrapper>
               <HomepageLink
-                to='/'
+                to="/"
                 size={determineFontDimensions('heading', 400)}
                 onClick={() => dispatch({ type: NavigationActionTypes.CLOSE_DRAWER })}
               >
@@ -201,7 +201,7 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
               </HomepageLink>
             </LogoWrapper>
             {isSearchOpen ? (
-              <SearchBox layout='mobile' onSearchClear={() => setIsSearchOpen(false)} />
+              <SearchBox layout="mobile" onSearchClear={() => setIsSearchOpen(false)} />
             ) : (
               <UnstyledSearchButton onClick={() => setIsSearchOpen(!isSearchOpen)}>
                 <SearchIcon />
@@ -211,36 +211,36 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
           <HeaderRight hideOnMobile>
             <DocumentationMenu>
               {headerMenus &&
-              headerMenus.map(({ node }) => {
-                if (node.external) {
+                headerMenus.map(({ node }) => {
+                  if (node.external) {
+                    return (
+                      <>
+                        <a key={node.id} href={node.href} target="_blank" rel="noopener noreferrer">
+                          {node.label}
+                        </a>
+                        {node.new && <LabelNew />}
+                      </>
+                    );
+                  }
+
                   return (
                     <>
-                      <a key={node.id} href={node.href} target='_blank' rel='noopener noreferrer'>
+                      <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
                         {node.label}
-                      </a>
+                      </Link>
                       {node.new && <LabelNew />}
                     </>
                   );
-                }
-
-                return (
-                  <>
-                    <Link key={node.id} getProps={isActive(node.exact)} to={node.href}>
-                      {node.label}
-                    </Link>
-                    {node.new && <LabelNew />}
-                  </>
-                );
-              })}
+                })}
             </DocumentationMenu>
             <DesktopHeaderRight>
-              <SearchBox layout='desktop' />
+              <SearchBox layout="desktop" />
               <LoginButton
-                variant='primary'
+                variant="primary"
                 size={'md' as any}
-                href='https://platform.kata.ai/'
-                target='_blank'
-                rel='noopener noreferrer'
+                href="https://platform.kata.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Login
               </LoginButton>
