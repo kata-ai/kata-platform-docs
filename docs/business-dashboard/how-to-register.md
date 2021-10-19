@@ -15,6 +15,8 @@ In WhatsApp Business Dashboard, you can connect multiple WhatsApp accounts to th
 
 ![WhatsApp number table that shows different statuses](./images/image-how-to-register-1.png)
 
+> WhatsApp Numbers page. You can add a new phone number and see the list of WhatsApp numbers that are registered to your Business Dashboard acount with the details.
+
 #### WhatsApp Number Status
 
 For every registered WhatsApp number, you will see a status on the WhatsApp Numbers page. Here’s what the status means: 
@@ -43,8 +45,11 @@ For every registered WhatsApp number, you will see a status on the WhatsApp Numb
   <tr>
     <td>Rejected</td>
     <td>Your request for connecting a new phone number has been rejected by WhatsApp. In this case, the following may be the case:
-Your number has been registered to WhatsApp
-Your number has expired
-Your display name does not comply with <a href="https://developers.facebook.com/docs/whatsapp/guides/display-name">guidelines</a> from Facebook</td>
+    <ul>
+      <li>Your number has been registered to WhatsApp</li>
+      <li>Your number has expired</li>
+      <li>Your display name does not comply with <a href="https://developers.facebook.com/docs/whatsapp/guides/display-name">guidelines</a> from Facebook</li>
+    </ul>
+    </td>
   </tr>
 </table>
