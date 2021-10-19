@@ -25,9 +25,7 @@ Once you have an approved message template, you can use it to send messages to y
 
 Let’s take a look at how to make a CSV file for an example content below:
 
-> <b>Order Kamu Sudah Dikirim Pada {{1}}!</b>
->
-> ```Hi, {{1}}! Ordermu dengan ID {{2}} sudah dalam perjalanan. Klik di bawah ini untuk tracking orderanmu atau hubungi kami jika ada pertanyaan atau kendala. ```
+![image-7](./images/message-template/image-7.png)
 
 Assume this message template has a "visit a website" CTA button with a dynamic URL. In the CSV file, you have to make a column for the variable URL.
 
