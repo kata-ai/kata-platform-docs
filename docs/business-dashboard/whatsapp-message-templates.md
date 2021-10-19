@@ -96,15 +96,19 @@ For all variables you created throughout your template message content, you have
 
 1. Template message with the floating parameters will not be approved by WhatsApp, please surround the parameter with context/information so it is clear what variable will be filled in the parameter.
 
-    Example of floating parameter: “Selamat datang di Toko Sejahtera {{1}}”
+    Example of floating parameter:
 
-    In this example, there is no clear information on what variable will be inserted in parameter {{1}} The CORRECT way to create the variable:
+    “Selamat datang di Toko Sejahtera {{1}}”
+
+    In this example, there is no clear information on what variable will be inserted in parameter {{1}}
+
+    The CORRECT way to create the variable:
 
     i. “Nomor pesanan Anda: {{2}}”
 
     ii. “Berikut total pesanan Anda {{3}}”
 
-2. Template with spelling mistakes will not be accepted, example:
+3. Template with spelling mistakes will not be accepted, example:
 
     Instead of using two curly brackets, you mistakenly type the variable in one curly bracket
 

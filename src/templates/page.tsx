@@ -32,6 +32,9 @@ interface PageTemplateProps extends RouteComponentProps {
     sectionList: {
       edges: Edge<MenuNode>[];
     };
+    sectionListBusinessDashboard: {
+      edges: Edge<MenuNode>[];
+    };
     markdownRemark: {
       html: string;
       tableOfContents: string;
@@ -48,13 +51,27 @@ interface PageTemplateProps extends RouteComponentProps {
 }
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
+  const { markdownRemark, sectionList, sectionListOmni, sectionListBusinessDashboard, site } = data;
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
-  const { markdownRemark, sectionList, sectionListOmni, site } = data;
+  const [section, setSection] = React.useState<Edge<MenuNode>[]>(sectionList.edges);
   const { siteMetadata } = site;
   const { prev, next } = markdownRemark.frontmatter;
-  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
-  const prevPage = isOmnichat ? getPageById(sectionListOmni.edges, prev) : getPageById(sectionList.edges, prev);
-  const nextPage = isOmnichat ? getPageById(sectionListOmni.edges, next) : getPageById(sectionList.edges, next);
+  const prevPage = getPageById(section, prev);
+  const nextPage = getPageById(section, next);
+
+  React.useEffect(() => {
+      if (window) {
+        const pathname = window.location.pathname;
+        if (pathname.includes('kata-omnichat')) {
+          setSection(sectionListOmni.edges);
+        } else if (pathname.includes('business-dashboard')){
+          setSection(sectionListBusinessDashboard.edges);
+        } else {
+          setSection(sectionList.edges);
+        }
+      }
+  },[window, section])
+
 
   return (
     <IndexLayout>
@@ -122,6 +139,18 @@ export const query = graphql`
       }
     }
     sectionListOmni: allTocOmnichatJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
+    sectionListBusinessDashboard: allTocBusinessDashboardJson {
       edges {
         node {
           title
