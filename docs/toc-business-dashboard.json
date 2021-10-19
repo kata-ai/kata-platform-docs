@@ -19,7 +19,7 @@
       },
       {
         "id": "how-to-use-trial",
-        "slug": "/business-dashboard/setup-agent-bot",
+        "slug": "/business-dashboard/how-to-use-trial",
         "title": "How to Use Trial Experience"
       },
       {
@@ -29,7 +29,7 @@
       },
       {
         "id": "manage-wa-credit",
-        "slug": "/business-dashboard/how-to-use",
+        "slug": "/business-dashboard/manage-wa-credit",
         "title": "Manage Your Broadcast Credit"
       },
       {
@@ -39,7 +39,7 @@
       },
       {
         "id": "manage-broadcast",
-        "slug": "/business-dashboard/how-to-use",
+        "slug": "/business-dashboard/manage-broadcast",
         "title": "Manage Your Broadcast"
       },
       {
