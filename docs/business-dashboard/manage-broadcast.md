@@ -25,11 +25,11 @@ Once you have an approved message template, you can use it to send messages to y
 
 Let’s take a look at how to make a CSV file for an example content below:
 
-```
-Order Kamu Sudah Dikirim Pada {{1}}!
+<pre>
+<b>Order Kamu Sudah Dikirim Pada {{1}}!</b>
 
 Hi, {{1}}! Ordermu dengan ID {{2}} sudah dalam perjalanan. Klik di bawah ini untuk tracking orderanmu atau hubungi kami jika ada pertanyaan atau kendala. 
-```
+</pre>
 
 Assume this message template has a "visit a website" CTA button with a dynamic URL. In the CSV file, you have to make a column for the variable URL.
 
@@ -121,6 +121,8 @@ If your CSV upload returns a warning, you can’t proceed to send a broadcast. L
 After you send a broadcast, your broadcast is listed on the **Broadcast** page. Here are the things you can see or do on the **Broadcast** page:
 
 ![Broadcast](./images/image-broadcast.png)
+
+> Broadcast page
 
 #### Broadcast Status
 
