@@ -13,6 +13,8 @@ You can see the remaining broadcast credit of a phone number connected to your b
 
 ![Credit](./images/image-top-up-credits.png)
 
+> Top up credit
+
 1. On the **WhatsApp Numbers** page, look for the WhatsApp number that you want to add the credits to, and click the **top up** button on the right side of the row. Alternatively, go to the **Credits** page and click the **Top up broadcast credits** button.
 
 2. You will be directed to the **Top Up Credits** page. Select the correct phone number and input or slide the slider to the number of credits you want to purchase. You will see the total amount you need to pay. To proceed, click **Pay Now**.
@@ -29,3 +31,5 @@ Currently, we are only receiving bank transfer payments through BCA and BNI Virt
 To view your ongoing and past WhatsApp credit purchases and their status, go to the **Credits** page. Here, you can also download the invoice for each of your purchases by clicking the view **invoice.**
 
 ![Credit History](./images/image-credit-history.png)
+
+> WhatsApp Credit History
