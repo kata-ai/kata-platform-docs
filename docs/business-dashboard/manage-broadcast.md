@@ -33,58 +33,19 @@ Assume this message template has a "visit a website" CTA button with a dynamic U
 
 To create the CSV from example above, make columns with the following names in excel:
 
-<table>
-  <tr>
-    <td>phone_number</td>
-    <td>header_type</td>
-    <td>header_text/link</td>
-    <td>body1_type</td>
-    <td>body1_text</td>
-    <td>body2_type</td>
-    <td>body2_text</td>
-    <td>cta_website_variable</td>
-  </tr>
-</table>
+
+| phone_number | header_type | header_text/link | body1_type | body1_text | body2_type | body2_text | cta_website_variable |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
 The example content above has two variables in the body content. In the excel, make columns body1_type and body1_text to input the content for variable {{1}} and columns body2_type and body3_text to input the content for variable {{2}}. There will be more body#_type and body#_text columns following the number of variables in the body section.
 
 After making the column names, fill in the contents for each column like the example below:
 
-<table>
-  <tr>
-    <td>phone_number</td>
-    <td>header_type</td>
-    <td>header_text/link</td>
-    <td>body1_type</td>
-    <td>body1_text</td>
-    <td>body2_type</td>
-    <td>body2_text</td>
-    <td>cta_website_variable</td>
-  </tr>
-  <tr>
-    <td>081265658112</td>
-    <td>text</td>
-    <td>22 Sep 2021</td>
-    <td>text</td>
-    <td>Jessica</td>
-    <td>text</td>
-    <td>00289</td>
-    <td>704628471649372</td>
-  </tr>
-  <tr>
-    <td>081944517400</td>
-    <td>text</td>
-    <td>22 Sep 2021</td>
-    <td>text</td>
-    <td>Marlin</td>
-    <td>text</td>
-    <td>00300</td>
-    <td>174392047645389</td>
-  </tr>
-</table>
 
-
-  
+| phone_number | header_type | header_text/link | body1_type | body1_text | body2_type | body2_text | cta_website_variable |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 081265658112 | text | 22 Sep 2021 | text | Jessica | text | 00289 | 704628471649372 |
+| 081944517400 | text | 22 Sep 2021 | text | Marlin | text | 00300 | 174392047645389 |
 
 Make sure you fill all the contents correctly to ensure the message is sent successfully. Once you are done filling the contents, **save** your excel document as a CSV and your CSV is ready for upload.
 
