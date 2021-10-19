@@ -30,6 +30,9 @@ interface DataProps {
   omnichatNavigationMenus: {
     edges: Edge<MenuNode>[];
   };
+  businessDashboardMenus: {
+    edges: Edge<MenuNode>[];
+  };
   headerMenus: {
     edges: Edge<HeaderMenuItem>[];
   };
@@ -75,6 +78,18 @@ const query = graphql`
         }
       }
     }
+    businessDashboardMenus: allTocBusinessDashboardJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
     headerMenus: allMenuJson {
       edges {
         node {
@@ -91,9 +106,23 @@ const query = graphql`
 `;
 
 const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
-  const { site, headerMenus, navigationMenus, omnichatNavigationMenus }: DataProps = useStaticQuery(query);
+  const { site, headerMenus, navigationMenus, omnichatNavigationMenus, businessDashboardMenus }: DataProps =
+    useStaticQuery(query);
+  const [section, setSection] = React.useState<Edge<MenuNode>[]>(navigationMenus.edges);
   const { siteMetadata } = site;
-  const isOmnichat = typeof window !== 'undefined' && window.location.pathname.split('/').includes('kata-omnichat');
+
+  React.useEffect(() => {
+    if (window) {
+      const pathname = window.location.pathname;
+      if (pathname.includes('kata-omnichat')) {
+        setSection(omnichatNavigationMenus.edges);
+      } else if (pathname.includes('business-dashboard')) {
+        setSection(businessDashboardMenus.edges);
+      } else {
+        setSection(navigationMenus.edges);
+      }
+    }
+  }, [section]);
 
   return (
     <NavigationContextProvider>
@@ -113,11 +142,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden
             <meta property="og:url" content={`${siteMetadata.siteUrl}${location ? location.pathname : '/'}`} />
           </Helmet>
           <Overlay />
-          <Navigation
-            navigation={isOmnichat ? omnichatNavigationMenus.edges : navigationMenus.edges}
-            headerMenus={headerMenus.edges}
-            navHidden={navHidden}
-          />
+          <Navigation navigation={section} headerMenus={headerMenus.edges} navHidden={navHidden} />
           <LayoutMain navHidden={navHidden}>{children}</LayoutMain>
         </LayoutRoot>
       </AksaraReset>

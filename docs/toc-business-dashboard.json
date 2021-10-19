@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Introduction",
+    "items": [
+      {
+        "id": "introduction",
+        "slug": "/business-dashboard/introduction",
+        "title": "About Business Dashboard"
+      }
+    ]
+  },
+  {
+    "title": "How To",
+    "items": [
+      {
+        "id": "get-started",
+        "slug": "/business-dashboard/get-started",
+        "title": "Get Started with WhatsApp Business Dashboard"
+      },
+      {
+        "id": "how-to-use-trial",
+        "slug": "/business-dashboard/setup-agent-bot",
+        "title": "How to Use Trial Experience"
+      },
+      {
+        "id": "how-to-register",
+        "slug": "/business-dashboard/how-to-register",
+        "title": "How to Register a New WhatsApp Number"
+      },
+      {
+        "id": "manage-wa-credit",
+        "slug": "/business-dashboard/how-to-use",
+        "title": "Manage Your Broadcast Credit"
+      },
+      {
+        "id": "manage-your-whatsapp-message-templates",
+        "slug": "/business-dashboard/whatsapp-message-templates",
+        "title": "Manage Your WhatsApp Template Messages"
+      },
+      {
+        "id": "manage-broadcast",
+        "slug": "/business-dashboard/how-to-use",
+        "title": "Manage Your Broadcast"
+      },
+      {
+        "id": "how-to-use-analytics",
+        "slug": "/business-dashboard/use-analytics",
+        "title": "How to Use Analytics"
+      }
+    ]
+  }
+]
