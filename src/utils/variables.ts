@@ -143,6 +143,8 @@ export const colors = {
   grey08: '#1e2423',
   grey09: '#121615',
   grey10: '#060807',
+  grey11: '#eff2f5',
+  grey12: '#313f4e',
 
   // Helper colors
   white: '#fff',
