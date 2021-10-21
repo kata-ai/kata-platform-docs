@@ -7,6 +7,8 @@ title: Manage Your Broadcast
 
 Once you have an approved message template, you can use it to send messages to your audience using the broadcast feature in our dashboard. 
 
+You can watch our video tutorial below to learn how to broadcast a template message.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/smbHZW5qsIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### How to Broadcast a Template Message
