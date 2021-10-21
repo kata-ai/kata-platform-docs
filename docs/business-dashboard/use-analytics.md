@@ -4,7 +4,7 @@ id: how-to-use-analytics
 title: How to Use Analytics
 ---
 
-![image-1](./images/analytics/image-1.png)
+![image-1](./images/analytics/image-1.jpg)
 
 > Analytics page
 
