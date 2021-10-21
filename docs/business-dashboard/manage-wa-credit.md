@@ -22,7 +22,7 @@ You can see the remaining broadcast credit of a phone number connected to your b
 3. The page will show the summary of your purchase. Choose your preferred payment method, and click **next**.
 
     **Note on payment method:**  
-Currently, we are only receiving bank transfer payments through BCA and BNI Virtual Accounts. For a BCA virtual account, we can only receive payments from a BCA account. To make payments from other bank accounts, choose a BNI virtual account as the payment method.
+    Currently, we are only receiving bank transfer payments through BCA and BNI Virtual Accounts. For a BCA virtual account, we can only receive payments from a BCA account. To make payments from other bank accounts, choose a BNI virtual account as the payment method.
 
 4. Transfer the payment to the virtual account number listed. Once the payment has been completed, you will receive a confirmation on the dashboard and your email along with the invoice. Note that you only have 24 hours to complete the payment before the session expires.
 

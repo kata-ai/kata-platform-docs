@@ -25,7 +25,7 @@ The example use cases for promotional messages include:
 ## Create a New WhatsApp Message Template
 Watch the video tutorial below to learn how to create a message template.
 
-<iframe width="704" height="396" src="https://www.youtube.com/embed/fXY57qj5tlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fXY57qj5tlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. Go to the **Message Template** page by clicking from the left side navigation, and click **+New Message** Template on the top right of the page.
 2. Choose a category of your message template. For a non-promotional WhatsApp template message, you can choose any category based on your business needs and objectives. For promotional content, you have to set the category as **Account Update**.
@@ -94,11 +94,10 @@ For all variables you created throughout your template message content, you have
 
 ## Message Template Best Practices
 
-1. Template message with the floating parameters will not be approved by WhatsApp, please surround the parameter with context/information so it is clear what variable will be filled in the parameter.
-
+1. Template message with the floating parameters will not be approved by WhatsApp, please surround the parameter with context/information so it is clear what variable will be filled in the parameter.<br><br>
     Example of floating parameter:
 
-    “Selamat datang di Toko Sejahtera {{1}}”
+    “Selamat datang di Toko Sejahtera {{1}}”<br><br>
 
     In this example, there is no clear information on what variable will be inserted in parameter {{1}}
 
@@ -106,7 +105,7 @@ For all variables you created throughout your template message content, you have
 
     i. “Nomor pesanan Anda: {{2}}”
 
-    ii. “Berikut total pesanan Anda {{3}}”
+    ii. “Berikut total pesanan Anda {{3}}”<br><br>
 
 3. Template with spelling mistakes will not be accepted, example:
 
@@ -114,12 +113,11 @@ For all variables you created throughout your template message content, you have
 
     Example:
 
-    Correct: {{2}}, Wrong: {2}
-
+    Correct: {{2}}, Wrong: {2}<br><br>
 
     Please type the parameter based on sequenced numbers
 
-    Example: {{1}}, {{2}}, {{3}}
+    Example: {{1}}, {{2}}, {{3}}<br><br>
 
 3. Template message contains potentially abusive/threatening content is not allowed:
 

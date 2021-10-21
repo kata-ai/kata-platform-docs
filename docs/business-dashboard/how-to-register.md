@@ -19,9 +19,9 @@ In WhatsApp Business Dashboard, you can connect multiple WhatsApp accounts to th
 
 #### WhatsApp Number Status
 
-For every registered WhatsApp number, you will see a status on the WhatsApp Numbers page. Here’s what the status means: 
+For every registered WhatsApp number, you will see a status on the WhatsApp Numbers page. Here’s what the status means:
 
-<table>
+<table className='bordered'>
   <tr>
     <td>Trial</td>
     <td>You have successfully registered a new WhatsApp number to your WhatsApp Business Account (WABA) for the first time and waiting for verification from Facebook. You can send a sample message with the trial experience feature.</td>
