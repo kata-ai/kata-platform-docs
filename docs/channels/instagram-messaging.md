@@ -2,6 +2,7 @@
 prev: channel-telegram
 id: channel-igdm
 title: Instagram Direct Message Automation
+next: channel-whatsapp
 ---
 
 Automate your Instagram DM conversation by using our flow builder in Kata Platform. Create bots to reply to customers with text, images, quick replies, generic template, ice breaker, and (coming soon) sticker.

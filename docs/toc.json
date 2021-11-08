@@ -241,6 +241,11 @@
         "id": "channel-igdm",
         "slug": "/channels/instagram-messaging/",
         "title": "Instagram Messaging"
+      },
+      {
+        "id": "channel-whatsapp",
+        "slug": "/channels/whatsapp/",
+        "title": "WhatsApp"
       }
     ]
   }
