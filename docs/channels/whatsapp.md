@@ -110,27 +110,23 @@ Here is an example of List Message response to end-users.
 
 ### How to Use
 
-1. Go to the Kata Platform and select your project.
+1.  Go to the Kata Platform and select your project.
 
-2. Click to **Flow > Conversation Flow > State > Action List**.
+2.  Click to **Flow > Conversation Flow > State > Action List**.
 
-3. Choose **List Message.** This action type only works on WhatsApp. Adding this on other channels will result in error.
+3.  Choose **List Message.** This action type only works on WhatsApp. Adding this on other channels will result in error.
 
-4. Fill in the fields.
+4.  Fill in the fields.
 
-5. Some important notes on List Message that you should know:
+5.  Some important notes on List Message that you should know: (1) "**Section**" has no limit. You can add as many sections as you want. (2) You can create up to **10 rows** in total across sections. (3) "**Row ID**" in the same section must be unique. For example:
 
-    1. "**Section**" has no limit. You can add as many sections as you want.
+        a. You create a section called "FAQ Topics"
 
-    2. You can create up to **10 rows** in total across sections.
+        b. Inside FAQ Topics, you have 3 rows.
 
-    3. "**Row ID**" in the same section must be unique. For example:
+        c. These 3 rows inside FAQ Topics can’t use the same ID.
 
-        1. You create a section called "FAQ Topics"
-
-        2. Inside FAQ Topics, you have 3 rows.
-
-        3. These 3 rows inside FAQ Topics can’t use the same ID.
+![image_22](./images/wa/image_22.png)
 
 > Using similar Row ID, either under 1 section or different sections, is not allowed
 
@@ -162,13 +158,13 @@ Here are examples of Reply Button responses to end-users.
 
 ### How to Use
 
-1. Go to the Kata Platform and select your project.
+-   Go to the Kata Platform and select your project.
 
-2. Click to **Flow > Conversation Flow > State > Action List**.
+-   Click to **Flow > Conversation Flow > State > Action List**.
 
-3. Choose **Reply Button.** This action type only works on WhatsApp. Adding this on other channels will result in error.
+-   Choose **Reply Button.** This action type only works on WhatsApp. Adding this on other channels will result in error.
 
-4. Fill in the fields. Some important notes on Reply button that you should know:
+-   Fill in the fields. Some important notes on Reply button that you should know:
 
     1. "**Button ID**" must be unique when creating action.
 
