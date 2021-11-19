@@ -141,8 +141,6 @@ Ice Breaker setup must be done in [Omnichat](/kata-omnichat). Hence, we need to 
 
 Finally, you’re successfully created the Inbox. Let's jump to [create the Ice Breaker tutorial](/channels/instagram-messaging).
 
-# Available Soon
-
 ## Instagram Sticker ("like heart")
 
 ### About
@@ -161,6 +159,8 @@ Tips: To develop this feature, you should be aware that your bot will reply with
 
 4. Click **Create**.
 
+# Available Soon
+
 ## Private Replies
 
 ### About
@@ -176,3 +176,9 @@ It will be applied in the **intent** feature to trigger automatic replies from I
 # Tutorial for Instagram Chatbot
 
 Go to this tutorial for creating a simple Instagram DM chatbot: [Create Instagram Bot Handover from Chatbot to Agent Tutorial](/tutorial/create-igdm-bot-handover-from-chatbot-to-agent)
+
+# FAQ
+
+## I have 2 IGDM bot actions which are image type and text type. First response will show an image, then a text. After I deploy the IG channel, it shows a text, then an image. Why did it happen?
+
+A: Because the API calls limit in Instagram (Facebook policy link) has a maximum of 5 outgoing messages in 1 second. Hence, to load the image and show it to the end-user, it took a delay in between and the impacted image action type didn’t show in the correct order. It cannot be avoided. We suggest you put a good UX conversation to show the image between text since the image will have an incorrect order than Platform emulator.
