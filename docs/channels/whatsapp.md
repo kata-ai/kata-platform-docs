@@ -158,6 +158,8 @@ Here are examples of Reply Button responses to end-users.
 
 ### How to Use
 
+Follow these steps to create a new Reply Button bot action type
+
 -   Go to the Kata Platform and select your project.
 
 -   Click to **Flow > Conversation Flow > State > Action List**.
