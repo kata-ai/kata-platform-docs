@@ -110,6 +110,8 @@ Here is an example of List Message response to end-users.
 
 ### How to Use
 
+Follow these steps to create a new List Message bot action type
+
 1.  Go to the Kata Platform and select your project.
 
 2.  Click to **Flow > Conversation Flow > State > Action List**.
@@ -131,6 +133,20 @@ Here is an example of List Message response to end-users.
 > Using similar Row ID, either under 1 section or different sections, is not allowed
 
 6.  Click **Create Action** to finalize your action
+
+After end-users click any options, bot must execute a response based on the clicked option. You can map the selected option by end-users using row title or row id.
+
+-   Using row `title`. For example:
+
+```
+context.chosen == payload.postback.title
+```
+
+-   Using row `id`. For example:
+
+```
+context.chosen == payload.postback.id
+```
 
 ## 🎉 **NEW** 🎉 Reply Button
 
@@ -181,6 +197,20 @@ Follow these steps to create a new Reply Button bot action type
 > Reply Button composition
 
 5.  Click **Create Action** to finalize your action
+
+After end-users click any button, bot must execute a response based on the clicked button. You can map the selected button by end-users using button title or button id.
+
+-   Using button `title`. For example:
+
+```
+context.chosen == payload.postback.title
+```
+
+-   Using button `id`. For example:
+
+```
+context.chosen == payload.postback.id
+```
 
 # Tutorial for WhatsApp Bot Integration
 
