@@ -16,6 +16,7 @@ import { Edge, HeaderMenuItem } from 'interfaces/nodes';
 import mainLogo from 'assets/images/logo-docs.svg';
 import omnichatLogo from 'assets/images/omnichat-logo-docs.svg';
 import businessDashboardLogo from 'assets/images/business-dashboard-logo-docs.svg';
+import qiosLogo from 'assets/images/qios-logo.svg';
 import { ButtonStyles } from 'components/ui/Button';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import SearchBox from 'components/search/SearchBox';
@@ -149,6 +150,8 @@ const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, location, 
         setLogo(omnichatLogo);
       } else if (pathname.includes('business-dashboard')) {
         setLogo(businessDashboardLogo);
+      } else if (pathname.includes('qios')) {
+        setLogo(qiosLogo);
       } else {
         setLogo(mainLogo);
       }
