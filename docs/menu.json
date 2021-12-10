@@ -53,5 +53,12 @@
     "href": "/business-dashboard",
     "new": true,
     "external": false
+  },
+  {
+    "id": "qios",
+    "label": "Qios",
+    "href": "/qios",
+    "new": true,
+    "external": false
   }
 ]

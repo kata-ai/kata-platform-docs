@@ -33,6 +33,9 @@ interface DataProps {
   businessDashboardMenus: {
     edges: Edge<MenuNode>[];
   };
+  qiosMenus: {
+    edges: Edge<MenuNode>[];
+  };
   headerMenus: {
     edges: Edge<HeaderMenuItem>[];
   };
@@ -90,6 +93,18 @@ const query = graphql`
         }
       }
     }
+    qiosMenus: allTocQiosJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
     headerMenus: allMenuJson {
       edges {
         node {
@@ -106,7 +121,7 @@ const query = graphql`
 `;
 
 const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden }) => {
-  const { site, headerMenus, navigationMenus, omnichatNavigationMenus, businessDashboardMenus }: DataProps =
+  const { site, headerMenus, navigationMenus, omnichatNavigationMenus, businessDashboardMenus, qiosMenus }: DataProps =
     useStaticQuery(query);
   const [section, setSection] = React.useState<Edge<MenuNode>[]>(navigationMenus.edges);
   const { siteMetadata } = site;
@@ -118,6 +133,8 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ location, children, navHidden
         setSection(omnichatNavigationMenus.edges);
       } else if (pathname.includes('business-dashboard')) {
         setSection(businessDashboardMenus.edges);
+      } else if (pathname.includes('qios')) {
+        setSection(qiosMenus.edges);
       } else {
         setSection(navigationMenus.edges);
       }

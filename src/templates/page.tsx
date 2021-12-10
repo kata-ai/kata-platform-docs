@@ -35,6 +35,9 @@ interface PageTemplateProps extends RouteComponentProps {
     sectionListBusinessDashboard: {
       edges: Edge<MenuNode>[];
     };
+    sectionListQios: {
+      edges: Edge<MenuNode>[];
+    }
     markdownRemark: {
       html: string;
       tableOfContents: string;
@@ -51,7 +54,7 @@ interface PageTemplateProps extends RouteComponentProps {
 }
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
-  const { markdownRemark, sectionList, sectionListOmni, sectionListBusinessDashboard, site } = data;
+  const { markdownRemark, sectionList, sectionListOmni, sectionListBusinessDashboard, sectionListQios, site } = data;
   const [tocIsOpen, setTocIsOpen] = React.useState(false);
   const [section, setSection] = React.useState<Edge<MenuNode>[]>(sectionList.edges);
   const { siteMetadata } = site;
@@ -66,6 +69,8 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => {
         setSection(sectionListOmni.edges);
       } else if (pathname.includes('business-dashboard')) {
         setSection(sectionListBusinessDashboard.edges);
+      } else if (pathname.includes('qios')) {
+        setSection(sectionListQios.edges);
       } else {
         setSection(sectionList.edges);
       }
@@ -150,6 +155,18 @@ export const query = graphql`
       }
     }
     sectionListBusinessDashboard: allTocBusinessDashboardJson {
+      edges {
+        node {
+          title
+          items {
+            id
+            slug
+            title
+          }
+        }
+      }
+    }
+    sectionListQios: allTocQiosJson {
       edges {
         node {
           title
