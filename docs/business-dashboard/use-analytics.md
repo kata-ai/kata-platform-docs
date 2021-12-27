@@ -2,6 +2,7 @@
 prev: manage-broadcast
 id: how-to-use-analytics
 title: How to Use Analytics
+next: conversation-based-pricing
 ---
 
 ![image-1](./images/analytics/image-1.jpg)
