@@ -44,8 +44,8 @@ how it works below for more information.
 
 WhatsApp Business API conversations fall into two different priced categories:
 
-1. User-initiated, such as customer service and general inquiries (Inbound).
-2. Business-initiated, such as notifications and notifications (Outbound).
+1. **User-initiated**, such as customer service and general inquiries (Inbound).
+2. **Business-initiated**, such as notifications and notifications (Outbound).
 
 All conversations or “Conversations” are measured in 24-hour increments, also known as “Sessions”, which start each time
 the first message is delivered by the business. The first message can be a response to a user question or a
@@ -59,7 +59,7 @@ will love before they have to pay. In addition, conversations will not be charge
 business using the call-to-action button on an Ad that clicks into WhatsApp or a Facebook Page CTA.
 
 ## Scenarios
-Disclaimer: This scenario is based on The Official Facebook documentation. The complete scenario can be found here.
+*Disclaimer: This scenario is based on The Official Facebook documentation. The complete scenario can be found [here](https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing).*
 
 For the following scenarios, we will use a user named Anne Budianto, a Commercial Air (airline) customer, and Kicks (an
 online shoe retailer).
@@ -69,11 +69,10 @@ needs. Commercial Air and Kicks know that many of their customers prefer to conn
 answer questions or send important updates via message.
 
 #### 1. User-Initiated Conversation (UIC)
-<table className='bordered'>
-<tr>
-<td>
-Scenario 1: User/customer service or general support questions in one 24-hour conversation session.
+![based-pricing-table-1.png](./images/based-pricing/table-1.png)
+<div style="text-align: center;">1.a. Illustrated Scenario 1</div>
 
+**Scenario 1: User/customer service or general support questions in one 24-hour conversation session.**
 1. Our user, Anne Budianto, messaged Commercial Air with a question about an upcoming reservation. When a Commercial Air
    reply message is sent, a 24-hour conversation session will start.
 2. In this scenario, all additional messages are free within a 24-hour session. This encourages Commercial Air to follow
@@ -83,74 +82,46 @@ Scenario 1: User/customer service or general support questions in one 24-hour co
    they will be charged for the new conversation. They will also be asked to send a message template to start a new
    conversation if it has been more than 24 hours since Anne's last message, which will be charged as a
    business-initiated conversation.
-
 In this scenario, Anne gets the info she needs about her reservation and Commercial Air pays for a single user-initiated
 conversation.
 
-Cost: IDR 320, for 1 UIC
-</td>
-<td>
-![image-1](./images/analytics/image-1.jpg)
-</td>
-</tr>
-<tr>
-<td>
-Scenario 2: A user/customer-initiated conversation that leads to two conversations with a Message Template.
+Cost: **IDR 320**, for 1 UIC
 
+![based-pricing-table-2.png](./images/based-pricing/table-2.png)
+<div style="text-align: center;">1.b. Illustrated Scenario 2</div>
+
+**Scenario 2: A user/customer-initiated conversation that leads to two conversations with a Message Template.**
 1. Anne wanted to check on an order she had made with Kicks, an online shoe retailer. He did it at 13:13.
 2. Kicks have a bot set up to reply to basic order inquiries and respond to Anne with delivery details at 13:13.
 3. As a follow-up the next day, the Kicks bot notified Anne that her order had shipped at 3:45 p.m.
-
 In this scenario, Kicks pays for one user-initiated conversation and one business-initiated conversation.
-
-Cost: IDR 820, for 1 UIC & 1 BIC
-</td>
-<td>
-![image-1](./images/analytics/image-1.jpg)
-</td>
-</tr>
-</table>
+Cost: **IDR 820**, for 1 UIC & 1 BIC
 
 #### 2. Business-Initiated Conversation (UIC)
-<table className='bordered'>
-<tr>
-<td>
-Scenario 3: Business initiates sending notification messages using Message Templates.
+![based-pricing-table-2.png](./images/based-pricing/table-2.png)
+<div style="text-align: center;">2.a. Illustrated Scenario 3</div>
 
+**Scenario 3: Business initiates sending notification messages using Message Templates.**
 1. When a flight is delayed or its status changes, Commercial Air notifies customers who have chosen to receive notifications using message templates.
 2. Two message templates sent in one 24-hour conversation session result in one business-initiated conversation fee.
-
 In this scenario, Commercial Air wants to inform Anne that her flight is delayed by 30 minutes.
-
 Commercial Air will charge for one business-initiated conversation for sending these two message templates to Anne in a 24-hour conversation session.
+Cost: **IDR 500**, for 1 BIC
 
-Cost: IDR 500, for 1 BIC
-</td>
-<td>
-![image-1](./images/analytics/image-1.jpg)
-</td>
-</tr>
-<tr>
-<td>
-Scenario 4: The business initiates a conversation that leads to a two-way conversation with the user/customer.
+![based-pricing-table-2.png](./images/based-pricing/table-2.png)
+<div style="text-align: center;">2.b. Illustrated Scenario 4</div>
 
+**Scenario 4: The business initiates a conversation that leads to a two-way conversation with the user/customer.**
 1. When a customer places a new order from Kicks, the online retailer sends a text message to confirm the order has been received and asks the customer if they would like to receive a notification when the order is shipped.
 2. The customer selects Yes and chooses to receive additional order notifications.
-
 In this scenario, Kicks pays for one conversation initiated by the business.
 
 If the user replies more than 24 hours after sending the initial business message and is followed by a business reply, it will result in a new conversation initiated by the user.
 
-Cost:
-1. IDR 500, for 1 BIC, if the user does not reply to the message.
-2. IDR 500, for 1 BIC, if the user replies within 1x24 hours.
-3. IDR 820, for 1 BIC & 1 UIC, if the user replies after 1x24 hours.
-</td>
-<td>
-(./images/analytics/image-1.jpg)
-</td>
-</tr>
-</table>
+Cost:<br>
+a. **IDR 500**, for 1 BIC, if the user does not reply to the message.<br>
+b. **IDR 500**, for 1 BIC, if the user replies within 1x24 hours.<br>
+c. **IDR 820**, for 1 BIC & 1 UIC, if the user replies after 1x24 hours.<br>
 
 These are four common conversation scenarios between businesses and users. If you still have questions regarding the
 comparison of the scenarios above, not limited to other possibilities that can occur between business and user
@@ -221,26 +192,30 @@ To accommodate changes in pricing schemes that occur, said the Business Dashboar
 </table>
 
 #### 2. IDR, for Non-Indonesian Numbers
-Prices for credit deductions from and for non-Indonesian numbers can be seen on: https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#cost-per-conversation-in-idr with a small round-up to the next dollar, plus an additional BSP Fee of +IDR 50 for both types of messages on WhatsApp, namely User-Initiated Conversation and Business-Initiated Conversation.
+Prices for credit deductions from and for non-Indonesian numbers can be seen on: https://developers.facebook.com/docs/whatsapp/pricing/conversationpricing#cost-per-conversation-in-idr with a small round-up to the next dollar, plus an additional BSP Fee of **+IDR 50** for both types of messages on WhatsApp, namely User-Initiated Conversation and Business-Initiated Conversation.
 
 Example:
-a. User-Initiated Conversation from Germany number
-Cost: IDR 1,169.20
-Round-up: IDR 1,170
-BSP Fee of IDR 50 = IDR 1,220
 
-b. Business-Initiated Conversation sent to a German number
-Cost: IDR 1,948.66
-Round-up: IDR 1,949
-BSP Fee of IDR 50 = IDR 1,999
+a. User-Initiated Conversation from Germany number<br>
+Cost: IDR 1,169.20<br>
+Round-up: IDR 1,170<br>
+BSP Fee of IDR 50 = **IDR 1,220**
 
+b. Business-Initiated Conversation sent to a German number<br>
+Cost: IDR 1,948.66<br>
+Round-up: IDR 1,949<br>
+BSP Fee of IDR 50 = **IDR 1,999**
+
+**<u>Final Price for Non-Indonesian Countries:</u>**
+
+**<u> * Rest of Non-Indonesian Country Groups:</u>**
 ## Credit Carry Over Policy
 For loyal Kata.ai customers and our partners who still have a credit balance from purchases before replacement and price negotiations. Credit from your business can be converted and can still be valid until the expiration limit of the top-up purchase in the previous period.
 
 Example:
-Remaining credit 100,000 Template Message * IDR 400 (old price) = IDR 40,000,000 remaining credit that can be converted into conversations.
-Remaining credit IDR 40,000,000 / IDR 500 (new price) = 80,000 Total Business-Initiated Conversation
-Remaining credit IDR 40,000,000 / IDR 320 (new price) = 125,000 Total User-Initiated Conversation
+Remaining credit 100,000 Template Message * IDR 400 (old price) = **IDR 40,000,000** remaining credit that can be converted into conversations.
+Remaining credit IDR 40,000,000 / IDR 500 (new price) = **80,000** Total Business-Initiated Conversation
+Remaining credit IDR 40,000,000 / IDR 320 (new price) = **125,000** Total User-Initiated Conversation
 
 The deduction for Business-Initiated Conversation and User-Initiated Conversation will use the new prices listed in point 1 above.
 
