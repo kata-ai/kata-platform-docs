@@ -135,11 +135,11 @@ Don't worry because no major changes have occurred. We only convert credit purch
 To accommodate changes in pricing schemes that occur, said the Business Dashboard to be updated to make it easier to use and monitor credit and the amount of usage. The latest update will be released on February 1, 2022, along with the price changes of the WhatsApp Business API.
 
 #### 1. IDR, for Indonesian Numbers Only
-<table className='bordered'>
+<table className='pricing-table'>
     <thead>
         <tr>
             <th>Conversation Type</th>
-            <th>Price, IDR (per Conversation)</th>
+            <th>Price, IDR<br>(per Conversation)</th>
         </tr>
     </thead>
     <tbody>
@@ -154,13 +154,13 @@ To accommodate changes in pricing schemes that occur, said the Business Dashboar
     </tbody>
 </table>
 
-<table className='bordered'>
+<table className='pricing-table'>
     <thead>
         <tr>
-            <th>Top-Up Credit(IDR)</th>
-            <th>Discount(%)</th>
-            <th>Discount(IDR)</th>
-            <th>Final Price(IDR)</th>
+            <th>Top-Up Credit<br>(IDR)</th>
+            <th>Discount<br>(%)</th>
+            <th>Discount<br>(IDR)</th>
+            <th>Final Price<br>(IDR)</th>
         </tr>
     </thead>
     <tbody>
@@ -207,6 +207,172 @@ Round-up: IDR 1,949<br>
 BSP Fee of IDR 50 = **IDR 1,999**
 
 **<u>Final Price for Non-Indonesian Countries:</u>**
+<table className='pricing-table'>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>User-Initiated Conversation<br>(IDR)</th>
+            <th>Business-Initiated<br>Conversation<br>(IDR)</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Argentina</td>
+        <td>IDR 501</td>
+        <td>IDR 801</td>
+      </tr>
+      <tr>
+        <td>Brazil</td>
+        <td>IDR 479</td>
+        <td>IDR 764</td>
+      </tr>
+      <tr>
+        <td>Chile</td>
+        <td>IDR 699</td>
+        <td>IDR 1,131</td>
+      </tr>
+      <tr>
+        <td>Colombia</td>
+        <td>IDR 136</td>
+        <td>IDR 193</td>
+      </tr>
+      <tr>
+        <td>Egypt</td>
+        <td>IDR 969</td>
+        <td>IDR 1,582</td>
+      </tr>
+      <tr>
+        <td>France</td>
+        <td>IDR 1,277</td>
+        <td>IDR 2,095</td>
+      </tr>
+      <tr>
+        <td>Germany</td>
+        <td>IDR 1,220</td>
+        <td>IDR 1,999</td>
+      </tr>
+      <tr>
+        <td>India</td>
+        <td>IDR 107</td>
+        <td>IDR 145</td>
+      </tr>
+      <tr>
+        <td>Israel</td>
+        <td>IDR 307</td>
+        <td>IDR 479</td>
+      </tr>
+      <tr>
+        <td>Italy</td>
+        <td>IDR 601</td>
+        <td>IDR 968</td>
+      </tr>
+      <tr>
+        <td>Malaysia</td>
+        <td>IDR 364</td>
+        <td>IDR 1,095</td>
+      </tr>
+      <tr>
+        <td>Mexico</td>
+        <td>IDR 200</td>
+        <td>IDR 548</td>
+      </tr>
+      <tr>
+        <td>Netherlands</td>
+        <td>IDR 1,322</td>
+        <td>IDR 2,170</td>
+      </tr>
+      <tr>
+        <td>Nigeria</td>
+        <td>IDR 493</td>
+        <td>IDR 788</td>
+      </tr>
+      <tr>
+        <td>Pakistan</td>
+        <td>IDR 253</td>
+        <td>IDR 726</td>
+      </tr>
+      <tr>
+        <td>Peru</td>
+        <td>IDR 307</td>
+        <td>IDR 904</td>
+      </tr>
+      <tr>
+        <td>Russia</td>
+        <td>IDR 618</td>
+        <td>IDR 997</td>
+      </tr>
+      <tr>
+        <td>Saudi Arabia</td>
+        <td>IDR 329</td>
+        <td>IDR 514</td>
+      </tr>
+      <tr>
+        <td>South Africa</td>
+        <td>IDR 291</td>
+        <td>IDR 451</td>
+      </tr>
+      <tr>
+        <td>Spain</td>
+        <td>IDR 577</td>
+        <td>IDR 928</td>
+      </tr>
+      <tr>
+        <td>Turkey</td>
+        <td>IDR 93</td>
+        <td>IDR 193</td>
+      </tr>
+      <tr>
+        <td>United Arab Emirates</td>
+        <td>IDR 321</td>
+        <td>IDR 502</td>
+      </tr>
+      <tr>
+        <td>United Kingdom</td>
+        <td>IDR 604</td>
+        <td>IDR 974</td>
+      </tr>
+      <tr>
+        <td>North America*</td>
+        <td>IDR 176</td>
+        <td>IDR 260</td>
+      </tr>
+      <tr>
+        <td>Rest of Africa*</td>
+        <td>IDR 568</td>
+        <td>IDR 1,775</td>
+      </tr>
+      <tr>
+        <td>Rest of Asia Pacific*</td>
+        <td>IDR 370</td>
+        <td>IDR 1,114</td>
+      </tr>
+      <tr>
+        <td>Rest of Central &amp; Eastern Europe*</td>
+        <td>IDR 408</td>
+        <td>IDR 1,242</td>
+      </tr>
+      <tr>
+        <td>Rest of Latin America*</td>
+        <td>IDR 655</td>
+        <td>IDR 1,058</td>
+      </tr>
+      <tr>
+        <td>Rest of Middle East*</td>
+        <td>IDR 362</td>
+        <td>IDR 1,088</td>
+      </tr>
+      <tr>
+        <td>Rest of Western Europe*</td>
+        <td>IDR 617</td>
+        <td>IDR 1,940</td>
+      </tr>
+      <tr>
+        <td>Other*</td>
+        <td>IDR 257</td>
+        <td>IDR 740</td>
+      </tr>
+    </tbody>
+</table>
 
 **<u> * Rest of Non-Indonesian Country Groups:</u>**
 <table className='bordered'>
