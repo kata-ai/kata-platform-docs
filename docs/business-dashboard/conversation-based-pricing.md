@@ -136,59 +136,59 @@ To accommodate changes in pricing schemes that occur, said the Business Dashboar
 
 #### 1. IDR, for Indonesian Numbers Only
 <table className='bordered'>
-<thead>
-<tr>
-<th>Conversation Type</th>
-<th>Price, IDR (per Conversation)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Business-Initiated Conversation</td>
-<td>IDR 500</td>
-</tr>
-<tr>
-<td>User-Initiated Conversation</td>
-<td>IDR 320</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Conversation Type</th>
+            <th>Price, IDR (per Conversation)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Business-Initiated Conversation</td>
+            <td>IDR 500</td>
+        </tr>
+        <tr>
+            <td>User-Initiated Conversation</td>
+            <td>IDR 320</td>
+        </tr>
+    </tbody>
 </table>
 
 <table className='bordered'>
-<thead>
-<tr>
-<th>Top-Up Credit(IDR)</th>
-<th>Discount(%)</th>
-<th>Discount(IDR)</th>
-<th>Final Price(IDR)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IDR 5,000,000</td>
-<td>2.00%</td>
-<td>IDR 100,000</td>
-<td>IDR 4,900,000</td>
-</tr>
-<tr>
-<td>IDR 20,000,000</td>
-<td>3.00%</td>
-<td>IDR 600,000</td>
-<td>IDR 19,400,000</td>
-</tr>
-<tr>
-<td>IDR 50,000,000</td>
-<td>4.00%</td>
-<td>IDR 2,000,000</td>
-<td>IDR 48,000,000</td>
-</tr>
-<tr>
-<td>IDR 100,000,000</td>
-<td>5.00%</td>
-<td>IDR 5,000,000</td>
-<td>IDR 95,000,000</td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Top-Up Credit(IDR)</th>
+            <th>Discount(%)</th>
+            <th>Discount(IDR)</th>
+            <th>Final Price(IDR)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>IDR 5,000,000</td>
+            <td>2.00%</td>
+            <td>IDR 100,000</td>
+            <td>IDR 4,900,000</td>
+        </tr>
+        <tr>
+            <td>IDR 20,000,000</td>
+            <td>3.00%</td>
+            <td>IDR 600,000</td>
+            <td>IDR 19,400,000</td>
+        </tr>
+        <tr>
+            <td>IDR 50,000,000</td>
+            <td>4.00%</td>
+            <td>IDR 2,000,000</td>
+            <td>IDR 48,000,000</td>
+        </tr>
+        <tr>
+            <td>IDR 100,000,000</td>
+            <td>5.00%</td>
+            <td>IDR 5,000,000</td>
+            <td>IDR 95,000,000</td>
+        </tr>
+    </tbody>
 </table>
 
 #### 2. IDR, for Non-Indonesian Numbers
@@ -209,6 +209,145 @@ BSP Fee of IDR 50 = **IDR 1,999**
 **<u>Final Price for Non-Indonesian Countries:</u>**
 
 **<u> * Rest of Non-Indonesian Country Groups:</u>**
+<table className='bordered'>
+    <tbody>
+        <tr>
+            <td>
+                <b>North America:</b><br>
+                Canada<br>
+                United States<br><br>
+                <b>Rest of Africa:</b><br>
+                Algeria<br>
+                Angola<br>
+                Benin<br>
+                Botswana<br>
+                Burkina Faso<br>
+                Burundi<br>
+                Cameroon<br>
+                Chad<br>
+                Congo<br>
+                Eritrea<br>
+                Ethiopia<br>
+                Gabon<br>
+                Gambia<br>
+                Ghana<br>
+                Guinea-Bissau<br>
+                Ivory Coast<br>
+                Kenya<br>
+                Lesotho<br>
+                Liberia<br>
+                Libya<br>
+                Madagascar<br>
+                Malawi<br>
+                Mali<br>
+                Mauritania<br>
+                Morocco<br>
+                Mozambique<br>
+                Namibia<br>
+                Niger<br>
+                Rwanda<br>
+                Senegal<br>
+                Sierra Leone<br>
+                Somalia<br>
+                South Sudan<br>
+                Sudan<br>
+                Swaziland<br>
+                Tanzania<br>
+                Togo<br>
+                Tunisia<br>
+                Uganda<br>
+                Zambia<br>
+            </td>
+            <td>
+                <b>Rest of Asia Pacific:</b><br>
+                Afghanistan<br>
+                Australia<br>
+                Bangladesh<br>
+                Cambodia<br>
+                China<br>
+                Hong Kong<br>
+                Japan<br>
+                Laos<br>
+                Mongolia<br>
+                Nepal<br>
+                New Zealand<br>
+                Papua New Guinea<br>
+                Philippines<br>
+                Singapore<br>
+                Sri Lanka<br>
+                Taiwan<br>
+                Tajikistan<br>
+                Thailand<br>
+                Turkmenistan<br>
+                Uzbekistan<br>
+                Vietnam<br><br>
+                <b>Rest of Central & Eastern Europe:</b><br>
+                Albania<br>
+                Armenia<br>
+                Azerbaijan<br>
+                Belarus<br>
+                Bulgaria<br>
+                Croatia<br>
+                Czech Republic<br>
+                Georgia<br>
+                Greece<br>
+                Hungary<br>
+                Latvia<br>
+                Lithuania<br>
+                Macedonia<br>
+                Moldova<br>
+                Poland<br>
+                Romania<br>
+                Serbia<br>
+                Slovakia<br>
+                Slovenia<br>
+                Ukraine<br>
+            </td>
+            <td>
+                <b>Rest of Latin America:</b><br>
+                Bolivia<br>
+                Costa Rica<br>
+                Dominican Republic<br>
+                Ecuador<br>
+                El Salvador<br>
+                Guatemala<br>
+                Haiti<br>
+                Honduras<br>
+                Jamaica<br>
+                Nicaragua<br>
+                Panama<br>
+                Paraguay<br>
+                Puerto Rico<br>
+                Uruguay<br>
+                Venezuela<br><br>
+                <b>Rest of Middle East:</b><br>
+                Bahrain<br>
+                Iraq<br>
+                Jordan<br>
+                Kuwait<br>
+                Lebanon<br>
+                Oman<br>
+                Qatar<br>
+                Yemen<br><br>
+                <b>Rest of Western Europe:</b><br>
+                Austria<br>
+                Belgium<br>
+                Denmark<br>
+                Finland<br>
+                Ireland<br>
+                Norway<br>
+                Portugal<br>
+                Sweden<br>
+                Switzerland<br><br>
+                <b>Other:</b><br>
+                All other countries not listed<br>
+                in the above regions or<br>
+                specifically listed in the above tables<br>
+            </td>
+        </tr>
+        <tr></tr>
+    </tbody>
+</table>
 ## Credit Carry Over Policy
 For loyal Kata.ai customers and our partners who still have a credit balance from purchases before replacement and price negotiations. Credit from your business can be converted and can still be valid until the expiration limit of the top-up purchase in the previous period.
 
