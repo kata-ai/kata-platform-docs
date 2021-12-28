@@ -114,6 +114,7 @@ const TableBordered = styled('table')`
     tr {
       td {
         padding: 14px 16px;
+        min-width: 15vw;
         vertical-align: top;
         font-size: ${textSizes[400].fontSize}px;
         line-height: ${textSizes[400].lineHeight}px;
