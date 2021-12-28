@@ -114,12 +114,48 @@ const TableBordered = styled('table')`
     tr {
       td {
         padding: 14px 16px;
-        min-width: 15vw;
         vertical-align: top;
         font-size: ${textSizes[400].fontSize}px;
         line-height: ${textSizes[400].lineHeight}px;
         color: ${colors.grey12};
         overflow-wrap: anywhere;
+      }
+      &:not(:last-child){
+        border-bottom: 1px solid ${colors.grey11};
+      }
+    }
+  }
+`;
+
+const TablePricing = styled('table')`
+  width: 100%;
+  margin: ${space.lg}px 0;
+  font-size: ${textSizes[300].fontSize}px;
+  line-height: ${textSizes[300].lineHeight}px;
+  border-collapse: collapse;
+  border: 2px solid ${colors.grey11};
+
+  thead {
+    border-bottom: 1px solid ${colors.grey02};
+    background-color: ${colors.greylight02};
+    th {
+      padding: 14px 16px;
+      font-weight: 600;
+      letter-spacing: -0.05px;
+      text-align: center;
+      color: ${colors.greydark02};
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 14px 16px;
+        vertical-align: top;
+        line-height: ${textSizes[300].lineHeight}px;
+        color: ${colors.grey12};
+        overflow-wrap: anywhere;
+        text-align: center;
       }
       &:not(:last-child){
         border-bottom: 1px solid ${colors.grey11};
@@ -151,6 +187,9 @@ export const table = (props: TableAttributes) => {
   const { className, ...rest } = props;
   if (className?.includes('bordered')){
     return <TableBordered {...rest} />
+  }
+  else if (className?.includes('pricing-table')){
+    return <TablePricing {...rest} />
   }
   return <TableDefault {...rest} />
 }

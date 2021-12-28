@@ -46,6 +46,11 @@
         "id": "how-to-use-analytics",
         "slug": "/business-dashboard/use-analytics",
         "title": "How to Use Analytics"
+      },
+      {
+        "id": "conversation-based-pricing",
+        "slug": "/business-dashboard/conversation-based-pricing",
+        "title": "Conversation-Based Pricing"
       }
     ]
   }
