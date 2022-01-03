@@ -98,7 +98,7 @@ In this scenario, Kicks pays for one user-initiated conversation and one busines
 Cost: **IDR 820**, for 1 UIC & 1 BIC
 
 #### 2. Business-Initiated Conversation (UIC)
-![based-pricing-table-2.png](./images/based-pricing/table-2.png)
+![based-pricing-table-3.png](./images/based-pricing/table-3.png)
 <div style="text-align: center;">2.a. Illustrated Scenario 3</div>
 
 **Scenario 3: Business initiates sending notification messages using Message Templates.**
@@ -108,7 +108,7 @@ In this scenario, Commercial Air wants to inform Anne that her flight is delayed
 Commercial Air will charge for one business-initiated conversation for sending these two message templates to Anne in a 24-hour conversation session.
 Cost: **IDR 500**, for 1 BIC
 
-![based-pricing-table-2.png](./images/based-pricing/table-2.png)
+![based-pricing-table-4.png](./images/based-pricing/table-4.png)
 <div style="text-align: center;">2.b. Illustrated Scenario 4</div>
 
 **Scenario 4: The business initiates a conversation that leads to a two-way conversation with the user/customer.**
@@ -514,6 +514,7 @@ BSP Fee of IDR 50 = **IDR 1,999**
         <tr></tr>
     </tbody>
 </table>
+
 ## Credit Carry Over Policy
 For loyal Kata.ai customers and our partners who still have a credit balance from purchases before replacement and price negotiations. Credit from your business can be converted and can still be valid until the expiration limit of the top-up purchase in the previous period.
 
