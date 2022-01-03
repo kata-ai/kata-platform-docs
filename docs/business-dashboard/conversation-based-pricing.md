@@ -40,7 +40,7 @@ how it works below for more information.
   </tr>
 </table>
 
-## Terms & Definitions
+## How It Works
 
 WhatsApp Business API conversations fall into two different priced categories:
 
