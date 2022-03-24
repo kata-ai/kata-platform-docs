@@ -1,4 +1,12 @@
-# kata-platform-docs
+# [DEPRECATED - No longer actively maintained] kata-platform-docs
+
+### This is no longer maintained. Currently using NextJS version in [here](https://github.com/kata-ai/next-kata-docs)
+
+#
+
+#
+
+---
 
 > Documentation website for the Kata Platform
 
@@ -14,8 +22,8 @@ Something is missing/incorrect? Don't hesitate to [create a pull request](https:
 
 #### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) (8.0.0+)
-- [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but highly recommended for your own sanity.)
+-   [Node.js](https://nodejs.org/en/) (8.0.0+)
+-   [Yarn](https://yarnpkg.com) (Optional. You can still use `npm` if you want, but highly recommended for your own sanity.)
 
 #### Initial setup
 
@@ -91,4 +99,4 @@ This project is bootstrapped with [Grundgesetz](https://github.com/kata-ai/grund
 
 ## Authors
 
-- Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
+-   Resi Respati ([@resir014](https://twitter.com/resir014)) – [Kata.ai](https://kata.ai)
