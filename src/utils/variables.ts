@@ -146,6 +146,9 @@ export const colors = {
   grey11: '#eff2f5',
   grey12: '#313f4e',
 
+  greylight02: '#FAFBFD',
+  greydark02: '#313F4E',
+
   // Helper colors
   white: '#fff',
   black: '#000'
